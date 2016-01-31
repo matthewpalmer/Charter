@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DSNestedAccordion.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GZIP.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>24E101DE2A90F8BF9246127F48FB139D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28828F8882C8664ACB5DE3FFFA1C19C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>66241D4532391C20FAE8E65120B7E8DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D4D8D8AFE7D989EB139B131F2837C34</key>
+		<key>7E2DC4B479673579C992E80F927963B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B347B467C0E4BBDD23C010C9736B65AA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6E3D87ECB7B9AA9588A6CFC56E5BEFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

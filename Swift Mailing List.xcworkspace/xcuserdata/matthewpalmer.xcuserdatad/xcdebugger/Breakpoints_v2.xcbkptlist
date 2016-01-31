@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/ThreadDetailViewController.swift"
-            timestampString = "475918803.661875"
+            timestampString = "475964334.074334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "reload()"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/ThreadDetailViewController.swift"
-            timestampString = "475918803.661875"
+            timestampString = "475964334.074334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "didMoveToParentViewController(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -310,7 +310,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/AppCoordinator.swift"
@@ -401,6 +401,102 @@
             endingLineNumber = "26"
             landmarkName = "mailingListMessageHeaders"
             landmarkType = "19">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/ThreadDetailViewController.swift"
+            timestampString = "475964334.074334"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "tableView(_:cellForPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/ThreadDetailViewController.swift"
+            timestampString = "475963270.694964"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "tableView(_:noOfChildRowsForCellAtPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/ThreadDetailViewController.swift"
+            timestampString = "475964299.349296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "emailForTreePath(_:path:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift_Mailing_List.AccordionDataSource.(emailForTreePath in _3F3CA6F66F8AC46EF86932564B7ECC15) (Swift_Mailing_List.AccordionDataSource)(Swift.Array&lt;Swift_Mailing_List.TestEmail&gt;, path : __ObjC.DSCellPath) -&gt; Swift_Mailing_List.TestEmail"
+                  moduleName = "Swift Mailing List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Swift%20Mailing%20List/Swift%20Mailing%20List/ThreadDetailViewController.swift"
+                  timestampString = "475964334.242927"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift_Mailing_List.AccordionDataSource.((emailForTreePath in _3F3CA6F66F8AC46EF86932564B7ECC15) (Swift_Mailing_List.AccordionDataSource) -&gt; (Swift.Array&lt;Swift_Mailing_List.TestEmail&gt;, path : __ObjC.DSCellPath) -&gt; Swift_Mailing_List.TestEmail).(closure #1)"
+                  moduleName = "Swift Mailing List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Swift%20Mailing%20List/Swift%20Mailing%20List/ThreadDetailViewController.swift"
+                  timestampString = "475964334.243226"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/ThreadDetailViewController.swift"
+            timestampString = "475964373.905779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "emailForTreePath(_:path:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

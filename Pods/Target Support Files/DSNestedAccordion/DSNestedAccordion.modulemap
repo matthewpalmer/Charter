@@ -1,0 +1,6 @@
+framework module DSNestedAccordion {
+  umbrella header "DSNestedAccordion-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A21ED9C5907DD184A4C4438F'
+               BlueprintIdentifier = 'BA3756C878EEEF4BD93A53D1'
                BlueprintName = 'Pods-Swift Mailing List'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Swift_Mailing_List.framework'>

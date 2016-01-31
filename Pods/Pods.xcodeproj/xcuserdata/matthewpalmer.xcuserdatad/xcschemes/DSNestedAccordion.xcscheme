@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '82373D94D01DEEE448590C92'
-               BlueprintName = 'GZIP'
+               BlueprintIdentifier = '9EE452904613202B67B567CE'
+               BlueprintName = 'DSNestedAccordion'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'GZIP.framework'>
+               BuildableName = 'DSNestedAccordion.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
