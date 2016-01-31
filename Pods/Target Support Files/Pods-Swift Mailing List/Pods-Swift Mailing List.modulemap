@@ -1,0 +1,6 @@
+framework module Pods_Swift_Mailing_List {
+  umbrella header "Pods-Swift Mailing List-umbrella.h"
+
+  export *
+  module * { export * }
+}

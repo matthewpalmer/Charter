@@ -1,0 +1,6 @@
+framework module MailingListParser {
+  umbrella header "MailingListParser-umbrella.h"
+
+  export *
+  module * { export * }
+}

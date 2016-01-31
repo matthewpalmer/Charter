@@ -1,0 +1,20 @@
+PODS:
+  - GZIP (1.1.1)
+  - MailingListParser (0.0.2)
+  - ReSwift (0.2.4)
+
+DEPENDENCIES:
+  - GZIP (~> 1.1.1)
+  - MailingListParser (from `~/dev/ios/MailingListParser`)
+  - ReSwift
+
+EXTERNAL SOURCES:
+  MailingListParser:
+    :path: "~/dev/ios/MailingListParser"
+
+SPEC CHECKSUMS:
+  GZIP: f8beb59597f651e6970a45b816508a9c6d700b77
+  MailingListParser: d598b23ac6f133d4a9f5a2089c578a0fd4851b4f
+  ReSwift: ee04e4dfb7a1a14c88e3a57a64c24cae1ebf075b
+
+COCOAPODS: 0.39.0
