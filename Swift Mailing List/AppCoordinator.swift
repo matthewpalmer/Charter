@@ -8,6 +8,70 @@
 
 import UIKit
 import ReSwift
+import DSNestedAccordion
+
+/*
+- This is email 1
+- This is 1 child of email 1
+- This is 2 child of email 1
+- This is 1 child of email 1, 2
+- This is 2 child of email 1, 2
+- This is email 2
+- This is 1 child of email 2
+*/
+
+struct TestEmail {
+    let text: String
+    let children: [TestEmail]
+}
+
+let email0 = TestEmail(text: "email 0", children: [email00, email01])
+let email00 = TestEmail(text: "email00", children: [])
+let email01 = TestEmail(text: "email01", children: [email010, email011])
+let email010 = TestEmail(text: "email010", children: [])
+let email011 = TestEmail(text: "email011", children: [])
+let email1 = TestEmail(text: "email 1", children: [email10])
+let email10 = TestEmail(text: "email10", children: [])
+
+
+let rootEmails = [email0, email1]
+
+class AccordionDataSource: DSNestedAccordionHandler {
+    override func noOfRowsInRootLevel() -> Int {
+        return rootEmails.count
+    }
+    
+    override func tableView(view: UITableView!, noOfChildRowsForCellAtPath path: DSCellPath!) -> Int {
+        return emailForTreePath(rootEmails, path: path).children.count
+    }
+    
+    private func emailForTreePath(list: [TestEmail], path: DSCellPath) -> TestEmail {
+        let route = path.levelIndexes.map { $0.integerValue! }
+        var email: TestEmail?
+        var childList: [TestEmail] = list
+        
+        for i in 0..<route.count {
+            if i == route.count - 1 {
+                // Last
+                email = childList[route[i]]
+            } else {
+                email = childList[route[i]]
+                childList = email!.children
+            }
+        }
+        
+        return email!
+    }
+    
+    override func tableView(view: UITableView!, cellForPath path: DSCellPath!) -> UITableViewCell! {
+        let cell = view.dequeueReusableCellWithIdentifier("threadDetailCellIdentifier")!
+        let email = emailForTreePath(rootEmails, path: path)
+        cell.textLabel?.text = email.text
+        return cell
+    }
+}
+
+extension AccordionDataSource: ThreadDetailTableViewHandler {}
 
 class AppCoordinator: NSObject, StoreSubscriber {
     let navigationController: UINavigationController
@@ -18,9 +82,13 @@ class AppCoordinator: NSObject, StoreSubscriber {
         return viewController
     }()
     
+    lazy var detailTableViewHandler: AccordionDataSource = {
+        return AccordionDataSource()
+    }()
+    
     lazy var threadDetailViewController: ThreadDetailViewController = {
         let viewController = ThreadDetailViewController()
-        viewController.dataSource = self
+        viewController.handler = self.detailTableViewHandler
         viewController.delegate = self
         return viewController
     }()
@@ -51,7 +119,9 @@ class AppCoordinator: NSObject, StoreSubscriber {
     }
     
     func route(nextRoute: Route, routeHistory: [Route]) {
-        defer { mainStore.dispatch(NextRouteAcknowledged()) }
+        defer {
+            mainStore.dispatch(NextRouteAcknowledged())
+        }
         
         guard routeHistory.count > 0 else {
             if nextRoute == .Threads {
@@ -82,16 +152,6 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
     
     func threadsViewControllerRequestsReloadedData() {
         mainStore.dispatch(RequestSwiftEvolution(ListPeriod(identifier: "2015-December")))
-    }
-}
-
-extension AppCoordinator: ThreadDetailViewControllerDataSource {
-    func threadDetailViewControllerEmailForIndexPath(threadDetailViewController: ThreadDetailViewController, indexPath: NSIndexPath) -> Email {
-        return mainStore.state.emailList[indexPath.row]
-    }
-    
-    func threadDetailViewControllerNumberOfEmailsInSection(threadDetailViewController: ThreadDetailViewController, section: Int) -> Int {
-        return mainStore.state.emailList.count
     }
 }
 
