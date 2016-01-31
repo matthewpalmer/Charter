@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
 class AppCoordinator: NSObject, StoreSubscriber {
     let navigationController: UINavigationController
@@ -20,6 +21,7 @@ class AppCoordinator: NSObject, StoreSubscriber {
     lazy var threadDetailViewController: ThreadDetailViewController = {
         let viewController = ThreadDetailViewController()
         viewController.dataSource = self
+        viewController.delegate = self
         return viewController
     }()
     
@@ -27,6 +29,9 @@ class AppCoordinator: NSObject, StoreSubscriber {
         self.navigationController = navigationController
         
         super.init()
+        
+        mainStore.subscribe(self)
+        mainStore.dispatch(MoveTo(route: .Threads))
     }
     
     func newState(state: AppState) {
@@ -57,7 +62,8 @@ class AppCoordinator: NSObject, StoreSubscriber {
         case (.Threads, .ThreadDetail):
             navigationController.pushViewController(threadDetailViewController, animated: true)
         case (.ThreadDetail, .Threads):
-            navigationController.popToRootViewControllerAnimated(true)
+            // Deliberate no-op--see the comments in `threadDetailViewControllerDidNavigateBackwards`.
+            break
         default:
             break
         }
@@ -81,5 +87,13 @@ extension AppCoordinator: ThreadDetailViewControllerDataSource {
     
     func threadDetailViewControllerNumberOfEmailsInSection(threadDetailViewController: ThreadDetailViewController, section: Int) -> Int {
         return mainStore.state.emailList.count
+    }
+}
+
+extension AppCoordinator: ThreadDetailViewControllerDelegate {
+    func threadDetailViewControllerDidNavigateBackwards(threadDetailViewController: ThreadDetailViewController) {
+        // Need to work around the fact that we can't override UINavigationController's back button action.
+        // We need to reconcile the UI route (currently at .Threads) with the route history (which is currently ending at .ThreadDetail)
+        mainStore.dispatch(MoveTo(route: .Threads))
     }
 }

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ReSwift
 import MailingListParser
 
 typealias Email = MailingListMessage
+
+let mainStore = Store(reducer: AppReducer(), state: AppState())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         coordinator = AppCoordinator(navigationController: navigationController)
+        
+        
+        let file = NSBundle.mainBundle().URLForResource("Message-2", withExtension: nil)!
+        let data = NSData(contentsOfURL: file)
+        
+
         
         return true
     }

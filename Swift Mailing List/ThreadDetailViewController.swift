@@ -13,15 +13,27 @@ protocol ThreadDetailViewControllerDataSource: class {
     func threadDetailViewControllerNumberOfEmailsInSection(threadDetailViewController: ThreadDetailViewController, section: Int) -> Int
 }
 
+protocol ThreadDetailViewControllerDelegate: class {
+    func threadDetailViewControllerDidNavigateBackwards(threadDetailViewController: ThreadDetailViewController)
+}
+
 class ThreadDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     private let reuseIdentifier = "threadDetailCellIdentifier"
     
     weak var dataSource: ThreadDetailViewControllerDataSource?
+    weak var delegate: ThreadDetailViewControllerDelegate?
     
     init() {
         super.init(nibName: "ThreadsViewController", bundle: NSBundle.mainBundle())
+    }
+
+    override func didMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil {
+            // Pressed 'Back' from this screen. Need to update our route history.
+            delegate?.threadDetailViewControllerDidNavigateBackwards(self)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
