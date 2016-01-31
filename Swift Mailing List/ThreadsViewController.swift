@@ -45,7 +45,7 @@ class ThreadsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
-        cell.textLabel?.text = "Row \(indexPath.row)"
+        cell.textLabel?.text = mainStore.state.rootEmailList[indexPath.row].headers.subject
         return cell
     }
     
@@ -54,6 +54,10 @@ class ThreadsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return mainStore.state.rootEmailList.count
+    }
+    
+    func relod() {
+        tableView.reloadData()
     }
 }

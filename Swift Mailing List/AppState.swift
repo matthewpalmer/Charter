@@ -15,6 +15,7 @@ enum Route {
 }
 
 struct AppState: StateType {
+    var rootEmailList: [Email] = []
     var emailList: [Email] = []
     
     var nextRoute: Route? = nil

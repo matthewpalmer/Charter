@@ -20,6 +20,10 @@ struct SetEmailList: Action {
     let contents: [Email]
 }
 
+struct SetRootEmailList: Action {
+    let contents: [Email]
+}
+
 struct ListPeriod {
     let identifier: String
     

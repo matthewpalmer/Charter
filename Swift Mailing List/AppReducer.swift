@@ -30,6 +30,10 @@ struct AppReducer: Reducer {
             state?.emailList = (action as! SetEmailList).contents
         }
         
+        if action is SetRootEmailList {
+            state?.rootEmailList = (action as! SetRootEmailList).contents
+        }
+        
         return state ?? AppState()
     }
 }

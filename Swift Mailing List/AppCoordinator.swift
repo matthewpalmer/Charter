@@ -43,6 +43,11 @@ class AppCoordinator: NSObject, StoreSubscriber {
             threadDetailViewController.reload()
         }
         
+        if state.emailList.count > 0 && state.rootEmailList.count == 0 {
+            let forest = PartitionEmailsIntoTreeForest(state.emailList)
+            mainStore.dispatch(SetRootEmailList(contents: forest.map { $0.email }))
+            threadsViewController.relod()
+        }
     }
     
     func route(nextRoute: Route, routeHistory: [Route]) {
