@@ -22,7 +22,7 @@ protocol ThreadDetailViewControllerDelegate: class {
 class ThreadDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    private let reuseIdentifier = "threadDetailCellIdentifier"
+    static let fullMessageCellIdentifier = "fullMessageCellId"
     
     weak var handler: ThreadDetailTableViewHandler?
     weak var delegate: ThreadDetailViewControllerDelegate?
@@ -47,9 +47,15 @@ class ThreadDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.registerNib(FullEmailMessageTableViewCell.nib(), forCellReuseIdentifier: ThreadDetailViewController.fullMessageCellIdentifier)
+        tableView.estimatedRowHeight = 160
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = handler
         tableView.delegate = handler
+    }
+    
+    override func viewDidLoad() {
+
     }
     
     func reload() {

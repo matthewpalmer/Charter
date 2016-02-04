@@ -10,33 +10,9 @@ import UIKit
 import ReSwift
 import DSNestedAccordion
 
-/*
-- This is email 1
-- This is 1 child of email 1
-- This is 2 child of email 1
-- This is 1 child of email 1, 2
-- This is 2 child of email 1, 2
-- This is email 2
-- This is 1 child of email 2
-*/
-
-struct TestEmail {
-    let text: String
-    let children: [TestEmail]
-}
-
-let email0 = TestEmail(text: "email 0", children: [email00, email01])
-let email00 = TestEmail(text: "email00", children: [])
-let email01 = TestEmail(text: "email01", children: [email010, email011])
-let email010 = TestEmail(text: "email010", children: [])
-let email011 = TestEmail(text: "email011", children: [])
-let email1 = TestEmail(text: "email 1", children: [email10])
-let email10 = TestEmail(text: "email10", children: [])
-
-
-let rootEmails = [email0, email1]
-
 class AccordionDataSource: DSNestedAccordionHandler {
+    var rootEmails: [EmailTreeNode] = []
+    
     override func noOfRowsInRootLevel() -> Int {
         return rootEmails.count
     }
@@ -45,10 +21,10 @@ class AccordionDataSource: DSNestedAccordionHandler {
         return emailForTreePath(rootEmails, path: path).children.count
     }
     
-    private func emailForTreePath(list: [TestEmail], path: DSCellPath) -> TestEmail {
+    private func emailForTreePath(list: [EmailTreeNode], path: DSCellPath) -> EmailTreeNode {
         let route = path.levelIndexes.map { $0.integerValue! }
-        var email: TestEmail?
-        var childList: [TestEmail] = list
+        var email: EmailTreeNode?
+        var childList: [EmailTreeNode] = list
         
         for i in 0..<route.count {
             if i == route.count - 1 {
@@ -64,17 +40,78 @@ class AccordionDataSource: DSNestedAccordionHandler {
     }
     
     override func tableView(view: UITableView!, cellForPath path: DSCellPath!) -> UITableViewCell! {
-        let cell = view.dequeueReusableCellWithIdentifier("threadDetailCellIdentifier")!
-        let email = emailForTreePath(rootEmails, path: path)
-        cell.textLabel?.text = email.text
+        let cell = view.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
+        
+        let email = emailForTreePath(rootEmails, path: path).email
+        
+                cell.leadingMarginConstraint.constant = CGFloat(-10 * path.levelIndexes.count)
+        
+        cell.dateLabel.text = email.headers.date
+        cell.subjectLabel.text = email.headers.subject
+        cell.contentTextView.text = email.content
+        
         return cell
     }
 }
 
 extension AccordionDataSource: ThreadDetailTableViewHandler {}
 
+class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
+    private let emails: [Email]
+    private let title: String
+    
+    // Conflicted about this data source taking in the entire app state
+    init(state: AppState) {
+        title = state.selectedMailingList!.rawValue.name
+        
+        self.emails = PartitionEmailsIntoTreeForest(
+            state.emailList.filter { $0.mailingList == state.selectedMailingList! }
+            ).map { $0.email }
+    }
+    
+    deinit {
+        print("deiinit")
+    }
+    
+    private lazy var squareBracketRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "^\\[.*\\]", options: .CaseInsensitive)
+    }()
+    
+    private lazy var leadingSpaceRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "^\\s+", options: .CaseInsensitive)
+    }()
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.reuseIdentifier, forIndexPath: indexPath)
+        let subject = emails[indexPath.row].headers.subject
+        let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
+        let noLeadingSpaces = leadingSpaceRegex.stringByReplacingMatchesInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count), withTemplate: "")
+        
+        cell.textLabel?.text = noLeadingSpaces
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return emails.count
+    }
+    
+    func mailingListTitle() -> String {
+        return title
+    }
+    
+    func rootEmailAtIndexPath(indexPath: NSIndexPath) -> Email {
+        return emails[indexPath.row]
+    }
+}
+
 class AppCoordinator: NSObject, StoreSubscriber {
     let navigationController: UINavigationController
+    
+    lazy var mailingListViewController: MailingListViewController = {
+        let viewController = MailingListViewController(mailingLists: MailingList.cases.map { $0.rawValue })
+        viewController.delegate = self
+        return viewController
+    }()
     
     lazy var threadsViewController: ThreadsViewController = {
         let viewController = ThreadsViewController()
@@ -93,13 +130,19 @@ class AppCoordinator: NSObject, StoreSubscriber {
         return viewController
     }()
     
+    var threadsTableViewDataSource: ThreadsTableViewDataSource? {
+        didSet {
+            self.threadsViewController.dataSource = threadsTableViewDataSource
+        }
+    }
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         
         super.init()
         
         mainStore.subscribe(self)
-        mainStore.dispatch(MoveTo(route: .Threads))
+        mainStore.dispatch(MoveTo(route: .MailingLists))
     }
     
     func newState(state: AppState) {
@@ -108,13 +151,23 @@ class AppCoordinator: NSObject, StoreSubscriber {
         }
         
         if state.routeHistory.last == .ThreadDetail {
-            threadDetailViewController.reload()
+            let emailsInList = state.emailList.filter { $0.mailingList == state.selectedMailingList }
+            let forest = PartitionEmailsIntoTreeForest(emailsInList)
+            detailTableViewHandler.rootEmails = forest.filter { $0.email.headers.messageID == state.selectedThreadWithRootMessageID }
+            detailTableViewHandler.reload()
         }
         
-        if state.emailList.count > 0 && state.rootEmailList.count == 0 {
-            let forest = PartitionEmailsIntoTreeForest(state.emailList)
-            mainStore.dispatch(SetRootEmailList(contents: forest.map { $0.email }))
-            threadsViewController.relod()
+        if state.routeHistory.last == .Threads && state.selectedMailingList != nil {
+            if let isRefreshing = state.mailingListIsRefreshing[state.selectedMailingList!] where isRefreshing == true {
+//                threadsViewController.beginRefreshing()
+            } else {
+                threadsViewController.endRefreshing()
+            }
+            
+            if state.emailList.count > 0 {
+                threadsTableViewDataSource = ThreadsTableViewDataSource(state: state)
+            }
+            
         }
     }
     
@@ -124,8 +177,8 @@ class AppCoordinator: NSObject, StoreSubscriber {
         }
         
         guard routeHistory.count > 0 else {
-            if nextRoute == .Threads {
-                navigationController.pushViewController(threadsViewController, animated: false)
+            if nextRoute == .MailingLists {
+                navigationController.pushViewController(mailingListViewController, animated: false)
             }
             
             return
@@ -134,11 +187,10 @@ class AppCoordinator: NSObject, StoreSubscriber {
         let oldRoute = routeHistory.last!
         
         switch (oldRoute, nextRoute) {
+        case (.MailingLists, .Threads):
+            navigationController.pushViewController(threadsViewController, animated: true)
         case (.Threads, .ThreadDetail):
             navigationController.pushViewController(threadDetailViewController, animated: true)
-        case (.ThreadDetail, .Threads):
-            // Deliberate no-op--see the comments in `threadDetailViewControllerDidNavigateBackwards`.
-            break
         default:
             break
         }
@@ -146,12 +198,23 @@ class AppCoordinator: NSObject, StoreSubscriber {
 }
 
 extension AppCoordinator: ThreadsViewControllerDelegate {
-    func threadsViewControllerDidSelectRowAtIndexPath(indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Hmm... not totally sure about the abstraction of this.
+        let selectedEmail = threadsTableViewDataSource?.emails[indexPath.row]
+        mainStore.dispatch(SetSelectedThreadWithRootMessageID(rootMessageID: selectedEmail?.headers.messageID))
         mainStore.dispatch(MoveTo(route: .ThreadDetail))
     }
     
     func threadsViewControllerRequestsReloadedData() {
-        mainStore.dispatch(RequestSwiftEvolution(ListPeriod(identifier: "2015-December")))
+        if mainStore.state.selectedMailingList == .SwiftEvolution {
+            mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
+            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: false))
+        }
+    }
+    
+    func threadsViewControllerDidNavigateBackwards(threadsViewController: ThreadsViewController) {
+        mainStore.dispatch(SetSelectedMailingList(list: nil))
+        mainStore.dispatch(MoveTo(route: .MailingLists))
     }
 }
 
@@ -159,6 +222,14 @@ extension AppCoordinator: ThreadDetailViewControllerDelegate {
     func threadDetailViewControllerDidNavigateBackwards(threadDetailViewController: ThreadDetailViewController) {
         // Need to work around the fact that we can't override UINavigationController's back button action.
         // We need to reconcile the UI route (currently at .Threads) with the route history (which is currently ending at .ThreadDetail)
+        mainStore.dispatch(SetSelectedThreadWithRootMessageID(rootMessageID: nil))
+        mainStore.dispatch(MoveTo(route: .Threads))
+    }
+}
+
+extension AppCoordinator: MailingListViewControllerDelegate {
+    func mailingListViewControllerDidSelectMailingList(mailingList: MailingListType) {
+        mainStore.dispatch(SetSelectedMailingList(list: MailingList(rawValue: mailingList)))
         mainStore.dispatch(MoveTo(route: .Threads))
     }
 }

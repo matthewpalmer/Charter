@@ -26,12 +26,21 @@ struct AppReducer: Reducer {
             state?.nextRoute = nil
         }
         
+        if action is SetSelectedMailingList {
+            state?.selectedMailingList = (action as! SetSelectedMailingList).list
+        }
+        
+        if action is SetSelectedThreadWithRootMessageID {
+            state?.selectedThreadWithRootMessageID = (action as! SetSelectedThreadWithRootMessageID).rootMessageID
+        }
+        
         if action is SetEmailList {
             state?.emailList = (action as! SetEmailList).contents
         }
         
-        if action is SetRootEmailList {
-            state?.rootEmailList = (action as! SetRootEmailList).contents
+        if action is SetMailingListIsRefreshing {
+            let a = (action as! SetMailingListIsRefreshing)
+            state?.mailingListIsRefreshing[a.mailingList] = a.isRefreshing
         }
         
         return state ?? AppState()

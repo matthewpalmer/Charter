@@ -19,10 +19,6 @@ func ==(lhs: EmailTreeNode, rhs: EmailTreeNode) -> Bool {
     return lhs.email.headers.messageID == rhs.email.headers.messageID && lhs.children == rhs.children
 }
 
-extension Email: Hashable {
-    public var hashValue: Int { return headers.messageID.hashValue }
-}
-
 func PartitionEmailsIntoTreeForest(collection: [Email]) -> [EmailTreeNode] {
     var postIDs = Dictionary<String, Email>()
     collection.forEach { postIDs[$0.headers.messageID] = $0 }

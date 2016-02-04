@@ -9,55 +9,82 @@
 import UIKit
 import ReSwift
 
-protocol ThreadsViewControllerDelegate: class {
-    func threadsViewControllerDidSelectRowAtIndexPath(indexPath: NSIndexPath)
+protocol ThreadsViewControllerDelegate: class, UITableViewDelegate {
     func threadsViewControllerRequestsReloadedData()
+    func threadsViewControllerDidNavigateBackwards(threadsViewController: ThreadsViewController)
 }
 
-class ThreadsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol ThreadsViewControllerDataSource: class, UITableViewDataSource {
+    func mailingListTitle() -> String
+    func rootEmailAtIndexPath(indexPath: NSIndexPath) -> Email
+}
+
+class ThreadsViewController: UIViewController, UITableViewDelegate {
     typealias StoreSubscriberStateType = AppState
     
-    private let reuseIdentifier = "threadsCellReuseIdentifier"
+    static let reuseIdentifier = "threadsCellReuseIdentifier"
     
     @IBOutlet weak var tableView: UITableView!
     
-    weak var delegate: ThreadsViewControllerDelegate?
+    weak var delegate: ThreadsViewControllerDelegate? {
+        didSet {
+            if tableView != nil {
+                tableView.delegate = delegate
+            }
+        }
+    }
+    
+    weak var dataSource: ThreadsViewControllerDataSource? {
+        didSet {
+            if tableView != nil {
+                tableView.dataSource = dataSource
+                tableView.reloadData()
+            }
+        }
+    }
     
     init() {
         super.init(nibName: "ThreadsViewController", bundle: NSBundle.mainBundle())
+    }
+    
+    override func didMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil {
+            // Pressed 'Back' from this screen. Need to update our route history.
+            delegate?.threadsViewControllerDidNavigateBackwards(self)
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "didRequestRefresh:", forControlEvents: .ValueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: ThreadsViewController.reuseIdentifier)
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+        delegate?.threadsViewControllerRequestsReloadedData()
         
+        tableView.addSubview(refreshControl)
+        
+        navigationItem.title = "Threads"
+    }
+    
+    func didRequestRefresh(sender: AnyObject) {
+        beginRefreshing()
+    }
+    
+    func beginRefreshing() {
+        refreshControl.beginRefreshing()
         delegate?.threadsViewControllerRequestsReloadedData()
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        delegate?.threadsViewControllerRequestsReloadedData()
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
-        cell.textLabel?.text = mainStore.state.rootEmailList[indexPath.row].headers.subject
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        delegate?.threadsViewControllerDidSelectRowAtIndexPath(indexPath)
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mainStore.state.rootEmailList.count
-    }
-    
-    func relod() {
-        tableView.reloadData()
+    func endRefreshing() {
+        refreshControl.endRefreshing()
     }
 }

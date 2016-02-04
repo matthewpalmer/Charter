@@ -20,14 +20,54 @@ struct SetEmailList: Action {
     let contents: [Email]
 }
 
-struct SetRootEmailList: Action {
-    let contents: [Email]
+struct SetSelectedMailingList: Action {
+    let list: MailingList?
+}
+
+struct SetSelectedThreadWithRootMessageID: Action {
+    let rootMessageID: String?
 }
 
 struct ListPeriod {
     let identifier: String
     
     var fileName: String { return identifier }
+}
+
+struct SetMailingListIsRefreshing: Action {
+    let mailingList: MailingList
+    let isRefreshing: Bool
+}
+
+/// This function computes the most recent archival list period for a given date.
+///
+/// An example can be found here: the [swift-users](https://lists.swift.org/pipermail/swift-users/) mailing list archive page.
+///
+/// This function **only handles weekly lists**, so for example swift-evolution-announce (a list archived monthly) cannot be used with this function.
+///
+/// Prior to the week following the 30th of November 2015 (i.e. the first week of December) there were no archival lists. This function does not check whether your date is valid, it only formats the date into the desired ListPeriod.
+func MostRecentListPeriodForDate(date: NSDate = NSDate()) -> ListPeriod {
+    // The list archives are referenced by the week beginning on Monday.
+    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+    calendar.locale = NSLocale(localeIdentifier: "en-US")
+    
+    // If today is a Monday, compute for today. Otherwise, compute for the previous monday.
+    let monday: NSDate
+    
+    let mondayWeekday = 2
+    
+    if calendar.components(.Weekday, fromDate: date).weekday == mondayWeekday {
+        monday = date
+    } else {
+        monday = calendar.nextDateAfterDate(date, matchingUnit: NSCalendarUnit.Weekday, value: mondayWeekday, options: [.SearchBackwards, .MatchStrictly])!
+    }
+    
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yMMdd"
+    let dateString = dateFormatter.stringFromDate(monday)
+    
+    let str = "Week-of-Mon-\(dateString)"
+    return ListPeriod(identifier: str)
 }
 
 func RequestSwiftEvolution(period: ListPeriod, useCache: Bool = true) -> ((_: AppState, _: Store<AppState>) -> Action?) {
@@ -48,8 +88,12 @@ func RequestSwiftEvolution(period: ListPeriod, useCache: Bool = true) -> ((_: Ap
                 .map { $0.mailingListMessage }
                 .filter { $0 != nil }
                 .map { $0! }
+                .map { return Email(headers: $0.headers, content: $0.content, mailingList: .SwiftEvolution) }
             
-            mainStore.dispatch(SetEmailList(contents: emails))
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                mainStore.dispatch(SetEmailList(contents: emails))
+                mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: false))
+            })
         }
         
         func doNetworkRequest() -> Action? {

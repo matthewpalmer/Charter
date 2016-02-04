@@ -10,13 +10,21 @@ import Foundation
 import ReSwift
 
 enum Route {
+    case MailingLists
     case Threads
     case ThreadDetail
 }
 
 struct AppState: StateType {
-    var rootEmailList: [Email] = []
     var emailList: [Email] = []
+    
+    var selectedMailingList: MailingList? = nil
+    var selectedThreadWithRootMessageID: String? = nil
+    
+    var mailingListIsRefreshing: [MailingList: Bool] = [
+        MailingList.SwiftEvolution: false,
+        MailingList.SwiftUsers: false
+    ]
     
     var nextRoute: Route? = nil
     /// Earliest to newest - 1
