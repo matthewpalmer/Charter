@@ -44,6 +44,36 @@ class ThreadDetailViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
+        if let dataSource = tableView.dataSource as? DSNestedAccordionHandler {
+            // Expand all cells
+//            override func noOfRowsInRootLevel() -> Int {
+//                return rootEmails.count
+//            }
+//            
+//            override func tableView(view: UITableView!, noOfChildRowsForCellAtPath path: DSCellPath!) -> Int {
+//                return emailForTreePath(rootEmails, path: path).children.count
+//            }
+            
+            // For each cell at each level, call `toggleAtPath`.
+            
+            let root = (0..<dataSource.noOfRowsInRootLevel())
+            for cell in root {
+                let path = DSCellPath()
+                
+                path.levelIndexes.addObject(cell)
+                dataSource.tableView(tableView, toggleAtPath: path)
+                
+                let children = (0..<dataSource.tableView(tableView, noOfChildRowsForCellAtPath: path))
+                
+                for child in children {
+                    let newPath = DSCellPath()
+                    newPath.levelIndexes = NSMutableArray(array: path.levelIndexes.arrayByAddingObject(child))
+                    dataSource.tableView(tableView, toggleAtPath: newPath)
+                }
+            }
+            
+//            dataSource.tableView(tableView, toggleAtPath: <#T##DSCellPath!#>)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -58,9 +88,9 @@ class ThreadDetailViewController: UIViewController {
 
     }
     
-    func reload() {
-        if tableView != nil {
-            tableView.reloadData()
-        }
-    }
+//    func reload() {
+//        if tableView != nil {
+//            tableView.reloadData()
+//        }
+//    }
 }

@@ -65,7 +65,11 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     }()
     
     override func viewDidLoad() {
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: ThreadsViewController.reuseIdentifier)
+        tableView.registerNib(MessagePreviewTableViewCell.nib(), forCellReuseIdentifier: ThreadsViewController.reuseIdentifier)
+        
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         tableView.delegate = delegate
         tableView.dataSource = dataSource
         delegate?.threadsViewControllerRequestsReloadedData()

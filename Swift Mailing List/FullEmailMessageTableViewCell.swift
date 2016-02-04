@@ -9,25 +9,16 @@
 import UIKit
 
 class FullEmailMessageTableViewCell: UITableViewCell {
-    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
-    
-    @IBOutlet weak var leadingMarginConstraint: NSLayoutConstraint!
     
     class func nib() -> UINib {
         return UINib(nibName: "FullEmailMessageTableViewCell", bundle: nil)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func layoutSubviews() {
+        contentTextView.textContainer.lineFragmentPadding = 0;
+        contentTextView.textContainerInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

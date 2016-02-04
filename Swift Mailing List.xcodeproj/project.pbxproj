@@ -15,6 +15,8 @@
 		0E017B571C62C33200316E22 /* MailingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B561C62C33200316E22 /* MailingList.swift */; };
 		0E017B5A1C62C4E000316E22 /* MailingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B581C62C4E000316E22 /* MailingListViewController.swift */; };
 		0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E017B591C62C4E000316E22 /* MailingListViewController.xib */; };
+		0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */; };
+		0E6F56511C63DCF4002D960E /* MessagePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */; };
 		0E73ED0E1C5D55670037F5A7 /* Message-1 in Resources */ = {isa = PBXBuildFile; fileRef = 0E73ED0D1C5D55670037F5A7 /* Message-1 */; };
 		0E73ED101C5D5A2A0037F5A7 /* Message-2 in Resources */ = {isa = PBXBuildFile; fileRef = 0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */; };
 		0E8B960C1C5B1873009F3025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B960B1C5B1873009F3025 /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 		0E017B561C62C33200316E22 /* MailingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingList.swift; sourceTree = "<group>"; };
 		0E017B581C62C4E000316E22 /* MailingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListViewController.swift; sourceTree = "<group>"; };
 		0E017B591C62C4E000316E22 /* MailingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailingListViewController.xib; sourceTree = "<group>"; };
+		0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePreviewTableViewCell.swift; sourceTree = "<group>"; };
+		0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagePreviewTableViewCell.xib; sourceTree = "<group>"; };
 		0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SML-Bridging-Header.h"; sourceTree = "<group>"; };
 		0E73ED0D1C5D55670037F5A7 /* Message-1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-1"; sourceTree = "<group>"; };
 		0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-2"; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */,
 				0E017B461C5DCE1400316E22 /* ThreadDetailViewController.swift */,
 				0E017B471C5DCE1400316E22 /* ThreadDetailViewController.xib */,
+				0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */,
+				0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */,
 				0E017B521C5EAB3B00316E22 /* FullEmailMessageTableViewCell.swift */,
 				0E017B531C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib */,
 				0E8B96121C5B1873009F3025 /* Assets.xcassets */,
@@ -196,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6F56511C63DCF4002D960E /* MessagePreviewTableViewCell.xib in Resources */,
 				0E73ED0E1C5D55670037F5A7 /* Message-1 in Resources */,
 				0E017B551C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib in Resources */,
 				0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */,
@@ -271,6 +278,7 @@
 				0E017B571C62C33200316E22 /* MailingList.swift in Sources */,
 				0E8B96221C5B199F009F3025 /* AppReducer.swift in Sources */,
 				0E017B481C5DCE1400316E22 /* ThreadDetailViewController.swift in Sources */,
+				0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */,
 				0E017B5A1C62C4E000316E22 /* MailingListViewController.swift in Sources */,
 				0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */,
 				0EB318CE1C5B2155005F7672 /* AppCoordinator.swift in Sources */,

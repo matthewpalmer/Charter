@@ -39,15 +39,15 @@ class AccordionDataSource: DSNestedAccordionHandler {
         return email!
     }
     
+    private lazy var emailFormatter: EmailFormatter = EmailFormatter()
+    
     override func tableView(view: UITableView!, cellForPath path: DSCellPath!) -> UITableViewCell! {
         let cell = view.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
         
         let email = emailForTreePath(rootEmails, path: path).email
         
-                cell.leadingMarginConstraint.constant = CGFloat(-10 * path.levelIndexes.count)
-        
-        cell.dateLabel.text = email.headers.date
-        cell.subjectLabel.text = email.headers.subject
+        cell.dateLabel.text = emailFormatter.formatDate(email.headers.date)
+        cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
         cell.contentTextView.text = email.content
         
         return cell
@@ -55,6 +55,53 @@ class AccordionDataSource: DSNestedAccordionHandler {
 }
 
 extension AccordionDataSource: ThreadDetailTableViewHandler {}
+
+class EmailFormatter {
+    private lazy var squareBracketRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "^\\[.*\\]", options: .CaseInsensitive)
+    }()
+    
+    private lazy var leadingSpaceRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "^\\s+", options: .CaseInsensitive)
+    }()
+    
+    private lazy var withinParenthesesRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "\\((.*)\\)", options: .CaseInsensitive)
+    }()
+    
+    private lazy var sourceDateFormatter: NSDateFormatter = {
+        let df = NSDateFormatter()
+        df.dateFormat = "ccc, dd MMM yyyy HH:mm:ss Z"
+        return df
+    }()
+    
+    private lazy var destinationDateFormatter: NSDateFormatter = {
+        let df = NSDateFormatter()
+        df.dateFormat = "d MMM"
+        return df
+    }()
+    
+    func formatSubject(subject: String) -> String {
+        let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
+        let noLeadingSpaces = leadingSpaceRegex.stringByReplacingMatchesInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count), withTemplate: "")
+        return noLeadingSpaces
+    }
+    
+    func formatName(name: String) -> String {
+        let firstMatch = withinParenthesesRegex.firstMatchInString(name, options: [], range: NSMakeRange(0, name.characters.count))
+        let range = firstMatch?.rangeAtIndex(1) ?? NSMakeRange(0, name.characters.count)
+        let withinParens = (name as NSString).substringWithRange(range)
+        return withinParens
+    }
+    
+    func formatDate(date: String) -> String {
+        if let date = sourceDateFormatter.dateFromString(date) {
+            return destinationDateFormatter.stringFromDate(date)
+        } else {
+            return ""
+        }
+    }
+}
 
 class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
     private let emails: [Email]
@@ -66,28 +113,23 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
         
         self.emails = PartitionEmailsIntoTreeForest(
             state.emailList.filter { $0.mailingList == state.selectedMailingList! }
-            ).map { $0.email }
+            ).map { $0.email }.reverse()
     }
     
     deinit {
         print("deiinit")
     }
     
-    private lazy var squareBracketRegex: NSRegularExpression = {
-        return try! NSRegularExpression(pattern: "^\\[.*\\]", options: .CaseInsensitive)
-    }()
-    
-    private lazy var leadingSpaceRegex: NSRegularExpression = {
-        return try! NSRegularExpression(pattern: "^\\s+", options: .CaseInsensitive)
-    }()
+    private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.reuseIdentifier, forIndexPath: indexPath)
-        let subject = emails[indexPath.row].headers.subject
-        let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
-        let noLeadingSpaces = leadingSpaceRegex.stringByReplacingMatchesInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count), withTemplate: "")
+        let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.reuseIdentifier, forIndexPath: indexPath) as! MessagePreviewTableViewCell
+        let email = emails[indexPath.row]
         
-        cell.textLabel?.text = noLeadingSpaces
+        cell.subjectLabel.text = emailFormatter.formatSubject(email.headers.subject)
+        cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
+        cell.timeLabel.text = emailFormatter.formatDate(email.headers.date)
+        
         return cell
     }
     
@@ -208,7 +250,7 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
     func threadsViewControllerRequestsReloadedData() {
         if mainStore.state.selectedMailingList == .SwiftEvolution {
             mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
-            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: false))
+            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: true))
         }
     }
     
