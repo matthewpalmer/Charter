@@ -41,7 +41,7 @@
                         <rect key="frame" x="8" y="38" width="312" height="114"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
@@ -52,7 +52,7 @@
                     <constraint firstItem="yKR-co-Nsx" firstAttribute="leading" secondItem="SkW-wv-FIW" secondAttribute="trailing" constant="29" id="E9O-D4-qm5"/>
                     <constraint firstItem="nGd-cz-Uoy" firstAttribute="top" secondItem="fC8-pC-L7i" secondAttribute="bottom" id="Nx4-YY-fpg"/>
                     <constraint firstItem="yKR-co-Nsx" firstAttribute="centerY" secondItem="fC8-pC-L7i" secondAttribute="centerY" id="OIp-oQ-y3T"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="nGd-cz-Uoy" secondAttribute="trailing" constant="-8" id="R6o-pf-lcj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nGd-cz-Uoy" secondAttribute="trailing" constant="8" id="R6o-pf-lcj"/>
                     <constraint firstItem="SkW-wv-FIW" firstAttribute="centerY" secondItem="fC8-pC-L7i" secondAttribute="centerY" id="hGC-ZL-11n"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fC8-pC-L7i" secondAttribute="trailing" constant="-8" id="iW8-q0-tAe"/>
                     <constraint firstItem="SkW-wv-FIW" firstAttribute="leading" secondItem="fC8-pC-L7i" secondAttribute="leading" constant="8" id="tWR-mX-KB6"/>
