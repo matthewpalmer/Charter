@@ -1,6 +1,11 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## CollapsibleTextView
+
+MIT
+
+
 ## DSNestedAccordion
 
 Copyright (c) 2014 deepan <subramani.deepan@gmail.com>

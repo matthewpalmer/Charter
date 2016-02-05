@@ -15,54 +15,67 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fC8-pC-L7i">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fC8-pC-L7i">
+                        <rect key="frame" x="25" y="0.0" width="295" height="38"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Matthew Palmer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SkW-wv-FIW">
+                                <rect key="frame" x="8" y="8" width="211" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="23 Feb" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKR-co-Nsx">
+                                <rect key="frame" x="223" y="8" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="38" id="Rf2-cR-vI8"/>
+                            <constraint firstItem="SkW-wv-FIW" firstAttribute="leading" secondItem="fC8-pC-L7i" secondAttribute="leading" constant="8" id="D6h-0a-COd"/>
+                            <constraint firstItem="SkW-wv-FIW" firstAttribute="centerY" secondItem="fC8-pC-L7i" secondAttribute="centerY" id="G6D-xj-dqX"/>
+                            <constraint firstAttribute="trailing" secondItem="yKR-co-Nsx" secondAttribute="trailing" constant="8" id="e75-5i-KJd"/>
+                            <constraint firstItem="yKR-co-Nsx" firstAttribute="centerY" secondItem="SkW-wv-FIW" secondAttribute="centerY" id="iWl-AN-Fc3"/>
+                            <constraint firstItem="yKR-co-Nsx" firstAttribute="leading" secondItem="SkW-wv-FIW" secondAttribute="trailing" constant="4" id="p6H-qN-PEY"/>
+                            <constraint firstAttribute="height" constant="38" id="tY7-jQ-h0s"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Matthew Palmer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SkW-wv-FIW">
-                        <rect key="frame" x="8" y="8" width="211" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="211" id="nor-jw-9MR"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="23 Feb" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKR-co-Nsx">
-                        <rect key="frame" x="248" y="8" width="64" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nGd-cz-Uoy">
-                        <rect key="frame" x="8" y="38" width="312" height="114"/>
+                        <rect key="frame" x="25" y="38" width="295" height="114"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8jO-mK-nDT"/>
+                        </constraints>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgk-Cl-8ya">
+                        <rect key="frame" x="0.0" y="0.0" width="27" height="172"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="27" id="aHw-HW-sk3"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yKR-co-Nsx" firstAttribute="trailing" secondItem="fC8-pC-L7i" secondAttribute="trailing" constant="-8" id="4V1-WB-NVW"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="nGd-cz-Uoy" secondAttribute="bottom" constant="16" id="BUk-QQ-qV0"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="nGd-cz-Uoy" secondAttribute="leading" id="D4v-Jr-OoU"/>
-                    <constraint firstItem="yKR-co-Nsx" firstAttribute="leading" secondItem="SkW-wv-FIW" secondAttribute="trailing" constant="29" id="E9O-D4-qm5"/>
-                    <constraint firstItem="nGd-cz-Uoy" firstAttribute="top" secondItem="fC8-pC-L7i" secondAttribute="bottom" id="Nx4-YY-fpg"/>
-                    <constraint firstItem="yKR-co-Nsx" firstAttribute="centerY" secondItem="fC8-pC-L7i" secondAttribute="centerY" id="OIp-oQ-y3T"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="nGd-cz-Uoy" secondAttribute="trailing" constant="8" id="R6o-pf-lcj"/>
-                    <constraint firstItem="SkW-wv-FIW" firstAttribute="centerY" secondItem="fC8-pC-L7i" secondAttribute="centerY" id="hGC-ZL-11n"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="fC8-pC-L7i" secondAttribute="trailing" constant="-8" id="iW8-q0-tAe"/>
-                    <constraint firstItem="SkW-wv-FIW" firstAttribute="leading" secondItem="fC8-pC-L7i" secondAttribute="leading" constant="8" id="tWR-mX-KB6"/>
-                    <constraint firstItem="fC8-pC-L7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="wc1-kz-pdD"/>
-                    <constraint firstItem="fC8-pC-L7i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="yyF-6T-jLa"/>
+                    <constraint firstItem="nGd-cz-Uoy" firstAttribute="leading" secondItem="SkW-wv-FIW" secondAttribute="leading" id="3JV-nq-Vus"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="nGd-cz-Uoy" secondAttribute="bottom" constant="12" id="3KS-ai-7LN"/>
+                    <constraint firstItem="nGd-cz-Uoy" firstAttribute="top" secondItem="fC8-pC-L7i" secondAttribute="bottom" id="6mK-cA-yKM"/>
+                    <constraint firstItem="vgk-Cl-8ya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="9Dt-Qk-9XE"/>
+                    <constraint firstItem="fC8-pC-L7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="D9N-QO-hrZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vgk-Cl-8ya" secondAttribute="bottom" constant="-8" id="Dn5-H0-XxC"/>
+                    <constraint firstItem="vgk-Cl-8ya" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Xxb-Cy-rKL"/>
+                    <constraint firstItem="fC8-pC-L7i" firstAttribute="leading" secondItem="vgk-Cl-8ya" secondAttribute="trailing" id="baX-VL-kda"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fC8-pC-L7i" secondAttribute="trailing" constant="-8" id="oND-du-k6e"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nGd-cz-Uoy" secondAttribute="trailing" constant="-8" id="xZU-mg-Q1f"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentTextView" destination="nGd-cz-Uoy" id="1a1-Co-aSe"/>
                 <outlet property="dateLabel" destination="yKR-co-Nsx" id="iDA-BT-kh7"/>
+                <outlet property="leadingMarginConstraint" destination="aHw-HW-sk3" id="kJa-W0-JlN"/>
                 <outlet property="nameLabel" destination="SkW-wv-FIW" id="A9J-GR-dlD"/>
             </connections>
             <point key="canvasLocation" x="305" y="334.5"/>

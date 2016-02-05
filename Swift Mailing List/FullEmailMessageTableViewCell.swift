@@ -13,12 +13,16 @@ class FullEmailMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     
+    @IBOutlet weak var leadingMarginConstraint: NSLayoutConstraint!
     class func nib() -> UINib {
         return UINib(nibName: "FullEmailMessageTableViewCell", bundle: nil)
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         contentTextView.textContainer.lineFragmentPadding = 0;
         contentTextView.textContainerInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
+        
+        leadingMarginConstraint.constant = CGFloat(indentationLevel) * indentationWidth
     }
 }

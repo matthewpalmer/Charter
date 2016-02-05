@@ -10,15 +10,56 @@ import UIKit
 import ReSwift
 import DSNestedAccordion
 
-class AccordionDataSource: DSNestedAccordionHandler {
-    var rootEmails: [EmailTreeNode] = []
-    
-    override func noOfRowsInRootLevel() -> Int {
-        return rootEmails.count
+class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
+    var rootEmails: [EmailTreeNode] = [] {
+        didSet {
+            orderedEmails = orderedEmailsFromTree(rootEmails).map { $0.email }
+        }
     }
     
-    override func tableView(view: UITableView!, noOfChildRowsForCellAtPath path: DSCellPath!) -> Int {
-        return emailForTreePath(rootEmails, path: path).children.count
+    private var orderedEmails: [Email] = []
+    private var indentationForEmail = [Email: Int]()
+    
+    deinit {
+        print("Deinit")
+    }
+    
+    private lazy var emailFormatter: EmailFormatter = EmailFormatter()
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return orderedEmails.count
+    }
+    
+    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        let indent = indentationForEmail[orderedEmails[indexPath.row]]
+        print("got indent \(indent)")
+        return indent ?? 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
+        
+        let email = orderedEmails[indexPath.row] // emailForTreePath(rootEmails, path: path).email
+        
+        cell.indentationWidth = 10
+        cell.dateLabel.text = emailFormatter.formatDate(email.headers.date)
+        cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
+        cell.contentTextView.text = email.content
+        
+        return cell
+    }
+    
+    private func orderedEmailsFromTree(rootEmails: [EmailTreeNode]) -> [EmailTreeNode] {
+        func getOrderedEmailsAndSetNestingLevel(level: Int, rootEmails: [EmailTreeNode]) -> [EmailTreeNode] {
+            guard let first = rootEmails.first else {
+                return []
+            }
+            
+            indentationForEmail[first.email] = level
+            return [first] + getOrderedEmailsAndSetNestingLevel(level + 1, rootEmails: first.children)
+        }
+        
+        return getOrderedEmailsAndSetNestingLevel(0, rootEmails: rootEmails)
     }
     
     private func emailForTreePath(list: [EmailTreeNode], path: DSCellPath) -> EmailTreeNode {
@@ -38,23 +79,7 @@ class AccordionDataSource: DSNestedAccordionHandler {
         
         return email!
     }
-    
-    private lazy var emailFormatter: EmailFormatter = EmailFormatter()
-    
-    override func tableView(view: UITableView!, cellForPath path: DSCellPath!) -> UITableViewCell! {
-        let cell = view.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
-        
-        let email = emailForTreePath(rootEmails, path: path).email
-        
-        cell.dateLabel.text = emailFormatter.formatDate(email.headers.date)
-        cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
-        cell.contentTextView.text = email.content
-        
-        return cell
-    }
 }
-
-extension AccordionDataSource: ThreadDetailTableViewHandler {}
 
 class EmailFormatter {
     private lazy var squareBracketRegex: NSRegularExpression = {
@@ -116,10 +141,6 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
             ).map { $0.email }.reverse()
     }
     
-    deinit {
-        print("deiinit")
-    }
-    
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -160,14 +181,14 @@ class AppCoordinator: NSObject, StoreSubscriber {
         viewController.delegate = self
         return viewController
     }()
-    
-    lazy var detailTableViewHandler: AccordionDataSource = {
-        return AccordionDataSource()
+
+    lazy var detailTableViewDataSource: EmailThreadDetailDataSource = {
+        return EmailThreadDetailDataSource()
     }()
     
     lazy var threadDetailViewController: ThreadDetailViewController = {
         let viewController = ThreadDetailViewController()
-        viewController.handler = self.detailTableViewHandler
+        viewController.dataSource = self.detailTableViewDataSource
         viewController.delegate = self
         return viewController
     }()
@@ -195,8 +216,11 @@ class AppCoordinator: NSObject, StoreSubscriber {
         if state.routeHistory.last == .ThreadDetail {
             let emailsInList = state.emailList.filter { $0.mailingList == state.selectedMailingList }
             let forest = PartitionEmailsIntoTreeForest(emailsInList)
-            detailTableViewHandler.rootEmails = forest.filter { $0.email.headers.messageID == state.selectedThreadWithRootMessageID }
-            detailTableViewHandler.reload()
+            detailTableViewDataSource.rootEmails = forest
+                .filter { $0.email.headers.messageID == state.selectedThreadWithRootMessageID }
+            if threadDetailViewController.tableView != nil && state.selectedMailingList != nil {
+                threadDetailViewController.tableView.reloadData()
+            }
         }
         
         if state.routeHistory.last == .Threads && state.selectedMailingList != nil {

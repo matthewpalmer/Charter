@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4EEC256495116A664F9579B5'
-               BlueprintName = 'DSNestedAccordion'
+               BlueprintIdentifier = '8CAE06325835FB55A21F8310'
+               BlueprintName = 'CollapsibleTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DSNestedAccordion.framework'>
+               BuildableName = 'CollapsibleTextView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

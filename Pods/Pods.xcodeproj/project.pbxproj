@@ -8,167 +8,184 @@
 
 /* Begin PBXBuildFile section */
 		01E23B38B619537D3EAD95C241F2AE79 /* GZIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BE4AF5A475C505FB911B3E51EC21402 /* GZIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17B6DDB84D9C94D20B47306539474304 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA326D20AF0C85EE3D838F98E64A80 /* StoreType.swift */; };
-		19AAE171415BD38A9710D2AAF9EB7FFA /* MailingListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83845F90C0151D50639398EF292368AB /* MailingListMessage.swift */; };
-		1A7B5528341C881360DBEF891686F90F /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C36666961771FF24708AD13546BAB056 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19AAE171415BD38A9710D2AAF9EB7FFA /* MailingListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF552CB4F3EBAAD5FBA2FDF2D316BB61 /* MailingListMessage.swift */; };
 		1ADBAD06BC353967BDCFDBBDA6C38912 /* DSNestedAccordionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 735779BD5D315DE87CAB03A0FA666138 /* DSNestedAccordionHandler.m */; };
+		1F20FC98CE0C856E0A32DEBC6CF67F6E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7277CC8103BAF97CD953399F01AF43 /* Store.swift */; };
 		244F9A13D420C9DAAEFBF76CC8A953C8 /* GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 3970A24B1551784C8A15607D7C8F92DD /* GZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2CC9148C832AB9B9C3AD0643F676B76B /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF5744F335CAAD6146E48F5C03410B /* ReSwift-dummy.m */; };
-		3704E2FB3031CEABDAFE257DA4E68E8F /* MailingListMessageParserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A24E4343820817E700791820F421AC /* MailingListMessageParserAdapter.swift */; };
-		38454324A6D91EDAD311529C299BDC15 /* MailingListMessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2986F535BA6C33B5D43B8A8597CADC /* MailingListMessageParser.swift */; };
+		35A0D8B93A253414DABDA69C400EF7DA /* Pods-Swift Mailing List-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71CE07A7E88FE0D1848D7BAB3F63A9C0 /* Pods-Swift Mailing List-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3704E2FB3031CEABDAFE257DA4E68E8F /* MailingListMessageParserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57522A7010C5A9C5E2A0257A2C99242 /* MailingListMessageParserAdapter.swift */; };
+		38454324A6D91EDAD311529C299BDC15 /* MailingListMessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFAA246081C7FF27E8ED1922B850F4 /* MailingListMessageParser.swift */; };
 		3AB95E287A689A8CF8A5D9DE553EB83D /* NSException+DSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C64B6390D4B38EE2BE47C89BC9E2CB1 /* NSException+DSException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4304E8B30B21E43319EF36EA4377DBD3 /* DSCellPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B43E7D88E9ECE56692DC2A46CB421EFE /* DSCellPath.m */; };
 		4583C689C52432641C5AF45222757E99 /* DSNestedAccordion-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B74D569294D89BAD1E4427D65D7B7B8 /* DSNestedAccordion-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		487938CFAAD76C981569E492FB058901 /* DSCellPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EC9BC03B3AD686117A3718C493B78E9 /* DSCellPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57E0C2FD7AE88106606E2466D7AB317A /* MailingListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E6E501540E0505DE63A363E765BD5 /* MailingListParser.swift */; };
-		59237EF551CFD859378C0BDCBA8C075B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE04CDB44687EA297474D97573DF99A /* Action.swift */; };
-		5C79D78AC9D6ED0305DDE504E568A2DA /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3208F0BDC3E2DB4D1777A18523F9622 /* State.swift */; };
+		4B5A5158446C1FCDD779EDEFD596501C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		4C52ADF0FFEF0252C1F88E1A6638EF01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		50CB3B39220FE955D2EC8078F6EF2205 /* CollapsibleTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B6C1B124579215152F163409E83AB0 /* CollapsibleTextView-dummy.m */; };
+		57430155407E430E02EF13D18C10276E /* CombinedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B1A25E1DA4E8410E235008C620FA13 /* CombinedReducer.swift */; };
+		575FA7397339990E24148953BCB8FCEB /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C36666961771FF24708AD13546BAB056 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57E0C2FD7AE88106606E2466D7AB317A /* MailingListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795145A883DEA180B2EF231AC1C57A86 /* MailingListParser.swift */; };
 		6077E3A0363799107B6C30D09AFF2E8F /* DSCellPathTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = EFAAAC0DADCAEE7660643AE191787D5B /* DSCellPathTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		608CC691830A584E78ECC540AFF5813F /* DSNestedAccordionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1E5DA5FB627B6A8D8C9407DFE074DF /* DSNestedAccordionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6917D7FABCBBD8BDBEA1A2BF4097EB22 /* CollapsibleTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FB58D61572047F2D2EA20BC9E550EF6C /* CollapsibleTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69C08DB5B2A272ED180820ACF99CB49C /* DSNestedAccordion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32601546CE0D1EFA6AD6D84F5CFF877C /* DSNestedAccordion-dummy.m */; };
 		6C67600EE119DE9DC86E48DF67986C76 /* GZIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1518A80741F1362C9869EF5BDC9F9 /* GZIP-dummy.m */; };
+		6D2752CC15EAA835859B5FD2919C7228 /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A98CEF0B58B9506E29DFD05AD8E8E6 /* CollapsibleTextView.swift */; };
+		6EAC4330912753ECEB42140B0EB5203E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		76CF6A7231A68F9204507CF08AF66E25 /* NSException+DSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89D46E847C08BE6E24D6D6EBA179E8 /* NSException+DSException.m */; };
-		8379CDC2DDF2ACCC44B51AE304DE9164 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B1E761D94747D5124012A47986FD0 /* Middleware.swift */; };
-		85894BC5032BFD2E9B853AA23BB360F6 /* CombinedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B1A25E1DA4E8410E235008C620FA13 /* CombinedReducer.swift */; };
-		8D3BCA55775776E2ECC3B2F523480B6D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7277CC8103BAF97CD953399F01AF43 /* Store.swift */; };
-		9BEC7A31E17DF394BF43ED760719B603 /* MailingListParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CF96B7AB135D7564D4C1E5DDB0C03EF /* MailingListParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2260C24F280DFA5D9F1AAF68DB4468A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		A3BE34E673AC8DFC44016BCEEC3C3A77 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638931A3A1FBD9C74574CBFD9CA5757 /* Coding.swift */; };
-		A42959807AC16F5585F81131704B4D05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		AC1DD3E62CF9E2103BB41B328107A2CD /* MailingListParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E610BB6B889CD8CEA1883F5657B6033F /* MailingListParser-dummy.m */; };
+		7CD6B631B42CB1877BAAB3B6B00E68D6 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638931A3A1FBD9C74574CBFD9CA5757 /* Coding.swift */; };
+		7E434C3E0C517300F3120F5FFE4A426A /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE04CDB44687EA297474D97573DF99A /* Action.swift */; };
+		82F50A365927FE4123563B08B881F7F9 /* CollapsibleTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE14F1757FBE5440CAD3C59CEA3B491 /* CollapsibleTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		878BEFEED2F9BC5C56212C9FE87100D5 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791BBF42AA01D4A8C1239553DD439CC /* StoreSubscriber.swift */; };
+		9BEC7A31E17DF394BF43ED760719B603 /* MailingListParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4327B43C804F0655BA7B11C6FB3381 /* MailingListParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4B65ABA1471B9C967497ED0E9A96005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AF40EB9E3EB1332B5C3456BD9CBBE /* ViewController.swift */; };
+		AC1DD3E62CF9E2103BB41B328107A2CD /* MailingListParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E9FA9EAD102802F692E4E31FB29D4 /* MailingListParser-dummy.m */; };
+		AE09D7F1469DFE8AE31D9007E6B62CD6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3208F0BDC3E2DB4D1777A18523F9622 /* State.swift */; };
 		AF045BE50F4A51CE28D2358E6E88CCAD /* DSCellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A325B9FF0D4FE206AC08D738081D3D5E /* DSCellLevel.m */; };
+		B2B87794D25406C225C0CCF65BD8FDA0 /* TypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA301C8C730ECF9A49CB29EEBA5C0962 /* TypeHelper.swift */; };
+		B52BAB613DB6E096AA544103DAF3735D /* Pods-Swift Mailing List-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D63260931E23009E715DC387FD21D0AC /* Pods-Swift Mailing List-dummy.m */; };
 		BE351A56E6E5B39CC903A425D7CAA11B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		C18BF013CA170EAC27E283B6BCB08A5D /* DSCellLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B27DCE174B2E26AADE46E955D22F36F /* DSCellLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C31B627B7908EC0310CF3CDD74F862F4 /* MailingListParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 8017DBE33839AAB436A76C665ADE5FB3 /* MailingListParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C31B627B7908EC0310CF3CDD74F862F4 /* MailingListParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 86CDA638D3ED1AC091A3204650F01DCA /* MailingListParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C85313116C4FCE350C56C79B822CB0BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B17FE520FD76EA37A343ACAD5C7DED /* AppDelegate.swift */; };
+		CFE0DCF397567C1BEE4867777302E804 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA326D20AF0C85EE3D838F98E64A80 /* StoreType.swift */; };
 		D054E6B1B871A65719ECE03D780F8F09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		D614697BB674F21D2C5E8CFF332FED45 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED86061FD865E7BFA179846635B6374 /* Reducer.swift */; };
 		D73BD1B3BBBB68D8C975EB2A63456500 /* DSCellPathTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 02131F475D1E99CB5EA948379A069691 /* DSCellPathTracker.m */; };
+		DCCA96CCF48D4517BE3A128BCC173515 /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF5744F335CAAD6146E48F5C03410B /* ReSwift-dummy.m */; };
 		DD3A0817C155FB7B9B0C08A8BBC66AFE /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8922B8D974403DD1D97A4EAD1A7 /* GZIP.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E2C7C0AB4DE4AA1902F5DC435E4319B2 /* Pods-Swift Mailing List-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D63260931E23009E715DC387FD21D0AC /* Pods-Swift Mailing List-dummy.m */; };
-		E90047551D730095A6E1EB43A1A31B34 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED86061FD865E7BFA179846635B6374 /* Reducer.swift */; };
 		E908CF5EA808CB3F1731957E56675007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		EAAFD4775851E2E29A200501A8D91ED8 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791BBF42AA01D4A8C1239553DD439CC /* StoreSubscriber.swift */; };
-		EBEBF46DB73CB02B384CEBB0AC693EE8 /* Pods-Swift Mailing List-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71CE07A7E88FE0D1848D7BAB3F63A9C0 /* Pods-Swift Mailing List-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB6337D4DCA6180BDAFA3B80E0634A6F /* TypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA301C8C730ECF9A49CB29EEBA5C0962 /* TypeHelper.swift */; };
-		FD385BA370C6D8DA250C096EB21E44E8 /* MailingListMessageHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F40AA9F0D3ACF0CB752705CCEE04EE /* MailingListMessageHeaders.swift */; };
+		FB2657C953F93CE88AE432CF48F9E6F5 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B1E761D94747D5124012A47986FD0 /* Middleware.swift */; };
+		FD385BA370C6D8DA250C096EB21E44E8 /* MailingListMessageHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F39B295C5D920FC2DDE20803085988 /* MailingListMessageHeaders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0EA7C303CA3E6A82C04E8627DF051E87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 66241D4532391C20FAE8E65120B7E8DD;
-			remoteInfo = MailingListParser;
-		};
-		571C957C0BCBE715B796132B8A2FA9BC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B347B467C0E4BBDD23C010C9736B65AA;
-			remoteInfo = GZIP;
-		};
-		6DB641658E580DCAB321CECDBA684D61 /* PBXContainerItemProxy */ = {
+		3FD3F507F2117583A77134B4187A1373 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7E2DC4B479673579C992E80F927963B4;
 			remoteInfo = DSNestedAccordion;
 		};
-		FFC161EB245BCE9F373D03CE05BC7BFB /* PBXContainerItemProxy */ = {
+		60F75FEE7083153D95CC16F9C41AB1B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 24E101DE2A90F8BF9246127F48FB139D;
+			remoteGlobalIDString = B4F5132205017E3360E6A51634F63937;
 			remoteInfo = ReSwift;
+		};
+		7E4196608E400CB64943416E2ADB5CDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B347B467C0E4BBDD23C010C9736B65AA;
+			remoteInfo = GZIP;
+		};
+		85898A903B3B50881D97C88A41DA42E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66241D4532391C20FAE8E65120B7E8DD;
+			remoteInfo = MailingListParser;
+		};
+		AFF3BA618CA80A741D7EE9084D9BDC62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0782BBD04B8AC7A0273295CEFE2B406E;
+			remoteInfo = CollapsibleTextView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02131F475D1E99CB5EA948379A069691 /* DSCellPathTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCellPathTracker.m; path = Pod/Classes/DSCellPathTracker.m; sourceTree = "<group>"; };
+		0460F820DB9EA8DEFDC638AD522F8DC3 /* GZIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GZIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07580ABADF8737EFEF61AC91368E1C57 /* CollapsibleTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTextView-prefix.pch"; sourceTree = "<group>"; };
 		0BD1518A80741F1362C9869EF5BDC9F9 /* GZIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GZIP-dummy.m"; sourceTree = "<group>"; };
 		0E30CD48205D8F9D6EFE51608AC61F92 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTextView.xcconfig; sourceTree = "<group>"; };
+		1473C83F55E18088BAEC45E89326BE40 /* DSNestedAccordion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DSNestedAccordion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F56A3BB3E7B115AFF7EC08FBEF4CB9 /* Pods-Swift Mailing List-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swift Mailing List-acknowledgements.plist"; sourceTree = "<group>"; };
-		17F1765E7FE2EFBB9971DEFF73C6D7E4 /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEF5744F335CAAD6146E48F5C03410B /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
-		20C1C0F24C09C1C1A74B13CABBD9366A /* GZIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GZIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21C602A8B976041BC656E4796EF3FA2C /* MailingListParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MailingListParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220E8410DEFA8476B80DB3DDB1A0C0CE /* Pods-Swift Mailing List-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift Mailing List-frameworks.sh"; sourceTree = "<group>"; };
 		253E0950288D9B155FC8EBC4C2F4D908 /* Pods-Swift Mailing List-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift Mailing List-resources.sh"; sourceTree = "<group>"; };
+		2AFC2E7D5D2E0D82B2FA01EF5D35194C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B4DFCD1C607ABB07941D4859FB1F887 /* Pods-Swift Mailing List.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Swift Mailing List.modulemap"; sourceTree = "<group>"; };
 		2CE04CDB44687EA297474D97573DF99A /* Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Action.swift; path = ReSwift/CoreTypes/Action.swift; sourceTree = "<group>"; };
 		2E7B48789650D7EF82AC455993E23F91 /* ReSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReSwift.modulemap; sourceTree = "<group>"; };
 		32601546CE0D1EFA6AD6D84F5CFF877C /* DSNestedAccordion-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DSNestedAccordion-dummy.m"; sourceTree = "<group>"; };
 		32C92D75BA923F758BA169DB6FB4C709 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3548DA3C77CE48104F7EF3BB6FF64D4D /* Pods_Swift_Mailing_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Mailing_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		373F0F36A82879ABF247693047482301 /* MailingListParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MailingListParser-prefix.pch"; sourceTree = "<group>"; };
+		33B0A9FB01FACF9171B1757A8563C95D /* CollapsibleTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CollapsibleTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D2DBBFBBFA086B7EF897EE1EE59828 /* DSNestedAccordion.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSNestedAccordion.xcconfig; sourceTree = "<group>"; };
 		3970A24B1551784C8A15607D7C8F92DD /* GZIP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GZIP.h; path = GZIP/GZIP.h; sourceTree = "<group>"; };
 		3E056F9630D730B3B3E1495BDEE631AE /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		43B1A25E1DA4E8410E235008C620FA13 /* CombinedReducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinedReducer.swift; path = ReSwift/CoreTypes/CombinedReducer.swift; sourceTree = "<group>"; };
 		43B5F44E996ED2EE1068F9C1827551D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44F40AA9F0D3ACF0CB752705CCEE04EE /* MailingListMessageHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageHeaders.swift; sourceTree = "<group>"; };
 		48A45F2890C217DB6D2DE83781140EA8 /* Pods-Swift Mailing List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swift Mailing List.release.xcconfig"; sourceTree = "<group>"; };
+		4B4E9FA9EAD102802F692E4E31FB29D4 /* MailingListParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MailingListParser-dummy.m"; sourceTree = "<group>"; };
 		4BE4AF5A475C505FB911B3E51EC21402 /* GZIP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GZIP-umbrella.h"; sourceTree = "<group>"; };
+		4E4327B43C804F0655BA7B11C6FB3381 /* MailingListParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MailingListParser-umbrella.h"; sourceTree = "<group>"; };
 		54EA326D20AF0C85EE3D838F98E64A80 /* StoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreType.swift; path = ReSwift/CoreTypes/StoreType.swift; sourceTree = "<group>"; };
+		57A98CEF0B58B9506E29DFD05AD8E8E6 /* CollapsibleTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTextView.swift; sourceTree = "<group>"; };
 		5B27DCE174B2E26AADE46E955D22F36F /* DSCellLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCellLevel.h; path = Pod/Classes/DSCellLevel.h; sourceTree = "<group>"; };
 		5B74D569294D89BAD1E4427D65D7B7B8 /* DSNestedAccordion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSNestedAccordion-umbrella.h"; sourceTree = "<group>"; };
 		5C64B6390D4B38EE2BE47C89BC9E2CB1 /* NSException+DSException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSException+DSException.h"; path = "Pod/Classes/NSException+DSException.h"; sourceTree = "<group>"; };
-		5CF96B7AB135D7564D4C1E5DDB0C03EF /* MailingListParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MailingListParser-umbrella.h"; sourceTree = "<group>"; };
-		5F3864EC0A37912E925F4331AAC6C391 /* MailingListParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MailingListParser.modulemap; sourceTree = "<group>"; };
 		60DEB8922B8D974403DD1D97A4EAD1A7 /* GZIP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GZIP.m; path = GZIP/GZIP.m; sourceTree = "<group>"; };
 		69D334C318AFC143A193CAD105E934E8 /* GZIP.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GZIP.xcconfig; sourceTree = "<group>"; };
 		6EC9BC03B3AD686117A3718C493B78E9 /* DSCellPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCellPath.h; path = Pod/Classes/DSCellPath.h; sourceTree = "<group>"; };
+		6EFFAA246081C7FF27E8ED1922B850F4 /* MailingListMessageParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageParser.swift; sourceTree = "<group>"; };
 		6F0B1E761D94747D5124012A47986FD0 /* Middleware.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Middleware.swift; path = ReSwift/CoreTypes/Middleware.swift; sourceTree = "<group>"; };
 		6F1E5DA5FB627B6A8D8C9407DFE074DF /* DSNestedAccordionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSNestedAccordionHandler.h; path = Pod/Classes/DSNestedAccordionHandler.h; sourceTree = "<group>"; };
 		71CE07A7E88FE0D1848D7BAB3F63A9C0 /* Pods-Swift Mailing List-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swift Mailing List-umbrella.h"; sourceTree = "<group>"; };
 		735779BD5D315DE87CAB03A0FA666138 /* DSNestedAccordionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSNestedAccordionHandler.m; path = Pod/Classes/DSNestedAccordionHandler.m; sourceTree = "<group>"; };
+		795145A883DEA180B2EF231AC1C57A86 /* MailingListParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListParser.swift; sourceTree = "<group>"; };
 		7BDA7CF2105AF6F537B46B16A4B7F760 /* DSNestedAccordion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSNestedAccordion-prefix.pch"; sourceTree = "<group>"; };
-		8017DBE33839AAB436A76C665ADE5FB3 /* MailingListParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MailingListParser.h; sourceTree = "<group>"; };
 		80BF04FE431A082F6D30B114D96BE495 /* DSNestedAccordion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DSNestedAccordion.modulemap; sourceTree = "<group>"; };
-		83845F90C0151D50639398EF292368AB /* MailingListMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessage.swift; sourceTree = "<group>"; };
+		819AF40EB9E3EB1332B5C3456BD9CBBE /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		853DFBD20328C860A529D94162F5EB39 /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86CDA638D3ED1AC091A3204650F01DCA /* MailingListParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MailingListParser.h; sourceTree = "<group>"; };
+		92B6C1B124579215152F163409E83AB0 /* CollapsibleTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTextView-dummy.m"; sourceTree = "<group>"; };
 		92DB57D6C862DE62ED5F2A6537B15F4E /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
+		96F39B295C5D920FC2DDE20803085988 /* MailingListMessageHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageHeaders.swift; sourceTree = "<group>"; };
 		9C89D46E847C08BE6E24D6D6EBA179E8 /* NSException+DSException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSException+DSException.m"; path = "Pod/Classes/NSException+DSException.m"; sourceTree = "<group>"; };
 		A3208F0BDC3E2DB4D1777A18523F9622 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = ReSwift/CoreTypes/State.swift; sourceTree = "<group>"; };
 		A325B9FF0D4FE206AC08D738081D3D5E /* DSCellLevel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCellLevel.m; path = Pod/Classes/DSCellLevel.m; sourceTree = "<group>"; };
-		A69C5FE5CEDB6DA97AF682B4C60CAE81 /* DSNestedAccordion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DSNestedAccordion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A851B400888DFA220A0BDC5FDDA0BF50 /* Pods_Swift_Mailing_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Mailing_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.xcconfig; sourceTree = "<group>"; };
-		A91E6E501540E0505DE63A363E765BD5 /* MailingListParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListParser.swift; sourceTree = "<group>"; };
 		ACA273157684AAB19A10CBDF5A78DB23 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACA47953EDEC2F93FF38E7E1D3035C10 /* MailingListParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MailingListParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MailingListParser.xcconfig; sourceTree = "<group>"; };
 		B43E7D88E9ECE56692DC2A46CB421EFE /* DSCellPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCellPath.m; path = Pod/Classes/DSCellPath.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB7277CC8103BAF97CD953399F01AF43 /* Store.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Store.swift; path = ReSwift/CoreTypes/Store.swift; sourceTree = "<group>"; };
 		BDC9F52F045B72475997DF749C5D30C4 /* GZIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GZIP.modulemap; sourceTree = "<group>"; };
 		C36666961771FF24708AD13546BAB056 /* ReSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-umbrella.h"; sourceTree = "<group>"; };
-		C7D5D4B7245AD7BFE123F85C3CD89FC7 /* MailingListParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MailingListParser.xcconfig; sourceTree = "<group>"; };
+		C57522A7010C5A9C5E2A0257A2C99242 /* MailingListMessageParserAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageParserAdapter.swift; sourceTree = "<group>"; };
+		C64E7D18BCBCEF7124FD3686EF63B3AB /* MailingListParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MailingListParser-prefix.pch"; sourceTree = "<group>"; };
 		CED86061FD865E7BFA179846635B6374 /* Reducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reducer.swift; path = ReSwift/CoreTypes/Reducer.swift; sourceTree = "<group>"; };
-		D0A24E4343820817E700791820F421AC /* MailingListMessageParserAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageParserAdapter.swift; sourceTree = "<group>"; };
+		CF552CB4F3EBAAD5FBA2FDF2D316BB61 /* MailingListMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessage.swift; sourceTree = "<group>"; };
 		D63260931E23009E715DC387FD21D0AC /* Pods-Swift Mailing List-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swift Mailing List-dummy.m"; sourceTree = "<group>"; };
 		D791BBF42AA01D4A8C1239553DD439CC /* StoreSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreSubscriber.swift; path = ReSwift/CoreTypes/StoreSubscriber.swift; sourceTree = "<group>"; };
+		DBE14F1757FBE5440CAD3C59CEA3B491 /* CollapsibleTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTextView-umbrella.h"; sourceTree = "<group>"; };
 		DCB559C89520DE5F3149D8CA9DEDE5F2 /* GZIP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GZIP-prefix.pch"; sourceTree = "<group>"; };
-		E610BB6B889CD8CEA1883F5657B6033F /* MailingListParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MailingListParser-dummy.m"; sourceTree = "<group>"; };
+		DE5639CF5FBD19815E4CECC662D73058 /* CollapsibleTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CollapsibleTextView.modulemap; sourceTree = "<group>"; };
+		DF2AEDC0B27E19FCF9BE3536942DF138 /* MailingListParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MailingListParser.modulemap; sourceTree = "<group>"; };
 		E638931A3A1FBD9C74574CBFD9CA5757 /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = ReSwift/Utils/Coding.swift; sourceTree = "<group>"; };
+		EA0FAC90EDD3A283EC0F530E87A47157 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA301C8C730ECF9A49CB29EEBA5C0962 /* TypeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeHelper.swift; path = ReSwift/Utils/TypeHelper.swift; sourceTree = "<group>"; };
 		EB41630BA961140D3701FE00D9766649 /* Pods-Swift Mailing List-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swift Mailing List-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EFAAAC0DADCAEE7660643AE191787D5B /* DSCellPathTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCellPathTracker.h; path = Pod/Classes/DSCellPathTracker.h; sourceTree = "<group>"; };
-		F7F64CF458E5CD214799DB900C75A63B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC2986F535BA6C33B5D43B8A8597CADC /* MailingListMessageParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageParser.swift; sourceTree = "<group>"; };
+		F7B17FE520FD76EA37A343ACAD5C7DED /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB58D61572047F2D2EA20BC9E550EF6C /* CollapsibleTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CollapsibleTextView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D2C0BAC6D47586ED2E48B0D80878F30 /* Frameworks */ = {
+		6FD36C4D3CCDC1569136BF200F8701DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A42959807AC16F5585F81131704B4D05 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E8810860C6AD5BC92FEAA202B741E03 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A2260C24F280DFA5D9F1AAF68DB4468A /* Foundation.framework in Frameworks */,
+				6EAC4330912753ECEB42140B0EB5203E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,11 +197,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		869946844671FF823482C1FD98C55031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C52ADF0FFEF0252C1F88E1A6638EF01 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFE8FBB0FFBF175C94D54EA87652F9CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D054E6B1B871A65719ECE03D780F8F09 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E29D9F1ACA8B9E4BBF30582722F37344 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B5A5158446C1FCDD779EDEFD596501C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +232,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000A2734DCDF42945A588C7A4308DDA4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE5639CF5FBD19815E4CECC662D73058 /* CollapsibleTextView.modulemap */,
+				125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */,
+				92B6C1B124579215152F163409E83AB0 /* CollapsibleTextView-dummy.m */,
+				07580ABADF8737EFEF61AC91368E1C57 /* CollapsibleTextView-prefix.pch */,
+				DBE14F1757FBE5440CAD3C59CEA3B491 /* CollapsibleTextView-umbrella.h */,
+				EA0FAC90EDD3A283EC0F530E87A47157 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Swift Mailing List/Pods/Target Support Files/CollapsibleTextView";
+			sourceTree = "<group>";
+		};
 		1FF91B43F848249F2358FEB670A0EB2D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,17 +260,27 @@
 			path = "../Target Support Files/GZIP";
 			sourceTree = "<group>";
 		};
-		22954597286D86F15F3A4983D08E85D3 /* MailingListParser */ = {
+		23885159EFC2E0432E4D7224BA6105DB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				83845F90C0151D50639398EF292368AB /* MailingListMessage.swift */,
-				44F40AA9F0D3ACF0CB752705CCEE04EE /* MailingListMessageHeaders.swift */,
-				FC2986F535BA6C33B5D43B8A8597CADC /* MailingListMessageParser.swift */,
-				D0A24E4343820817E700791820F421AC /* MailingListMessageParserAdapter.swift */,
-				8017DBE33839AAB436A76C665ADE5FB3 /* MailingListParser.h */,
-				A91E6E501540E0505DE63A363E765BD5 /* MailingListParser.swift */,
+				2AFC2E7D5D2E0D82B2FA01EF5D35194C /* Info.plist */,
+				DF2AEDC0B27E19FCF9BE3536942DF138 /* MailingListParser.modulemap */,
+				AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */,
+				4B4E9FA9EAD102802F692E4E31FB29D4 /* MailingListParser-dummy.m */,
+				C64E7D18BCBCEF7124FD3686EF63B3AB /* MailingListParser-prefix.pch */,
+				4E4327B43C804F0655BA7B11C6FB3381 /* MailingListParser-umbrella.h */,
 			);
-			path = MailingListParser;
+			name = "Support Files";
+			path = "../Swift Mailing List/Pods/Target Support Files/MailingListParser";
+			sourceTree = "<group>";
+		};
+		39411CF412BA6FE8252618E943351637 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BE5ACCEF9963FA328D1E8B146173699 /* CollapsibleTextView */,
+				B1F6856275F7AFB9C0FBF586FFCB0CE9 /* MailingListParser */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		447B92AF432720F42BEC5B1088C55FE4 /* Pods */ = {
@@ -236,28 +293,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4688F5C5DD276E66221DA4541AE942BC /* Support Files */ = {
+		4BE5ACCEF9963FA328D1E8B146173699 /* CollapsibleTextView */ = {
 			isa = PBXGroup;
 			children = (
-				F7F64CF458E5CD214799DB900C75A63B /* Info.plist */,
-				5F3864EC0A37912E925F4331AAC6C391 /* MailingListParser.modulemap */,
-				C7D5D4B7245AD7BFE123F85C3CD89FC7 /* MailingListParser.xcconfig */,
-				E610BB6B889CD8CEA1883F5657B6033F /* MailingListParser-dummy.m */,
-				373F0F36A82879ABF247693047482301 /* MailingListParser-prefix.pch */,
-				5CF96B7AB135D7564D4C1E5DDB0C03EF /* MailingListParser-umbrella.h */,
+				8EAEE75038C12435EF5F47D11C3B26C9 /* CollapsibleTextView */,
+				000A2734DCDF42945A588C7A4308DDA4 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Swift Mailing List/Pods/Target Support Files/MailingListParser";
-			sourceTree = "<group>";
-		};
-		47164ED121EF1CC91ED14AB78068B990 /* MailingListParser */ = {
-			isa = PBXGroup;
-			children = (
-				22954597286D86F15F3A4983D08E85D3 /* MailingListParser */,
-				4688F5C5DD276E66221DA4541AE942BC /* Support Files */,
-			);
-			name = MailingListParser;
-			path = /Users/matthewpalmer/dev/ios/MailingListParser;
+			name = CollapsibleTextView;
+			path = /Users/matthewpalmer/dev/ios/CollapsibleTextView;
 			sourceTree = "<absolute>";
 		};
 		53D577B27DB7970953FE0E3C4FF7B486 /* Support Files */ = {
@@ -274,24 +317,25 @@
 			path = "../Target Support Files/ReSwift";
 			sourceTree = "<group>";
 		};
-		5CFF7528F9083152CD13A59847EB5CF9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A69C5FE5CEDB6DA97AF682B4C60CAE81 /* DSNestedAccordion.framework */,
-				20C1C0F24C09C1C1A74B13CABBD9366A /* GZIP.framework */,
-				ACA47953EDEC2F93FF38E7E1D3035C10 /* MailingListParser.framework */,
-				3548DA3C77CE48104F7EF3BB6FF64D4D /* Pods_Swift_Mailing_List.framework */,
-				17F1765E7FE2EFBB9971DEFF73C6D7E4 /* ReSwift.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		65DFC263E2765546E86CD319B78D1FE0 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				7A5229C457D99009DB355319CAE3784F /* Pods-Swift Mailing List */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7142A37B288173DF32040E2682B39CAE /* MailingListParser */ = {
+			isa = PBXGroup;
+			children = (
+				CF552CB4F3EBAAD5FBA2FDF2D316BB61 /* MailingListMessage.swift */,
+				96F39B295C5D920FC2DDE20803085988 /* MailingListMessageHeaders.swift */,
+				6EFFAA246081C7FF27E8ED1922B850F4 /* MailingListMessageParser.swift */,
+				C57522A7010C5A9C5E2A0257A2C99242 /* MailingListMessageParserAdapter.swift */,
+				86CDA638D3ED1AC091A3204650F01DCA /* MailingListParser.h */,
+				795145A883DEA180B2EF231AC1C57A86 /* MailingListParser.swift */,
+			);
+			path = MailingListParser;
 			sourceTree = "<group>";
 		};
 		7A5229C457D99009DB355319CAE3784F /* Pods-Swift Mailing List */ = {
@@ -316,10 +360,10 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				E2AA22FD9973CBE74A1272B100C6C30F /* Development Pods */,
+				39411CF412BA6FE8252618E943351637 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				447B92AF432720F42BEC5B1088C55FE4 /* Pods */,
-				5CFF7528F9083152CD13A59847EB5CF9 /* Products */,
+				A20598AB073C01B9FD0FE9702F2E00D0 /* Products */,
 				65DFC263E2765546E86CD319B78D1FE0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -342,6 +386,17 @@
 			path = DSNestedAccordion;
 			sourceTree = "<group>";
 		};
+		8EAEE75038C12435EF5F47D11C3B26C9 /* CollapsibleTextView */ = {
+			isa = PBXGroup;
+			children = (
+				F7B17FE520FD76EA37A343ACAD5C7DED /* AppDelegate.swift */,
+				FB58D61572047F2D2EA20BC9E550EF6C /* CollapsibleTextView.h */,
+				57A98CEF0B58B9506E29DFD05AD8E8E6 /* CollapsibleTextView.swift */,
+				819AF40EB9E3EB1332B5C3456BD9CBBE /* ViewController.swift */,
+			);
+			path = CollapsibleTextView;
+			sourceTree = "<group>";
+		};
 		A14487C956839388E817C312F1E6C5B7 /* ReSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +414,29 @@
 			);
 			path = ReSwift;
 			sourceTree = "<group>";
+		};
+		A20598AB073C01B9FD0FE9702F2E00D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33B0A9FB01FACF9171B1757A8563C95D /* CollapsibleTextView.framework */,
+				1473C83F55E18088BAEC45E89326BE40 /* DSNestedAccordion.framework */,
+				0460F820DB9EA8DEFDC638AD522F8DC3 /* GZIP.framework */,
+				21C602A8B976041BC656E4796EF3FA2C /* MailingListParser.framework */,
+				A851B400888DFA220A0BDC5FDDA0BF50 /* Pods_Swift_Mailing_List.framework */,
+				853DFBD20328C860A529D94162F5EB39 /* ReSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1F6856275F7AFB9C0FBF586FFCB0CE9 /* MailingListParser */ = {
+			isa = PBXGroup;
+			children = (
+				7142A37B288173DF32040E2682B39CAE /* MailingListParser */,
+				23885159EFC2E0432E4D7224BA6105DB /* Support Files */,
+			);
+			name = MailingListParser;
+			path = /Users/matthewpalmer/dev/ios/MailingListParser;
+			sourceTree = "<absolute>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
@@ -400,23 +478,32 @@
 			path = GZIP;
 			sourceTree = "<group>";
 		};
-		E2AA22FD9973CBE74A1272B100C6C30F /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				47164ED121EF1CC91ED14AB78068B990 /* MailingListParser */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1D64D4ECA1E8E1F1383684DC5CD59283 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F50A365927FE4123563B08B881F7F9 /* CollapsibleTextView-umbrella.h in Headers */,
+				6917D7FABCBBD8BDBEA1A2BF4097EB22 /* CollapsibleTextView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3728856D9AC9B51496E1ADBAC4530141 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9BEC7A31E17DF394BF43ED760719B603 /* MailingListParser-umbrella.h in Headers */,
 				C31B627B7908EC0310CF3CDD74F862F4 /* MailingListParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		629807ABF389C28A9DBFDB4603F16D31 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575FA7397339990E24148953BCB8FCEB /* ReSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,14 +520,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8EE90230574AC007BA1CF9A129B1D22C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBEBF46DB73CB02B384CEBB0AC693EE8 /* Pods-Swift Mailing List-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C2EF95021EE59453873E887295F54218 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,53 +529,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA5803E7CEA5EEE64F6A12D06AF1B8A4 /* Headers */ = {
+		D26E5A69D2DC8EC03013BD5EED060593 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A7B5528341C881360DBEF891686F90F /* ReSwift-umbrella.h in Headers */,
+				35A0D8B93A253414DABDA69C400EF7DA /* Pods-Swift Mailing List-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		24E101DE2A90F8BF9246127F48FB139D /* ReSwift */ = {
+		0782BBD04B8AC7A0273295CEFE2B406E /* CollapsibleTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8F260818BE7C6F24AE70265C33361C1 /* Build configuration list for PBXNativeTarget "ReSwift" */;
+			buildConfigurationList = 1C928A5D8EFE6935673130B8CD972577 /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */;
 			buildPhases = (
-				AFB290224CC7BC339B13FE3D1C2E7E03 /* Sources */,
-				7E8810860C6AD5BC92FEAA202B741E03 /* Frameworks */,
-				FA5803E7CEA5EEE64F6A12D06AF1B8A4 /* Headers */,
+				7EF0316066F37E4CC500F1C3EC00E766 /* Sources */,
+				6FD36C4D3CCDC1569136BF200F8701DD /* Frameworks */,
+				1D64D4ECA1E8E1F1383684DC5CD59283 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ReSwift;
-			productName = ReSwift;
-			productReference = 17F1765E7FE2EFBB9971DEFF73C6D7E4 /* ReSwift.framework */;
+			name = CollapsibleTextView;
+			productName = CollapsibleTextView;
+			productReference = 33B0A9FB01FACF9171B1757A8563C95D /* CollapsibleTextView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		28828F8882C8664ACB5DE3FFFA1C19C1 /* Pods-Swift Mailing List */ = {
+		2ECE7E05FFC7BC02313362611FD82949 /* Pods-Swift Mailing List */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2BD162418B929F9975DA6D4D80E185D /* Build configuration list for PBXNativeTarget "Pods-Swift Mailing List" */;
+			buildConfigurationList = 3458D1A8BBF366375626E46F82097905 /* Build configuration list for PBXNativeTarget "Pods-Swift Mailing List" */;
 			buildPhases = (
-				8F2C1D366B82DB7EF85B4C600AB92740 /* Sources */,
-				0D2C0BAC6D47586ED2E48B0D80878F30 /* Frameworks */,
-				8EE90230574AC007BA1CF9A129B1D22C /* Headers */,
+				0D196F1AB1536D47114415CDA0CD4C9A /* Sources */,
+				E29D9F1ACA8B9E4BBF30582722F37344 /* Frameworks */,
+				D26E5A69D2DC8EC03013BD5EED060593 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B6CEA056575E66BA27D8CF1EE0BE8AA9 /* PBXTargetDependency */,
-				E846C0E14F364FB7CE5800E73EADE0BA /* PBXTargetDependency */,
-				CFF9E2925B9CEEB24EE1A8795B7164B2 /* PBXTargetDependency */,
-				A0B7F0B87FC20799003C693184F2FF41 /* PBXTargetDependency */,
+				10A9BFF220B6EC5C02AC6946674ED09A /* PBXTargetDependency */,
+				96DA759843F02F7922F820ED1E966C59 /* PBXTargetDependency */,
+				26F0D936A013FEBD3E12ECE97D028B0B /* PBXTargetDependency */,
+				F57FBD67B195C9CA0EFA4305EE5D1642 /* PBXTargetDependency */,
+				E0B61B027E1BFF77B18AFD184BB20B63 /* PBXTargetDependency */,
 			);
 			name = "Pods-Swift Mailing List";
 			productName = "Pods-Swift Mailing List";
-			productReference = 3548DA3C77CE48104F7EF3BB6FF64D4D /* Pods_Swift_Mailing_List.framework */;
+			productReference = A851B400888DFA220A0BDC5FDDA0BF50 /* Pods_Swift_Mailing_List.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		66241D4532391C20FAE8E65120B7E8DD /* MailingListParser */ = {
@@ -513,7 +593,7 @@
 			);
 			name = MailingListParser;
 			productName = MailingListParser;
-			productReference = ACA47953EDEC2F93FF38E7E1D3035C10 /* MailingListParser.framework */;
+			productReference = 21C602A8B976041BC656E4796EF3FA2C /* MailingListParser.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7E2DC4B479673579C992E80F927963B4 /* DSNestedAccordion */ = {
@@ -530,7 +610,7 @@
 			);
 			name = DSNestedAccordion;
 			productName = DSNestedAccordion;
-			productReference = A69C5FE5CEDB6DA97AF682B4C60CAE81 /* DSNestedAccordion.framework */;
+			productReference = 1473C83F55E18088BAEC45E89326BE40 /* DSNestedAccordion.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B347B467C0E4BBDD23C010C9736B65AA /* GZIP */ = {
@@ -547,7 +627,24 @@
 			);
 			name = GZIP;
 			productName = GZIP;
-			productReference = 20C1C0F24C09C1C1A74B13CABBD9366A /* GZIP.framework */;
+			productReference = 0460F820DB9EA8DEFDC638AD522F8DC3 /* GZIP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4F5132205017E3360E6A51634F63937 /* ReSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4240BA690E9207D4C6232B2053AF6B3 /* Build configuration list for PBXNativeTarget "ReSwift" */;
+			buildPhases = (
+				1436182905A8E438FDB838E93885A1E5 /* Sources */,
+				869946844671FF823482C1FD98C55031 /* Frameworks */,
+				629807ABF389C28A9DBFDB4603F16D31 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReSwift;
+			productName = ReSwift;
+			productReference = 853DFBD20328C860A529D94162F5EB39 /* ReSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -567,15 +664,16 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 5CFF7528F9083152CD13A59847EB5CF9 /* Products */;
+			productRefGroup = A20598AB073C01B9FD0FE9702F2E00D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				0782BBD04B8AC7A0273295CEFE2B406E /* CollapsibleTextView */,
 				7E2DC4B479673579C992E80F927963B4 /* DSNestedAccordion */,
 				B347B467C0E4BBDD23C010C9736B65AA /* GZIP */,
 				66241D4532391C20FAE8E65120B7E8DD /* MailingListParser */,
-				28828F8882C8664ACB5DE3FFFA1C19C1 /* Pods-Swift Mailing List */,
-				24E101DE2A90F8BF9246127F48FB139D /* ReSwift */,
+				2ECE7E05FFC7BC02313362611FD82949 /* Pods-Swift Mailing List */,
+				B4F5132205017E3360E6A51634F63937 /* ReSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -594,6 +692,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D196F1AB1536D47114415CDA0CD4C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52BAB613DB6E096AA544103DAF3735D /* Pods-Swift Mailing List-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1436182905A8E438FDB838E93885A1E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E434C3E0C517300F3120F5FFE4A426A /* Action.swift in Sources */,
+				7CD6B631B42CB1877BAAB3B6B00E68D6 /* Coding.swift in Sources */,
+				57430155407E430E02EF13D18C10276E /* CombinedReducer.swift in Sources */,
+				FB2657C953F93CE88AE432CF48F9E6F5 /* Middleware.swift in Sources */,
+				D614697BB674F21D2C5E8CFF332FED45 /* Reducer.swift in Sources */,
+				DCCA96CCF48D4517BE3A128BCC173515 /* ReSwift-dummy.m in Sources */,
+				AE09D7F1469DFE8AE31D9007E6B62CD6 /* State.swift in Sources */,
+				1F20FC98CE0C856E0A32DEBC6CF67F6E /* Store.swift in Sources */,
+				878BEFEED2F9BC5C56212C9FE87100D5 /* StoreSubscriber.swift in Sources */,
+				CFE0DCF397567C1BEE4867777302E804 /* StoreType.swift in Sources */,
+				B2B87794D25406C225C0CCF65BD8FDA0 /* TypeHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		55F822FFC254D3BB9DBFFE0E7057B790 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -607,29 +731,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F2C1D366B82DB7EF85B4C600AB92740 /* Sources */ = {
+		7EF0316066F37E4CC500F1C3EC00E766 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C7C0AB4DE4AA1902F5DC435E4319B2 /* Pods-Swift Mailing List-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFB290224CC7BC339B13FE3D1C2E7E03 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59237EF551CFD859378C0BDCBA8C075B /* Action.swift in Sources */,
-				A3BE34E673AC8DFC44016BCEEC3C3A77 /* Coding.swift in Sources */,
-				85894BC5032BFD2E9B853AA23BB360F6 /* CombinedReducer.swift in Sources */,
-				8379CDC2DDF2ACCC44B51AE304DE9164 /* Middleware.swift in Sources */,
-				E90047551D730095A6E1EB43A1A31B34 /* Reducer.swift in Sources */,
-				2CC9148C832AB9B9C3AD0643F676B76B /* ReSwift-dummy.m in Sources */,
-				5C79D78AC9D6ED0305DDE504E568A2DA /* State.swift in Sources */,
-				8D3BCA55775776E2ECC3B2F523480B6D /* Store.swift in Sources */,
-				EAAFD4775851E2E29A200501A8D91ED8 /* StoreSubscriber.swift in Sources */,
-				17B6DDB84D9C94D20B47306539474304 /* StoreType.swift in Sources */,
-				FB6337D4DCA6180BDAFA3B80E0634A6F /* TypeHelper.swift in Sources */,
+				C85313116C4FCE350C56C79B822CB0BF /* AppDelegate.swift in Sources */,
+				50CB3B39220FE955D2EC8078F6EF2205 /* CollapsibleTextView-dummy.m in Sources */,
+				6D2752CC15EAA835859B5FD2919C7228 /* CollapsibleTextView.swift in Sources */,
+				A4B65ABA1471B9C967497ED0E9A96005 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,36 +754,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A0B7F0B87FC20799003C693184F2FF41 /* PBXTargetDependency */ = {
+		10A9BFF220B6EC5C02AC6946674ED09A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ReSwift;
-			target = 24E101DE2A90F8BF9246127F48FB139D /* ReSwift */;
-			targetProxy = FFC161EB245BCE9F373D03CE05BC7BFB /* PBXContainerItemProxy */;
+			name = CollapsibleTextView;
+			target = 0782BBD04B8AC7A0273295CEFE2B406E /* CollapsibleTextView */;
+			targetProxy = AFF3BA618CA80A741D7EE9084D9BDC62 /* PBXContainerItemProxy */;
 		};
-		B6CEA056575E66BA27D8CF1EE0BE8AA9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DSNestedAccordion;
-			target = 7E2DC4B479673579C992E80F927963B4 /* DSNestedAccordion */;
-			targetProxy = 6DB641658E580DCAB321CECDBA684D61 /* PBXContainerItemProxy */;
-		};
-		CFF9E2925B9CEEB24EE1A8795B7164B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MailingListParser;
-			target = 66241D4532391C20FAE8E65120B7E8DD /* MailingListParser */;
-			targetProxy = 0EA7C303CA3E6A82C04E8627DF051E87 /* PBXContainerItemProxy */;
-		};
-		E846C0E14F364FB7CE5800E73EADE0BA /* PBXTargetDependency */ = {
+		26F0D936A013FEBD3E12ECE97D028B0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GZIP;
 			target = B347B467C0E4BBDD23C010C9736B65AA /* GZIP */;
-			targetProxy = 571C957C0BCBE715B796132B8A2FA9BC /* PBXContainerItemProxy */;
+			targetProxy = 7E4196608E400CB64943416E2ADB5CDD /* PBXContainerItemProxy */;
+		};
+		96DA759843F02F7922F820ED1E966C59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DSNestedAccordion;
+			target = 7E2DC4B479673579C992E80F927963B4 /* DSNestedAccordion */;
+			targetProxy = 3FD3F507F2117583A77134B4187A1373 /* PBXContainerItemProxy */;
+		};
+		E0B61B027E1BFF77B18AFD184BB20B63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReSwift;
+			target = B4F5132205017E3360E6A51634F63937 /* ReSwift */;
+			targetProxy = 60F75FEE7083153D95CC16F9C41AB1B6 /* PBXContainerItemProxy */;
+		};
+		F57FBD67B195C9CA0EFA4305EE5D1642 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MailingListParser;
+			target = 66241D4532391C20FAE8E65120B7E8DD /* MailingListParser */;
+			targetProxy = 85898A903B3B50881D97C88A41DA42E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0C0EEF4BA4C44AF60F518D967725BDD0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7D5D4B7245AD7BFE123F85C3CD89FC7 /* MailingListParser.xcconfig */;
+			baseConfigurationReference = AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -699,35 +814,7 @@
 			};
 			name = Release;
 		};
-		2DC1DC587580E194C8033CA0BE5987D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReSwift/ReSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6935AE704FAE727F417DE845131960FE /* Debug */ = {
+		0C5DFA4F508595F7B94434550B593789 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E056F9630D730B3B3E1495BDEE631AE /* Pods-Swift Mailing List.debug.xcconfig */;
 			buildSettings = {
@@ -758,6 +845,33 @@
 			};
 			name = Debug;
 		};
+		249CD83500145E6206260091D4358490 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTextView/CollapsibleTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollapsibleTextView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CollapsibleTextView/CollapsibleTextView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CollapsibleTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		739DBC896799BD3B89B19CDB7B89759E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69D334C318AFC143A193CAD105E934E8 /* GZIP.xcconfig */;
@@ -785,36 +899,6 @@
 			};
 			name = Debug;
 		};
-		745C4EDF2F3A402AADDE08BADE577365 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48A45F2890C217DB6D2DE83781140EA8 /* Pods-Swift Mailing List.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Swift Mailing List/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Swift_Mailing_List;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		900F21257CD2B64304219380D87C66A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38D2DBBFBBFA086B7EF897EE1EE59828 /* DSNestedAccordion.xcconfig */;
@@ -841,6 +925,34 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		9CA5E364C2F448CBDAA5FB185169DC60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTextView/CollapsibleTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollapsibleTextView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CollapsibleTextView/CollapsibleTextView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CollapsibleTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -881,9 +993,67 @@
 			};
 			name = Debug;
 		};
+		AE7FCBB7E76C751A8E59C4D9ED6E2EFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48A45F2890C217DB6D2DE83781140EA8 /* Pods-Swift Mailing List.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Swift Mailing List/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Swift_Mailing_List;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C05A68125469352E0826336EA6E9A5D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReSwift/ReSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ReSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		C8C91D5E37BF81709495FC9E32F64777 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7D5D4B7245AD7BFE123F85C3CD89FC7 /* MailingListParser.xcconfig */;
+			baseConfigurationReference = AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -963,7 +1133,7 @@
 			};
 			name = Release;
 		};
-		F49FF22118EAD07E243E319E78791ACC /* Release */ = {
+		F5275CED337171A7B1FEADABFFC5ED13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */;
 			buildSettings = {
@@ -1045,6 +1215,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		1C928A5D8EFE6935673130B8CD972577 /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CA5E364C2F448CBDAA5FB185169DC60 /* Debug */,
+				249CD83500145E6206260091D4358490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1054,11 +1233,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2BD162418B929F9975DA6D4D80E185D /* Build configuration list for PBXNativeTarget "Pods-Swift Mailing List" */ = {
+		3458D1A8BBF366375626E46F82097905 /* Build configuration list for PBXNativeTarget "Pods-Swift Mailing List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6935AE704FAE727F417DE845131960FE /* Debug */,
-				745C4EDF2F3A402AADDE08BADE577365 /* Release */,
+				0C5DFA4F508595F7B94434550B593789 /* Debug */,
+				AE7FCBB7E76C751A8E59C4D9ED6E2EFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1072,11 +1251,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8F260818BE7C6F24AE70265C33361C1 /* Build configuration list for PBXNativeTarget "ReSwift" */ = {
+		B4240BA690E9207D4C6232B2053AF6B3 /* Build configuration list for PBXNativeTarget "ReSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2DC1DC587580E194C8033CA0BE5987D0 /* Debug */,
-				F49FF22118EAD07E243E319E78791ACC /* Release */,
+				C05A68125469352E0826336EA6E9A5D9 /* Debug */,
+				F5275CED337171A7B1FEADABFFC5ED13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
