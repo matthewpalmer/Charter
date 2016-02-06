@@ -13,6 +13,8 @@ import DSNestedAccordion
 class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     var rootEmails: [EmailTreeNode] = [] {
         didSet {
+            indentationForEmail = [Email: Int]()
+            textViewDataSources = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
             orderedEmails = orderedEmailsFromTree(rootEmails).map { $0.email }
         }
     }
@@ -38,6 +40,8 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         return indent ?? 0
     }
     
+    private var textViewDataSources: [NSIndexPath: EmailCollapsibleTextViewDataSource] = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
         
@@ -47,19 +51,37 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         cell.dateLabel.text = emailFormatter.formatDate(email.headers.date)
         cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
         cell.delegate = cellDelegate
-//        cell.contentTextView.text = email.content
+        
+        var textViewDataSource = textViewDataSources[indexPath]
+        
+        if textViewDataSource == nil {
+            let regions = EmailCollapsibleTextViewDataSource.QuoteRanges(email.content)
+            print(regions)
+            textViewDataSource = EmailCollapsibleTextViewDataSource(text: email.content, initiallyCollapsedRegions: regions)
+            textViewDataSources[indexPath] = textViewDataSource!
+        }
+        
+        cell.textViewDataSource = textViewDataSource!
         
         return cell
     }
     
     private func orderedEmailsFromTree(rootEmails: [EmailTreeNode]) -> [EmailTreeNode] {
         func getOrderedEmailsAndSetNestingLevel(level: Int, rootEmails: [EmailTreeNode]) -> [EmailTreeNode] {
-            guard let first = rootEmails.first else {
+            guard let _ = rootEmails.first else {
                 return []
             }
             
-            indentationForEmail[first.email] = level
-            return [first] + getOrderedEmailsAndSetNestingLevel(level + 1, rootEmails: first.children)
+            // The root, followed by all its children
+            var array: [EmailTreeNode] = []
+            
+            for rootEmail in rootEmails {
+                array.append(rootEmail)
+                indentationForEmail[rootEmail.email] = level
+                array.appendContentsOf(getOrderedEmailsAndSetNestingLevel(level + 1, rootEmails: rootEmail.children))
+            }
+            
+            return array
         }
         
         return getOrderedEmailsAndSetNestingLevel(0, rootEmails: rootEmails)
@@ -190,12 +212,16 @@ class AppCoordinator: NSObject, StoreSubscriber {
     }()
     
     lazy var threadDetailViewController: ThreadDetailViewController = {
+        return self.constructThreadDetailViewController()
+    }()
+    
+    func constructThreadDetailViewController() -> ThreadDetailViewController {
         let viewController = ThreadDetailViewController()
         viewController.dataSource = self.detailTableViewDataSource
         self.detailTableViewDataSource.cellDelegate = viewController
         viewController.delegate = self
         return viewController
-    }()
+    }
     
     var threadsTableViewDataSource: ThreadsTableViewDataSource? {
         didSet {
@@ -222,7 +248,8 @@ class AppCoordinator: NSObject, StoreSubscriber {
             let forest = PartitionEmailsIntoTreeForest(emailsInList)
             detailTableViewDataSource.rootEmails = forest
                 .filter { $0.email.headers.messageID == state.selectedThreadWithRootMessageID }
-            if threadDetailViewController.tableView != nil && state.selectedMailingList != nil {
+            if threadDetailViewController.tableView != nil && state.selectedThreadWithRootMessageID != nil {
+                print("threadDetailViewController.tableView.reloadData()")
                 threadDetailViewController.tableView.reloadData()
             }
         }
@@ -260,6 +287,7 @@ class AppCoordinator: NSObject, StoreSubscriber {
         case (.MailingLists, .Threads):
             navigationController.pushViewController(threadsViewController, animated: true)
         case (.Threads, .ThreadDetail):
+            threadDetailViewController = constructThreadDetailViewController()
             navigationController.pushViewController(threadDetailViewController, animated: true)
         default:
             break

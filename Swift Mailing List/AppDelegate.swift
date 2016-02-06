@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         coordinator = AppCoordinator(navigationController: navigationController)
         
-        
         let file = NSBundle.mainBundle().URLForResource("Message-2", withExtension: nil)!
         let data = NSData(contentsOfURL: file)
         

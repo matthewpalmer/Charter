@@ -57,6 +57,7 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.separatorStyle = .None
+        tableView.allowsSelection = false
     }
     
     override func viewDidLoad() {
