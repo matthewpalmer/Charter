@@ -142,7 +142,7 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
         
         self.emails = PartitionEmailsIntoTreeForest(
             state.emailList.filter { $0.mailingList == state.selectedMailingList! }
-            ).map { $0.email }//.reverse()
+            ).map { $0.email }.reverse()
     }
     
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
