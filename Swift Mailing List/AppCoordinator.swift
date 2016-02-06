@@ -8,7 +8,6 @@
 
 import UIKit
 import ReSwift
-import DSNestedAccordion
 
 class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     var rootEmails: [EmailTreeNode] = [] {
@@ -24,11 +23,7 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     private var HTMLContentForEmail: [Email: String] = [Email: String]()
     private var orderedEmails: [Email] = []
     private var indentationForEmail = [Email: Int]()
-    
-    deinit {
-        print("Deinit")
-    }
-    
+
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +32,6 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         let indent = indentationForEmail[orderedEmails[indexPath.row]]
-        print("got indent \(indent)")
         return indent ?? 0
     }
     
@@ -57,7 +51,6 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         
         if textViewDataSource == nil {
             let regions = EmailCollapsibleTextViewDataSource.QuoteRanges(email.content)
-            print(regions)
             textViewDataSource = EmailCollapsibleTextViewDataSource(text: email.content, initiallyCollapsedRegions: regions)
             textViewDataSources[indexPath] = textViewDataSource!
         }
@@ -86,24 +79,6 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         }
         
         return getOrderedEmailsAndSetNestingLevel(0, rootEmails: rootEmails)
-    }
-    
-    private func emailForTreePath(list: [EmailTreeNode], path: DSCellPath) -> EmailTreeNode {
-        let route = path.levelIndexes.map { $0.integerValue! }
-        var email: EmailTreeNode?
-        var childList: [EmailTreeNode] = list
-        
-        for i in 0..<route.count {
-            if i == route.count - 1 {
-                // Last
-                email = childList[route[i]]
-            } else {
-                email = childList[route[i]]
-                childList = email!.children
-            }
-        }
-        
-        return email!
     }
 }
 
@@ -169,7 +144,7 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
         
         self.emails = PartitionEmailsIntoTreeForest(
             state.emailList.filter { $0.mailingList == state.selectedMailingList! }
-            ).map { $0.email }.reverse()
+            ).map { $0.email }//.reverse()
     }
     
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
@@ -254,8 +229,8 @@ class AppCoordinator: NSObject, StoreSubscriber {
             let forest = PartitionEmailsIntoTreeForest(emailsInList)
             detailTableViewDataSource.rootEmails = forest
                 .filter { $0.email.headers.messageID == state.selectedThreadWithRootMessageID }
+            
             if threadDetailViewController.tableView != nil && state.selectedThreadWithRootMessageID != nil {
-                print("threadDetailViewController.tableView.reloadData()")
                 threadDetailViewController.tableView.reloadData()
             }
         }
@@ -312,7 +287,7 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
     func threadsViewControllerRequestsReloadedData() {
         if mainStore.state.selectedMailingList == .SwiftEvolution {
             mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
-            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: false))
+            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: true))
         }
     }
     

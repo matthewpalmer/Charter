@@ -132,6 +132,7 @@ private let styleHTML = "<style type='text/css'>" +
     "blockquote { font-style: italic; color: #404C51; }" +
     "</style>"
 
+// turns out this is pretty slow
 private func attributedStringForTextView(text: String) -> NSAttributedString? {
     guard let markdownHTML = try? styleHTML + MMMarkdown.HTMLStringWithMarkdown(text as String) else {
         return nil
@@ -151,8 +152,38 @@ private func attributedStringForTextView(text: String) -> NSAttributedString? {
 }
 
 class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
+    var preloadedData = [NSAttributedString]()
+    
     override init(text: String, initiallyCollapsedRegions: [NSRange]) {
         super.init(text: text, initiallyCollapsedRegions: initiallyCollapsedRegions)
+        
+        let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        var descriptor = bodyFont.fontDescriptor()
+        descriptor = descriptor.fontDescriptorWithSymbolicTraits(UIFontDescriptorSymbolicTraits.TraitItalic)
+        
+        let italicBodyFont = UIFont(descriptor: descriptor, size: bodyFont.pointSize)
+        
+        for region in regions {
+            let text = textForRegion(region)
+            
+            let font: UIFont
+            let color: UIColor
+            
+            if region.state == .Collapsed || region.state == .Expanded {
+                font = italicBodyFont
+                color = UIColor.darkGrayColor()
+            } else {
+                font = bodyFont
+                color = UIColor.blackColor()
+            }
+            
+            let attributedString = NSAttributedString(string: text, attributes: [
+                NSFontAttributeName: font,
+                NSForegroundColorAttributeName: color
+            ])
+            
+            preloadedData.append(attributedString)
+        }
     }
     
     override func staticRegionForIndex(index: Int, text: String) -> UIView {
@@ -162,11 +193,8 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
         view.selectable = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.systemFontOfSize(UIFont.systemFontSize())
-        
-        guard let attributedString = attributedStringForTextView(text) else {
-            view.text = text.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-            return view
-        }
+
+        let attributedString = preloadedData[index]
         
         view.attributedText = attributedString
         return view
@@ -183,12 +211,7 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
         view.textView.scrollEnabled = false
         view.textView.selectable = true
         
-        guard let attributedString = attributedStringForTextView(text) else {
-            view.textView.text = text.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-            return view
-        }
-        
-        view.textView.attributedText = attributedString
+        view.textView.attributedText = preloadedData[index]
         
         return view
     }

@@ -10,7 +10,7 @@ import UIKit
 import CollapsibleTextView
 
 protocol FullEmailMessageTableViewCellDelegate: class {
-    func didChangeCellHeight()
+    func didChangeCellHeight(indexPath: NSIndexPath)
 }
 
 class FullEmailMessageTableViewCell: UITableViewCell, CollapsibleTextViewDataSourceDelegate, RegionViewDelegate {
@@ -56,7 +56,6 @@ class FullEmailMessageTableViewCell: UITableViewCell, CollapsibleTextViewDataSou
     }
     
     func regionView(regionView: RegionView, didFinishReplacingRegionAtIndex: Int) {
-        print("Finished the replacement... \(delegate)")
-        delegate?.didChangeCellHeight()
+        delegate?.didChangeCellHeight(NSIndexPath(forRow: didFinishReplacingRegionAtIndex, inSection: 0))
     }
 }

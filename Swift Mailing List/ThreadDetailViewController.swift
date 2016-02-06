@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DSNestedAccordion
 
 protocol ThreadDetailDataSource: class, UITableViewDataSource {
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int
@@ -32,7 +31,7 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
     weak var delegate: ThreadDetailViewControllerDelegate?
     
     init() {
-        super.init(nibName: "ThreadsViewController", bundle: NSBundle.mainBundle())
+        super.init(nibName: "ThreadDetailViewController", bundle: NSBundle.mainBundle())
     }
 
     override func didMoveToParentViewController(parent: UIViewController?) {
@@ -60,15 +59,11 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         tableView.allowsSelection = false
     }
     
-    override func viewDidLoad() {
-
-    }
-    
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         return dataSource?.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath) ?? 0
     }
     
-    func didChangeCellHeight() {
+    func didChangeCellHeight(indexPath: NSIndexPath) {
         tableView.reloadData()
     }
 }
