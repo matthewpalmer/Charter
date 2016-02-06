@@ -8,19 +8,29 @@
 
 import UIKit
 import MailingListParser
+import RealmSwift
 
-struct Email {
-    let headers: MailingListMessageHeaders
-    let content: String
-    let mailingList: MailingList
+class Email: Object {
+    dynamic var messageID: String = ""
+    dynamic var from: String = ""
+    dynamic var date: NSDate = NSDate(timeIntervalSince1970: 1)
+    dynamic var subject: String = ""
+    dynamic var inReplyTo: Email?
+    let references: List<Email> = List<Email>()
+    dynamic var mailingList: String = ""
+    dynamic var content: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "messageID"
+    }
 }
 
 extension Email: Equatable {}
 
 func ==(lhs: Email, rhs: Email) -> Bool {
-    return lhs.headers == rhs.headers && lhs.content == rhs.content && lhs.mailingList == rhs.mailingList
+    return lhs.messageID == rhs.messageID
 }
 
 extension Email: Hashable {
-    var hashValue: Int { return headers.messageID.hashValue }
+    override var hashValue: Int { return messageID.hashValue }
 }

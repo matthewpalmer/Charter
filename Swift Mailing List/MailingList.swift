@@ -21,7 +21,7 @@ struct _MailingList: MailingListType {
 enum MailingList: RawRepresentable {
     typealias RawValue = MailingListType
     
-    case SwiftEvolution, SwiftUsers
+    case SwiftEvolution, SwiftUsers, SwiftDev
     
     static var cases: [MailingList] = [.SwiftEvolution, .SwiftUsers]
     
@@ -31,6 +31,8 @@ enum MailingList: RawRepresentable {
             self = .SwiftEvolution
         case "swift-users":
             self = .SwiftUsers
+        case "swift-dev":
+            self = .SwiftDev
         default:
             return nil
         }
@@ -42,6 +44,8 @@ enum MailingList: RawRepresentable {
             return _MailingList(identifier: "swift-evolution", name: "Swift Evolution")
         case .SwiftUsers:
             return _MailingList(identifier: "swift-users", name: "Swift Users")
+        case .SwiftDev:
+            return _MailingList(identifier: "swift-dev", name: "Swift Dev")
         }
     }
 }

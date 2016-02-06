@@ -16,6 +16,7 @@
 		0E017B5A1C62C4E000316E22 /* MailingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B581C62C4E000316E22 /* MailingListViewController.swift */; };
 		0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E017B591C62C4E000316E22 /* MailingListViewController.xib */; };
 		0E1A2A141C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */; };
+		0E1A2A1A1C66AE8E00003D98 /* EmailThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A191C66AE8D00003D98 /* EmailThread.swift */; };
 		0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */; };
 		0E6F56511C63DCF4002D960E /* MessagePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */; };
 		0E73ED0E1C5D55670037F5A7 /* Message-1 in Resources */ = {isa = PBXBuildFile; fileRef = 0E73ED0D1C5D55670037F5A7 /* Message-1 */; };
@@ -43,6 +44,7 @@
 		0E017B581C62C4E000316E22 /* MailingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListViewController.swift; sourceTree = "<group>"; };
 		0E017B591C62C4E000316E22 /* MailingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailingListViewController.xib; sourceTree = "<group>"; };
 		0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
+		0E1A2A191C66AE8D00003D98 /* EmailThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThread.swift; sourceTree = "<group>"; };
 		0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePreviewTableViewCell.swift; sourceTree = "<group>"; };
 		0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagePreviewTableViewCell.xib; sourceTree = "<group>"; };
 		0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SML-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0E017B4A1C5DF2D200316E22 /* EmailTree.swift */,
 				0E017B561C62C33200316E22 /* MailingList.swift */,
 				0E8C2C131C62CBAA0038F5BE /* Email.swift */,
+				0E1A2A191C66AE8D00003D98 /* EmailThread.swift */,
 				0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */,
 				0E017B581C62C4E000316E22 /* MailingListViewController.swift */,
 				0E017B591C62C4E000316E22 /* MailingListViewController.xib */,
@@ -283,6 +286,7 @@
 				0E1A2A141C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift in Sources */,
 				0E017B481C5DCE1400316E22 /* ThreadDetailViewController.swift in Sources */,
 				0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */,
+				0E1A2A1A1C66AE8E00003D98 /* EmailThread.swift in Sources */,
 				0E017B5A1C62C4E000316E22 /* MailingListViewController.swift in Sources */,
 				0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */,
 				0EB318CE1C5B2155005F7672 /* AppCoordinator.swift in Sources */,

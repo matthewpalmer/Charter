@@ -41,8 +41,8 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         let email = orderedEmails[indexPath.row] // emailForTreePath(rootEmails, path: path).email
         
         cell.indentationWidth = 10
-        cell.dateLabel.text = emailFormatter.formatDate(email.headers.date)
-        cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
+        cell.dateLabel.text = emailFormatter.formatDate(email.date)
+        cell.nameLabel.text = emailFormatter.formatName(email.from)
         cell.delegate = cellDelegate
         
         var textViewDataSource = textViewDataSources[indexPath]
@@ -123,12 +123,12 @@ class EmailFormatter {
         return withinParens
     }
     
-    func formatDate(date: String) -> String {
-        if let date = sourceDateFormatter.dateFromString(date) {
-            return destinationDateFormatter.stringFromDate(date)
-        } else {
-            return ""
-        }
+    func dateStringToDate(date: String) -> NSDate? {
+        return sourceDateFormatter.dateFromString(date)
+    }
+    
+    func formatDate(date: NSDate) -> String {
+        return destinationDateFormatter.stringFromDate(date)
     }
 }
 
@@ -140,8 +140,9 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
     init(state: AppState) {
         title = state.selectedMailingList!.rawValue.name
         
+        // TODO:
         self.emails = PartitionEmailsIntoTreeForest(
-            state.emailList.filter { $0.mailingList == state.selectedMailingList! }
+            state.emailList.filter { $0.mailingList == state.selectedMailingList!.rawValue.identifier }
             ).map { $0.email }.reverse()
     }
     
@@ -151,9 +152,9 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.reuseIdentifier, forIndexPath: indexPath) as! MessagePreviewTableViewCell
         let email = emails[indexPath.row]
         
-        cell.subjectLabel.text = emailFormatter.formatSubject(email.headers.subject)
-        cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
-        cell.timeLabel.text = emailFormatter.formatDate(email.headers.date)
+        cell.subjectLabel.text = emailFormatter.formatSubject(email.subject)
+        cell.nameLabel.text = emailFormatter.formatName(email.from)
+        cell.timeLabel.text = emailFormatter.formatDate(email.date)
         
         return cell
     }
@@ -223,10 +224,10 @@ class AppCoordinator: NSObject, StoreSubscriber {
         }
         
         if state.routeHistory.last == .ThreadDetail {
-            let emailsInList = state.emailList.filter { $0.mailingList == state.selectedMailingList }
+            let emailsInList = state.emailList.filter { $0.mailingList == state.selectedMailingList?.rawValue.identifier }
             let forest = PartitionEmailsIntoTreeForest(emailsInList)
             detailTableViewDataSource.rootEmails = forest
-                .filter { $0.email.headers.messageID == state.selectedThreadWithRootMessageID }
+                .filter { $0.email.messageID == state.selectedThreadWithRootMessageID }
             
             if threadDetailViewController.tableView != nil && state.selectedThreadWithRootMessageID != nil {
                 threadDetailViewController.tableView.reloadData()
@@ -278,14 +279,14 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Hmm... not totally sure about the abstraction of this.
         let selectedEmail = threadsTableViewDataSource?.emails[indexPath.row]
-        mainStore.dispatch(SetSelectedThreadWithRootMessageID(rootMessageID: selectedEmail?.headers.messageID))
+        mainStore.dispatch(SetSelectedThreadWithRootMessageID(rootMessageID: selectedEmail?.messageID))
         mainStore.dispatch(MoveTo(route: .ThreadDetail))
     }
     
     func threadsViewControllerRequestsReloadedData() {
         if mainStore.state.selectedMailingList == .SwiftEvolution {
-            mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
-            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: true))
+//            mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
+//            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: true))
         }
     }
     

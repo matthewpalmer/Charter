@@ -9,5 +9,6 @@ target 'Swift Mailing List' do
   pod 'CollapsibleTextView', :path => '~/dev/ios/CollapsibleTextView'
   pod 'GZIP', '~> 1.1.1'
   pod 'MMMarkdown', '~> 0.5.1'
+  pod 'RealmSwift', '~> 0.98.0'
 end
 

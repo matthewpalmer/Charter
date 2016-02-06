@@ -9,6 +9,7 @@
 import UIKit
 import ReSwift
 import MailingListParser
+import RealmSwift
 
 let mainStore = Store(reducer: AppReducer(), state: AppState())
 
@@ -29,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let file = NSBundle.mainBundle().URLForResource("Message-2", withExtension: nil)!
         let data = NSData(contentsOfURL: file)
         
+        print("Realm database at \(Realm.Configuration.defaultConfiguration.path)")
+        
+        let action = DownloadData(MostRecentListPeriodForDate(), mailingList: .SwiftDev)
+        mainStore.dispatch(action)
         
         return true
     }

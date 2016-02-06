@@ -89,6 +89,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Swift Mailing List/MMMarkdown.framework"
   install_framework "Pods-Swift Mailing List/MailingListParser.framework"
   install_framework "Pods-Swift Mailing List/ReSwift.framework"
+  install_framework "Pods-Swift Mailing List/Realm.framework"
+  install_framework "Pods-Swift Mailing List/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Swift Mailing List/CollapsibleTextView.framework"
@@ -96,4 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Swift Mailing List/MMMarkdown.framework"
   install_framework "Pods-Swift Mailing List/MailingListParser.framework"
   install_framework "Pods-Swift Mailing List/ReSwift.framework"
+  install_framework "Pods-Swift Mailing List/Realm.framework"
+  install_framework "Pods-Swift Mailing List/RealmSwift.framework"
 fi
