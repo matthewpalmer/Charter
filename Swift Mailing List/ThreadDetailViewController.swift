@@ -17,7 +17,7 @@ protocol ThreadDetailViewControllerDelegate: class {
     func threadDetailViewControllerDidNavigateBackwards(threadDetailViewController: ThreadDetailViewController)
 }
 
-class ThreadDetailViewController: UIViewController, UITableViewDelegate {
+class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEmailMessageTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     static let fullMessageCellIdentifier = "fullMessageCellId"
@@ -65,5 +65,9 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         return dataSource?.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath) ?? 0
+    }
+    
+    func didChangeCellHeight() {
+        tableView.reloadData()
     }
 }

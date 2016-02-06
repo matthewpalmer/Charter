@@ -10,7 +10,7 @@
   },
   "social_media_url": "http://twitter.com/_matthewpalmer",
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source": {
     "git": "https://_matthewpalmer@bitbucket.org/_matthewpalmer/collapsibletextview.git",

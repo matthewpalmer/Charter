@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8CAE06325835FB55A21F8310'
+               BlueprintIdentifier = 'DAED5315FEFCA77B193DC306'
                BlueprintName = 'CollapsibleTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CollapsibleTextView.framework'>

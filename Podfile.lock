@@ -26,7 +26,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MattKiazyk/DSNestedAccordion.git
 
 SPEC CHECKSUMS:
-  CollapsibleTextView: 522219cd200746a02d590717a4b1d34714f45266
+  CollapsibleTextView: c24f359d0ff7df5a88161fc27893fac03f3f1a8d
   DSNestedAccordion: bbfaecd1656942358485f48f5740be43ac60488e
   GZIP: f8beb59597f651e6970a45b816508a9c6d700b77
   MailingListParser: d598b23ac6f133d4a9f5a2089c578a0fd4851b4f

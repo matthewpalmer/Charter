@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4EEC256495116A664F9579B5'
+               BlueprintIdentifier = '9F0910080B5620EF626E600C'
                BlueprintName = 'DSNestedAccordion'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'DSNestedAccordion.framework'>

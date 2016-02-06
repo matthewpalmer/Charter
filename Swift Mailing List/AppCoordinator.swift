@@ -17,6 +17,8 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         }
     }
     
+    var cellDelegate: FullEmailMessageTableViewCellDelegate?
+    
     private var orderedEmails: [Email] = []
     private var indentationForEmail = [Email: Int]()
     
@@ -44,7 +46,8 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         cell.indentationWidth = 10
         cell.dateLabel.text = emailFormatter.formatDate(email.headers.date)
         cell.nameLabel.text = emailFormatter.formatName(email.headers.from)
-        cell.contentTextView.text = email.content
+        cell.delegate = cellDelegate
+//        cell.contentTextView.text = email.content
         
         return cell
     }
@@ -189,6 +192,7 @@ class AppCoordinator: NSObject, StoreSubscriber {
     lazy var threadDetailViewController: ThreadDetailViewController = {
         let viewController = ThreadDetailViewController()
         viewController.dataSource = self.detailTableViewDataSource
+        self.detailTableViewDataSource.cellDelegate = viewController
         viewController.delegate = self
         return viewController
     }()

@@ -41,16 +41,6 @@
                             <constraint firstAttribute="height" constant="38" id="tY7-jQ-h0s"/>
                         </constraints>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nGd-cz-Uoy">
-                        <rect key="frame" x="25" y="38" width="295" height="114"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="8jO-mK-nDT"/>
-                        </constraints>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgk-Cl-8ya">
                         <rect key="frame" x="0.0" y="0.0" width="27" height="172"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,25 +48,32 @@
                             <constraint firstAttribute="width" constant="27" id="aHw-HW-sk3"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rQg-aQ-1wG" customClass="RegionView" customModule="CollapsibleTextView">
+                        <rect key="frame" x="25" y="38" width="295" height="134"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Cxu-aP-ea0"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nGd-cz-Uoy" firstAttribute="leading" secondItem="SkW-wv-FIW" secondAttribute="leading" id="3JV-nq-Vus"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="nGd-cz-Uoy" secondAttribute="bottom" constant="12" id="3KS-ai-7LN"/>
-                    <constraint firstItem="nGd-cz-Uoy" firstAttribute="top" secondItem="fC8-pC-L7i" secondAttribute="bottom" id="6mK-cA-yKM"/>
                     <constraint firstItem="vgk-Cl-8ya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="9Dt-Qk-9XE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rQg-aQ-1wG" secondAttribute="trailing" constant="-8" id="9zE-Fx-3aH"/>
                     <constraint firstItem="fC8-pC-L7i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="D9N-QO-hrZ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="vgk-Cl-8ya" secondAttribute="bottom" constant="-8" id="Dn5-H0-XxC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vgk-Cl-8ya" secondAttribute="bottom" priority="250" constant="-8" id="Dn5-H0-XxC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rQg-aQ-1wG" secondAttribute="bottom" constant="-8" id="VUD-GF-d4S"/>
                     <constraint firstItem="vgk-Cl-8ya" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="Xxb-Cy-rKL"/>
                     <constraint firstItem="fC8-pC-L7i" firstAttribute="leading" secondItem="vgk-Cl-8ya" secondAttribute="trailing" id="baX-VL-kda"/>
+                    <constraint firstItem="rQg-aQ-1wG" firstAttribute="top" secondItem="fC8-pC-L7i" secondAttribute="bottom" id="jAk-af-fwk"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fC8-pC-L7i" secondAttribute="trailing" constant="-8" id="oND-du-k6e"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="nGd-cz-Uoy" secondAttribute="trailing" constant="-8" id="xZU-mg-Q1f"/>
+                    <constraint firstItem="rQg-aQ-1wG" firstAttribute="leading" secondItem="SkW-wv-FIW" secondAttribute="leading" id="pyC-hL-lb8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentTextView" destination="nGd-cz-Uoy" id="1a1-Co-aSe"/>
                 <outlet property="dateLabel" destination="yKR-co-Nsx" id="iDA-BT-kh7"/>
                 <outlet property="leadingMarginConstraint" destination="aHw-HW-sk3" id="kJa-W0-JlN"/>
                 <outlet property="nameLabel" destination="SkW-wv-FIW" id="A9J-GR-dlD"/>
+                <outlet property="regionView" destination="rQg-aQ-1wG" id="YgK-9S-4y7"/>
             </connections>
             <point key="canvasLocation" x="305" y="334.5"/>
         </tableViewCell>

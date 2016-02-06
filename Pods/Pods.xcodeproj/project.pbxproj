@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		01E23B38B619537D3EAD95C241F2AE79 /* GZIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BE4AF5A475C505FB911B3E51EC21402 /* GZIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		04A0E03D10065990AA61AADC9642AB41 /* CollapsibleTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D202C61D7586A176C2C9275F77FCF161 /* CollapsibleTextView-dummy.m */; };
 		19AAE171415BD38A9710D2AAF9EB7FFA /* MailingListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF552CB4F3EBAAD5FBA2FDF2D316BB61 /* MailingListMessage.swift */; };
 		1ADBAD06BC353967BDCFDBBDA6C38912 /* DSNestedAccordionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 735779BD5D315DE87CAB03A0FA666138 /* DSNestedAccordionHandler.m */; };
 		1F20FC98CE0C856E0A32DEBC6CF67F6E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7277CC8103BAF97CD953399F01AF43 /* Store.swift */; };
+		2185C3E6421B49D902A2F4690066B8C9 /* CollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191C75C02D9000E5F8B8454C3138F233 /* CollapsibleTextViewDataSource.swift */; };
 		244F9A13D420C9DAAEFBF76CC8A953C8 /* GZIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 3970A24B1551784C8A15607D7C8F92DD /* GZIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35A0D8B93A253414DABDA69C400EF7DA /* Pods-Swift Mailing List-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71CE07A7E88FE0D1848D7BAB3F63A9C0 /* Pods-Swift Mailing List-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3704E2FB3031CEABDAFE257DA4E68E8F /* MailingListMessageParserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57522A7010C5A9C5E2A0257A2C99242 /* MailingListMessageParserAdapter.swift */; };
@@ -21,24 +23,21 @@
 		487938CFAAD76C981569E492FB058901 /* DSCellPath.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EC9BC03B3AD686117A3718C493B78E9 /* DSCellPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B5A5158446C1FCDD779EDEFD596501C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		4C52ADF0FFEF0252C1F88E1A6638EF01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		50CB3B39220FE955D2EC8078F6EF2205 /* CollapsibleTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B6C1B124579215152F163409E83AB0 /* CollapsibleTextView-dummy.m */; };
 		57430155407E430E02EF13D18C10276E /* CombinedReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B1A25E1DA4E8410E235008C620FA13 /* CombinedReducer.swift */; };
 		575FA7397339990E24148953BCB8FCEB /* ReSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C36666961771FF24708AD13546BAB056 /* ReSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57E0C2FD7AE88106606E2466D7AB317A /* MailingListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795145A883DEA180B2EF231AC1C57A86 /* MailingListParser.swift */; };
 		6077E3A0363799107B6C30D09AFF2E8F /* DSCellPathTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = EFAAAC0DADCAEE7660643AE191787D5B /* DSCellPathTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		608CC691830A584E78ECC540AFF5813F /* DSNestedAccordionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F1E5DA5FB627B6A8D8C9407DFE074DF /* DSNestedAccordionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6917D7FABCBBD8BDBEA1A2BF4097EB22 /* CollapsibleTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = FB58D61572047F2D2EA20BC9E550EF6C /* CollapsibleTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60ED4FCBE2A8512328F1D523D7767DB1 /* CollapsibleTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 14E1947BEA3D2D18F5136FE879D24010 /* CollapsibleTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63FE8F2519A528579A5332B3AF5E4941 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		69C08DB5B2A272ED180820ACF99CB49C /* DSNestedAccordion-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32601546CE0D1EFA6AD6D84F5CFF877C /* DSNestedAccordion-dummy.m */; };
 		6C67600EE119DE9DC86E48DF67986C76 /* GZIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1518A80741F1362C9869EF5BDC9F9 /* GZIP-dummy.m */; };
-		6D2752CC15EAA835859B5FD2919C7228 /* CollapsibleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A98CEF0B58B9506E29DFD05AD8E8E6 /* CollapsibleTextView.swift */; };
-		6EAC4330912753ECEB42140B0EB5203E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		76CF6A7231A68F9204507CF08AF66E25 /* NSException+DSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89D46E847C08BE6E24D6D6EBA179E8 /* NSException+DSException.m */; };
 		7CD6B631B42CB1877BAAB3B6B00E68D6 /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E638931A3A1FBD9C74574CBFD9CA5757 /* Coding.swift */; };
 		7E434C3E0C517300F3120F5FFE4A426A /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE04CDB44687EA297474D97573DF99A /* Action.swift */; };
-		82F50A365927FE4123563B08B881F7F9 /* CollapsibleTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE14F1757FBE5440CAD3C59CEA3B491 /* CollapsibleTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		878BEFEED2F9BC5C56212C9FE87100D5 /* StoreSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D791BBF42AA01D4A8C1239553DD439CC /* StoreSubscriber.swift */; };
+		8CF96BD1509306BC2C87ADA140C7E3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8272FE49720904ADB5DE3D77EF5D844 /* ViewController.swift */; };
 		9BEC7A31E17DF394BF43ED760719B603 /* MailingListParser-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4327B43C804F0655BA7B11C6FB3381 /* MailingListParser-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A4B65ABA1471B9C967497ED0E9A96005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AF40EB9E3EB1332B5C3456BD9CBBE /* ViewController.swift */; };
 		AC1DD3E62CF9E2103BB41B328107A2CD /* MailingListParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4E9FA9EAD102802F692E4E31FB29D4 /* MailingListParser-dummy.m */; };
 		AE09D7F1469DFE8AE31D9007E6B62CD6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3208F0BDC3E2DB4D1777A18523F9622 /* State.swift */; };
 		AF045BE50F4A51CE28D2358E6E88CCAD /* DSCellLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = A325B9FF0D4FE206AC08D738081D3D5E /* DSCellLevel.m */; };
@@ -47,14 +46,16 @@
 		BE351A56E6E5B39CC903A425D7CAA11B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		C18BF013CA170EAC27E283B6BCB08A5D /* DSCellLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B27DCE174B2E26AADE46E955D22F36F /* DSCellLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C31B627B7908EC0310CF3CDD74F862F4 /* MailingListParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 86CDA638D3ED1AC091A3204650F01DCA /* MailingListParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C85313116C4FCE350C56C79B822CB0BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B17FE520FD76EA37A343ACAD5C7DED /* AppDelegate.swift */; };
+		CE689DA29F82EC1F12F14250CE94AFF5 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A1C6DC488A0A33F1188F74F3A7B7B5 /* RegionView.swift */; };
 		CFE0DCF397567C1BEE4867777302E804 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA326D20AF0C85EE3D838F98E64A80 /* StoreType.swift */; };
 		D054E6B1B871A65719ECE03D780F8F09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		D16F3FFB8FEE754CF0A7EEE393A6232D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9F656E5731DDD3F24A7D9873489C82 /* AppDelegate.swift */; };
 		D614697BB674F21D2C5E8CFF332FED45 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED86061FD865E7BFA179846635B6374 /* Reducer.swift */; };
 		D73BD1B3BBBB68D8C975EB2A63456500 /* DSCellPathTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 02131F475D1E99CB5EA948379A069691 /* DSCellPathTracker.m */; };
 		DCCA96CCF48D4517BE3A128BCC173515 /* ReSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF5744F335CAAD6146E48F5C03410B /* ReSwift-dummy.m */; };
 		DD3A0817C155FB7B9B0C08A8BBC66AFE /* GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DEB8922B8D974403DD1D97A4EAD1A7 /* GZIP.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E908CF5EA808CB3F1731957E56675007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		EB4D892A5BB3E72F8E7F06B60FD02045 /* CollapsibleTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7253055CB3ADC005B4696888A07CAF8 /* CollapsibleTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB2657C953F93CE88AE432CF48F9E6F5 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B1E761D94747D5124012A47986FD0 /* Middleware.swift */; };
 		FD385BA370C6D8DA250C096EB21E44E8 /* MailingListMessageHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F39B295C5D920FC2DDE20803085988 /* MailingListMessageHeaders.swift */; };
 /* End PBXBuildFile section */
@@ -92,7 +93,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0782BBD04B8AC7A0273295CEFE2B406E;
+			remoteGlobalIDString = F6A4880CFD5F4178799AFD14F3AF5A4B;
 			remoteInfo = CollapsibleTextView;
 		};
 /* End PBXContainerItemProxy section */
@@ -100,12 +101,13 @@
 /* Begin PBXFileReference section */
 		02131F475D1E99CB5EA948379A069691 /* DSCellPathTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCellPathTracker.m; path = Pod/Classes/DSCellPathTracker.m; sourceTree = "<group>"; };
 		0460F820DB9EA8DEFDC638AD522F8DC3 /* GZIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GZIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07580ABADF8737EFEF61AC91368E1C57 /* CollapsibleTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTextView-prefix.pch"; sourceTree = "<group>"; };
 		0BD1518A80741F1362C9869EF5BDC9F9 /* GZIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GZIP-dummy.m"; sourceTree = "<group>"; };
 		0E30CD48205D8F9D6EFE51608AC61F92 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTextView.xcconfig; sourceTree = "<group>"; };
 		1473C83F55E18088BAEC45E89326BE40 /* DSNestedAccordion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DSNestedAccordion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14E1947BEA3D2D18F5136FE879D24010 /* CollapsibleTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CollapsibleTextView.h; sourceTree = "<group>"; };
 		14F56A3BB3E7B115AFF7EC08FBEF4CB9 /* Pods-Swift Mailing List-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swift Mailing List-acknowledgements.plist"; sourceTree = "<group>"; };
+		191C75C02D9000E5F8B8454C3138F233 /* CollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
+		1E9F656E5731DDD3F24A7D9873489C82 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FEF5744F335CAAD6146E48F5C03410B /* ReSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReSwift-dummy.m"; sourceTree = "<group>"; };
 		21C602A8B976041BC656E4796EF3FA2C /* MailingListParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MailingListParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220E8410DEFA8476B80DB3DDB1A0C0CE /* Pods-Swift Mailing List-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swift Mailing List-frameworks.sh"; sourceTree = "<group>"; };
@@ -127,8 +129,8 @@
 		4B4E9FA9EAD102802F692E4E31FB29D4 /* MailingListParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MailingListParser-dummy.m"; sourceTree = "<group>"; };
 		4BE4AF5A475C505FB911B3E51EC21402 /* GZIP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GZIP-umbrella.h"; sourceTree = "<group>"; };
 		4E4327B43C804F0655BA7B11C6FB3381 /* MailingListParser-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MailingListParser-umbrella.h"; sourceTree = "<group>"; };
+		4F788FCA40E1EB6E60F423E764243F80 /* CollapsibleTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CollapsibleTextView.xcconfig; sourceTree = "<group>"; };
 		54EA326D20AF0C85EE3D838F98E64A80 /* StoreType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreType.swift; path = ReSwift/CoreTypes/StoreType.swift; sourceTree = "<group>"; };
-		57A98CEF0B58B9506E29DFD05AD8E8E6 /* CollapsibleTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollapsibleTextView.swift; sourceTree = "<group>"; };
 		5B27DCE174B2E26AADE46E955D22F36F /* DSCellLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCellLevel.h; path = Pod/Classes/DSCellLevel.h; sourceTree = "<group>"; };
 		5B74D569294D89BAD1E4427D65D7B7B8 /* DSNestedAccordion-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSNestedAccordion-umbrella.h"; sourceTree = "<group>"; };
 		5C64B6390D4B38EE2BE47C89BC9E2CB1 /* NSException+DSException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSException+DSException.h"; path = "Pod/Classes/NSException+DSException.h"; sourceTree = "<group>"; };
@@ -143,15 +145,14 @@
 		795145A883DEA180B2EF231AC1C57A86 /* MailingListParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListParser.swift; sourceTree = "<group>"; };
 		7BDA7CF2105AF6F537B46B16A4B7F760 /* DSNestedAccordion-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSNestedAccordion-prefix.pch"; sourceTree = "<group>"; };
 		80BF04FE431A082F6D30B114D96BE495 /* DSNestedAccordion.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DSNestedAccordion.modulemap; sourceTree = "<group>"; };
-		819AF40EB9E3EB1332B5C3456BD9CBBE /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		853DFBD20328C860A529D94162F5EB39 /* ReSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CDA638D3ED1AC091A3204650F01DCA /* MailingListParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MailingListParser.h; sourceTree = "<group>"; };
-		92B6C1B124579215152F163409E83AB0 /* CollapsibleTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTextView-dummy.m"; sourceTree = "<group>"; };
 		92DB57D6C862DE62ED5F2A6537B15F4E /* ReSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReSwift-prefix.pch"; sourceTree = "<group>"; };
 		96F39B295C5D920FC2DDE20803085988 /* MailingListMessageHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessageHeaders.swift; sourceTree = "<group>"; };
 		9C89D46E847C08BE6E24D6D6EBA179E8 /* NSException+DSException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSException+DSException.m"; path = "Pod/Classes/NSException+DSException.m"; sourceTree = "<group>"; };
 		A3208F0BDC3E2DB4D1777A18523F9622 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = ReSwift/CoreTypes/State.swift; sourceTree = "<group>"; };
 		A325B9FF0D4FE206AC08D738081D3D5E /* DSCellLevel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSCellLevel.m; path = Pod/Classes/DSCellLevel.m; sourceTree = "<group>"; };
+		A8272FE49720904ADB5DE3D77EF5D844 /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A851B400888DFA220A0BDC5FDDA0BF50 /* Pods_Swift_Mailing_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Mailing_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReSwift.xcconfig; sourceTree = "<group>"; };
 		ACA273157684AAB19A10CBDF5A78DB23 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,27 +166,28 @@
 		C64E7D18BCBCEF7124FD3686EF63B3AB /* MailingListParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MailingListParser-prefix.pch"; sourceTree = "<group>"; };
 		CED86061FD865E7BFA179846635B6374 /* Reducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reducer.swift; path = ReSwift/CoreTypes/Reducer.swift; sourceTree = "<group>"; };
 		CF552CB4F3EBAAD5FBA2FDF2D316BB61 /* MailingListMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MailingListMessage.swift; sourceTree = "<group>"; };
+		D202C61D7586A176C2C9275F77FCF161 /* CollapsibleTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CollapsibleTextView-dummy.m"; sourceTree = "<group>"; };
 		D63260931E23009E715DC387FD21D0AC /* Pods-Swift Mailing List-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swift Mailing List-dummy.m"; sourceTree = "<group>"; };
+		D7253055CB3ADC005B4696888A07CAF8 /* CollapsibleTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTextView-umbrella.h"; sourceTree = "<group>"; };
 		D791BBF42AA01D4A8C1239553DD439CC /* StoreSubscriber.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoreSubscriber.swift; path = ReSwift/CoreTypes/StoreSubscriber.swift; sourceTree = "<group>"; };
-		DBE14F1757FBE5440CAD3C59CEA3B491 /* CollapsibleTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTextView-umbrella.h"; sourceTree = "<group>"; };
 		DCB559C89520DE5F3149D8CA9DEDE5F2 /* GZIP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GZIP-prefix.pch"; sourceTree = "<group>"; };
-		DE5639CF5FBD19815E4CECC662D73058 /* CollapsibleTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CollapsibleTextView.modulemap; sourceTree = "<group>"; };
 		DF2AEDC0B27E19FCF9BE3536942DF138 /* MailingListParser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MailingListParser.modulemap; sourceTree = "<group>"; };
+		E3A1C6DC488A0A33F1188F74F3A7B7B5 /* RegionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		E638931A3A1FBD9C74574CBFD9CA5757 /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = ReSwift/Utils/Coding.swift; sourceTree = "<group>"; };
-		EA0FAC90EDD3A283EC0F530E87A47157 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA301C8C730ECF9A49CB29EEBA5C0962 /* TypeHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TypeHelper.swift; path = ReSwift/Utils/TypeHelper.swift; sourceTree = "<group>"; };
 		EB41630BA961140D3701FE00D9766649 /* Pods-Swift Mailing List-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swift Mailing List-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EFAAAC0DADCAEE7660643AE191787D5B /* DSCellPathTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSCellPathTracker.h; path = Pod/Classes/DSCellPathTracker.h; sourceTree = "<group>"; };
-		F7B17FE520FD76EA37A343ACAD5C7DED /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB58D61572047F2D2EA20BC9E550EF6C /* CollapsibleTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CollapsibleTextView.h; sourceTree = "<group>"; };
+		F36F6A459F0E10E2E540951B05859FAB /* CollapsibleTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CollapsibleTextView.modulemap; sourceTree = "<group>"; };
+		F5A31873914924B9B1C0BD06288F9E64 /* CollapsibleTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CollapsibleTextView-prefix.pch"; sourceTree = "<group>"; };
+		FB7EEC26B0A7732B84CD07A19A7062D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6FD36C4D3CCDC1569136BF200F8701DD /* Frameworks */ = {
+		0BDCFD935B1B78CF58D679F7AC8F7ED0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EAC4330912753ECEB42140B0EB5203E /* Foundation.framework in Frameworks */,
+				63FE8F2519A528579A5332B3AF5E4941 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,20 +234,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		000A2734DCDF42945A588C7A4308DDA4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DE5639CF5FBD19815E4CECC662D73058 /* CollapsibleTextView.modulemap */,
-				125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */,
-				92B6C1B124579215152F163409E83AB0 /* CollapsibleTextView-dummy.m */,
-				07580ABADF8737EFEF61AC91368E1C57 /* CollapsibleTextView-prefix.pch */,
-				DBE14F1757FBE5440CAD3C59CEA3B491 /* CollapsibleTextView-umbrella.h */,
-				EA0FAC90EDD3A283EC0F530E87A47157 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Swift Mailing List/Pods/Target Support Files/CollapsibleTextView";
-			sourceTree = "<group>";
-		};
 		1FF91B43F848249F2358FEB670A0EB2D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,7 +265,7 @@
 		39411CF412BA6FE8252618E943351637 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4BE5ACCEF9963FA328D1E8B146173699 /* CollapsibleTextView */,
+				F6011CE993DB41A4A677A3271374CE3D /* CollapsibleTextView */,
 				B1F6856275F7AFB9C0FBF586FFCB0CE9 /* MailingListParser */,
 			);
 			name = "Development Pods";
@@ -292,16 +280,6 @@
 			);
 			name = Pods;
 			sourceTree = "<group>";
-		};
-		4BE5ACCEF9963FA328D1E8B146173699 /* CollapsibleTextView */ = {
-			isa = PBXGroup;
-			children = (
-				8EAEE75038C12435EF5F47D11C3B26C9 /* CollapsibleTextView */,
-				000A2734DCDF42945A588C7A4308DDA4 /* Support Files */,
-			);
-			name = CollapsibleTextView;
-			path = /Users/matthewpalmer/dev/ios/CollapsibleTextView;
-			sourceTree = "<absolute>";
 		};
 		53D577B27DB7970953FE0E3C4FF7B486 /* Support Files */ = {
 			isa = PBXGroup;
@@ -386,17 +364,6 @@
 			path = DSNestedAccordion;
 			sourceTree = "<group>";
 		};
-		8EAEE75038C12435EF5F47D11C3B26C9 /* CollapsibleTextView */ = {
-			isa = PBXGroup;
-			children = (
-				F7B17FE520FD76EA37A343ACAD5C7DED /* AppDelegate.swift */,
-				FB58D61572047F2D2EA20BC9E550EF6C /* CollapsibleTextView.h */,
-				57A98CEF0B58B9506E29DFD05AD8E8E6 /* CollapsibleTextView.swift */,
-				819AF40EB9E3EB1332B5C3456BD9CBBE /* ViewController.swift */,
-			);
-			path = CollapsibleTextView;
-			sourceTree = "<group>";
-		};
 		A14487C956839388E817C312F1E6C5B7 /* ReSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +405,18 @@
 			path = /Users/matthewpalmer/dev/ios/MailingListParser;
 			sourceTree = "<absolute>";
 		};
+		B93E4EC803102126DC85DF9CE9183947 /* CollapsibleTextView */ = {
+			isa = PBXGroup;
+			children = (
+				1E9F656E5731DDD3F24A7D9873489C82 /* AppDelegate.swift */,
+				14E1947BEA3D2D18F5136FE879D24010 /* CollapsibleTextView.h */,
+				191C75C02D9000E5F8B8454C3138F233 /* CollapsibleTextViewDataSource.swift */,
+				E3A1C6DC488A0A33F1188F74F3A7B7B5 /* RegionView.swift */,
+				A8272FE49720904ADB5DE3D77EF5D844 /* ViewController.swift */,
+			);
+			path = CollapsibleTextView;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +431,20 @@
 				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		C6BBED3A2AFBA4040C5FBB491E043636 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F36F6A459F0E10E2E540951B05859FAB /* CollapsibleTextView.modulemap */,
+				4F788FCA40E1EB6E60F423E764243F80 /* CollapsibleTextView.xcconfig */,
+				D202C61D7586A176C2C9275F77FCF161 /* CollapsibleTextView-dummy.m */,
+				F5A31873914924B9B1C0BD06288F9E64 /* CollapsibleTextView-prefix.pch */,
+				D7253055CB3ADC005B4696888A07CAF8 /* CollapsibleTextView-umbrella.h */,
+				FB7EEC26B0A7732B84CD07A19A7062D2 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Swift Mailing List/Pods/Target Support Files/CollapsibleTextView";
 			sourceTree = "<group>";
 		};
 		C7FC0FB5206F5A931120FEB4B489DE25 /* Support Files */ = {
@@ -478,15 +471,25 @@
 			path = GZIP;
 			sourceTree = "<group>";
 		};
+		F6011CE993DB41A4A677A3271374CE3D /* CollapsibleTextView */ = {
+			isa = PBXGroup;
+			children = (
+				B93E4EC803102126DC85DF9CE9183947 /* CollapsibleTextView */,
+				C6BBED3A2AFBA4040C5FBB491E043636 /* Support Files */,
+			);
+			name = CollapsibleTextView;
+			path = /Users/matthewpalmer/dev/ios/CollapsibleTextView;
+			sourceTree = "<absolute>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1D64D4ECA1E8E1F1383684DC5CD59283 /* Headers */ = {
+		1684183BFD3DF2BAA567234E1B8B88EB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F50A365927FE4123563B08B881F7F9 /* CollapsibleTextView-umbrella.h in Headers */,
-				6917D7FABCBBD8BDBEA1A2BF4097EB22 /* CollapsibleTextView.h in Headers */,
+				EB4D892A5BB3E72F8E7F06B60FD02045 /* CollapsibleTextView-umbrella.h in Headers */,
+				60ED4FCBE2A8512328F1D523D7767DB1 /* CollapsibleTextView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,23 +543,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0782BBD04B8AC7A0273295CEFE2B406E /* CollapsibleTextView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C928A5D8EFE6935673130B8CD972577 /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */;
-			buildPhases = (
-				7EF0316066F37E4CC500F1C3EC00E766 /* Sources */,
-				6FD36C4D3CCDC1569136BF200F8701DD /* Frameworks */,
-				1D64D4ECA1E8E1F1383684DC5CD59283 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CollapsibleTextView;
-			productName = CollapsibleTextView;
-			productReference = 33B0A9FB01FACF9171B1757A8563C95D /* CollapsibleTextView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		2ECE7E05FFC7BC02313362611FD82949 /* Pods-Swift Mailing List */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3458D1A8BBF366375626E46F82097905 /* Build configuration list for PBXNativeTarget "Pods-Swift Mailing List" */;
@@ -647,6 +633,23 @@
 			productReference = 853DFBD20328C860A529D94162F5EB39 /* ReSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		F6A4880CFD5F4178799AFD14F3AF5A4B /* CollapsibleTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6666F2C4FEC890800C5FE27BFD3976DF /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */;
+			buildPhases = (
+				6368EEF71471DDE7D41E90EFB388FF9B /* Sources */,
+				0BDCFD935B1B78CF58D679F7AC8F7ED0 /* Frameworks */,
+				1684183BFD3DF2BAA567234E1B8B88EB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollapsibleTextView;
+			productName = CollapsibleTextView;
+			productReference = 33B0A9FB01FACF9171B1757A8563C95D /* CollapsibleTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -668,7 +671,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0782BBD04B8AC7A0273295CEFE2B406E /* CollapsibleTextView */,
+				F6A4880CFD5F4178799AFD14F3AF5A4B /* CollapsibleTextView */,
 				7E2DC4B479673579C992E80F927963B4 /* DSNestedAccordion */,
 				B347B467C0E4BBDD23C010C9736B65AA /* GZIP */,
 				66241D4532391C20FAE8E65120B7E8DD /* MailingListParser */,
@@ -731,14 +734,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EF0316066F37E4CC500F1C3EC00E766 /* Sources */ = {
+		6368EEF71471DDE7D41E90EFB388FF9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C85313116C4FCE350C56C79B822CB0BF /* AppDelegate.swift in Sources */,
-				50CB3B39220FE955D2EC8078F6EF2205 /* CollapsibleTextView-dummy.m in Sources */,
-				6D2752CC15EAA835859B5FD2919C7228 /* CollapsibleTextView.swift in Sources */,
-				A4B65ABA1471B9C967497ED0E9A96005 /* ViewController.swift in Sources */,
+				D16F3FFB8FEE754CF0A7EEE393A6232D /* AppDelegate.swift in Sources */,
+				04A0E03D10065990AA61AADC9642AB41 /* CollapsibleTextView-dummy.m in Sources */,
+				2185C3E6421B49D902A2F4690066B8C9 /* CollapsibleTextViewDataSource.swift in Sources */,
+				CE689DA29F82EC1F12F14250CE94AFF5 /* RegionView.swift in Sources */,
+				8CF96BD1509306BC2C87ADA140C7E3CE /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,7 +761,7 @@
 		10A9BFF220B6EC5C02AC6946674ED09A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CollapsibleTextView;
-			target = 0782BBD04B8AC7A0273295CEFE2B406E /* CollapsibleTextView */;
+			target = F6A4880CFD5F4178799AFD14F3AF5A4B /* CollapsibleTextView */;
 			targetProxy = AFF3BA618CA80A741D7EE9084D9BDC62 /* PBXContainerItemProxy */;
 		};
 		26F0D936A013FEBD3E12ECE97D028B0B /* PBXTargetDependency */ = {
@@ -787,9 +791,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C0EEF4BA4C44AF60F518D967725BDD0 /* Release */ = {
+		06A089EC536D8325F3C77E615A53F474 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */;
+			baseConfigurationReference = 4F788FCA40E1EB6E60F423E764243F80 /* CollapsibleTextView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -798,14 +802,42 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MailingListParser/MailingListParser-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MailingListParser/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTextView/CollapsibleTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollapsibleTextView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MailingListParser/MailingListParser.modulemap";
+				MODULEMAP_FILE = "Target Support Files/CollapsibleTextView/CollapsibleTextView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CollapsibleTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		07E7B7E0FE62CAEB0375DA8DEB578245 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReSwift/ReSwift.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MailingListParser;
+				PRODUCT_NAME = ReSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -814,7 +846,7 @@
 			};
 			name = Release;
 		};
-		0C5DFA4F508595F7B94434550B593789 /* Debug */ = {
+		33A3391F888C9402AA8872831043D49A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E056F9630D730B3B3E1495BDEE631AE /* Pods-Swift Mailing List.debug.xcconfig */;
 			buildSettings = {
@@ -827,7 +859,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-Swift Mailing List/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.modulemap";
@@ -845,9 +877,9 @@
 			};
 			name = Debug;
 		};
-		249CD83500145E6206260091D4358490 /* Release */ = {
+		37307E96E4FF3812657FED572C3B5802 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */;
+			baseConfigurationReference = AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -856,95 +888,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTextView/CollapsibleTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CollapsibleTextView/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MailingListParser/MailingListParser-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MailingListParser/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CollapsibleTextView/CollapsibleTextView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = CollapsibleTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		739DBC896799BD3B89B19CDB7B89759E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69D334C318AFC143A193CAD105E934E8 /* GZIP.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GZIP/GZIP-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GZIP/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GZIP/GZIP.modulemap";
+				MODULEMAP_FILE = "Target Support Files/MailingListParser/MailingListParser.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GZIP;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		900F21257CD2B64304219380D87C66A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38D2DBBFBBFA086B7EF897EE1EE59828 /* DSNestedAccordion.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DSNestedAccordion/DSNestedAccordion-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DSNestedAccordion/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DSNestedAccordion/DSNestedAccordion.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DSNestedAccordion;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9CA5E364C2F448CBDAA5FB185169DC60 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 125561A087B53C221CC580CB759D8FBE /* CollapsibleTextView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTextView/CollapsibleTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CollapsibleTextView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CollapsibleTextView/CollapsibleTextView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = CollapsibleTextView;
+				PRODUCT_NAME = MailingListParser;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -954,7 +905,34 @@
 			};
 			name = Debug;
 		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		53123D42DED2C1FCF454FA1EF7AEABC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F788FCA40E1EB6E60F423E764243F80 /* CollapsibleTextView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CollapsibleTextView/CollapsibleTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CollapsibleTextView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CollapsibleTextView/CollapsibleTextView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CollapsibleTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -986,72 +964,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		AE7FCBB7E76C751A8E59C4D9ED6E2EFE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48A45F2890C217DB6D2DE83781140EA8 /* Pods-Swift Mailing List.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Swift Mailing List/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Swift_Mailing_List;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C05A68125469352E0826336EA6E9A5D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReSwift/ReSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C8C91D5E37BF81709495FC9E32F64777 /* Debug */ = {
+		6A37A6EE4B8D1135216B7F6452CA33F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AED948309A838EE6568EB312878DD6BB /* MailingListParser.xcconfig */;
 			buildSettings = {
@@ -1065,66 +985,11 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MailingListParser/MailingListParser-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MailingListParser/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MailingListParser/MailingListParser.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MailingListParser;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CEA0A790F1C702EF6F6F4327E32789A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38D2DBBFBBFA086B7EF897EE1EE59828 /* DSNestedAccordion.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DSNestedAccordion/DSNestedAccordion-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DSNestedAccordion/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DSNestedAccordion/DSNestedAccordion.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DSNestedAccordion;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E391D032651ED93D692E2F4EE8D91233 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69D334C318AFC143A193CAD105E934E8 /* GZIP.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GZIP/GZIP-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GZIP/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GZIP/GZIP.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GZIP;
+				PRODUCT_NAME = MailingListParser;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1133,7 +998,7 @@
 			};
 			name = Release;
 		};
-		F5275CED337171A7B1FEADABFFC5ED13 /* Release */ = {
+		7096CFE8846C4DC14810A3FE57EF722D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A8EFC4DC1E6B9A4B0F11D3717035F075 /* ReSwift.xcconfig */;
 			buildSettings = {
@@ -1147,20 +1012,48 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ReSwift/ReSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ReSwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ReSwift/ReSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = ReSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		725614FEBFBD365CDA8CB46F9B1B43B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D2DBBFBBFA086B7EF897EE1EE59828 /* DSNestedAccordion.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DSNestedAccordion/DSNestedAccordion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DSNestedAccordion/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DSNestedAccordion/DSNestedAccordion.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DSNestedAccordion;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1187,10 +1080,121 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87C2CF8287A34E87E63CFC0697B49C5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48A45F2890C217DB6D2DE83781140EA8 /* Pods-Swift Mailing List.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Swift Mailing List/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Swift_Mailing_List;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		99BDC7BA1D6DE8DC57B3C8D6864220B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69D334C318AFC143A193CAD105E934E8 /* GZIP.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GZIP/GZIP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GZIP/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GZIP/GZIP.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GZIP;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A7849A769AEC9AE728D542AA70478C89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69D334C318AFC143A193CAD105E934E8 /* GZIP.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GZIP/GZIP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GZIP/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GZIP/GZIP.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GZIP;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DA2312B0420628B4E57E8D641F8017D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38D2DBBFBBFA086B7EF897EE1EE59828 /* DSNestedAccordion.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DSNestedAccordion/DSNestedAccordion-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DSNestedAccordion/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DSNestedAccordion/DSNestedAccordion.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DSNestedAccordion;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1200,8 +1204,8 @@
 		0A9FA91A9DC17129EAAEDFB1AA077198 /* Build configuration list for PBXNativeTarget "MailingListParser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8C91D5E37BF81709495FC9E32F64777 /* Debug */,
-				0C0EEF4BA4C44AF60F518D967725BDD0 /* Release */,
+				37307E96E4FF3812657FED572C3B5802 /* Debug */,
+				6A37A6EE4B8D1135216B7F6452CA33F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1209,17 +1213,8 @@
 		12A91C9A59280FDC4F62A76F2A807944 /* Build configuration list for PBXNativeTarget "DSNestedAccordion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEA0A790F1C702EF6F6F4327E32789A1 /* Debug */,
-				900F21257CD2B64304219380D87C66A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1C928A5D8EFE6935673130B8CD972577 /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9CA5E364C2F448CBDAA5FB185169DC60 /* Debug */,
-				249CD83500145E6206260091D4358490 /* Release */,
+				725614FEBFBD365CDA8CB46F9B1B43B6 /* Debug */,
+				DA2312B0420628B4E57E8D641F8017D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1227,8 +1222,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
+				74857149DC1E0D599B8A01A78349A926 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1236,8 +1231,17 @@
 		3458D1A8BBF366375626E46F82097905 /* Build configuration list for PBXNativeTarget "Pods-Swift Mailing List" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C5DFA4F508595F7B94434550B593789 /* Debug */,
-				AE7FCBB7E76C751A8E59C4D9ED6E2EFE /* Release */,
+				33A3391F888C9402AA8872831043D49A /* Debug */,
+				87C2CF8287A34E87E63CFC0697B49C5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6666F2C4FEC890800C5FE27BFD3976DF /* Build configuration list for PBXNativeTarget "CollapsibleTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A089EC536D8325F3C77E615A53F474 /* Debug */,
+				53123D42DED2C1FCF454FA1EF7AEABC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1245,8 +1249,8 @@
 		B035BE8400726A0B9C5BBC15E341E130 /* Build configuration list for PBXNativeTarget "GZIP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				739DBC896799BD3B89B19CDB7B89759E /* Debug */,
-				E391D032651ED93D692E2F4EE8D91233 /* Release */,
+				99BDC7BA1D6DE8DC57B3C8D6864220B3 /* Debug */,
+				A7849A769AEC9AE728D542AA70478C89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1254,8 +1258,8 @@
 		B4240BA690E9207D4C6232B2053AF6B3 /* Build configuration list for PBXNativeTarget "ReSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C05A68125469352E0826336EA6E9A5D9 /* Debug */,
-				F5275CED337171A7B1FEADABFFC5ED13 /* Release */,
+				7096CFE8846C4DC14810A3FE57EF722D /* Debug */,
+				07E7B7E0FE62CAEB0375DA8DEB578245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
