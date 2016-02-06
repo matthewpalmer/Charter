@@ -8,6 +8,6 @@ target 'Swift Mailing List' do
   pod 'MailingListParser', :path => '~/dev/ios/MailingListParser'
   pod 'CollapsibleTextView', :path => '~/dev/ios/CollapsibleTextView'
   pod 'GZIP', '~> 1.1.1'
-  pod 'DSNestedAccordion', :git => 'https://github.com/MattKiazyk/DSNestedAccordion.git'
+  pod 'MMMarkdown', '~> 0.5.1'
 end
 

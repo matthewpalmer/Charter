@@ -125,26 +125,70 @@ private class ExpandedRegionView: UIView {
     }
 }
 
+import MMMarkdown
+
+private let styleHTML = "<style type='text/css'>" +
+    "body { font-family: -apple-system, 'Helvetica Neue', 'Lucida Grande'; font-size: 12pt; line-height: 1.3; }" +
+    "blockquote { font-style: italic; color: #404C51; }" +
+    "</style>"
+
+private func attributedStringForTextView(text: String) -> NSAttributedString? {
+    guard let markdownHTML = try? styleHTML + MMMarkdown.HTMLStringWithMarkdown(text as String) else {
+        return nil
+    }
+    
+    guard let data = markdownHTML.dataUsingEncoding(NSUTF16StringEncoding, allowLossyConversion: false) else {
+        return nil
+    }
+    
+    let options = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+    
+    guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
+        return nil
+    }
+    
+    return attributedString
+}
+
 class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
+    override init(text: String, initiallyCollapsedRegions: [NSRange]) {
+        super.init(text: text, initiallyCollapsedRegions: initiallyCollapsedRegions)
+    }
+    
     override func staticRegionForIndex(index: Int, text: String) -> UIView {
         let view = UITextView()
-        view.userInteractionEnabled = false
+        view.editable = false
         view.scrollEnabled = false
+        view.selectable = true
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = text.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
         view.font = UIFont.systemFontOfSize(UIFont.systemFontSize())
+        
+        guard let attributedString = attributedStringForTextView(text) else {
+            view.text = text.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            return view
+        }
+        
+        view.attributedText = attributedString
         return view
     }
     
     override func expandedRegionForIndex(index: Int, text: String) -> UIView {
         let view = ExpandedRegionView()
         
-        view.textView.text = text.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-        
         view.collapseIndicator.tag = index
         let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didTapRegion:")
         view.collapseIndicator.removeGestureRecognizer(tapGestureRecognizer)
         view.collapseIndicator.addGestureRecognizer(tapGestureRecognizer)
+        view.textView.editable = false
+        view.textView.scrollEnabled = false
+        view.textView.selectable = true
+        
+        guard let attributedString = attributedStringForTextView(text) else {
+            view.textView.text = text.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            return view
+        }
+        
+        view.textView.attributedText = attributedString
         
         return view
     }

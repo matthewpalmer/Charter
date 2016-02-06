@@ -85,15 +85,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Swift Mailing List/CollapsibleTextView.framework"
-  install_framework "Pods-Swift Mailing List/DSNestedAccordion.framework"
   install_framework "Pods-Swift Mailing List/GZIP.framework"
+  install_framework "Pods-Swift Mailing List/MMMarkdown.framework"
   install_framework "Pods-Swift Mailing List/MailingListParser.framework"
   install_framework "Pods-Swift Mailing List/ReSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Swift Mailing List/CollapsibleTextView.framework"
-  install_framework "Pods-Swift Mailing List/DSNestedAccordion.framework"
   install_framework "Pods-Swift Mailing List/GZIP.framework"
+  install_framework "Pods-Swift Mailing List/MMMarkdown.framework"
   install_framework "Pods-Swift Mailing List/MailingListParser.framework"
   install_framework "Pods-Swift Mailing List/ReSwift.framework"
 fi

@@ -14,13 +14,14 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     var rootEmails: [EmailTreeNode] = [] {
         didSet {
             indentationForEmail = [Email: Int]()
+            HTMLContentForEmail = [Email: String]()
             textViewDataSources = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
             orderedEmails = orderedEmailsFromTree(rootEmails).map { $0.email }
         }
     }
     
     var cellDelegate: FullEmailMessageTableViewCellDelegate?
-    
+    private var HTMLContentForEmail: [Email: String] = [Email: String]()
     private var orderedEmails: [Email] = []
     private var indentationForEmail = [Email: Int]()
     
@@ -311,7 +312,7 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
     func threadsViewControllerRequestsReloadedData() {
         if mainStore.state.selectedMailingList == .SwiftEvolution {
             mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
-            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: true))
+            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: false))
         }
     }
     
