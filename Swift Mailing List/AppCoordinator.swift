@@ -131,9 +131,14 @@ class EmailFormatter {
         return df
     }()
     
+    private lazy var leadingPunctuationRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "^\\W+", options: .CaseInsensitive)
+    }()
+    
     func formatSubject(subject: String) -> String {
         let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
-        let noLeadingSpaces = leadingSpaceRegex.stringByReplacingMatchesInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count), withTemplate: "")
+        let noLeadingPunctuation = leadingPunctuationRegex.stringByReplacingMatchesInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count), withTemplate: "")
+        let noLeadingSpaces = leadingSpaceRegex.stringByReplacingMatchesInString(noLeadingPunctuation, options: [], range: NSMakeRange(0, noLeadingPunctuation.characters.count), withTemplate: "")
         return noLeadingSpaces
     }
     
