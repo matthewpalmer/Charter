@@ -10,7 +10,8 @@ import UIKit
 import CollapsibleTextView
 
 private func threeDotsToggleIndicator(lightBackground: Bool) -> UIView {
-    let view = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 26))
+    let parent = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 40)) // Gives the nutri grain piece some padding
+    let view = UIView(frame: CGRect(x: 5, y: 7, width: 60, height: 26))
     
     let background: UIColor
     let foreground: UIColor
@@ -22,6 +23,8 @@ private func threeDotsToggleIndicator(lightBackground: Bool) -> UIView {
         background = UIColor.lightGrayColor()
         foreground = UIColor.groupTableViewBackgroundColor()
     }
+    
+    parent.addSubview(view)
     
     view.backgroundColor = background
     view.layer.cornerRadius = 4
@@ -35,7 +38,7 @@ private func threeDotsToggleIndicator(lightBackground: Bool) -> UIView {
     
     view.addSubview(label)
     
-    return view
+    return parent
 }
 
 private class CollapsedRegionView: UIView {
@@ -53,7 +56,7 @@ private class CollapsedRegionView: UIView {
     }
     
     private override func intrinsicContentSize() -> CGSize {
-        let height = expandIndicator.frame.size.height + 10
+        let height = expandIndicator.frame.size.height
         let width = expandIndicator.frame.size.width
         return CGSize(width: width, height: height)
     }
@@ -113,8 +116,7 @@ private class ExpandedRegionView: UIView {
     
     private func setupCollapseIndicatorConstraints() {
         let top = NSLayoutConstraint(item: collapseIndicator, attribute: .Top, relatedBy: .Equal, toItem: textView, attribute: .Bottom, multiplier: 1, constant: 0)
-        // Slight margin
-        let bottom = NSLayoutConstraint(item: collapseIndicator, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: -10)
+        let bottom = NSLayoutConstraint(item: collapseIndicator, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
         let left = NSLayoutConstraint(item: collapseIndicator, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
         let width = NSLayoutConstraint(item: collapseIndicator, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1, constant: collapseIndicator.frame.width)
         let height = NSLayoutConstraint(item: collapseIndicator, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 1, constant: collapseIndicator.frame.height)
