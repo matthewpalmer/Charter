@@ -82,13 +82,13 @@ private class ExpandedRegionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(textView)
-        self.addSubview(collapseIndicator)
+//        self.addSubview(collapseIndicator)
         
-        setupTextViewConstraints()
-        setupCollapseIndicatorConstraints()
+//        setupTextViewConstraints()
+//        setupCollapseIndicatorConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -100,7 +100,7 @@ private class ExpandedRegionView: UIView {
     }
     
     private override func intrinsicContentSize() -> CGSize {
-        let width = textView.intrinsicContentSize().width + collapseIndicator.frame.width
+        let width = textView.intrinsicContentSize().width
         let height = textView.intrinsicContentSize().height + collapseIndicator.frame.height + 10
         return CGSize(width: width, height: height)
     }
@@ -201,19 +201,23 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
     }
     
     override func expandedRegionForIndex(index: Int, text: String) -> UIView {
-        let view = ExpandedRegionView()
+//        let view = ExpandedRegionView()
         
-        view.collapseIndicator.tag = index
-        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didTapRegion:")
-        view.collapseIndicator.removeGestureRecognizer(tapGestureRecognizer)
-        view.collapseIndicator.addGestureRecognizer(tapGestureRecognizer)
-        view.textView.editable = false
-        view.textView.scrollEnabled = false
-        view.textView.selectable = true
+//        view.collapseIndicator.tag = index
+//        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didTapRegion:")
+//        view.collapseIndicator.removeGestureRecognizer(tapGestureRecognizer)
+//        view.collapseIndicator.addGestureRecognizer(tapGestureRecognizer)
         
-        view.textView.attributedText = preloadedData[index]
+//        view.textView.editable = false
+//        view.textView.scrollEnabled = true
+//        view.textView.selectable = true
+//        view.textView.text = textForRegion(regions[index]) // preloadedData[index]
         
-        return view
+        let textView = UITextView()
+        textView.editable = false
+        textView.attributedText = preloadedData[index]
+        
+        return textView
     }
     
     override func collapsedRegionForIndex(index: Int) -> UIView {
@@ -229,7 +233,13 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
     }
     
     override func didTapRegion(gesture: UITapGestureRecognizer) {
-        super.didTapRegion(gesture)
+        guard let index = gesture.view?.tag else { return }
+        let text = textForRegion(regions[index])
+        guard let view = expandedRegionForIndex(index, text: text) as? UITextView else {
+            return
+        }
+
+        delegate?.collapsibleTextViewDataSourceNeedsPopoverViewControllerPresented(view, sender: gesture.view!)
     }
     
     class func QuoteRanges(email: String) -> [NSRange] {

@@ -23,7 +23,7 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     private var HTMLContentForEmail: [Email: String] = [Email: String]()
     private var orderedEmails: [Email] = []
     private var indentationForEmail = [Email: Int]()
-
+    private var textViewDataSources: [NSIndexPath: EmailCollapsibleTextViewDataSource] = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,8 +34,6 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         let indent = indentationForEmail[orderedEmails[indexPath.row]]
         return indent ?? 0
     }
-    
-    private var textViewDataSources: [NSIndexPath: EmailCollapsibleTextViewDataSource] = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
