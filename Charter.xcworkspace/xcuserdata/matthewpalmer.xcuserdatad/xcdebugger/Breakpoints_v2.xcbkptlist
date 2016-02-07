@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/Actions.swift"
-            timestampString = "476539029.453355"
+            timestampString = "476562686.374437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "doNetworkRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/Actions.swift"
-            timestampString = "476539088.887433"
+            timestampString = "476554069.565731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "DownloadData(_:mailingList:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/Actions.swift"
-            timestampString = "476539092.279483"
+            timestampString = "476562686.374437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "DownloadData(_:mailingList:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/Actions.swift"
-            timestampString = "476539107.780605"
+            timestampString = "476554069.565731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "doNetworkRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/Actions.swift"
-            timestampString = "476539122.101819"
+            timestampString = "476554069.565731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "doNetworkRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,107 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swift Mailing List/Actions.swift"
-            timestampString = "476539293.363334"
+            timestampString = "476554069.565731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "dispatchActionForUncompressedData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/Actions.swift"
+            timestampString = "476554069.565731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "dispatchActionForUncompressedData(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.(DownloadData (Charter.ListPeriod, mailingList : Charter.MailingList) -&gt; (Charter.AppState, ReSwift.Store&lt;Charter.AppState&gt;) -&gt; Swift.Optional&lt;ReSwift.Action&gt;).(closure #1).(dispatchActionForUncompressedData #1) (__ObjC.NSData)()"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Swift%20Mailing%20List/Swift%20Mailing%20List/Actions.swift"
+                  timestampString = "476552920.240264"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.(DownloadData (Charter.ListPeriod, mailingList : Charter.MailingList) -&gt; (Charter.AppState, ReSwift.Store&lt;Charter.AppState&gt;) -&gt; Swift.Optional&lt;ReSwift.Action&gt;).(closure #1).((dispatchActionForUncompressedData #1) (__ObjC.NSData) -&gt; ()).(closure #1)"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Swift%20Mailing%20List/Swift%20Mailing%20List/Actions.swift"
+                  timestampString = "476552920.240758"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/Actions.swift"
+            timestampString = "476554069.565731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "dispatchActionForUncompressedData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/Actions.swift"
+            timestampString = "476554069.565731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "MostRecentListPeriodForDate(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swift Mailing List/Actions.swift"
+            timestampString = "476562503.414424"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "dispatchActionForUncompressedData(_:)"
             landmarkType = "7">
          </BreakpointContent>

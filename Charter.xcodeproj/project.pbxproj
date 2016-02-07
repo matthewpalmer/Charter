@@ -581,6 +581,7 @@
 				0EE8230E1C674BE8005070AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

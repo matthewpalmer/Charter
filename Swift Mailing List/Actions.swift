@@ -81,17 +81,9 @@ func MostRecentListPeriodForDate(date: NSDate = NSDate()) -> ListPeriod {
     // The list archives are referenced by the week beginning on Monday.
     let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
     calendar.locale = NSLocale(localeIdentifier: "en-US")
-    
-    // If today is a Monday, compute for today. Otherwise, compute for the previous monday.
-    let monday: NSDate
-    
+        
     let mondayWeekday = 2
-    
-    if calendar.components(.Weekday, fromDate: date).weekday == mondayWeekday {
-        monday = date
-    } else {
-        monday = calendar.nextDateAfterDate(date, matchingUnit: NSCalendarUnit.Weekday, value: mondayWeekday, options: [.SearchBackwards, .MatchStrictly])!
-    }
+    let monday: NSDate = calendar.nextDateAfterDate(date, matchingUnit: NSCalendarUnit.Weekday, value: mondayWeekday, options: [.SearchBackwards, .MatchStrictly])!
     
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "yMMdd"
@@ -192,7 +184,10 @@ func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState
                     uncompressedData = compressedData.gunzippedData() {
                         dispatchActionForUncompressedData(uncompressedData)
                 } else {
-                    store.dispatch(SetMailingListIsRefreshing(mailingList: mailingList, isRefreshing: false))
+                    dispatch_async(dispatch_get_main_queue(), {
+                        store.dispatch(SetMailingListIsRefreshing(mailingList: mailingList, isRefreshing: false))
+                    })
+                    
                 }
             }
             
