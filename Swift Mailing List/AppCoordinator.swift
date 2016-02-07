@@ -135,6 +135,7 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if emails.count == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.emptyCellReuseIdentifier, forIndexPath: indexPath)
+            cell.selectionStyle = .None
             return cell
         }
         
@@ -294,6 +295,18 @@ class AppCoordinator: NSObject, StoreSubscriber {
 }
 
 extension AppCoordinator: ThreadsViewControllerDelegate {
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        guard let dataSource = threadsDataSourceForViewController[threadsViewController] else {
+            return nil
+        }
+        
+        if dataSource.emails.count == 0 {
+            return nil
+        }
+        
+        return indexPath
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Hmm... not totally sure about the abstraction of this.
         tableView.selectRowAtIndexPath(nil, animated: false, scrollPosition: UITableViewScrollPosition.Middle)

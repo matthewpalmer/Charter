@@ -67,13 +67,22 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         tableView.reloadData()
     }
     
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .None
+    }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
     }
     
     func presentPopover(view: UIView, sender: UIView) {
-        let size = CGSize(width: self.view.frame.width - 10, height: self.view.frame.height - 140)
+        let size: CGSize
+        
+        if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight {
+            size = CGSize(width: self.view.frame.width - 140, height: self.view.frame.height - 10)
+        } else {
+            size = CGSize(width: self.view.frame.width - 10, height: self.view.frame.height - 140)
+        }
         
         let viewController = UIViewController()
         viewController.preferredContentSize = size
