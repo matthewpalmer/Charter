@@ -38,8 +38,13 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     weak var dataSource: ThreadsViewControllerDataSource? {
         didSet {
             if tableView != nil {
-                tableView.dataSource = dataSource
-                tableView.reloadData()
+                if oldValue !== dataSource {
+                    tableView.dataSource = dataSource
+                    tableView.reloadData()
+                }
+            } else {
+                // Reset
+                dataSource = nil
             }
         }
     }

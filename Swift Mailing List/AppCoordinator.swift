@@ -113,10 +113,10 @@ class EmailFormatter {
 
 class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
     private let title: String
-    private let emails: Results<Email>
+    var emails: Results<Email>
     
     // Conflicted about this data source taking in the entire app state
-    init?(state: AppState) {
+    init(state: AppState) {
         title = state.selectedMailingList!.rawValue.name
         emails = state.emailList!
     }
@@ -156,10 +156,17 @@ class AppCoordinator: NSObject, StoreSubscriber {
         return viewController
     }()
     
-    lazy var threadsViewController: ThreadsViewController = {
+    private var threadsViewControllerForMailingList: [MailingList: ThreadsViewController] = [MailingList: ThreadsViewController]()
+    private var threadsDataSourceForViewController: [ThreadsViewController: ThreadsTableViewDataSource] = [ThreadsViewController: ThreadsTableViewDataSource]()
+    
+    func constructThreadsViewController() -> ThreadsViewController {
         let viewController = ThreadsViewController()
         viewController.delegate = self
         return viewController
+    }
+    
+    lazy var threadsViewController: ThreadsViewController = {
+        return self.constructThreadsViewController()
     }()
 
     lazy var detailTableViewDataSource: EmailThreadDetailDataSource = {
@@ -176,12 +183,6 @@ class AppCoordinator: NSObject, StoreSubscriber {
         self.detailTableViewDataSource.cellDelegate = viewController
         viewController.delegate = self
         return viewController
-    }
-    
-    var threadsTableViewDataSource: ThreadsTableViewDataSource? {
-        didSet {
-            self.threadsViewController.dataSource = threadsTableViewDataSource
-        }
     }
     
     init(navigationController: UINavigationController) {
@@ -210,7 +211,22 @@ class AppCoordinator: NSObject, StoreSubscriber {
         }
         
         if state.routeHistory.last == .Threads && state.emailList != nil && state.selectedMailingList != nil {
-            threadsTableViewDataSource = ThreadsTableViewDataSource(state: state)
+            let dataSource: ThreadsTableViewDataSource
+            if threadsDataSourceForViewController[threadsViewController] == nil {
+                dataSource = ThreadsTableViewDataSource(state: state)
+                threadsDataSourceForViewController[threadsViewController] = dataSource
+            } else {
+                dataSource = threadsDataSourceForViewController[threadsViewController]!
+            }
+            
+            // Has to be set multiple times because the first time through the state's email list will still be pointing at the previous list's email list.
+            // The second time the email list has the updated pointer.
+            if state.emailList != nil {
+                dataSource.emails = state.emailList!
+            }
+            
+            // Needs to be set multiple times because it must be done after the table view has appeared. Table view must handle selective reloading.
+            threadsViewController.dataSource = dataSource
             
             if state.mailingListIsRefreshing[state.selectedMailingList!] == true {
                 threadsViewController.beginRefreshing()
@@ -237,6 +253,15 @@ class AppCoordinator: NSObject, StoreSubscriber {
         
         switch (oldRoute, nextRoute) {
         case (.MailingLists, .Threads):
+            let viewController: ThreadsViewController
+            if threadsViewControllerForMailingList[mainStore.state.selectedMailingList!] != nil {
+                viewController = threadsViewControllerForMailingList[mainStore.state.selectedMailingList!]!
+            } else {
+                viewController = constructThreadsViewController()
+                threadsViewControllerForMailingList[mainStore.state.selectedMailingList!] = viewController
+            }
+            
+            threadsViewController = viewController
             navigationController.pushViewController(threadsViewController, animated: true)
         case (.Threads, .ThreadDetail):
             threadDetailViewController = constructThreadDetailViewController()
@@ -250,7 +275,8 @@ class AppCoordinator: NSObject, StoreSubscriber {
 extension AppCoordinator: ThreadsViewControllerDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Hmm... not totally sure about the abstraction of this.
-        guard let selectedEmail = threadsTableViewDataSource?.emails[indexPath.row] else { return }
+        tableView.selectRowAtIndexPath(nil, animated: false, scrollPosition: UITableViewScrollPosition.Middle)
+        guard let selectedEmail = threadsDataSourceForViewController[threadsViewController]?.emails[indexPath.row] else { return }
         mainStore.dispatch(ComputeAndSetThreadForEmail(selectedEmail))
         mainStore.dispatch(MoveTo(route: .ThreadDetail))
     }

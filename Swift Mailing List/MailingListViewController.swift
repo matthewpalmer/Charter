@@ -41,6 +41,7 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(MailingListViewController.reuseIdentifier)!
         cell.textLabel?.text = self.mailingLists[indexPath.row].name
+        cell.accessoryType = .DisclosureIndicator
         return cell
     }
     
@@ -53,6 +54,7 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.selectRowAtIndexPath(nil, animated: false, scrollPosition: UITableViewScrollPosition.Middle)
         delegate?.mailingListViewControllerDidSelectMailingList(mailingLists[indexPath.row])
     }
 }

@@ -85,8 +85,6 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         viewController.popoverPresentationController!.sourceRect = sender.frame
         viewController.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0) // No arrow
         
-        print("sender \(sender)")
-        
         view.frame = CGRect(origin: CGPointZero, size: CGSize(width: size.width - 10, height: size.height - 10))
         viewController.view.addSubview(view)
         

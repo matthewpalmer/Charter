@@ -164,7 +164,7 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
         let italicBodyFont = UIFont(descriptor: descriptor, size: bodyFont.pointSize)
         
         for region in regions {
-            let text = textForRegion(region)
+            let text = textForRegion(region).stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
             
             let font: UIFont
             let color: UIColor
