@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FBB759E96452F8ECD8AE9B779B12880CF8D81920" : 0,
+    "669255ED85F7807498CFC972E0C6877DC6604494" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "767DDFA2-A38D-419A-A518-8552BA6E5BA2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FBB759E96452F8ECD8AE9B779B12880CF8D81920" : "MailingListParser\/",
+    "669255ED85F7807498CFC972E0C6877DC6604494" : "CollapsibleTextView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Charter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Charter.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/_matthewpalmer\/collapsibletextview.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "669255ED85F7807498CFC972E0C6877DC6604494"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/_matthewpalmer\/mailinglistparser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FBB759E96452F8ECD8AE9B779B12880CF8D81920"
+    }
+  ]
+}

@@ -24,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Swift Mailing List.xcscheme</key>
+		<key>Pods-Charter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CD220544B80101AD2712DF2E832B078</key>
+		<key>23AB791088286CE274A36AAC5A58935A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>40B8068314C3AFAA290E9DCD9C8A38E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>66241D4532391C20FAE8E65120B7E8DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C518A5BC39E0F76CA679BA9E6E5C8F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD3EF207692E5C4D38CBE4C05B2193C5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E714EB815C09AC0F496AEE60038CEB68</key>
+		<key>DFFB505FE2EB73BCB12EAAF89B4335F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F6A4880CFD5F4178799AFD14F3AF5A4B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FB7B1A3B129F01342F67C13DAAD929CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
