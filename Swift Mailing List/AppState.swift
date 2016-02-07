@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import RealmSwift
 
 enum Route {
     case MailingLists
@@ -16,14 +17,16 @@ enum Route {
 }
 
 struct AppState: StateType {
-    var emailList: [Email] = []
+    var emailList: Results<(Email)>? = nil
+    var emailThread: [(Int, Email)]? = nil
     
     var selectedMailingList: MailingList? = nil
-    var selectedThreadWithRootMessageID: String? = nil
+//    var selectedThreadWithRootMessageID: String? = nil
     
     var mailingListIsRefreshing: [MailingList: Bool] = [
         MailingList.SwiftEvolution: false,
-        MailingList.SwiftUsers: false
+        MailingList.SwiftUsers: false,
+        MailingList.SwiftDev: false
     ]
     
     var nextRoute: Route? = nil

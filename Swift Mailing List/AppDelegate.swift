@@ -32,9 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Realm database at \(Realm.Configuration.defaultConfiguration.path)")
         
-        let action = DownloadData(MostRecentListPeriodForDate(), mailingList: .SwiftDev)
-        mainStore.dispatch(action)
-        
         return true
     }
 }

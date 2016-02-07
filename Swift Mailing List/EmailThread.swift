@@ -9,11 +9,11 @@
 import UIKit
 import RealmSwift
 
-class EmailThread: Object {
-    dynamic var rootEmailID: String = ""
-    let children: List<Email> = List<Email>()
-    
-    override static func primaryKey() -> String? {
-        return "rootEmailID"
-    }
-}
+//class EmailThread: Object {
+//    dynamic var rootEmailID: String = ""
+//    let children: List<Email> = List<Email>()
+//    
+//    override static func primaryKey() -> String? {
+//        return "rootEmailID"
+//    }
+//}

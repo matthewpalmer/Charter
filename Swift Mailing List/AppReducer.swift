@@ -30,12 +30,16 @@ struct AppReducer: Reducer {
             state?.selectedMailingList = (action as! SetSelectedMailingList).list
         }
         
-        if action is SetSelectedThreadWithRootMessageID {
-            state?.selectedThreadWithRootMessageID = (action as! SetSelectedThreadWithRootMessageID).rootMessageID
-        }
+//        if action is SetSelectedThreadWithRootMessageID {
+//            state?.selectedThreadWithRootMessageID = (action as! SetSelectedThreadWithRootMessageID).rootMessageID
+//        }
         
         if action is SetEmailList {
-            state?.emailList = (action as! SetEmailList).contents
+            state?.emailList = (action as! SetEmailList).results
+        }
+        
+        if action is SetEmailThread {
+            state?.emailThread = (action as! SetEmailThread).thread
         }
         
         if action is SetMailingListIsRefreshing {

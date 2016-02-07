@@ -17,6 +17,7 @@ class Email: Object {
     dynamic var subject: String = ""
     dynamic var inReplyTo: Email?
     let references: List<Email> = List<Email>()
+    let children: List<Email> = List<Email>()
     dynamic var mailingList: String = ""
     dynamic var content: String = ""
     

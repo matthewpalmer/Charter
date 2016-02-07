@@ -10,6 +10,7 @@ import UIKit
 import ReSwift
 
 protocol ThreadsViewControllerDelegate: class, UITableViewDelegate {
+    func threadsViewControllerRequestsInitialData()
     func threadsViewControllerRequestsReloadedData()
     func threadsViewControllerDidNavigateBackwards(threadsViewController: ThreadsViewController)
 }
@@ -72,20 +73,23 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
         
         tableView.delegate = delegate
         tableView.dataSource = dataSource
-        delegate?.threadsViewControllerRequestsReloadedData()
         
         tableView.addSubview(refreshControl)
         
         navigationItem.title = "Threads"
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        delegate?.threadsViewControllerRequestsInitialData()
+    }
+    
     func didRequestRefresh(sender: AnyObject) {
-        beginRefreshing()
+        delegate?.threadsViewControllerRequestsReloadedData()
     }
     
     func beginRefreshing() {
         refreshControl.beginRefreshing()
-        delegate?.threadsViewControllerRequestsReloadedData()
     }
     
     func endRefreshing() {

@@ -18,7 +18,11 @@ struct MoveTo: Action {
 }
 
 struct SetEmailList: Action {
-    let contents: [Email]
+    let results: Results<Email>?
+}
+
+struct SetEmailThread: Action {
+    let thread: [(Int, Email)]?
 }
 
 struct SetSelectedMailingList: Action {
@@ -38,6 +42,32 @@ struct ListPeriod {
 struct SetMailingListIsRefreshing: Action {
     let mailingList: MailingList
     let isRefreshing: Bool
+}
+
+func ComputeAndSetThreadForEmail(email: Email) -> ((_: AppState, _: Store<AppState>) -> Action?) {
+    return { _, _ in
+        func blah(root: Email, indentLevel: Int) -> [(Int, Email)] {
+            var list = [(Int, Email)]()
+            for child in root.children {
+                list.appendContentsOf(blah(child, indentLevel: indentLevel + 1))
+            }
+            return [(indentLevel, root)] + list
+        }
+        
+        let thread = blah(email, indentLevel: 0)
+        return SetEmailThread(thread: thread)
+    }
+}
+
+func RetrieveRootEmails(list: MailingList) -> ((_: AppState, _: Store<AppState>) -> Action?) {
+    return { _, _ in
+        let realm = try! Realm()
+        
+        let query = "mailingList = '\(list.rawValue.identifier)' AND inReplyTo = nil"
+        let sortedEmails = realm.objects(Email).filter(query).sorted("date", ascending: false)
+        
+        return SetEmailList(results: sortedEmails)
+    }
 }
 
 /// This function computes the most recent archival list period for a given date.
@@ -72,92 +102,84 @@ func MostRecentListPeriodForDate(date: NSDate = NSDate()) -> ListPeriod {
 }
 
 func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState, _: Store<AppState>) -> Action?) {
-    return { _, _ in
+    return { _, store in
         func dispatchActionForUncompressedData(data: NSData) {
-            guard let listString = NSString(data: data, encoding: NSUTF8StringEncoding) else { return }
-            let mailingListMessagesOpt: [MailingListMessage?] = MailingListParser(string: listString as String)
-                .emails
-                .map { return MailingListMessageParser(string: $0) }
-                .map { return MailingListMessageParserAdapter(mailingListMessageParser: $0) }
-                .map { $0.mailingListMessage }
-                .filter { $0 != nil }
-            
-            // Swift compiler fucked up for some reason
-            // mailingListMessagesOpt must have the nils filtered
-            let mailingListMessages: [MailingListMessage] = mailingListMessagesOpt.map({ (msg) -> MailingListMessage in
-                return msg!
-            })
-            
-            let emailFormatter = EmailFormatter()
-            
-            let emails: [Email] = mailingListMessages
-                .map { message in
-                    let email = Email()
-                    email.messageID = message.headers.messageID
-                    email.from = message.headers.from
-                    
-                    if let date = emailFormatter.dateStringToDate(message.headers.date) {
-                        email.date = date
-                    }
-                    
-                    email.subject = message.headers.subject
-                    email.mailingList = mailingList.rawValue.identifier
-                    email.content = message.content
-                    return email
-            }
-            
-            var messageIDToEmail: [String: Email] = [String: Email]()
-            
-            // Index by ID
-            for email in emails {
-                messageIDToEmail[email.messageID] = email
-            }
-            
-            // Add `inReplyTo` and `references`
-            for mailingListMessage in mailingListMessages {
-                if let email = messageIDToEmail[mailingListMessage.headers.messageID] {
-                    if let inReplyTo = mailingListMessage.headers.inReplyTo {
-                        let parent = messageIDToEmail[inReplyTo]
-                        email.inReplyTo = parent
-                    }
-                    
-                    for reference in mailingListMessage.headers.references {
-                        if let refEmail = messageIDToEmail[reference] {
-                            email.references.append(refEmail)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                guard let listString = NSString(data: data, encoding: NSUTF8StringEncoding) else { return }
+                let mailingListMessagesOpt: [MailingListMessage?] = MailingListParser(string: listString as String)
+                    .emails
+                    .map { return MailingListMessageParser(string: $0) }
+                    .map { return MailingListMessageParserAdapter(mailingListMessageParser: $0) }
+                    .map { $0.mailingListMessage }
+                    .filter { $0 != nil }
+                
+                // Swift compiler fucked up for some reason
+                // mailingListMessagesOpt must have the nils filtered
+                let mailingListMessages: [MailingListMessage] = mailingListMessagesOpt.map({ (msg) -> MailingListMessage in
+                    return msg!
+                })
+                
+                let emailFormatter = EmailFormatter()
+                
+                let emails: [Email] = mailingListMessages
+                    .map { message in
+                        let email = Email()
+                        email.messageID = message.headers.messageID
+                        email.from = message.headers.from
+                        
+                        if let date = emailFormatter.dateStringToDate(message.headers.date) {
+                            email.date = date
+                        }
+                        
+                        email.subject = message.headers.subject
+                        email.mailingList = mailingList.rawValue.identifier
+                        email.content = message.content
+                        return email
+                }
+                
+                var messageIDToEmail: [String: Email] = [String: Email]()
+                
+                // Index by ID
+                for email in emails {
+                    messageIDToEmail[email.messageID] = email
+                }
+                
+                // Add `inReplyTo` and `references`
+                for mailingListMessage in mailingListMessages {
+                    if let email = messageIDToEmail[mailingListMessage.headers.messageID] {
+                        if let inReplyTo = mailingListMessage.headers.inReplyTo {
+                            let parent = messageIDToEmail[inReplyTo]
+                            email.inReplyTo = parent
+                        }
+                        
+                        for reference in mailingListMessage.headers.references {
+                            if let refEmail = messageIDToEmail[reference] {
+                                email.references.append(refEmail)
+                            }
                         }
                     }
                 }
-            }
-            
-            // Now build our threads
-            // Build Parent -> [Children] mapping
-            var parentToChildren: [Email: [Email]] = [Email: [Email]]()
-            
-            for child in emails {
-                if let parent = child.inReplyTo {
-                    if parentToChildren[parent] == nil {
-                        parentToChildren[parent] = []
+                
+                // Now build our threads
+                // Build Parent -> [Children] mapping
+                
+                for child in emails {
+                    if let parent = child.inReplyTo {
+                        parent.children.append(child)
                     }
-                    
-                    parentToChildren[parent]?.append(child)
                 }
-            }
-            
-            func threadForEmail(rootEmail: Email) -> EmailThread {
-                let thread = EmailThread()
-                thread.rootEmailID = rootEmail.messageID
-                thread.children.appendContentsOf(parentToChildren[rootEmail] ?? [])
-                return thread
-            }
-            
-            let threads = emails.map(threadForEmail)
-            
-            let realm = try! Realm()
-            
-            try! realm.write {
-                realm.add(emails, update: true)
-                realm.add(threads, update: true)
-            }
+                
+                do {
+                    let realm = try Realm()
+                    try realm.write {
+                        realm.add(emails, update: true)
+                    }
+                } catch let e {
+                    print("Realm related error \(e)")
+                }
+
+                store.dispatch(SetMailingListIsRefreshing(mailingList: mailingList, isRefreshing: false))
+            })
         }
         
         func doNetworkRequest() -> Action? {

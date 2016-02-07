@@ -23,7 +23,7 @@ enum MailingList: RawRepresentable {
     
     case SwiftEvolution, SwiftUsers, SwiftDev
     
-    static var cases: [MailingList] = [.SwiftEvolution, .SwiftUsers]
+    static var cases: [MailingList] = [.SwiftEvolution, .SwiftUsers, .SwiftDev]
     
     init?(rawValue: MailingListType) {
         switch rawValue.identifier {

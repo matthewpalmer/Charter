@@ -8,37 +8,37 @@
 
 import UIKit
 import ReSwift
+import RealmSwift
 
 class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
     var rootEmails: [EmailTreeNode] = [] {
         didSet {
-            indentationForEmail = [Email: Int]()
-            HTMLContentForEmail = [Email: String]()
-            textViewDataSources = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
-            orderedEmails = orderedEmailsFromTree(rootEmails).map { $0.email }
+            
         }
     }
     
     var cellDelegate: FullEmailMessageTableViewCellDelegate?
-    private var HTMLContentForEmail: [Email: String] = [Email: String]()
-    private var orderedEmails: [Email] = []
-    private var indentationForEmail = [Email: Int]()
+    var indentationAndEmail: [(Int, Email)] = [] {
+        didSet {
+            textViewDataSources = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
+        }
+    }
+    
     private var textViewDataSources: [NSIndexPath: EmailCollapsibleTextViewDataSource] = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orderedEmails.count
+        return indentationAndEmail.count
     }
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
-        let indent = indentationForEmail[orderedEmails[indexPath.row]]
-        return indent ?? 0
+        return indentationAndEmail[indexPath.row].0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(ThreadDetailViewController.fullMessageCellIdentifier) as! FullEmailMessageTableViewCell
         
-        let email = orderedEmails[indexPath.row] // emailForTreePath(rootEmails, path: path).email
+        let email = indentationAndEmail[indexPath.row].1
         
         cell.indentationWidth = 10
         cell.dateLabel.text = emailFormatter.formatDate(email.date)
@@ -56,27 +56,6 @@ class EmailThreadDetailDataSource: NSObject, ThreadDetailDataSource {
         cell.textViewDataSource = textViewDataSource!
         
         return cell
-    }
-    
-    private func orderedEmailsFromTree(rootEmails: [EmailTreeNode]) -> [EmailTreeNode] {
-        func getOrderedEmailsAndSetNestingLevel(level: Int, rootEmails: [EmailTreeNode]) -> [EmailTreeNode] {
-            guard let _ = rootEmails.first else {
-                return []
-            }
-            
-            // The root, followed by all its children
-            var array: [EmailTreeNode] = []
-            
-            for rootEmail in rootEmails {
-                array.append(rootEmail)
-                indentationForEmail[rootEmail.email] = level
-                array.appendContentsOf(getOrderedEmailsAndSetNestingLevel(level + 1, rootEmails: rootEmail.children))
-            }
-            
-            return array
-        }
-        
-        return getOrderedEmailsAndSetNestingLevel(0, rootEmails: rootEmails)
     }
 }
 
@@ -133,17 +112,13 @@ class EmailFormatter {
 }
 
 class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
-    private let emails: [Email]
     private let title: String
+    private let emails: Results<Email>
     
     // Conflicted about this data source taking in the entire app state
-    init(state: AppState) {
+    init?(state: AppState) {
         title = state.selectedMailingList!.rawValue.name
-        
-        // TODO:
-        self.emails = PartitionEmailsIntoTreeForest(
-            state.emailList.filter { $0.mailingList == state.selectedMailingList!.rawValue.identifier }
-            ).map { $0.email }.reverse()
+        emails = state.emailList!
     }
     
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
@@ -223,28 +198,25 @@ class AppCoordinator: NSObject, StoreSubscriber {
             route(nextRoute, routeHistory: state.routeHistory)
         }
         
-        if state.routeHistory.last == .ThreadDetail {
-            let emailsInList = state.emailList.filter { $0.mailingList == state.selectedMailingList?.rawValue.identifier }
-            let forest = PartitionEmailsIntoTreeForest(emailsInList)
-            detailTableViewDataSource.rootEmails = forest
-                .filter { $0.email.messageID == state.selectedThreadWithRootMessageID }
-            
-            if threadDetailViewController.tableView != nil && state.selectedThreadWithRootMessageID != nil {
+        if state.nextRoute == .ThreadDetail && state.emailThread != nil {
+            detailTableViewDataSource.indentationAndEmail = state.emailThread!
+            if threadDetailViewController.tableView != nil && state.emailThread != nil {
                 threadDetailViewController.tableView.reloadData()
             }
         }
         
-        if state.routeHistory.last == .Threads && state.selectedMailingList != nil {
-            if let isRefreshing = state.mailingListIsRefreshing[state.selectedMailingList!] where isRefreshing == true {
-//                threadsViewController.beginRefreshing()
+        if state.routeHistory.last == .Threads && state.emailList == nil && state.mailingListIsRefreshing[MailingList.SwiftEvolution] == false {
+            mainStore.dispatch(RetrieveRootEmails(state.selectedMailingList!))
+        }
+        
+        if state.routeHistory.last == .Threads && state.emailList != nil && state.selectedMailingList != nil {
+            threadsTableViewDataSource = ThreadsTableViewDataSource(state: state)
+            
+            if state.mailingListIsRefreshing[state.selectedMailingList!] == true {
+                threadsViewController.beginRefreshing()
             } else {
                 threadsViewController.endRefreshing()
             }
-            
-            if state.emailList.count > 0 {
-                threadsTableViewDataSource = ThreadsTableViewDataSource(state: state)
-            }
-            
         }
     }
     
@@ -278,16 +250,18 @@ class AppCoordinator: NSObject, StoreSubscriber {
 extension AppCoordinator: ThreadsViewControllerDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Hmm... not totally sure about the abstraction of this.
-        let selectedEmail = threadsTableViewDataSource?.emails[indexPath.row]
-        mainStore.dispatch(SetSelectedThreadWithRootMessageID(rootMessageID: selectedEmail?.messageID))
+        guard let selectedEmail = threadsTableViewDataSource?.emails[indexPath.row] else { return }
+        mainStore.dispatch(ComputeAndSetThreadForEmail(selectedEmail))
         mainStore.dispatch(MoveTo(route: .ThreadDetail))
     }
     
+    func threadsViewControllerRequestsInitialData() {
+        mainStore.dispatch(RetrieveRootEmails(mainStore.state.selectedMailingList!))
+    }
+    
     func threadsViewControllerRequestsReloadedData() {
-        if mainStore.state.selectedMailingList == .SwiftEvolution {
-//            mainStore.dispatch(SetMailingListIsRefreshing(mailingList: .SwiftEvolution, isRefreshing: true))
-//            mainStore.dispatch(RequestSwiftEvolution(MostRecentListPeriodForDate(), useCache: true))
-        }
+        mainStore.dispatch(SetMailingListIsRefreshing(mailingList: mainStore.state.selectedMailingList!, isRefreshing: true))
+        mainStore.dispatch(DownloadData(MostRecentListPeriodForDate(), mailingList: mainStore.state.selectedMailingList!))
     }
     
     func threadsViewControllerDidNavigateBackwards(threadsViewController: ThreadsViewController) {
@@ -300,7 +274,7 @@ extension AppCoordinator: ThreadDetailViewControllerDelegate {
     func threadDetailViewControllerDidNavigateBackwards(threadDetailViewController: ThreadDetailViewController) {
         // Need to work around the fact that we can't override UINavigationController's back button action.
         // We need to reconcile the UI route (currently at .Threads) with the route history (which is currently ending at .ThreadDetail)
-        mainStore.dispatch(SetSelectedThreadWithRootMessageID(rootMessageID: nil))
+        mainStore.dispatch(SetEmailThread(thread: nil))
         mainStore.dispatch(MoveTo(route: .Threads))
     }
 }
