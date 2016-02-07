@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         coordinator = AppCoordinator(navigationController: navigationController)
         
-        let file = NSBundle.mainBundle().URLForResource("Message-2", withExtension: nil)!
-        let data = NSData(contentsOfURL: file)
+        UINavigationBar.appearance().tintColor = UIColor(red:0.99, green:0.43, blue:0.22, alpha:1)
         
         print("Realm database at \(Realm.Configuration.defaultConfiguration.path)")
         
