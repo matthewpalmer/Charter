@@ -197,6 +197,7 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
         let attributedString = preloadedData[index]
         
         view.attributedText = attributedString
+        view.dataDetectorTypes = UIDataDetectorTypes.Link
         return view
     }
     
@@ -216,6 +217,7 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
         let textView = UITextView()
         textView.editable = false
         textView.attributedText = preloadedData[index]
+        textView.dataDetectorTypes = UIDataDetectorTypes.Link
         
         return textView
     }
