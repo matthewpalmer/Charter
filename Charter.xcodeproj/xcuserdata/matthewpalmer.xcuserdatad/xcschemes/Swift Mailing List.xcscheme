@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0E8B96071C5B1873009F3025"
-               BuildableName = "Swift Mailing List.app"
-               BlueprintName = "Swift Mailing List"
-               ReferencedContainer = "container:Swift Mailing List.xcodeproj">
+               BuildableName = "Charter.app"
+               BlueprintName = "Charter"
+               ReferencedContainer = "container:Charter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E8B96071C5B1873009F3025"
-            BuildableName = "Swift Mailing List.app"
-            BlueprintName = "Swift Mailing List"
-            ReferencedContainer = "container:Swift Mailing List.xcodeproj">
+            BuildableName = "Charter.app"
+            BlueprintName = "Charter"
+            ReferencedContainer = "container:Charter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E8B96071C5B1873009F3025"
-            BuildableName = "Swift Mailing List.app"
-            BlueprintName = "Swift Mailing List"
-            ReferencedContainer = "container:Swift Mailing List.xcodeproj">
+            BuildableName = "Charter.app"
+            BlueprintName = "Charter"
+            ReferencedContainer = "container:Charter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0E8B96071C5B1873009F3025"
-            BuildableName = "Swift Mailing List.app"
-            BlueprintName = "Swift Mailing List"
-            ReferencedContainer = "container:Swift Mailing List.xcodeproj">
+            BuildableName = "Charter.app"
+            BlueprintName = "Charter"
+            ReferencedContainer = "container:Charter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

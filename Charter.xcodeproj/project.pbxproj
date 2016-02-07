@@ -54,7 +54,7 @@
 		0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SML-Bridging-Header.h"; sourceTree = "<group>"; };
 		0E73ED0D1C5D55670037F5A7 /* Message-1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-1"; sourceTree = "<group>"; };
 		0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-2"; sourceTree = "<group>"; };
-		0E8B96081C5B1873009F3025 /* Swift Mailing List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Mailing List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8B960B1C5B1873009F3025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E8B96121C5B1873009F3025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E8B96151C5B1873009F3025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		0E8B96091C5B1873009F3025 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E8B96081C5B1873009F3025 /* Swift Mailing List.app */,
+				0E8B96081C5B1873009F3025 /* Charter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,9 +156,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E8B96071C5B1873009F3025 /* Swift Mailing List */ = {
+		0E8B96071C5B1873009F3025 /* Charter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E8B961A1C5B1873009F3025 /* Build configuration list for PBXNativeTarget "Swift Mailing List" */;
+			buildConfigurationList = 0E8B961A1C5B1873009F3025 /* Build configuration list for PBXNativeTarget "Charter" */;
 			buildPhases = (
 				A1C2CB1A709F215E604B0954 /* Check Pods Manifest.lock */,
 				0E8B96041C5B1873009F3025 /* Sources */,
@@ -171,9 +171,9 @@
 			);
 			dependencies = (
 			);
-			name = "Swift Mailing List";
+			name = Charter;
 			productName = "Swift Mailing List";
-			productReference = 0E8B96081C5B1873009F3025 /* Swift Mailing List.app */;
+			productReference = 0E8B96081C5B1873009F3025 /* Charter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0E8B96031C5B1873009F3025 /* Build configuration list for PBXProject "Swift Mailing List" */;
+			buildConfigurationList = 0E8B96031C5B1873009F3025 /* Build configuration list for PBXProject "Charter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -204,7 +204,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E8B96071C5B1873009F3025 /* Swift Mailing List */,
+				0E8B96071C5B1873009F3025 /* Charter */,
 			);
 		};
 /* End PBXProject section */
@@ -406,7 +406,7 @@
 				INFOPLIST_FILE = "Swift Mailing List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.matthewpalmer.Swift-Mailing-List";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Charter;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift Mailing List/SML-Bridging-Header.h";
 			};
 			name = Debug;
@@ -419,7 +419,7 @@
 				INFOPLIST_FILE = "Swift Mailing List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.matthewpalmer.Swift-Mailing-List";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Charter;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift Mailing List/SML-Bridging-Header.h";
 			};
 			name = Release;
@@ -427,7 +427,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0E8B96031C5B1873009F3025 /* Build configuration list for PBXProject "Swift Mailing List" */ = {
+		0E8B96031C5B1873009F3025 /* Build configuration list for PBXProject "Charter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E8B96181C5B1873009F3025 /* Debug */,
@@ -436,7 +436,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E8B961A1C5B1873009F3025 /* Build configuration list for PBXNativeTarget "Swift Mailing List" */ = {
+		0E8B961A1C5B1873009F3025 /* Build configuration list for PBXNativeTarget "Charter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0E8B961B1C5B1873009F3025 /* Debug */,
