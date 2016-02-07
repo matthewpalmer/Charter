@@ -99,7 +99,16 @@ class EmailFormatter {
         let firstMatch = withinParenthesesRegex.firstMatchInString(name, options: [], range: NSMakeRange(0, name.characters.count))
         let range = firstMatch?.rangeAtIndex(1) ?? NSMakeRange(0, name.characters.count)
         let withinParens = (name as NSString).substringWithRange(range)
-        return withinParens
+        
+        // The server sometimes sends us ?utf-8? junk, and there's nothing we can do.
+        let noJunk: String
+        if withinParens.hasPrefix("=?utf-8?") {
+            noJunk = ""
+        } else {
+            noJunk = withinParens
+        }
+        
+        return noJunk
     }
     
     func dateStringToDate(date: String) -> NSDate? {
