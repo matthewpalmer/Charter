@@ -105,7 +105,6 @@ func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState
     return { _, store in
         func dispatchActionForUncompressedData(data: NSData) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                print("Various encodings: 1 \(NSString(data: data, encoding: NSUTF8StringEncoding))")
                 guard let listString = NSString(data: data, encoding: NSUTF8StringEncoding) else { return }
                 let mailingListMessagesOpt: [MailingListMessage?] = MailingListParser(string: listString as String)
                     .emails

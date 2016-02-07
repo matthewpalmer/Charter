@@ -17,6 +17,8 @@
 		0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E017B591C62C4E000316E22 /* MailingListViewController.xib */; };
 		0E1A2A141C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */; };
 		0E1A2A1A1C66AE8E00003D98 /* EmailThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A191C66AE8D00003D98 /* EmailThread.swift */; };
+		0E644ED01C6724A3004467CE /* NoThreadsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E644ECE1C6724A3004467CE /* NoThreadsTableViewCell.swift */; };
+		0E644ED11C6724A3004467CE /* NoThreadsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E644ECF1C6724A3004467CE /* NoThreadsTableViewCell.xib */; };
 		0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */; };
 		0E6F56511C63DCF4002D960E /* MessagePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */; };
 		0E73ED0E1C5D55670037F5A7 /* Message-1 in Resources */ = {isa = PBXBuildFile; fileRef = 0E73ED0D1C5D55670037F5A7 /* Message-1 */; };
@@ -45,6 +47,8 @@
 		0E017B591C62C4E000316E22 /* MailingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailingListViewController.xib; sourceTree = "<group>"; };
 		0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
 		0E1A2A191C66AE8D00003D98 /* EmailThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThread.swift; sourceTree = "<group>"; };
+		0E644ECE1C6724A3004467CE /* NoThreadsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoThreadsTableViewCell.swift; sourceTree = "<group>"; };
+		0E644ECF1C6724A3004467CE /* NoThreadsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoThreadsTableViewCell.xib; sourceTree = "<group>"; };
 		0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePreviewTableViewCell.swift; sourceTree = "<group>"; };
 		0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagePreviewTableViewCell.xib; sourceTree = "<group>"; };
 		0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SML-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */,
 				0E017B461C5DCE1400316E22 /* ThreadDetailViewController.swift */,
 				0E017B471C5DCE1400316E22 /* ThreadDetailViewController.xib */,
+				0E644ECE1C6724A3004467CE /* NoThreadsTableViewCell.swift */,
+				0E644ECF1C6724A3004467CE /* NoThreadsTableViewCell.xib */,
 				0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */,
 				0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */,
 				0E017B521C5EAB3B00316E22 /* FullEmailMessageTableViewCell.swift */,
@@ -214,6 +220,7 @@
 				0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */,
 				0E017B491C5DCE1400316E22 /* ThreadDetailViewController.xib in Resources */,
 				0E8B96161C5B1873009F3025 /* LaunchScreen.storyboard in Resources */,
+				0E644ED11C6724A3004467CE /* NoThreadsTableViewCell.xib in Resources */,
 				0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */,
 				0E8B96131C5B1873009F3025 /* Assets.xcassets in Resources */,
 				0E73ED101C5D5A2A0037F5A7 /* Message-2 in Resources */,
@@ -277,6 +284,7 @@
 			files = (
 				0E8B961E1C5B1901009F3025 /* AppState.swift in Sources */,
 				0E8B96201C5B1962009F3025 /* Actions.swift in Sources */,
+				0E644ED01C6724A3004467CE /* NoThreadsTableViewCell.swift in Sources */,
 				0E8C2C141C62CBAA0038F5BE /* Email.swift in Sources */,
 				0E017B4B1C5DF2D200316E22 /* EmailTree.swift in Sources */,
 				0E8B960C1C5B1873009F3025 /* AppDelegate.swift in Sources */,

@@ -24,6 +24,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     typealias StoreSubscriberStateType = AppState
     
     static let reuseIdentifier = "threadsCellReuseIdentifier"
+    static let emptyCellReuseIdentifier = "threadsEmptyCell"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,6 +40,11 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
         didSet {
             if tableView != nil {
                 if oldValue !== dataSource {
+                    if tableView.numberOfRowsInSection(0) == 0 {
+                        tableView.separatorStyle = .None
+                    } else {
+                        tableView.separatorStyle = .SingleLine
+                    }
                     tableView.dataSource = dataSource
                     tableView.reloadData()
                 }
@@ -72,6 +78,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         tableView.registerNib(MessagePreviewTableViewCell.nib(), forCellReuseIdentifier: ThreadsViewController.reuseIdentifier)
+        tableView.registerNib(NoThreadsTableViewCell.nib(), forCellReuseIdentifier: ThreadsViewController.emptyCellReuseIdentifier)
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -99,5 +106,8 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     
     func endRefreshing() {
         refreshControl.endRefreshing()
+        if tableView != nil {
+            tableView.reloadData()
+        }
     }
 }

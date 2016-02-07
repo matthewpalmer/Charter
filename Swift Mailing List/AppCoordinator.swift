@@ -133,6 +133,11 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if emails.count == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.emptyCellReuseIdentifier, forIndexPath: indexPath)
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(ThreadsViewController.reuseIdentifier, forIndexPath: indexPath) as! MessagePreviewTableViewCell
         let email = emails[indexPath.row]
         
@@ -144,6 +149,7 @@ class ThreadsTableViewDataSource: NSObject, ThreadsViewControllerDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if emails.count == 0 { return 1 }
         return emails.count
     }
     
@@ -203,6 +209,8 @@ class AppCoordinator: NSObject, StoreSubscriber {
         mainStore.dispatch(MoveTo(route: .MailingLists))
     }
     
+    var threadsWereRefreshing: Bool = false
+    
     func newState(state: AppState) {
         if let nextRoute = state.nextRoute {
             route(nextRoute, routeHistory: state.routeHistory)
@@ -237,10 +245,14 @@ class AppCoordinator: NSObject, StoreSubscriber {
             // Needs to be set multiple times because it must be done after the table view has appeared. Table view must handle selective reloading.
             threadsViewController.dataSource = dataSource
             
-            if state.mailingListIsRefreshing[state.selectedMailingList!] == true {
+            if state.mailingListIsRefreshing[state.selectedMailingList!] == true && !threadsWereRefreshing {
                 threadsViewController.beginRefreshing()
-            } else {
+            } else if threadsWereRefreshing == true && state.mailingListIsRefreshing[state.selectedMailingList!] == false {
                 threadsViewController.endRefreshing()
+            }
+            
+            if let refresh = state.mailingListIsRefreshing[state.selectedMailingList!] {
+                threadsWereRefreshing = refresh
             }
         }
     }
