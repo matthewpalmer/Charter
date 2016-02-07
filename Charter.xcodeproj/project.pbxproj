@@ -33,8 +33,19 @@
 		0EB318CE1C5B2155005F7672 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB318CD1C5B2155005F7672 /* AppCoordinator.swift */; };
 		0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */; };
 		0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */; };
+		0EE823081C674BE8005070AC /* CharterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE823071C674BE8005070AC /* CharterUITests.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0EE8230A1C674BE8005070AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E8B96001C5B1873009F3025 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E8B96071C5B1873009F3025;
+			remoteInfo = Charter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04791EF6784CA91D405E69D8 /* Pods-Charter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Charter/Pods-Charter.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +78,9 @@
 		0EB318CD1C5B2155005F7672 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
 		0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadsViewController.xib; sourceTree = "<group>"; };
+		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EE823071C674BE8005070AC /* CharterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterUITests.swift; sourceTree = "<group>"; };
+		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1528DD33AA4E86705B2BDE04 /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
 		1D429F569C69C6E0148D0A7C /* Pods-Charter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Charter/Pods-Charter.debug.xcconfig"; sourceTree = "<group>"; };
 		48BD330A86F6C6BA34A7FD2F /* Pods-Swift Mailing List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EE823021C674BE8005070AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8B960A1C5B1873009F3025 /* Swift Mailing List */,
+				0EE823061C674BE8005070AC /* CharterUITests */,
 				0E8B96091C5B1873009F3025 /* Products */,
 				4164DBA32992E8297D1B3199 /* Pods */,
 				8943F1175D24D1ABD84D60D5 /* Frameworks */,
@@ -100,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8B96081C5B1873009F3025 /* Charter.app */,
+				0EE823051C674BE8005070AC /* CharterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +160,15 @@
 				0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */,
 			);
 			path = "Swift Mailing List";
+			sourceTree = "<group>";
+		};
+		0EE823061C674BE8005070AC /* CharterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0EE823071C674BE8005070AC /* CharterUITests.swift */,
+				0EE823091C674BE8005070AC /* Info.plist */,
+			);
+			path = CharterUITests;
 			sourceTree = "<group>";
 		};
 		4164DBA32992E8297D1B3199 /* Pods */ = {
@@ -183,6 +215,24 @@
 			productReference = 0E8B96081C5B1873009F3025 /* Charter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0EE823041C674BE8005070AC /* CharterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EE8230C1C674BE8005070AC /* Build configuration list for PBXNativeTarget "CharterUITests" */;
+			buildPhases = (
+				0EE823011C674BE8005070AC /* Sources */,
+				0EE823021C674BE8005070AC /* Frameworks */,
+				0EE823031C674BE8005070AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0EE8230B1C674BE8005070AC /* PBXTargetDependency */,
+			);
+			name = CharterUITests;
+			productName = CharterUITests;
+			productReference = 0EE823051C674BE8005070AC /* CharterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,6 +245,10 @@
 				TargetAttributes = {
 					0E8B96071C5B1873009F3025 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					0EE823041C674BE8005070AC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0E8B96071C5B1873009F3025;
 					};
 				};
 			};
@@ -212,6 +266,7 @@
 			projectRoot = "";
 			targets = (
 				0E8B96071C5B1873009F3025 /* Charter */,
+				0EE823041C674BE8005070AC /* CharterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +286,13 @@
 				0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */,
 				0E8B96131C5B1873009F3025 /* Assets.xcassets in Resources */,
 				0E73ED101C5D5A2A0037F5A7 /* Message-2 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EE823031C674BE8005070AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +383,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0EE823011C674BE8005070AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EE823081C674BE8005070AC /* CharterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0EE8230B1C674BE8005070AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E8B96071C5B1873009F3025 /* Charter */;
+			targetProxy = 0EE8230A1C674BE8005070AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E8B96141C5B1873009F3025 /* LaunchScreen.storyboard */ = {
@@ -444,6 +522,30 @@
 			};
 			name = Release;
 		};
+		0EE8230D1C674BE8005070AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CharterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CharterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Charter;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0EE8230E1C674BE8005070AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CharterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CharterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Charter;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,6 +566,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0EE8230C1C674BE8005070AC /* Build configuration list for PBXNativeTarget "CharterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EE8230D1C674BE8005070AC /* Debug */,
+				0EE8230E1C674BE8005070AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
