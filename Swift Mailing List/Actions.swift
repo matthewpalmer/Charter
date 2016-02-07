@@ -191,6 +191,8 @@ func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState
                 if let compressedData = data,
                     uncompressedData = compressedData.gunzippedData() {
                         dispatchActionForUncompressedData(uncompressedData)
+                } else {
+                    store.dispatch(SetMailingListIsRefreshing(mailingList: mailingList, isRefreshing: false))
                 }
             }
             

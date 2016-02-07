@@ -8,19 +8,12 @@
 
 import XCTest
 
-class Snapshot: XCTestCase {
+class SnapshotTestCase: XCTestCase {
         
     override func setUp() {
-        super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
     }
     
     override func tearDown() {
@@ -32,13 +25,16 @@ class Snapshot: XCTestCase {
         
         let app = XCUIApplication()
         app.navigationBars["Mailing Lists"].staticTexts["Mailing Lists"].tap()
-        
+        snapshot("04MailingLists")
         let tablesQuery2 = app.tables
         let tablesQuery = tablesQuery2
         tablesQuery.staticTexts["Swift Dev"].tap()
+        snapshot("01ThreadsList")
         tablesQuery.staticTexts["CGPath cannot be found"].tap()
+        snapshot("02Conversation")
         tablesQuery2.cells.containingType(.StaticText, identifier:"Thomas Krajacic").childrenMatchingType(.TextView).element.tap()
         tablesQuery.staticTexts["•••"].tap()
+        snapshot("03Quote")
         app.navigationBars["UIView"].buttons["Threads"].tap()
         
     }
