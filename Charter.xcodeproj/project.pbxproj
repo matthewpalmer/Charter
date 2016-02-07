@@ -34,7 +34,6 @@
 		0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */; };
 		0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
-		A2265DB3EE6EBC83AF90867A /* Pods_Swift_Mailing_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA2AC83B4D785149E529AB6 /* Pods_Swift_Mailing_List.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2265DB3EE6EBC83AF90867A /* Pods_Swift_Mailing_List.framework in Frameworks */,
 				512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +172,7 @@
 				0E8B96061C5B1873009F3025 /* Resources */,
 				8E2012A48AD0AF84D8B62274 /* Embed Pods Frameworks */,
 				BADA125D0CB29D27F53F6B88 /* Copy Pods Resources */,
+				0EB4279F1C67320600843158 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -238,6 +237,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0EB4279F1C67320600843158 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c409e4d4055f0b0e7d997af9fdd729298203dea1 5d834db05b498c63ca1300ff67c569c70fbfd1def3c6539b5bd34b02e6ce8efb";
+		};
 		8E2012A48AD0AF84D8B62274 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

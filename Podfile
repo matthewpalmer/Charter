@@ -12,6 +12,5 @@ target 'Charter' do
   pod 'RealmSwift', '~> 0.98.0'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Answers'
 end
 

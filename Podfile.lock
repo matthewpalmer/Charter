@@ -1,6 +1,4 @@
 PODS:
-  - Answers (1.1.0):
-    - Fabric (~> 1.6.3)
   - CollapsibleTextView (0.0.1)
   - Crashlytics (3.6.0):
     - Fabric (~> 1.6.3)
@@ -16,7 +14,6 @@ PODS:
   - ReSwift (0.2.4)
 
 DEPENDENCIES:
-  - Answers
   - CollapsibleTextView (from `~/dev/ios/CollapsibleTextView`)
   - Crashlytics
   - Fabric
@@ -33,7 +30,6 @@ EXTERNAL SOURCES:
     :path: "~/dev/ios/MailingListParser"
 
 SPEC CHECKSUMS:
-  Answers: f2aaf04d5a6dfc978c2e1d12835031472ab41beb
   CollapsibleTextView: c24f359d0ff7df5a88161fc27893fac03f3f1a8d
   Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
   Fabric: 338ffd3c2afcab120638907b4251189de9ad17b3
