@@ -34,6 +34,7 @@
 		0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */; };
 		0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */; };
 		0EE823081C674BE8005070AC /* CharterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE823071C674BE8005070AC /* CharterUITests.swift */; };
+		0EE823101C674DF0005070AC /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8230F1C674DF0005070AC /* Snapshot.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823071C674BE8005070AC /* CharterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharterUITests.swift; sourceTree = "<group>"; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EE8230F1C674DF0005070AC /* Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Snapshot.swift; path = ../Snapshot.swift; sourceTree = "<group>"; };
 		1528DD33AA4E86705B2BDE04 /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
 		1D429F569C69C6E0148D0A7C /* Pods-Charter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Charter/Pods-Charter.debug.xcconfig"; sourceTree = "<group>"; };
 		48BD330A86F6C6BA34A7FD2F /* Pods-Swift Mailing List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		0EE823061C674BE8005070AC /* CharterUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0EE8230F1C674DF0005070AC /* Snapshot.swift */,
 				0EE823071C674BE8005070AC /* CharterUITests.swift */,
 				0EE823091C674BE8005070AC /* Info.plist */,
 			);
@@ -388,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE823081C674BE8005070AC /* CharterUITests.swift in Sources */,
+				0EE823101C674DF0005070AC /* Snapshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 //
-//  CharterUITests.swift
-//  CharterUITests
+//  Snapshot.swift
+//  Charter
 //
 //  Created by Matthew Palmer on 7/02/2016.
 //  Copyright © 2016 Matthew Palmer. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class CharterUITests: XCTestCase {
+class Snapshot: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -27,8 +27,20 @@ class CharterUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
+
+    func testSnapshots() {
+        
+        let app = XCUIApplication()
+        app.navigationBars["Mailing Lists"].staticTexts["Mailing Lists"].tap()
+        
+        let tablesQuery2 = app.tables
+        let tablesQuery = tablesQuery2
+        tablesQuery.staticTexts["Swift Dev"].tap()
+        tablesQuery.staticTexts["CGPath cannot be found"].tap()
+        tablesQuery2.cells.containingType(.StaticText, identifier:"Thomas Krajacic").childrenMatchingType(.TextView).element.tap()
+        tablesQuery.staticTexts["•••"].tap()
+        app.navigationBars["UIView"].buttons["Threads"].tap()
+        
     }
     
 }
