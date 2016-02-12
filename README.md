@@ -11,7 +11,7 @@
 
 **How do I run the project?**
 
-1. `git clone https://github.com/matthewpalmer/MailingListParser`
+1. `git clone https://github.com/matthewpalmer/Charter`
 2. `pod install`
 3. Run the app in Xcode
 
