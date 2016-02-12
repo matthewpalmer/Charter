@@ -10,8 +10,6 @@ import UIKit
 import ReSwift
 import MailingListParser
 import RealmSwift
-import Fabric
-import Crashlytics
 
 let mainStore = Store(reducer: AppReducer(), state: AppState())
 
@@ -23,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let navigationController = UINavigationController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Fabric.with([Crashlytics.self])
-        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
