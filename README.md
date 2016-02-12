@@ -34,10 +34,11 @@ Of course! However, I will say this: I didn’t intend to open source this so ea
 and it’s going to change pretty quickly over the coming weeks. It might not be the best use of your time to do it *right now*,
 but open an issue and we can track it.
 
-**What's next?**
+**What’s next?**
 
-I’ll mainly be tracking what I’m working on in the issues for this repo, but roughly
+I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Source by Default” thing, so I’ll mainly track what’s coming up in the Github issues for this repo, but roughly
 
 * Add a backend so we can get faster list updates (and open source it)
 * Clean up the front end codebase
+* Fix bugs
 * Add new features
