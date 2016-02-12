@@ -7,32 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E017B481C5DCE1400316E22 /* ThreadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B461C5DCE1400316E22 /* ThreadDetailViewController.swift */; };
-		0E017B491C5DCE1400316E22 /* ThreadDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E017B471C5DCE1400316E22 /* ThreadDetailViewController.xib */; };
-		0E017B4B1C5DF2D200316E22 /* EmailTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B4A1C5DF2D200316E22 /* EmailTree.swift */; };
-		0E017B541C5EAB3C00316E22 /* FullEmailMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B521C5EAB3B00316E22 /* FullEmailMessageTableViewCell.swift */; };
-		0E017B551C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E017B531C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib */; };
-		0E017B571C62C33200316E22 /* MailingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B561C62C33200316E22 /* MailingList.swift */; };
-		0E017B5A1C62C4E000316E22 /* MailingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E017B581C62C4E000316E22 /* MailingListViewController.swift */; };
-		0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E017B591C62C4E000316E22 /* MailingListViewController.xib */; };
-		0E1A2A141C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */; };
-		0E1A2A1A1C66AE8E00003D98 /* EmailThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1A2A191C66AE8D00003D98 /* EmailThread.swift */; };
-		0E644ED01C6724A3004467CE /* NoThreadsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E644ECE1C6724A3004467CE /* NoThreadsTableViewCell.swift */; };
-		0E644ED11C6724A3004467CE /* NoThreadsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E644ECF1C6724A3004467CE /* NoThreadsTableViewCell.xib */; };
-		0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */; };
-		0E6F56511C63DCF4002D960E /* MessagePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */; };
-		0E73ED0E1C5D55670037F5A7 /* Message-1 in Resources */ = {isa = PBXBuildFile; fileRef = 0E73ED0D1C5D55670037F5A7 /* Message-1 */; };
-		0E73ED101C5D5A2A0037F5A7 /* Message-2 in Resources */ = {isa = PBXBuildFile; fileRef = 0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */; };
-		0E8B960C1C5B1873009F3025 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B960B1C5B1873009F3025 /* AppDelegate.swift */; };
-		0E8B96131C5B1873009F3025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E8B96121C5B1873009F3025 /* Assets.xcassets */; };
-		0E8B96161C5B1873009F3025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8B96141C5B1873009F3025 /* LaunchScreen.storyboard */; };
-		0E8B961E1C5B1901009F3025 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B961D1C5B1901009F3025 /* AppState.swift */; };
-		0E8B96201C5B1962009F3025 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B961F1C5B1962009F3025 /* Actions.swift */; };
-		0E8B96221C5B199F009F3025 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B96211C5B199F009F3025 /* AppReducer.swift */; };
-		0E8C2C141C62CBAA0038F5BE /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C2C131C62CBAA0038F5BE /* Email.swift */; };
-		0EB318CE1C5B2155005F7672 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB318CD1C5B2155005F7672 /* AppCoordinator.swift */; };
-		0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */; };
-		0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */; };
+		0E0B36E51C6E701900DF9995 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36C81C6E701900DF9995 /* Actions.swift */; };
+		0E0B36E61C6E701900DF9995 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */; };
+		0E0B36E71C6E701900DF9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */; };
+		0E0B36E81C6E701900DF9995 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36CB1C6E701900DF9995 /* AppReducer.swift */; };
+		0E0B36E91C6E701900DF9995 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36CC1C6E701900DF9995 /* AppState.swift */; };
+		0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36CD1C6E701900DF9995 /* Assets.xcassets */; };
+		0E0B36EB1C6E701900DF9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */; };
+		0E0B36EC1C6E701900DF9995 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D01C6E701900DF9995 /* Email.swift */; };
+		0E0B36ED1C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D11C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift */; };
+		0E0B36EE1C6E701900DF9995 /* EmailThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D21C6E701900DF9995 /* EmailThread.swift */; };
+		0E0B36EF1C6E701900DF9995 /* EmailTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D31C6E701900DF9995 /* EmailTree.swift */; };
+		0E0B36F01C6E701900DF9995 /* FullEmailMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D41C6E701900DF9995 /* FullEmailMessageTableViewCell.swift */; };
+		0E0B36F11C6E701900DF9995 /* FullEmailMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36D51C6E701900DF9995 /* FullEmailMessageTableViewCell.xib */; };
+		0E0B36F21C6E701900DF9995 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36D61C6E701900DF9995 /* Info.plist */; };
+		0E0B36F31C6E701900DF9995 /* MailingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D71C6E701900DF9995 /* MailingList.swift */; };
+		0E0B36F41C6E701900DF9995 /* MailingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D81C6E701900DF9995 /* MailingListViewController.swift */; };
+		0E0B36F51C6E701900DF9995 /* MailingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36D91C6E701900DF9995 /* MailingListViewController.xib */; };
+		0E0B36F61C6E701900DF9995 /* Message-1 in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36DA1C6E701900DF9995 /* Message-1 */; };
+		0E0B36F71C6E701900DF9995 /* Message-2 in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36DB1C6E701900DF9995 /* Message-2 */; };
+		0E0B36F81C6E701900DF9995 /* MessagePreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36DC1C6E701900DF9995 /* MessagePreviewTableViewCell.swift */; };
+		0E0B36F91C6E701900DF9995 /* MessagePreviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36DD1C6E701900DF9995 /* MessagePreviewTableViewCell.xib */; };
+		0E0B36FA1C6E701900DF9995 /* NoThreadsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36DE1C6E701900DF9995 /* NoThreadsTableViewCell.swift */; };
+		0E0B36FB1C6E701900DF9995 /* NoThreadsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36DF1C6E701900DF9995 /* NoThreadsTableViewCell.xib */; };
+		0E0B36FC1C6E701900DF9995 /* ThreadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36E11C6E701900DF9995 /* ThreadDetailViewController.swift */; };
+		0E0B36FD1C6E701900DF9995 /* ThreadDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */; };
+		0E0B36FE1C6E701900DF9995 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */; };
+		0E0B36FF1C6E701900DF9995 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */; };
 		0EE823101C674DF0005070AC /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8230F1C674DF0005070AC /* SnapshotTestCase.swift */; };
 		0EE823121C674FF7005070AC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE823111C674FF7005070AC /* SnapshotHelper.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
@@ -50,35 +51,35 @@
 
 /* Begin PBXFileReference section */
 		04791EF6784CA91D405E69D8 /* Pods-Charter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Charter/Pods-Charter.release.xcconfig"; sourceTree = "<group>"; };
-		0E017B461C5DCE1400316E22 /* ThreadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailViewController.swift; sourceTree = "<group>"; };
-		0E017B471C5DCE1400316E22 /* ThreadDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadDetailViewController.xib; sourceTree = "<group>"; };
-		0E017B4A1C5DF2D200316E22 /* EmailTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTree.swift; sourceTree = "<group>"; };
-		0E017B521C5EAB3B00316E22 /* FullEmailMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEmailMessageTableViewCell.swift; sourceTree = "<group>"; };
-		0E017B531C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullEmailMessageTableViewCell.xib; sourceTree = "<group>"; };
-		0E017B561C62C33200316E22 /* MailingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingList.swift; sourceTree = "<group>"; };
-		0E017B581C62C4E000316E22 /* MailingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListViewController.swift; sourceTree = "<group>"; };
-		0E017B591C62C4E000316E22 /* MailingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailingListViewController.xib; sourceTree = "<group>"; };
-		0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
-		0E1A2A191C66AE8D00003D98 /* EmailThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThread.swift; sourceTree = "<group>"; };
-		0E644ECE1C6724A3004467CE /* NoThreadsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoThreadsTableViewCell.swift; sourceTree = "<group>"; };
-		0E644ECF1C6724A3004467CE /* NoThreadsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoThreadsTableViewCell.xib; sourceTree = "<group>"; };
-		0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePreviewTableViewCell.swift; sourceTree = "<group>"; };
-		0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagePreviewTableViewCell.xib; sourceTree = "<group>"; };
-		0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SML-Bridging-Header.h"; sourceTree = "<group>"; };
-		0E73ED0D1C5D55670037F5A7 /* Message-1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-1"; sourceTree = "<group>"; };
-		0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-2"; sourceTree = "<group>"; };
+		0E0B36C81C6E701900DF9995 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0E0B36CB1C6E701900DF9995 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		0E0B36CC1C6E701900DF9995 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		0E0B36CD1C6E701900DF9995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E0B36CF1C6E701900DF9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0E0B36D01C6E701900DF9995 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		0E0B36D11C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
+		0E0B36D21C6E701900DF9995 /* EmailThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThread.swift; sourceTree = "<group>"; };
+		0E0B36D31C6E701900DF9995 /* EmailTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTree.swift; sourceTree = "<group>"; };
+		0E0B36D41C6E701900DF9995 /* FullEmailMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEmailMessageTableViewCell.swift; sourceTree = "<group>"; };
+		0E0B36D51C6E701900DF9995 /* FullEmailMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullEmailMessageTableViewCell.xib; sourceTree = "<group>"; };
+		0E0B36D61C6E701900DF9995 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E0B36D71C6E701900DF9995 /* MailingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingList.swift; sourceTree = "<group>"; };
+		0E0B36D81C6E701900DF9995 /* MailingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailingListViewController.swift; sourceTree = "<group>"; };
+		0E0B36D91C6E701900DF9995 /* MailingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailingListViewController.xib; sourceTree = "<group>"; };
+		0E0B36DA1C6E701900DF9995 /* Message-1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-1"; sourceTree = "<group>"; };
+		0E0B36DB1C6E701900DF9995 /* Message-2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Message-2"; sourceTree = "<group>"; };
+		0E0B36DC1C6E701900DF9995 /* MessagePreviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePreviewTableViewCell.swift; sourceTree = "<group>"; };
+		0E0B36DD1C6E701900DF9995 /* MessagePreviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagePreviewTableViewCell.xib; sourceTree = "<group>"; };
+		0E0B36DE1C6E701900DF9995 /* NoThreadsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoThreadsTableViewCell.swift; sourceTree = "<group>"; };
+		0E0B36DF1C6E701900DF9995 /* NoThreadsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoThreadsTableViewCell.xib; sourceTree = "<group>"; };
+		0E0B36E01C6E701900DF9995 /* SML-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SML-Bridging-Header.h"; sourceTree = "<group>"; };
+		0E0B36E11C6E701900DF9995 /* ThreadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailViewController.swift; sourceTree = "<group>"; };
+		0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadDetailViewController.xib; sourceTree = "<group>"; };
+		0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
+		0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadsViewController.xib; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E8B960B1C5B1873009F3025 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E8B96121C5B1873009F3025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0E8B96151C5B1873009F3025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0E8B96171C5B1873009F3025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E8B961D1C5B1901009F3025 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		0E8B961F1C5B1962009F3025 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		0E8B96211C5B199F009F3025 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		0E8C2C131C62CBAA0038F5BE /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
-		0EB318CD1C5B2155005F7672 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
-		0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadsViewController.xib; sourceTree = "<group>"; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE8230F1C674DF0005070AC /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotTestCase.swift; path = ../SnapshotTestCase.swift; sourceTree = "<group>"; };
@@ -109,10 +110,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0B36C71C6E701900DF9995 /* Charter */ = {
+			isa = PBXGroup;
+			children = (
+				0E0B36C81C6E701900DF9995 /* Actions.swift */,
+				0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */,
+				0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */,
+				0E0B36CB1C6E701900DF9995 /* AppReducer.swift */,
+				0E0B36CC1C6E701900DF9995 /* AppState.swift */,
+				0E0B36CD1C6E701900DF9995 /* Assets.xcassets */,
+				0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */,
+				0E0B36D01C6E701900DF9995 /* Email.swift */,
+				0E0B36D11C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift */,
+				0E0B36D21C6E701900DF9995 /* EmailThread.swift */,
+				0E0B36D31C6E701900DF9995 /* EmailTree.swift */,
+				0E0B36D41C6E701900DF9995 /* FullEmailMessageTableViewCell.swift */,
+				0E0B36D51C6E701900DF9995 /* FullEmailMessageTableViewCell.xib */,
+				0E0B36D61C6E701900DF9995 /* Info.plist */,
+				0E0B36D71C6E701900DF9995 /* MailingList.swift */,
+				0E0B36D81C6E701900DF9995 /* MailingListViewController.swift */,
+				0E0B36D91C6E701900DF9995 /* MailingListViewController.xib */,
+				0E0B36DA1C6E701900DF9995 /* Message-1 */,
+				0E0B36DB1C6E701900DF9995 /* Message-2 */,
+				0E0B36DC1C6E701900DF9995 /* MessagePreviewTableViewCell.swift */,
+				0E0B36DD1C6E701900DF9995 /* MessagePreviewTableViewCell.xib */,
+				0E0B36DE1C6E701900DF9995 /* NoThreadsTableViewCell.swift */,
+				0E0B36DF1C6E701900DF9995 /* NoThreadsTableViewCell.xib */,
+				0E0B36E01C6E701900DF9995 /* SML-Bridging-Header.h */,
+				0E0B36E11C6E701900DF9995 /* ThreadDetailViewController.swift */,
+				0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */,
+				0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */,
+				0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */,
+			);
+			path = Charter;
+			sourceTree = "<group>";
+		};
 		0E8B95FF1C5B1873009F3025 = {
 			isa = PBXGroup;
 			children = (
-				0E8B960A1C5B1873009F3025 /* Swift Mailing List */,
+				0E0B36C71C6E701900DF9995 /* Charter */,
 				0EE823061C674BE8005070AC /* CharterUITests */,
 				0E8B96091C5B1873009F3025 /* Products */,
 				4164DBA32992E8297D1B3199 /* Pods */,
@@ -127,41 +163,6 @@
 				0EE823051C674BE8005070AC /* CharterUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0E8B960A1C5B1873009F3025 /* Swift Mailing List */ = {
-			isa = PBXGroup;
-			children = (
-				0E8B960B1C5B1873009F3025 /* AppDelegate.swift */,
-				0E8B961D1C5B1901009F3025 /* AppState.swift */,
-				0E8B96211C5B199F009F3025 /* AppReducer.swift */,
-				0E8B961F1C5B1962009F3025 /* Actions.swift */,
-				0EB318CD1C5B2155005F7672 /* AppCoordinator.swift */,
-				0E017B4A1C5DF2D200316E22 /* EmailTree.swift */,
-				0E017B561C62C33200316E22 /* MailingList.swift */,
-				0E8C2C131C62CBAA0038F5BE /* Email.swift */,
-				0E1A2A191C66AE8D00003D98 /* EmailThread.swift */,
-				0E73ED0C1C5D53960037F5A7 /* SML-Bridging-Header.h */,
-				0E017B581C62C4E000316E22 /* MailingListViewController.swift */,
-				0E017B591C62C4E000316E22 /* MailingListViewController.xib */,
-				0EB318CF1C5B2441005F7672 /* ThreadsViewController.swift */,
-				0EB318D01C5B2441005F7672 /* ThreadsViewController.xib */,
-				0E017B461C5DCE1400316E22 /* ThreadDetailViewController.swift */,
-				0E017B471C5DCE1400316E22 /* ThreadDetailViewController.xib */,
-				0E644ECE1C6724A3004467CE /* NoThreadsTableViewCell.swift */,
-				0E644ECF1C6724A3004467CE /* NoThreadsTableViewCell.xib */,
-				0E6F564E1C63DCF4002D960E /* MessagePreviewTableViewCell.swift */,
-				0E6F564F1C63DCF4002D960E /* MessagePreviewTableViewCell.xib */,
-				0E017B521C5EAB3B00316E22 /* FullEmailMessageTableViewCell.swift */,
-				0E1A2A131C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift */,
-				0E017B531C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib */,
-				0E8B96121C5B1873009F3025 /* Assets.xcassets */,
-				0E8B96141C5B1873009F3025 /* LaunchScreen.storyboard */,
-				0E8B96171C5B1873009F3025 /* Info.plist */,
-				0E73ED0D1C5D55670037F5A7 /* Message-1 */,
-				0E73ED0F1C5D5A2A0037F5A7 /* Message-2 */,
-			);
-			path = "Swift Mailing List";
 			sourceTree = "<group>";
 		};
 		0EE823061C674BE8005070AC /* CharterUITests */ = {
@@ -280,16 +281,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E6F56511C63DCF4002D960E /* MessagePreviewTableViewCell.xib in Resources */,
-				0E73ED0E1C5D55670037F5A7 /* Message-1 in Resources */,
-				0E017B551C5EAB3C00316E22 /* FullEmailMessageTableViewCell.xib in Resources */,
-				0E017B5B1C62C4E000316E22 /* MailingListViewController.xib in Resources */,
-				0E017B491C5DCE1400316E22 /* ThreadDetailViewController.xib in Resources */,
-				0E8B96161C5B1873009F3025 /* LaunchScreen.storyboard in Resources */,
-				0E644ED11C6724A3004467CE /* NoThreadsTableViewCell.xib in Resources */,
-				0EB318D21C5B2441005F7672 /* ThreadsViewController.xib in Resources */,
-				0E8B96131C5B1873009F3025 /* Assets.xcassets in Resources */,
-				0E73ED101C5D5A2A0037F5A7 /* Message-2 in Resources */,
+				0E0B36F21C6E701900DF9995 /* Info.plist in Resources */,
+				0E0B36F71C6E701900DF9995 /* Message-2 in Resources */,
+				0E0B36FF1C6E701900DF9995 /* ThreadsViewController.xib in Resources */,
+				0E0B36F91C6E701900DF9995 /* MessagePreviewTableViewCell.xib in Resources */,
+				0E0B36F11C6E701900DF9995 /* FullEmailMessageTableViewCell.xib in Resources */,
+				0E0B36F51C6E701900DF9995 /* MailingListViewController.xib in Resources */,
+				0E0B36FD1C6E701900DF9995 /* ThreadDetailViewController.xib in Resources */,
+				0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */,
+				0E0B36F61C6E701900DF9995 /* Message-1 in Resources */,
+				0E0B36EB1C6E701900DF9995 /* LaunchScreen.storyboard in Resources */,
+				0E0B36FB1C6E701900DF9995 /* NoThreadsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,22 +370,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8B961E1C5B1901009F3025 /* AppState.swift in Sources */,
-				0E8B96201C5B1962009F3025 /* Actions.swift in Sources */,
-				0E644ED01C6724A3004467CE /* NoThreadsTableViewCell.swift in Sources */,
-				0E8C2C141C62CBAA0038F5BE /* Email.swift in Sources */,
-				0E017B4B1C5DF2D200316E22 /* EmailTree.swift in Sources */,
-				0E8B960C1C5B1873009F3025 /* AppDelegate.swift in Sources */,
-				0E017B541C5EAB3C00316E22 /* FullEmailMessageTableViewCell.swift in Sources */,
-				0E017B571C62C33200316E22 /* MailingList.swift in Sources */,
-				0E8B96221C5B199F009F3025 /* AppReducer.swift in Sources */,
-				0E1A2A141C657E4F00003D98 /* EmailCollapsibleTextViewDataSource.swift in Sources */,
-				0E017B481C5DCE1400316E22 /* ThreadDetailViewController.swift in Sources */,
-				0E6F56501C63DCF4002D960E /* MessagePreviewTableViewCell.swift in Sources */,
-				0E1A2A1A1C66AE8E00003D98 /* EmailThread.swift in Sources */,
-				0E017B5A1C62C4E000316E22 /* MailingListViewController.swift in Sources */,
-				0EB318D11C5B2441005F7672 /* ThreadsViewController.swift in Sources */,
-				0EB318CE1C5B2155005F7672 /* AppCoordinator.swift in Sources */,
+				0E0B36FE1C6E701900DF9995 /* ThreadsViewController.swift in Sources */,
+				0E0B36E71C6E701900DF9995 /* AppDelegate.swift in Sources */,
+				0E0B36ED1C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift in Sources */,
+				0E0B36FC1C6E701900DF9995 /* ThreadDetailViewController.swift in Sources */,
+				0E0B36FA1C6E701900DF9995 /* NoThreadsTableViewCell.swift in Sources */,
+				0E0B36E91C6E701900DF9995 /* AppState.swift in Sources */,
+				0E0B36EC1C6E701900DF9995 /* Email.swift in Sources */,
+				0E0B36EE1C6E701900DF9995 /* EmailThread.swift in Sources */,
+				0E0B36F01C6E701900DF9995 /* FullEmailMessageTableViewCell.swift in Sources */,
+				0E0B36F31C6E701900DF9995 /* MailingList.swift in Sources */,
+				0E0B36E61C6E701900DF9995 /* AppCoordinator.swift in Sources */,
+				0E0B36EF1C6E701900DF9995 /* EmailTree.swift in Sources */,
+				0E0B36F81C6E701900DF9995 /* MessagePreviewTableViewCell.swift in Sources */,
+				0E0B36E81C6E701900DF9995 /* AppReducer.swift in Sources */,
+				0E0B36F41C6E701900DF9995 /* MailingListViewController.swift in Sources */,
+				0E0B36E51C6E701900DF9995 /* Actions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,10 +409,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0E8B96141C5B1873009F3025 /* LaunchScreen.storyboard */ = {
+		0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0E8B96151C5B1873009F3025 /* Base */,
+				0E0B36CF1C6E701900DF9995 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -511,7 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.Charter;
 				PRODUCT_NAME = Charter;
-				SWIFT_OBJC_BRIDGING_HEADER = "Swift Mailing List/SML-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Charter/SML-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -525,7 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.Charter;
 				PRODUCT_NAME = Charter;
-				SWIFT_OBJC_BRIDGING_HEADER = "Swift Mailing List/SML-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Charter/SML-Bridging-Header.h";
 			};
 			name = Release;
 		};
