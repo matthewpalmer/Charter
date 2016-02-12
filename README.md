@@ -1,12 +1,12 @@
 # Charter 
 
-![icon](http://i.imgur.com/LRlZpYp.png)
+<img src='http://i.imgur.com/LRlZpYp.png' style='display: inline-block' />
 
 An iOS client for the Swift mailing lists.
 
 By [@_matthewpalmer](http://twitter.com/_matthewpalmer)
 
-![screenshot1](http://i.imgur.com/LRlZpYp.png)
+![screenshot1](http://i.imgur.com/ouvY5SA.png?1)
 
 ![screenshot2](http://i.imgur.com/yPScDFa.png?1)
 
