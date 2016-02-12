@@ -6,6 +6,9 @@
   An iOS client for the Swift mailing lists by <a href="http://twitter.com/_matthewpalmer"</a>@_matthewpalmer</a>.
 </p>
 
+<p align="center">
+<img src="http://i.imgur.com/ouvY5SA.png" /><img src="http://i.imgur.com/yPScDFa.png" />
+</p>
 
 ## Details
 
