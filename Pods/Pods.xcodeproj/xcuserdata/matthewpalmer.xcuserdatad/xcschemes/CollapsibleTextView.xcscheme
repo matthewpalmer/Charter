@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '01B0711C93FD4F63248FF078'
-               BlueprintName = 'RealmSwift'
+               BlueprintIdentifier = 'B7C9EE16FCFC4AEF12110D95'
+               BlueprintName = 'CollapsibleTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RealmSwift.framework'>
+               BuildableName = 'CollapsibleTextView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

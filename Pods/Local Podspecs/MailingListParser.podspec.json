@@ -10,7 +10,8 @@
   },
   "social_media_url": "http://twitter.com/_matthewpalmer",
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "osx": "10.10"
   },
   "source": {
     "git": "https://_matthewpalmer@bitbucket.org/_matthewpalmer/mailinglistparser.git",

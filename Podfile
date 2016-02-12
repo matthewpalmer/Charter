@@ -5,8 +5,8 @@ use_frameworks!
 
 target 'Charter' do
   pod 'ReSwift'
-  pod 'MailingListParser', :path => '~/dev/ios/MailingListParser'
-  pod 'CollapsibleTextView', :path => '~/dev/ios/CollapsibleTextView'
+  pod 'MailingListParser', :git => 'https://github.com/matthewpalmer/MailingListParser'
+  pod 'CollapsibleTextView', :git => 'https://github.com/matthewpalmer/CollapsibleTextView'
   pod 'GZIP', '~> 1.1.1'
   pod 'MMMarkdown', '~> 0.5.1'
   pod 'RealmSwift', '~> 0.98.0'

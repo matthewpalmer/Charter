@@ -1,1 +1,1 @@
-../../../../../CollapsibleTextView/CollapsibleTextView/CollapsibleTextView.h
+../../../CollapsibleTextView/CollapsibleTextView/CollapsibleTextView.h

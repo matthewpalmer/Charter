@@ -1,20 +1,28 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "FBB759E96452F8ECD8AE9B779B12880CF8D81920" : 0,
+    "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3" : 0,
     "669255ED85F7807498CFC972E0C6877DC6604494" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "767DDFA2-A38D-419A-A518-8552BA6E5BA2",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "FBB759E96452F8ECD8AE9B779B12880CF8D81920" : "MailingListParser\/",
+    "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3" : "Swift%20Mailing%20List\/",
     "669255ED85F7807498CFC972E0C6877DC6604494" : "CollapsibleTextView\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Charter",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Charter.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/matthewpalmer\/Charter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/_matthewpalmer\/collapsibletextview.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

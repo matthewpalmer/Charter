@@ -1,1 +1,1 @@
-../../../../../MailingListParser/MailingListParser/MailingListParser.h
+../../../MailingListParser/MailingListParser/MailingListParser.h
