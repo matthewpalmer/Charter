@@ -1,6 +1,0 @@
-framework module CollapsibleTextView {
-  umbrella header "CollapsibleTextView-umbrella.h"
-
-  export *
-  module * { export * }
-}
