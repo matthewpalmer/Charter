@@ -1,14 +1,11 @@
-# Charter 
+<p align="center">
+  <img src="http://i.imgur.com/ClrkeeK.png" />
+  
+  An iOS client for the Swift mailing lists.
 
-<img src='http://i.imgur.com/LRlZpYp.png' style='display: inline-block' />
+  By [@_matthewpalmer](http://twitter.com/_matthewpalmer)
+</p>
 
-An iOS client for the Swift mailing lists.
-
-By [@_matthewpalmer](http://twitter.com/_matthewpalmer)
-
-![screenshot1](http://i.imgur.com/ouvY5SA.png?1)
-
-![screenshot2](http://i.imgur.com/yPScDFa.png?1)
 
 ## Details
 
@@ -34,7 +31,7 @@ but open an issue and we can track it.
 
 **What's next?**
 
-I’ll be tracking what I’m working on in the issues for this repo, but roughly
+I’ll mainly be tracking what I’m working on in the issues for this repo, but roughly
 
 * Add a backend so we can get faster list updates (and open source it)
 * Clean up the front end codebase
