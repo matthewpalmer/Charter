@@ -1,10 +1,8 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Crashlytics/iOS" "${PODS_ROOT}/Fabric/iOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Crashlytics" "${PODS_ROOT}/Headers/Public/Fabric"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/CollapsibleTextView.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GZIP.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MMMarkdown.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MailingListParser.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ReSwift.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Realm.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RealmSwift.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Crashlytics" -isystem "${PODS_ROOT}/Headers/Public/Fabric"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "CollapsibleTextView" -framework "Crashlytics" -framework "Fabric" -framework "GZIP" -framework "MMMarkdown" -framework "MailingListParser" -framework "ReSwift" -framework "Realm" -framework "RealmSwift" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/CollapsibleTextView.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/GZIP.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MMMarkdown.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/MailingListParser.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ReSwift.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Realm.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RealmSwift.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "CollapsibleTextView" -framework "GZIP" -framework "MMMarkdown" -framework "MailingListParser" -framework "ReSwift" -framework "Realm" -framework "RealmSwift"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Charter
 PODS_ROOT = ${SRCROOT}/Pods

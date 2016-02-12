@@ -10,7 +10,5 @@ target 'Charter' do
   pod 'GZIP', '~> 1.1.1'
   pod 'MMMarkdown', '~> 0.5.1'
   pod 'RealmSwift', '~> 0.98.0'
-  pod 'Fabric'
-  pod 'Crashlytics'
 end
 
