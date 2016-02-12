@@ -1,9 +1,9 @@
 <p align="center">
   <img src="http://i.imgur.com/ClrkeeK.png" />
-  
-  An iOS client for the Swift mailing lists.
+</p>
 
-  By [@_matthewpalmer](http://twitter.com/_matthewpalmer)
+<p align="center">
+  An iOS client for the Swift mailing lists by <a href="http://twitter.com/_matthewpalmer"</a>@_matthewpalmer</a>.
 </p>
 
 
