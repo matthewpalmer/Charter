@@ -26,7 +26,7 @@ Definitely not. I'm working on it.
 
 **Is this available on the App Store?**
 
-It will be soon, but I’m sick of waiting for the app store to approve it, so I figured I’d just post it.
+It will be soon, but I’m sick of waiting for it to get approved. I figured I’d just post it.
 
 **Can I contribute?**
 
@@ -36,9 +36,8 @@ but open an issue and we can track it.
 
 **What’s next?**
 
-I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Source by Default” thing, so I’ll mainly track what’s coming up in the Github issues for this repo, but roughly
+I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Source by Default” thing, so I’ll mainly track what’s coming up in the GitHub issues for this repo, but roughly
 
 * Add a backend so we can get faster list updates (and open source it)
-* Clean up the front end codebase
-* Fix bugs
-* Add new features
+* Clean up the front end codebase so it's easier for others to contribute
+* The usual: bug fixes and new features
