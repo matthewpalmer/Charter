@@ -20,13 +20,9 @@
 2. `pod install`
 3. Run the app in Xcode
 
-**Is this good? Is the code for this good?**
-
-Definitely not. I'm working on it.
-
 **Is this available on the App Store?**
 
-It will be soon, but I’m sick of waiting for it to get approved. I figured I’d just post it.
+Yep—[Charter on the App Store](https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&mt=8). You’re welcome to download from the App Store or build it yourself, whatever’s easiest.
 
 **Can I contribute?**
 
