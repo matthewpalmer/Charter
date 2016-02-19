@@ -79,8 +79,8 @@ Add some HTTP Basic Auth security (note that this is different to the database u
 ```
 ## Configuration for file based Identity Manager
 users:
-    - userid: SOMERESTUSERNAME
-      password: SOMERESTPASSWORD
+    - userid: some_REST_user
+      password: some_REST_password
       roles: [users]
 ```
 
