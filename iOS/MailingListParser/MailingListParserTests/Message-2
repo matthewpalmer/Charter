@@ -1,0 +1,30 @@
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160202/f424e07b/attachment.html>
+
+From tseitz42 at icloud.com  Wed Feb  3 00:35:29 2016
+From: tseitz42 at icloud.com (Thorsten Seitz)
+Date: Wed, 03 Feb 2016 07:35:29 +0100
+Subject: [swift-evolution] Proposal: Pattern Matching Partial Function
+ (#111)
+In-Reply-To: <5BF00F78-C732-416E-A1F5-C8F1858886B3@novafore.com>
+References: <5BF00F78-C732-416E-A1F5-C8F1858886B3@novafore.com>
+Message-ID: <AF417EF0-DAD2-408D-BDC3-334C88B88083@icloud.com>
+
+Hi Craig, 
+
+the following sentence is a bit misleading as it makes the feature seem a special ability on functions which accept closures which I do not think it should be.
+
+> Am 29.01.2016 um 07:43 schrieb Craig Cruden via swift-evolution <swift-evolution at swift.org>:
+> 
+> Any function which accepts a closure would also be able to accept a closure composed of partial functions defined usingcase/default syntax used in switch-case.
+
+I think it should be a new feature how unary closures can be written, so I would reword it a little bit:
+
+"Any closure that takes one argument can be composed of ..."
+
+This would make your example of using it with reduce() invalid, though, but I think this would create ambiguities with cases where the closure is actually called with a tuple as single argument anyway (similar to the problems of the current autosplatting of tuples as function arguments which Chris want's to remove because of the subtle problems this introduces). It probably would be sufficient to just use match() within the reduction closure.
+
+I still don't like the shortened "cases" variant and would prefer to drop it or at least replace or extend the match() example with a standard variant making it look like a "real" case expression.
+
+-Thorsten 

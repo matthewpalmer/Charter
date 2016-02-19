@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3" : 0,
+    "FBB759E96452F8ECD8AE9B779B12880CF8D81920" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "953D6612-4866-4F5B-856A-F706E3D8E1D9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3" : "Charter\/",
+    "FBB759E96452F8ECD8AE9B779B12880CF8D81920" : "MailingListParser\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftLangEmailLists",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iOS\/MailingListToJSON\/SwiftLangEmailLists.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/matthewpalmer\/Charter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "31ECCF9331367B7D4BDA07A8EF36656CF6CA3DA3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/matthewpalmer\/MailingListParser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FBB759E96452F8ECD8AE9B779B12880CF8D81920"
+    }
+  ]
+}

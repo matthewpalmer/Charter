@@ -1,0 +1,63 @@
+An HTML attachment was scrubbed...
+URL: <https://lists.swift.org/pipermail/swift-users/attachments/20160125/38dfb2f8/attachment.html>
+
+From jon889 at me.com  Mon Jan 25 09:54:37 2016
+From: jon889 at me.com (Jonathan Bailey)
+Date: Mon, 25 Jan 2016 15:54:37 +0000
+Subject: [swift-users] try? with a function that returns an optional
+In-Reply-To: <CAMA6uOAhMv1SAPRe=KcD15kYTmJjNNnDWtG+zBVJbXswNLMZGw@mail.gmail.com>
+References: <2FA36C98-FBCA-4F27-9706-77DF38BF747C@me.com>
+	<CAMA6uOAhMv1SAPRe=KcD15kYTmJjNNnDWtG+zBVJbXswNLMZGw@mail.gmail.com>
+Message-ID: <A52D5CCD-E51B-488F-B915-8795231FFEB9@me.com>
+
+So it would be legal to change the type of y in the second example to `Int??`
+
+Does that mean when assigning optionals, it will unwrap, check if it's nill and assign nil, else assign the original value? This seems kind of pointless to just assigning the complete optional
+
+
+> On 25 Jan 2016, at 15:49, Svein Halvor Halvorsen <svein.h at lvor.halvorsen.cc> wrote:
+>
+> This is exactly according to the documentation.
+> In your first example `someThrowingFunction` returns an `Int`, so `y` is defined as an `Int?`.
+> In the second example `someThrowingFunction` returns an `Int?`, so `y` should be an `Int??`
+>
+> However, since you didn't update the definition of `y` in your second example, the if branch either assigns an `Int?` to an `Int?`, which is legal, and may be nil, or it explicitly sets it to nil, which is also legal. Thus, effectively unwrapping the nested optionals.
+>
+> Yu could also apply a `flatMap` to the nested optional, like so:
+>
+> let x = (try? someThrowingFunction())?.flatMap({$0})
+>
+> I'm not sure if it's more readable, though.
+>
+>
+> 2016-01-25 14:01 GMT+01:00 Jonathan Bailey via swift-users <swift-users at swift.org>:
+>> In the language guide on the apple website, https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID542
+>>
+>> It says the following assignments to x and y are equivalent:
+>> func someThrowingFunction() throws -> Int { ... }
+>> let x = try? someThrowingFunction()
+>> // x has type `Int?`
+>>
+>> let y: Int?
+>> do {
+>>     y = try someThrowingFunction()
+>> } catch {
+>>     y = nil
+>> }
+>>
+>> However this isn’t the case if someThrowingFunction also returns an optional, say:
+>>
+>> func someThrowingFunction() throws -> Int? { ... }
+>>
+>> The type of x would be `Int??`, but the type of y is still `Int?`, is there some way to make the `try?` return an `Int?` instead of a double optional, which is not very helpful.
+>>
+>> Thanks,
+>> Jonathan
+>>
+>>
+>> _______________________________________________
+>> swift-users mailing list
+>> swift-users at swift.org
+>> https://lists.swift.org/mailman/listinfo/swift-users
+>>
+>

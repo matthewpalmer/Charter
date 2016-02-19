@@ -1,0 +1,47 @@
+<p>Hi John,</p>
+
+<p>I don't think this represents a good direction.</p>
+
+<p><strong>IMHO</strong>, it is not as easy <a href="http://ormaintain.com">to read</a> for two reasons:</p>
+
+<ol>
+<li>The Unix grep and sed commands popularized a regular expression syntax that has been leveraged by numerous languages and libraries, and hence, most developers want that familiarity.</li>
+<li>The syntax presented by Swift Verbal Expressions is noisy, and hence it lacks the clear and concise nature of the syntax used by grep and sed.</li>
+</ol>
+
+<p>Cheers,</p>
+
+<p>-Patrick</p>
+
+<blockquote>
+<p>On Jan 31, 2016, at 10:48 PM, John Randolph <jcr at mac.com> wrote:</p>
+
+<p>></p>
+
+<blockquote>
+<p>On Jan 31, 2016, at 7:39 PM, Chris Lattner via swift-evolution <swift-evolution at swift.org <mailto:swift-evolution at swift.org>> wrote:</p>
+
+<p>></p>
+
+<blockquote>
+<p>On Jan 31, 2016, at 8:32 AM, Patrick Gili via swift-evolution <swift-evolution at swift.org <mailto:swift-evolution at swift.org>> wrote:</p>
+
+<p>There have been several threads that have discussed the notion of a regular expression literals. However, I didn't see anyone putting together a formal proposal, and hence I took the liberty to do so. I would appreciate discussion and comments on the proposal:</p>
+</blockquote>
+
+<p>I am +1 on the concept of adding regex literals to Swift, but -1 on this proposal.</p>
+
+<p>Specifically, instead of introducing regex literals, I’d suggest that you investigate introducing regex’s to the pattern grammar, which is what Swift uses for matching already.  Regex’s should be usable in the cases of a switch, for example.  Similarly, they should be able to bind variables directly to subpatterns.</p>
+
+<p>Further, I highly recommend checking out Perl 6’s regular expressions.  They are a community that has had an obsessive passion for regular expressions, and in Perl 6 they were given the chance to reinvent the wheel based on what they learned.  What they came up with is very powerful, and pretty good all around.</p>
+</blockquote>
+
+<p>Perl 6’s regex implementation looks like a  logical progression of the grep style as we’ve come to know it over the years, but I’d really like to see Swift go with something like the Verbal Expressions approach.</p>
+
+<p>https://github.com/VerbalExpressions/SwiftVerbalExpressions <a href="https://github.com/VerbalExpressions/SwiftVerbalExpressions">https://github.com/VerbalExpressions/SwiftVerbalExpressions</a></p>
+
+<p>All the power is there, but it’s far more readable.</p>
+
+<p>-jcr</p>
+</blockquote>
+

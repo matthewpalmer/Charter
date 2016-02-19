@@ -1,0 +1,400 @@
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160203/67770881/attachment.html>
+
+From brent at architechies.com  Wed Feb  3 00:08:22 2016
+From: brent at architechies.com (Brent Royal-Gordon)
+Date: Tue, 2 Feb 2016 22:08:22 -0800
+Subject: [swift-evolution] When to use argument labels (a new approach)
+In-Reply-To: <m2vb663a6h.fsf@eno.apple.com>
+References: <m2vb663a6h.fsf@eno.apple.com>
+Message-ID: <F4EC3B94-010B-42E4-AF5D-A94B57167C2D@architechies.com>
+
+> 1. If and only if the first argument could complete a sentence*
+>   beginning in the base name and describing the primary semantics of
+>   the call, it gets no argument label:
+> 
+>     a.contains(b)  // b completes the phrase "a contains b"
+>     a.mergeWith(b) // b completes the phrase "merge with b"
+> 
+>     a.dismiss(animated: b) // "a, dismiss b" is a sentence but 
+>                            // doesn't describe the semantics at all, 
+>                            // thus we add a label for b.
+> 
+>     a.moveTo(x: 300, y: 400) // "a, move to 300" is a sentence 
+>                              // but doesn't describe the primary 
+>                              // semantics, which are to move in both
+>                              // x and y.  Thus, x gets a label.
+> 
+>     a.readFrom(u, ofType: b) // "a, read from u" describes
+>                              // the primary semantics, so u gets no
+>                              // label. b is an
+>                              // option that tunes the primary
+>                              // semantics
+> 
+>   [Note that this covers all the direct object cases and, I believe,
+>   all the default argument cases too, so maybe that exception can be
+>   dropped.  We still need the exceptions for full-width type
+>   conversions and indistinguishable peers]
+> 
+>   Note: when there is a noun in the base name describing the role of the
+>   first argument, we skip it in considering this criterion:
+> 
+>      a.addObserver(b) // "a, add b" completes a sentence describing 
+>                       // the semantics.  "Observer" is omitted in 
+>                       // making this determination.
+> 
+> * We could say "clause" here but I think making it an *independent*
+>  clause doesn't rule out any important use-cases (see
+>  https://web.cn.edu/kwheeler/gram_clauses_n_phrases.html) and at that
+>  point, you might as well say "sentence," which is a more
+>  universally-understood term.
+
+I've been considering this for a bit, and I'd like to suggest a different way of thinking about things. This is kind of high-level and may need to be translated into concrete guidelines, but it's guided my thinking about good Swift method names recently.
+
+You can broadly separate parameters into operands and options. Operands slot into the "sentence" formed by the method name; options generally do not.
+
+Operands should generally *not* be labeled explicitly with the name of what's being passed in that slot; the name should fall out by grammatical implication. For instance, in:
+
+	foo.remove(bar)
+
+The only sensible way of reading that is that `bar` will be removed from `foo`. If it were the other way around, it would have to be:
+
+	foo.removeFrom(bar)
+
+A second operand should usually be labeled, but not explicitly—only by grammatical implication. Again, this is because the structure of the "sentence" should imply the role of each operand. So when we want to insert into an array, which has two operands, we say:
+
+	foo.insert(bar, at: 0)
+
+The grammar used to label the first parameter, however, should be included in the method name itself. In a sense, the method's name should be thought of as "insert at", but the constraints of Swift syntax demands we use a parameter label for the "at".
+
+(There are, of course, the twin exceptions of omitting completely vacuous labels and labeling the meaning of operands whose type is not specific enough to imply their meaning. Both of these are at work in `reduce(_:combine:)`; it should theoretically be something like `reduce(_:with:)`, but `with` is vacuous and the type of the parameter is not strong enough to imply its meaning and it needs to be labeled `combine`.)
+
+Options, on the other hand, *are* explicitly labeled with the meaning of the parameter, because they aren't as directly connected to the sentence and it would be difficult to imply their role. Hence, in something like:
+
+	foo.lexicographicalCompare(foo2, isOrderedBefore: <)
+
+The second parameter is an option and has to be explicitly labeled with its meaning. Options *often* have default values, but not always; for instance, the `animated` parameter in many UIKit methods is an option, but Swift does not give it a default value. 
+
+Because options should be explicitly labeled with their meaning but operands should have their meaning implied, options usually have the same label and variable name, while operands usually have different labels and variable names. This is not *always* the case, but it's a pretty strong hint.
+
+*Usually* the first parameter is an operand and the other parameters are options, and so by default, Swift gives the first parameter an empty label and the remaining parameters a label matching their variable name. But you may have to override that in either direction if your method doesn't quite fit that norm.
+
+Incidentally, I would like to suggest one small change based on this conception: the `min` and `max` free functions should be called `minOf` and `maxOf`. This both reads slightly better and gives them distinct names from the `Collection` methods.
+
+* * *
+
+As long as I'm here, a word about method names.
+
+I've seen some suggestions that method names should be only verbs, and so `-addSubview:` should be `add(subview:)`. I don't think this is useful or appropriate.
+
+What you need to understand about this is that the `Subview` in `-addSubview:` is not really labeling the parameter. It's connecting the method to the `subviews` collection. Similarly, in `-addObserver:forKeyPath:options:context:`, the `Observer` is connecting the method to the (private, side-table-stored) observer list. This also reflects the fact that, even though these two operations both "add" something, they are massively different—`addObserver` and `addSubview` have almost nothing in common.
+
+Importing `-addSubview:` as `add(subview:)` would be like importing `-setNeedsDisplayInRect:` as `set(needsDisplayInRect:)`. The method name quite simply no longer describes the operation being performed.
+
+-- 
+Brent Royal-Gordon
+Architechies
+
+
+From jonathan.d.tang at gmail.com  Wed Feb  3 00:17:44 2016
+From: jonathan.d.tang at gmail.com (Jonathan Tang)
+Date: Tue, 2 Feb 2016 22:17:44 -0800
+Subject: [swift-evolution] When to use argument labels (a new approach)
+In-Reply-To: <m2vb663a6h.fsf@eno.apple.com>
+References: <m2vb663a6h.fsf@eno.apple.com>
+Message-ID: <CAAR2SvOuFtg6Y2ZNhgEfvZ3HsqeAdLQdH-PbQA5jncbzyhsmKg@mail.gmail.com>
+
+On Tue, Feb 2, 2016 at 4:32 PM, Dave Abrahams via swift-evolution <
+swift-evolution at swift.org> wrote:
+
+>
+> This thread is related to the review of new API guidelines, but it's not
+> a review thread; it's exploratory.  The goal is to come up with
+> guidelines that:
+>
+> * describe when and where to use argument labels
+> * require labels in many of the cases people have asked for them
+> * are understandable by humans
+> * preserve important semantics communicated by existing APIs.
+>
+> Here's what I'm thinking
+>
+> 1. If and only if the first argument could complete a sentence*
+>    beginning in the base name and describing the primary semantics of
+>    the call, it gets no argument label:
+>
+>      a.contains(b)  // b completes the phrase "a contains b"
+>      a.mergeWith(b) // b completes the phrase "merge with b"
+>
+>      a.dismiss(animated: b) // "a, dismiss b" is a sentence but
+>                             // doesn't describe the semantics at all,
+>                             // thus we add a label for b.
+>
+>      a.moveTo(x: 300, y: 400) // "a, move to 300" is a sentence
+>                               // but doesn't describe the primary
+>                               // semantics, which are to move in both
+>                               // x and y.  Thus, x gets a label.
+>
+>      a.readFrom(u, ofType: b) // "a, read from u" describes
+>                               // the primary semantics, so u gets no
+>                               // label. b is an
+>                               // option that tunes the primary
+>                               // semantics
+>
+>    [Note that this covers all the direct object cases and, I believe,
+>    all the default argument cases too, so maybe that exception can be
+>    dropped.  We still need the exceptions for full-width type
+>    conversions and indistinguishable peers]
+>
+>    Note: when there is a noun in the base name describing the role of the
+>    first argument, we skip it in considering this criterion:
+>
+>       a.addObserver(b) // "a, add b" completes a sentence describing
+>                        // the semantics.  "Observer" is omitted in
+>                        // making this determination.
+>
+> * We could say "clause" here but I think making it an *independent*
+>   clause doesn't rule out any important use-cases (see
+>   https://web.cn.edu/kwheeler/gram_clauses_n_phrases.html) and at that
+>   point, you might as well say "sentence," which is a more
+>   universally-understood term.
+>
+>
++1
+
+
+> 2. Words that describe attributes of an *already-existing* instance
+>    should go in the base name rather than in a label:
+>
+>       a.tracksHavingMediaType("Wax Cylinder")      // yes
+>       a.removeFirstTrackHavingMediaType("BetaMax") // yes
+>
+>       a.tracks(mediaType: "Wax Cylinder")          // no
+>       a.removeFirstTrack(havingMediaType: "BetaMax") // no
+>
+>    [yes, we could use "With" instead of "Having", but it's more
+>    ambiguous]
+>
+>    Words that describe attributes of an instance *to be created* should
+>    go in argument labels, rather than the base name (for parity with
+>    initializers):
+>
+>       AudioTrack(mediaType: "BetaMax")                   // initializer
+>       trackFactory.newTrack(mediaType: "Wax Cylinder")   // yes
+>
+>       trackFactory.newTrackWithMediaType("Wax Cylinder") // no
+>
+>
+Very mixed feelings on this, probably adding up to a +0.2 or so.  I'll
+mention a couple concerns that I haven't seen anyone raise:
+
+Please consider the first-class function case when naming.  Particularly
+since Swift encourages passing functions around as objects rather than
+using string selectors.  #2 implies that the prepositional phrase will
+appear when *referencing* the method (vs. calling it):
+
+	let ops = [
+		self.removeFirstTrackHavingMediaType,
+		self.addTrackWithMediaType
+		self.populateTrackOperationsForMediaType
+		self.play
+	]
+
+vs.
+
+	let ops = [
+		self.removeFirstTrack
+		self.addTrack
+		self.populateTrackOperations
+		self.play
+	]
+
+The second option wins on verbosity, but the first arguably gives more
+clarity as to what the methods actually do.  Also, the second has a
+potentially annoying semantic problem: if you have overloads for these
+methods that differ only in keyword, Swift won't be able to disambiguate
+them:
+
+	// Compile error: Invalid redeclaration of removeFirstTrack
+	func removeFirstTrack(havingMediaType: String) { ... }
+	func removeFirstTrack(named: String) { ... }
+	func removeFirstTrack(byArtist: String) { ... }
+
+	// Compile error only when the function is referenced
+	func removeTrack(n: Int, named: String)
+	func removeTrack(n: Int, byArtist: String)
+	let f = self.removeTrack   // named: or byArtist:?
+
+	// Legal...
+	func removeFirstTrackHavingMediaType(_: String) { ... }
+	func removeFirstTrackNamed(_: String) { ... }
+	func removeFirstTrackByArtist(_: String) { ... }
+
+Unless the Swift compiler were to change to make the former set legal, I
+think this is a powerful argument in favor of this proposal, because
+otherwise you may find that the compiler prevents you from writing the code
+that the guidelines encourage.  You might also find that changing the type
+of an overload means you have to change the name to prevent a collision,
+which could be very surprising to users.
+
+My other reservation is the flip side of this argument: when you use a
+function in a first-class context, often you *want* to leave things
+unspecified.  After all, the whole point of parameterized code is so that
+it can be used in more contexts.  This comes most often with containers or
+other generic functions:
+
+	myStringArray.map(myString.appendContentsOf)    // wordy and awkward
+	myStringArray.map(myString.append)  // cleaner
+
+I'd consider this a less severe problem, but something I'd still like
+considered, particularly given the existence of several higher-order
+functions in the standard library.
+
+
+> 3. (this one is separable) When the first argument is the *name* or
+>    *identifier* of the subject in the base name, do not label it or
+>    describe it in the base name.
+>
+>       a.transitionToScene(.GreatHall)               // yes
+>       a.transitionToSceneWithIdentifier(.GreatHall) // no
+>
+>       let p = someFont.glyph("propellor")           // yes
+>       let p = someFont.glyphWithName("propellor")   // no
+>       let p = someFont.glyph(name: "propellor")     // no
+>
+>
+>
++1
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160202/f424e07b/attachment.html>
+
+From tseitz42 at icloud.com  Wed Feb  3 00:35:29 2016
+From: tseitz42 at icloud.com (Thorsten Seitz)
+Date: Wed, 03 Feb 2016 07:35:29 +0100
+Subject: [swift-evolution] Proposal: Pattern Matching Partial Function
+ (#111)
+In-Reply-To: <5BF00F78-C732-416E-A1F5-C8F1858886B3@novafore.com>
+References: <5BF00F78-C732-416E-A1F5-C8F1858886B3@novafore.com>
+Message-ID: <AF417EF0-DAD2-408D-BDC3-334C88B88083@icloud.com>
+
+Hi Craig, 
+
+the following sentence is a bit misleading as it makes the feature seem a special ability on functions which accept closures which I do not think it should be.
+
+> Am 29.01.2016 um 07:43 schrieb Craig Cruden via swift-evolution <swift-evolution at swift.org>:
+> 
+> Any function which accepts a closure would also be able to accept a closure composed of partial functions defined usingcase/default syntax used in switch-case.
+
+I think it should be a new feature how unary closures can be written, so I would reword it a little bit:
+
+"Any closure that takes one argument can be composed of ..."
+
+This would make your example of using it with reduce() invalid, though, but I think this would create ambiguities with cases where the closure is actually called with a tuple as single argument anyway (similar to the problems of the current autosplatting of tuples as function arguments which Chris want's to remove because of the subtle problems this introduces). It probably would be sufficient to just use match() within the reduction closure.
+
+I still don't like the shortened "cases" variant and would prefer to drop it or at least replace or extend the match() example with a standard variant making it look like a "real" case expression.
+
+-Thorsten 
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160203/80de939f/attachment.html>
+
+From david at owensd.io  Wed Feb  3 00:39:28 2016
+From: david at owensd.io (David Owens II)
+Date: Tue, 2 Feb 2016 22:39:28 -0800
+Subject: [swift-evolution] Proposal: Pattern Matching Partial Function
+	(#111)
+In-Reply-To: <119D47E2-0357-427D-A069-C6D8844711CC@novafore.com>
+References: <5BF00F78-C732-416E-A1F5-C8F1858886B3@novafore.com>
+	<5F2385B8-E87C-4A1C-9640-192E623FEC1D@icloud.com>
+	<2A741803-DC58-482E-B061-D02884D84DD2@icloud.com>
+	<119D47E2-0357-427D-A069-C6D8844711CC@novafore.com>
+Message-ID: <6B0C0FBE-11BE-49B1-9BCB-7398E8EC9AF7@owensd.io>
+
+I'm really confused by this proposal. Primarily it really seems to be asking for two things:
+
+	1. Allow closures to skip the "switch item" line, and
+	2. Implicit returns within closures
+
+The desired troy example:
+
+let weightKg = weightTroy.reduce(0.00) {
+		case (let acc, Troy.Pound(let quantity)): acc + Double(quantity) * 0.373
+		case (let acc, Troy.Ounce(let quantity)): acc + Double(quantity) * 0.031103
+		case (let acc, Troy.Pennyweight(let quantity)): acc + Double(quantity) * 0.001555
+		case (let acc, Troy.Grain(let quantity)): acc + Double(quantity) * 0.0000648
+}
+
+What you can already do today:
+
+let weightKg = weightTroy.reduce(0.00) { acc, troy in
+		switch troy {
+		case let .Pound(quantity): return acc + Double(quantity) * 0.373
+		case let .Ounce(quantity): return acc + Double(quantity) * 0.031103
+		case let .Pennyweight(quantity): return acc + Double(quantity) * 0.001555
+		case let .Grain(quantity): return acc + Double(quantity) * 0.0000648
+		}
+}
+
+Unless I'm misunderstanding some other great value, this seems like a lot of syntax to save typing "switch troy" and "return". If you forget "return", the compiler will already error for you. I don't think the desired example brings more clarity either.
+
+As to the initialization example:
+
+let str: String = {
+		switch($0) {
+		case .Cold: return "Too cold"
+		case .Hot:  return "Too hot"
+		default:    return "Just right"
+		}
+}(state)
+
+Yes, the type must be explicit because Swift cannot figure it out. I'd rather address that issue.
+
+For me, I'm really not seeing the value the complexity of the proposal brings.
+
+-David
+
+> On Feb 2, 2016, at 10:07 PM, Craig Cruden via swift-evolution <swift-evolution at swift.org> wrote:
+> 
+> I will wait another 24 hours before resubmitting it (even though this discussion thread is not long)…. 
+> 
+> Anyone that had commented on this in the other thread, but not this one — it would be greatly appreciated if at least one comment (yay or nay) were added to this thread.
+> 
+> I think the last thread where this was discussed for at least 10 days and had many more comments - already fleshed everything out.
+> 
+> 
+>> On 2016-02-03, at 13:03:18, Paul Ossenbruggen <possen at gmail.com <mailto:possen at gmail.com>> wrote:
+>> 
+>> Agreed. I really would like this to move forward.
+>> 
+>> 
+>>> On Feb 2, 2016, at 6:59 PM, Denis Nikitenko via swift-evolution <swift-evolution at swift.org <mailto:swift-evolution at swift.org>> wrote:
+>>> 
+>>> +1 from me - I would like to see this discussion continue.  Swift already recognizes the utility of pattern matching for initialization by retaining the ?: operator.  It would be nice to see a more general and flexible solution that is still reasonably concise and doesn’t introduce new keywords and operators - though I’m sure at least some changes to the language would be inevitable.  
+>>> 
+>>> 
+>>>> On Jan 29, 2016, at 1:43 AM, Craig Cruden via swift-evolution <swift-evolution at swift.org <mailto:swift-evolution at swift.org>> wrote:
+>>>> 
+>>>> The following proposal apparently was not considered widely enough discussed since it was “buried” in a 400 message discussion thread that meandered before coming to the final draft.
+>>>> 
+>>>> As such, to have it reopened — I am restarting the discussion in a new thread to ensure wider discussion.
+>>>> 
+>>>> 
+>>>> https://github.com/cacruden/swift-evolution/blob/master/proposals/0024-Pattern-Matching-Partial-Function.md <https://github.com/cacruden/swift-evolution/blob/master/proposals/0024-Pattern-Matching-Partial-Function.md>
+>>>> 
+>>>> 
+>>>> Pattern Matching Partial Function
+>>>> 
+>>> 
+>>> <snip>
+>>> 
+>>> _______________________________________________
+>>> swift-evolution mailing list
+>>> swift-evolution at swift.org <mailto:swift-evolution at swift.org>
+>>> https://lists.swift.org/mailman/listinfo/swift-evolution <https://lists.swift.org/mailman/listinfo/swift-evolution>
+> 
+> _______________________________________________
+> swift-evolution mailing list
+> swift-evolution at swift.org
+> https://lists.swift.org/mailman/listinfo/swift-evolution
