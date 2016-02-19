@@ -10,7 +10,21 @@ import UIKit
 import MailingListParser
 import RealmSwift
 
-class Email: Object {
+protocol EmailThread: class {
+    var messageID: String { get }
+    var from: String { get }
+    var date: NSDate { get }
+    var subject: String { get }
+    var replies: [EmailThread] { get }
+    var mailingList: String { get }
+}
+
+// Ad-hoc equality because I can't work out how to have self-referential protocols conform to equality (Self or associated type requirements issue).
+func ==<T: EmailThread>(lhs: T, rhs: T) -> Bool {
+    return lhs.messageID == rhs.messageID
+}
+
+class Email: Object, EmailThread {
     dynamic var messageID: String = ""
     dynamic var from: String = ""
     dynamic var date: NSDate = NSDate(timeIntervalSince1970: 1)
@@ -20,6 +34,10 @@ class Email: Object {
     let children: List<Email> = List<Email>()
     dynamic var mailingList: String = ""
     dynamic var content: String = ""
+    
+    var replies: [EmailThread] {
+        return Array(children)
+    }
     
     override static func primaryKey() -> String? {
         return "messageID"
