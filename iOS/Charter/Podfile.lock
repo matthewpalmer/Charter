@@ -11,18 +11,18 @@ PODS:
   - ReSwift (0.2.4)
 
 DEPENDENCIES:
-  - CollapsibleTextView (from `./CollapsibleTextView`)
+  - CollapsibleTextView (from `../CollapsibleTextView`)
   - GZIP (~> 1.1.1)
-  - MailingListParser (from `./MailingListParser`)
+  - MailingListParser (from `../MailingListParser`)
   - MMMarkdown (~> 0.5.1)
   - RealmSwift (~> 0.98.0)
   - ReSwift
 
 EXTERNAL SOURCES:
   CollapsibleTextView:
-    :path: "./CollapsibleTextView"
+    :path: "../CollapsibleTextView"
   MailingListParser:
-    :path: "./MailingListParser"
+    :path: "../MailingListParser"
 
 SPEC CHECKSUMS:
   CollapsibleTextView: c24f359d0ff7df5a88161fc27893fac03f3f1a8d
