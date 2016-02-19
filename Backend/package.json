@@ -1,0 +1,32 @@
+{
+  "name": "charter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "cheerio": "^0.20.0",
+    "mailin": "^3.0.3",
+    "moment": "^2.11.2",
+    "mongodb": "^2.1.7",
+    "request": "^2.69.0",
+    "sprintf-js": "^1.0.3"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.4.5",
+    "nock": "^7.2.1",
+    "should": "^8.2.2",
+    "sinon": "^1.17.3"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha --",
+    "test-all": "npm test ./test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@162.243.241.218:charter.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
