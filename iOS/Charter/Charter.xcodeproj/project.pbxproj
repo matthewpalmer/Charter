@@ -36,6 +36,9 @@
 		0E8975D31C77023A00ECFEA4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */; };
 		0E8975E11C77BC2F00ECFEA4 /* EmailThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975E01C77BC2F00ECFEA4 /* EmailThreadService.swift */; };
 		0E8975F31C77BC8900ECFEA4 /* EmailThreadServiceImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975F21C77BC8900ECFEA4 /* EmailThreadServiceImplTest.swift */; };
+		0E8975F61C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975F51C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift */; };
+		0E8975F81C77D8A800ECFEA4 /* EmailThreadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975F71C77D8A800ECFEA4 /* EmailThreadRequest.swift */; };
+		0E8975FA1C77D9CD00ECFEA4 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E8975F91C77D9CD00ECFEA4 /* Credentials.plist */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		0E8975E81C77BC5900ECFEA4 /* CharterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8975EC1C77BC5900ECFEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E8975F21C77BC8900ECFEA4 /* EmailThreadServiceImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailThreadServiceImplTest.swift; path = Services/EmailThreadServiceImplTest.swift; sourceTree = "<group>"; };
+		0E8975F51C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailThreadServiceDataSources.swift; path = Services/EmailThreadServiceDataSources.swift; sourceTree = "<group>"; };
+		0E8975F71C77D8A800ECFEA4 /* EmailThreadRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailThreadRequest.swift; path = Networking/EmailThreadRequest.swift; sourceTree = "<group>"; };
+		0E8975F91C77D9CD00ECFEA4 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Credentials.plist; path = Networking/Credentials.plist; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8975DD1C77BBDE00ECFEA4 /* Services */,
+				0E8975F41C77D7A900ECFEA4 /* Networking */,
 				0E0B36C81C6E701900DF9995 /* Actions.swift */,
 				0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */,
 				0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */,
@@ -164,6 +171,7 @@
 		0E8975DD1C77BBDE00ECFEA4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0E8975F51C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift */,
 				0E8975E01C77BC2F00ECFEA4 /* EmailThreadService.swift */,
 				0E8975F21C77BC8900ECFEA4 /* EmailThreadServiceImplTest.swift */,
 			);
@@ -176,6 +184,15 @@
 				0E8975EC1C77BC5900ECFEA4 /* Info.plist */,
 			);
 			path = CharterTests;
+			sourceTree = "<group>";
+		};
+		0E8975F41C77D7A900ECFEA4 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0E8975F71C77D8A800ECFEA4 /* EmailThreadRequest.swift */,
+				0E8975F91C77D9CD00ECFEA4 /* Credentials.plist */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		0E8B95FF1C5B1873009F3025 = {
@@ -353,6 +370,7 @@
 				0E0B36FD1C6E701900DF9995 /* ThreadDetailViewController.xib in Resources */,
 				0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */,
 				0E0B36F61C6E701900DF9995 /* Message-1 in Resources */,
+				0E8975FA1C77D9CD00ECFEA4 /* Credentials.plist in Resources */,
 				0E0B36EB1C6E701900DF9995 /* LaunchScreen.storyboard in Resources */,
 				0E0B36FB1C6E701900DF9995 /* NoThreadsTableViewCell.xib in Resources */,
 			);
@@ -432,9 +450,11 @@
 				0E0B36E71C6E701900DF9995 /* AppDelegate.swift in Sources */,
 				0E0B36ED1C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift in Sources */,
 				0E0B36FC1C6E701900DF9995 /* ThreadDetailViewController.swift in Sources */,
+				0E8975F81C77D8A800ECFEA4 /* EmailThreadRequest.swift in Sources */,
 				0E0B36FA1C6E701900DF9995 /* NoThreadsTableViewCell.swift in Sources */,
 				0E0B36E91C6E701900DF9995 /* AppState.swift in Sources */,
 				0E0B36EC1C6E701900DF9995 /* Email.swift in Sources */,
+				0E8975F61C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift in Sources */,
 				0E8975E11C77BC2F00ECFEA4 /* EmailThreadService.swift in Sources */,
 				0E0B36F01C6E701900DF9995 /* FullEmailMessageTableViewCell.swift in Sources */,
 				0E0B36F31C6E701900DF9995 /* MailingList.swift in Sources */,

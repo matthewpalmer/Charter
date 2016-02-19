@@ -1,3 +1,4 @@
 iOS/**/screenshots
 iOS/**/Pods/
 Backend/**/node_modules
+iOS/**/Networking/Credentials.plist
