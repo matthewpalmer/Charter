@@ -34,8 +34,7 @@
 		0E0B36FD1C6E701900DF9995 /* ThreadDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */; };
 		0E0B36FE1C6E701900DF9995 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */; };
 		0E0B36FF1C6E701900DF9995 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */; };
-		0EE823101C674DF0005070AC /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8230F1C674DF0005070AC /* SnapshotTestCase.swift */; };
-		0EE823121C674FF7005070AC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE823111C674FF7005070AC /* SnapshotHelper.swift */; };
+		0E8975D31C77023A00ECFEA4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,11 +78,10 @@
 		0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadDetailViewController.xib; sourceTree = "<group>"; };
 		0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
 		0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadsViewController.xib; sourceTree = "<group>"; };
+		0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = Snapshot/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EE8230F1C674DF0005070AC /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotTestCase.swift; path = ../SnapshotTestCase.swift; sourceTree = "<group>"; };
-		0EE823111C674FF7005070AC /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		1528DD33AA4E86705B2BDE04 /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
 		1D429F569C69C6E0148D0A7C /* Pods-Charter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Charter/Pods-Charter.debug.xcconfig"; sourceTree = "<group>"; };
 		48BD330A86F6C6BA34A7FD2F /* Pods-Swift Mailing List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,8 +166,7 @@
 		0EE823061C674BE8005070AC /* CharterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0EE8230F1C674DF0005070AC /* SnapshotTestCase.swift */,
-				0EE823111C674FF7005070AC /* SnapshotHelper.swift */,
+				0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */,
 				0EE823091C674BE8005070AC /* Info.plist */,
 			);
 			path = CharterUITests;
@@ -379,8 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EE823101C674DF0005070AC /* SnapshotTestCase.swift in Sources */,
-				0EE823121C674FF7005070AC /* SnapshotHelper.swift in Sources */,
+				0E8975D31C77023A00ECFEA4 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,10 +516,12 @@
 		0EE8230D1C674BE8005070AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CharterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CharterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = Charter;
 				USES_XCTRUNNER = YES;
 			};
@@ -532,6 +530,7 @@
 		0EE8230E1C674BE8005070AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CharterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.matthewpalmer.CharterUITests;
