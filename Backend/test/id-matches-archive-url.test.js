@@ -37,9 +37,6 @@ const noLinkHtml = '<html><body><div>No links here</div></body></html>';
 const invalidLinkHtml = '<html><body><a href="http://fooledyou.com">Fooled you</a></body></html>';
 
 describe('id-matches-archive-url', () => {
-  // A lot of what we are asserting here is that the correct requests are made and the correct 
-  // database queries are executed. This module has no callbacks or return value.
-
   it('should callback with true and the message id if the page matches', (done) => {
     nock('https://lists.swift.org').get('/pipermail/swift-evolution/Week-of-Mon-20160208/009858.html').reply(200, matchSource);
 
