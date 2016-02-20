@@ -268,4 +268,24 @@ class EmailTest: XCTestCase {
         XCTAssertEqual(email4.references.sort({ $0.id > $1.id }), [email3, email2, email1].sort({ $0.id > $1.id }))
         XCTAssertEqual(email1.descendants.sort({$0.id > $1.id}), [email4, email3, email2].sort({$0.id > $1.id}))
     }
+    
+    func testInitFromJSONWhereRequiredFieldsAreNotPresent() {
+        let expectation = expectationWithDescription("Should throw if not present")
+        
+        do {
+            let _ = try Email.createFromJSONData(dataForJSONFile("EmailInvalid"), realm: realm)
+        } catch {
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(1.0, handler: nil)
+    }
+    
+    func testInitFromJSONWhereOptionalFieldsAreNotPresent() {
+        let email = try! Email.createFromJSONData(dataForJSONFile("EmailValidButPartial"), realm: realm)
+        XCTAssertEqual(email.id, "b32b4d86-d703-4075-9c5d-da46bbac808b@me.com")
+        XCTAssertEqual(Array(email.references), [])
+        XCTAssertEqual(email.inReplyTo, nil)
+        XCTAssertEqual(Array(email.descendants), [])
+    }
 }

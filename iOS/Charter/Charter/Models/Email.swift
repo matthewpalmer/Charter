@@ -81,13 +81,15 @@ extension Email {
             return emailsToCreate
         }
         
-        let descendantIDs = try json.array("descendants").map(String.init).filter { !$0.isEmpty }
+        let descendantArray = (try? json.array("descendants")) ?? [JSON]()
+        let descendantIDs = try descendantArray.map(String.init).filter { !$0.isEmpty }
         let descendantsToCreate = emailsToCreate(fromListOfIds: descendantIDs, inRealm: realm)
         
-        let referenceIDs = try json.array("references").map(String.init).filter { !$0.isEmpty }
+        let referenceArray = (try? json.array("references")) ?? [JSON]()
+        let referenceIDs = try referenceArray.map(String.init).filter { !$0.isEmpty }
         let referencesToCreate = emailsToCreate(fromListOfIds: referenceIDs, inRealm: realm)
         
-        let inReplyTo = try json.string("inReplyTo", ifNull: true)
+        let inReplyTo = (try? json.string("inReplyTo", ifNull: true)) ?? nil
         let inReplyToToCreate: [Email]
         if let inReplyTo = inReplyTo {
             inReplyToToCreate = emailsToCreate(fromListOfIds: [inReplyTo], inRealm: realm)

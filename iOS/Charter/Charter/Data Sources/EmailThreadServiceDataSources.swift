@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol EmailThreadCacheDataSource: class {
-    func getThreads() -> [Email]
+    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void)
     func cacheThreads(threads: [Email], completion: Void -> Void)
 }
 
 protocol EmailThreadNetworkDataSource: class {
-    func getThreads(completion: [Email] -> Void)
+    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void)
 }

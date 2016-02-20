@@ -10,8 +10,8 @@ import Foundation
 
 protocol EmailThreadService {
     init(cacheDataSource: EmailThreadCacheDataSource, networkDataSource: EmailThreadNetworkDataSource)
-    func getCachedThreads(completion: [Email] -> Void)
-    func getUncachedThreads(completion: [Email] -> Void)
+    func getCachedThreads(request: EmailThreadRequest, completion: [Email] -> Void)
+    func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void)
 }
 
 class EmailThreadServiceImpl: EmailThreadService {
@@ -25,14 +25,18 @@ class EmailThreadServiceImpl: EmailThreadService {
     
     // TOOD: Paging and shit
     
-    func getCachedThreads(completion: [Email] -> Void) {
-        completion(cacheDataSource.getThreads())
+    func getCachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+        cacheDataSource.getThreads(request) {
+            completion($0)
+        }
     }
     
-    func getUncachedThreads(completion: [Email] -> Void) {
-        networkDataSource.getThreads { [unowned self] networkThreads in
+    func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+        networkDataSource.getThreads(request) { [unowned self] networkThreads in
             self.cacheDataSource.cacheThreads(networkThreads) {
-                completion(self.cacheDataSource.getThreads())
+                self.cacheDataSource.getThreads(request) {
+                    completion($0)
+                }
             }
         }
     }

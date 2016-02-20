@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Freddy
+import RealmSwift
 
 protocol NetworkingSession {
     func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask
@@ -14,20 +16,15 @@ protocol NetworkingSession {
 
 extension NSURLSession: NetworkingSession {}
 
-// http://162.243.241.218:8080/charter/emails?filter={inReplyTo: null}&sort={date: -1}&pagesize=25&page=1
-
-class ThreadRequest {
-    
-}
-
-
-class EmailThreadRequest: EmailThreadNetworkDataSource {
+class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
     private let session: NetworkingSession
     private let username: String
     private let password: String
+    private let realm: Realm
     
-    required init(username: String? = nil, password: String? = nil, session: NetworkingSession = NSURLSession.sharedSession()) {
+    required init(username: String? = nil, password: String? = nil, session: NetworkingSession = NSURLSession.sharedSession(), realm: Realm = try! Realm()) {
         self.session = session
+        self.realm = realm
         
         if let username = username, password = password {
             self.username = username
@@ -41,36 +38,28 @@ class EmailThreadRequest: EmailThreadNetworkDataSource {
         }
     }
     
-    func getThreads(completion: [Email] -> Void) {
-        let components = NSURLComponents(string: "http://162.243.241.218:8080/charter/emails")!
+    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+        let parameters = request.URLRequestQueryParameters
+    
+        let URLComponents = NSURLComponents(string: "http://162.243.241.218:8080/charter/emails")!
+        URLComponents.queryItems = parameters.map { NSURLQueryItem(name: $0, value: $1) }
         
-        // TODO: This is reusable
-        let pageSize = NSURLQueryItem(name: "pagesize", value: "25")
-        let page = NSURLQueryItem(name: "page", value: "1")
-        let filter = NSURLQueryItem(name: "filter", value: "{inReplyTo: null}")
-        
-        components.queryItems?.appendContentsOf([pageSize, page, filter])
-        
-        let URL = components.URL!
-        let request: NSMutableURLRequest = NSMutableURLRequest(URL: URL)
+        let URLRequest = NSMutableURLRequest(URL: URLComponents.URL!)
 
         // TODO: This is reusable
-        let base64 = "\(username):\(password)"
+        if let base64 = "\(username):\(password)"
             .dataUsingEncoding(NSUTF8StringEncoding)?
-            .base64EncodedStringWithOptions([])
+            .base64EncodedStringWithOptions([]) {
+            URLRequest.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
+        }
         
-        request.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
-        
-        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+        let task = session.dataTaskWithRequest(URLRequest) { (data, response, error) -> Void in
             guard let data = data else { return completion([]) }
+            guard let json = try? JSON(data: data) else { return completion([]) }
+            guard let emailList = try? json.array("_embedded", "rh:doc") else { return completion([]) }
             
-            do {
-//                let thread = try Email(jsonData: data)
-                
-            } catch let e {
-                print(e)
-                completion([])
-            }
+            let threads = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }
+            completion(threads)
         }
         
         task.resume()

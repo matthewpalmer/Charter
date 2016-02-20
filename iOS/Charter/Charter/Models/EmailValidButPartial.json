@@ -1,0 +1,16 @@
+{
+    "_links": {
+        "self": {
+            "href": "/charter/emails/b32b4d86-d703-4075-9c5d-da46bbac808b@me.com"
+        }
+    },
+    "_id": "b32b4d86-d703-4075-9c5d-da46bbac808b@me.com",
+    "from": "tseitz42 at icloud.com (Thorsten Seitz)",
+    "mailingList": "swift-evolution",
+    "content": "An HTML attachment was scrubbed...\nURL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160106/c75c224c/attachment.html>",
+    "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160104/005485.html",
+    "date": {
+        "$date": 1452072743000
+    },
+    "subject": "[swift-evolution] =?utf-8?q?Require_use_of_override_keyword_to_ov?= =?utf-8?q?erride_dynamically_dispatched_methods_defined_in_a_protocol_wit?= =?utf-8?q?h_a_default_implementation?="
+}
