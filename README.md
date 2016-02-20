@@ -37,5 +37,6 @@ I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Sourc
 * Add a backend so we can get faster list updates (and open source it)
 * Clean up the front end codebase so it's easier for others to contribute
 * The usual: bug fixes and new features
-
-<p align="center">The latest changes are happening on <a href="https://github.com/matthewpalmer/Charter/tree/develop"><pre>develop</pre></a>.</p>
+<br/>
+<br/>
+<p align="center">The latest changes are happening on <a href="https://github.com/matthewpalmer/Charter/tree/develop"><code>develop</code></a>.</p>
