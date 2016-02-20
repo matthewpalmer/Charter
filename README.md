@@ -40,4 +40,5 @@ I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Sourc
 <br/>
 <br/>
 <br/>
+
 > The latest changes are happening on [develop](https://github.com/matthewpalmer/Charter/tree/develop).
