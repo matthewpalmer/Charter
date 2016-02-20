@@ -39,4 +39,5 @@ I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Sourc
 * The usual: bug fixes and new features
 <br/>
 <br/>
-<p align="center">The latest changes are happening on <a href="https://github.com/matthewpalmer/Charter/tree/develop"><code>develop</code></a>.</p>
+<br/>
+> The latest changes are happening on [develop](https://github.com/matthewpalmer/Charter/tree/develop).
