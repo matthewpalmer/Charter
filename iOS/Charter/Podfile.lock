@@ -1,5 +1,6 @@
 PODS:
   - CollapsibleTextView (0.0.1)
+  - Freddy (2.0.2)
   - GZIP (1.1.1)
   - MailingListParser (0.0.2)
   - MMMarkdown (0.5.1)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - CollapsibleTextView (from `../CollapsibleTextView`)
+  - Freddy (~> 2.0.2)
   - GZIP (~> 1.1.1)
   - MailingListParser (from `../MailingListParser`)
   - MMMarkdown (~> 0.5.1)
@@ -26,6 +28,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CollapsibleTextView: c24f359d0ff7df5a88161fc27893fac03f3f1a8d
+  Freddy: e53713b8d5be02dbf5f4132c44d899d99eb09a6b
   GZIP: f8beb59597f651e6970a45b816508a9c6d700b77
   MailingListParser: 7701c1bc02d32e521897273c4a12e12e1c5a04c3
   MMMarkdown: 06f7989e0350d10a7de50516af6c812402ce554b

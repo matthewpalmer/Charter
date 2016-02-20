@@ -9,10 +9,10 @@
 import Foundation
 
 protocol EmailThreadCacheDataSource: class {
-    func getThreads() -> [EmailThread]
-    func cacheThreads(threads: [EmailThread], completion: Void -> Void)
+    func getThreads() -> [Email]
+    func cacheThreads(threads: [Email], completion: Void -> Void)
 }
 
 protocol EmailThreadNetworkDataSource: class {
-    func getThreads(completion: [EmailThread] -> Void)
+    func getThreads(completion: [Email] -> Void)
 }

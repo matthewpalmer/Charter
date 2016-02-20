@@ -1,0 +1,1177 @@
+{
+    "_links": {
+        "self": {
+            "href": "/charter/emails?filter={inReplyTo: null}&sort={date: -1}&pagesize=25&page=1"
+        },
+        "curies": []
+    },
+    "_id": "emails",
+    "_created_on": "2016-02-12T02:49:33Z",
+    "_etag": {
+        "$oid": "56bd483da07fe857fb4ce84b"
+    },
+    "_collection-props-cached": false,
+    "_returned": 25,
+    "_embedded": {
+        "rh:doc": [
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2ziv7yyt9.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2ziv7yyt9.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "mailingList": "swift-evolution",
+                   "content": "Hi All,\n\nThe API guidelines working group took up the issue of the InPlace suffix\nyesterday, and decided that it was not to be used anywhere in the\nstandard library.  We are planning to apply the changes shown here\n<https://gist.github.com/dabrahams/d872556291a3cb797bd5> to the API of\nSetAlgebra (and consequently Set) to make it conform to the guidelines\nunder development.\n\nComments welcome as usual,\n\n-- \n-Dave",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009684.html",
+                   "date": {
+                   "$date": 1455209538000
+                   },
+                   "subject": "[swift-evolution] ed/ing, InPlace, Set/SetAlgebra naming resolution",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "A8FC326B-7A87-447F-944F-10EBCC1AA9B3@mac.com",
+                                   "B62D971D-218B-423B-81F1-86DB94487A22@me.com",
+                                   "7F4D5AE3-930B-44A9-A16B-6F3F10B43A0D@mac.com",
+                                   "4E0D96AB-9B82-470D-A655-A06AF69CB927@architechies.com",
+                                   "960645F0-384C-4D45-9475-1295D001C9FD@architechies.com",
+                                   "m237ss5uuv.fsf@eno.apple.com",
+                                   "7EA11508-D8E0-4E99-99AD-D6B9A375A58E@novafore.com",
+                                   "m2r3gia1gj.fsf@eno.apple.com",
+                                   "E4BEA678-3F7A-4A9F-BC17-F10E1B9F5659@owensd.io",
+                                   "B262CDAE-3C44-40FB-93B1-C273871B381F@apple.com",
+                                   "1B77C118-25E0-43EE-BB72-D3B808509FB0@owensd.io",
+                                   "F37EAA18-FC7C-41E0-B275-F59C024FFE71@apple.com",
+                                   "F35DF9C5-0837-427B-A266-A6812A27B3BB@owensd.io",
+                                   "3667619A-5295-44F4-B259-195D791348F0@me.com",
+                                   "m2r3gh60bz.fsf@eno.apple.com",
+                                   "m2d1s14gdq.fsf@eno.apple.com",
+                                   "EC6F7264-1DD6-4371-80B7-0B2FE5A5C8C5@mac.com",
+                                   "660DC148-7CA7-4301-9E82-9FEB82AA9A89@mac.com",
+                                   "CCBBE04D-991B-4655-AE88-EEA8D11843E7@gmail.com",
+                                   "50436AA8-1BFD-4FF9-8CC2-A19E02490CFE@uzh.ch",
+                                   "m2y4ao354l.fsf@eno.apple.com",
+                                   "299ADA6E-54A2-4BD8-B773-94D23BEE98CF@icloud.com",
+                                   "m2pow0z9s3.fsf@eno.apple.com",
+                                   "F4861D75-6150-480D-BCC5-A238F40CF7BF@novafore.com",
+                                   "C9ACE38E-10E0-4B38-8444-0443CA87BD88@gmail.com",
+                                   "2753A39C-BEC6-47B2-AA9C-EB4A652B148A@architechies.com",
+                                   "m2a8n4z4sm.fsf@eno.apple.com",
+                                   "m2h9hbxnoi.fsf@eno.apple.com",
+                                   "m237svxn3w.fsf@eno.apple.com",
+                                   "96B1E92E-5587-4B90-94C3-4ECF678AB3D6@novafore.com",
+                                   "AE630228-0A45-4B83-8D7E-14A9E9147F64@hartbit.com",
+                                   "m2wpq7vx09.fsf@eno.apple.com",
+                                   "7876666B-9AD2-4182-992E-B5525B3DC98A@aol.com",
+                                   "CAGY80un4tr=Gjc+iFEK5cj1y9HD21yR9x3U500z5A0KOR+BGSQ@mail.gmail.com",
+                                   "4CE7B43A-03FA-4DC4-8E75-C826045C4B4A@aol.com",
+                                   "49CE0188-3042-434F-9BDC-3984480B6817@mac.com",
+                                   "648999C7-881B-443F-826B-4058E0575A50@apple.com",
+                                   "CACR_FB5GAdzdMS+q6MHm8ymXQPMSyxNvS5PLjWJtFT96uK3DTw@mail.gmail.com",
+                                   "CAGY80uk7AQR5Xz_SFffr5j07Y+pjRFzuHN52wMqMMP1FcTYwTQ@mail.gmail.com",
+                                   "144F4695-6BA1-4C55-8A69-65F7835FED1C@mac.com",
+                                   "CANGnqV3H+Zcaz0jbYG+pLyYpjTVw4zmnCO+UbNwZE2tt2mcAtQ@mail.gmail.com",
+                                   "9C736880-B61A-493E-A9B6-7957CAF3B6B8@me.com",
+                                   "3A28E134-D038-4FC6-AAA1-E20FB54AE29C@novafore.com",
+                                   "CAGY80un5AR7O6ctBGXemPGZU9Xgbpc8jpx-heZVnN0FR68A0CA@mail.gmail.com",
+                                   "3860288B-D504-485D-861D-5FFC2A16ED2C@apple.com",
+                                   "m2bn7hu6lw.fsf@eno.apple.com",
+                                   "7D9A827C-357F-4493-9BA6-61FCA91DD5CD@apple.com",
+                                   "CAGY80u=+0K0i=4c8nMX0nsowG2jtDdhbuANZhdKOBo89_jgxPw@mail.gmail.com",
+                                   "227F5F93-BAD7-42EE-B7B0-5937431EB4EC@icloud.com",
+                                   "9896E9CD-8DC6-42EA-A0BB-584C79501F8F@novafore.com",
+                                   "53C6E239-6F63-4790-85C9-F50C213103A6@me.com",
+                                   "4BDB1AC4-3918-46A2-8167-E06D909D0560@novafore.com",
+                                   "D16D314D-C05A-4784-8D70-BFFE8AEE5682@icloud.com",
+                                   "2365FF46-BDCF-4BC0-9050-C8E9DB8A4CF7@novafore.com",
+                                   "76E902E8-4C70-4C3F-96CD-2942F8DD3384@ericasadun.com",
+                                   "8B1B13A5-442A-4DCE-B9D8-410552C1CE21@novafore.com",
+                                   "CADcs6kPScP9s3m2YVUENy+KHmeO4VbJhUJE6TQwj6B621Z6wwQ@mail.gmail.com",
+                                   "CAGY80ukwYNLGCkhUsc7zTbTt4xZEeCud71-wCx5LC=NTojhqhw@mail.gmail.com",
+                                   "A3854C05-14D7-4686-8FFB-6C37729BED77@apple.com",
+                                   "9953B953-CED8-42E5-B665-67EF52FCE82A@ericasadun.com",
+                                   "3EA8C7F5-E3D6-4FB2-95DE-739D9B5F2259@ericasadun.com",
+                                   "CADcs6kOXB6Ak_gJVcJcjNy0ySPbOPfmo0f5t9farRn-Yx-fCnw@mail.gmail.com",
+                                   "09DB5774-C20F-4B00-AC39-3B9ECAF309A5@akkyra.com",
+                                   "6378ED7E-F0A0-4C60-884E-9B61433F66CA@ericasadun.com",
+                                   "CAGY80ungx6M3srmcjED1TnS3dhAvFC1SZjT4uGgU9Jx=cuvzMg@mail.gmail.com",
+                                   "24CB3821-B699-4F9D-B084-BC02CB456387@apple.com",
+                                   "CADcs6kNATModezcKKqciVhKdAhP7aqapWMS_yJn-HK8nphZ+VQ@mail.gmail.com",
+                                   "E5D2D8D8-E733-434B-8044-98DE0860812A@ericasadun.com",
+                                   "CAGY80umV=X_RhGvuVJZGKtJCoO-6xXBUujSmhxi3jnUAK-_ahg@mail.gmail.com",
+                                   "6136A42A-433F-4675-B115-871FF3248971@me.com",
+                                   "CAGefD4MoAgczY7T1nJyi57b-VpW+sBWmapsErUZmfvztYKJZgg@mail.gmail.com",
+                                   "A20884F4-1165-4188-9D95-EFAE7821D032@gmail.com",
+                                   "D1CD66EF-C8F4-47EF-BBEB-FD3E31C33588@lng.la",
+                                   "m28u2qx43z.fsf@eno.apple.com",
+                                   "5380D783-1ED6-4D2A-9C09-1DB321AF6C1D@gmail.com",
+                                   "BCDF997B-6F18-4DB3-91BB-C75ACB288788@lng.la",
+                                   "5B0A1922-41B7-4851-9211-AF3FB132D595@pobox.com",
+                                   "m2lh6qvnux.fsf@eno.apple.com",
+                                   "CAGY80ukwZQ6j89O7GZQwrfvUxjjqqrJgHUS3wB=VuHE3nsJnhA@mail.gmail.com",
+                                   "m2twlevods.fsf@eno.apple.com",
+                                   "666286C9-A32C-4862-919F-46403FA74C22@ericasadun.com",
+                                   "1C96914E-15C7-461E-A953-DFCB8F7CBABE@apple.com",
+                                   "CAGY80ukOgEaTnG92PWJuGrBkpxZHoOYVOtsZ8Yvyiq9dzoFESA@mail.gmail.com",
+                                   "C194A9C5-2EA4-4D73-A686-D841724F541C@architechies.com",
+                                   "3AD3381B-A7E0-4528-9DC3-06250D0429C4@apple.com",
+                                   "D9F0708F-F9F2-40FF-AA05-61D3C07EC3C0@lng.la",
+                                   "A2578CEB-50CB-4F0C-BD49-17585E164DC8@apple.com",
+                                   "CAGY80u=rwWF16b_5vc9DMQ0STH1jp32VVEvPfzndKTseGxYR=A@mail.gmail.com",
+                                   "m2d1s2vlps.fsf@eno.apple.com",
+                                   "F836F2DC-47C3-474A-9767-B574643541B3@apple.com",
+                                   "DE3AF87C-BAC4-4651-BD2A-27B5EDFC828F@me.com",
+                                   "CAGY80unFC41Lnf+Sajx6Jd0nc6dHE40hG7DHPZN815A207fqUw@mail.gmail.com",
+                                   "C595731D-D350-40C4-846D-06AF801B9E6F@mac.com",
+                                   "m24mdevhu3.fsf@eno.apple.com",
+                                   "E4D05236-3C18-4A11-9258-FCDE0AA80198@architechies.com",
+                                   "m2y4aqu35r.fsf@eno.apple.com",
+                                   "m2mvr6u2z7.fsf@eno.apple.com",
+                                   "m2h9heu2xd.fsf@eno.apple.com",
+                                   "m2si0yu32u.fsf@eno.apple.com",
+                                   "CAGY80ukfTtHJUOjLgBTowt8eLz=v8X9k8QKVVzi-JCLkUucTYg@mail.gmail.com",
+                                   "B7AEEAD8-43D9-44CC-BCAF-77CDC1CC9719@me.com",
+                                   "E1D07E90-531F-4BCF-87E7-3C221E262FA1@me.com",
+                                   "m27fiabhhx.fsf@eno.apple.com",
+                                   "m21t8ibgzi.fsf@eno.apple.com",
+                                   "m260xua0bj.fsf@eno.apple.com",
+                                   "CAGY80u=qd_WCLKCJRNg49QbBo9=DmfTci0x+iowZzcpa+ExA_g@mail.gmail.com",
+                                   "CAGY80u=6wNA+JEH58EVPAjMrJ6zRFGe8VKU9QZ5DeHBKGjcbow@mail.gmail.com",
+                                   "C4C6257A-A186-4831-BB21-0303E32D2A0B@apple.com",
+                                   "77CA3E70-A7B7-4FFF-B817-F85AB79D04FC@gmail.com",
+                                   "CBBE8D69-5D3A-4E7A-AC74-445347179CA8@uzh.ch",
+                                   "CANq73XOvwfuC=gQY8qN7G6JdJ-EKHYB96F1DpfoDDpkJKwZ5LQ@mail.gmail.com",
+                                   "A6CEE025-BCB5-4729-8BA1-BB8A5C8CB03F@icloud.com",
+                                   "E5C8E08F-4D35-42A3-9B58-E2E393AD5D74@icloud.com",
+                                   "FD766F1E-F333-441B-8DA0-4E8205A1A1C5@novafore.com",
+                                   "4D456C5F-72B5-4CA0-AA2A-DDA300E6113B@owensd.io",
+                                   "56BDDDC5.8010008@brockerhoff.net",
+                                   "4C153A86-C3C7-464B-BD79-A80EC276805F@apple.com",
+                                   "m2vb5t7uz8.fsf@eno.apple.com",
+                                   "0C507CF8-4D22-4009-8EB8-978EE33B2956@gmail.com",
+                                   "8E7A694C-E47E-4BF5-90FF-F1E3FA9B3E61@gilt.com",
+                                   "BF16570F-261E-45F5-B319-448B8E6C4815@novafore.com",
+                                   "9004F40B-EB9D-440B-A63B-3EE836876636@novafore.com",
+                                   "613F72D3-51BA-4554-9393-E6793AB6B876@owensd.io",
+                                   "CANFz0qvfcPDa0cDLrJOA=s9dOxoo6UhYXZwgqXAx4jWGF5wBQg@mail.gmail.com",
+                                   "m2lh6p603p.fsf@eno.apple.com",
+                                   "DC5437D3-F942-4EC7-84A4-F2F012501E39@ucdavis.edu",
+                                   "m2pow033r1.fsf@eno.apple.com",
+                                   "919DA31D-F366-4A4F-9F9D-44D289BA41CE@novafore.com",
+                                   "m2egcg1lun.fsf@eno.apple.com",
+                                   "m2io1s3285.fsf@eno.apple.com",
+                                   "7A3A651D-8AD3-4012-AC7C-23E13D535D9D@gmail.com",
+                                   "m2ziv4za9r.fsf@eno.apple.com",
+                                   "0E14ABA8-3818-4497-80CC-030A8FA5F139@mac.com",
+                                   "E6D98C0B-096E-4F8E-9E44-197D5B938972@aol.com",
+                                   "5389D1B5-0C8A-4474-9C56-1210CC50BFBB@uzh.ch",
+                                   "8F3A7B56-EE19-4E67-A190-086F22481F24@dimsumthinking.com",
+                                   "F13D9E94-9557-4B23-82F3-4B72B639DAFB@dimsumthinking.com",
+                                   "m2povzxogh.fsf@eno.apple.com",
+                                   "EA1B1AA9-41F7-4602-806A-6949852BF803@hartbit.com",
+                                   "m2d1rzxnjz.fsf@eno.apple.com",
+                                   "BC7A6FB6-4AFC-4705-9560-B78D1C2432F5@icloud.com",
+                                   "71EEA366-9429-43C0-8236-33E922BA8975@mac.com",
+                                   "m260xqwyxm.fsf@eno.apple.com",
+                                   "m2egcfvwmm.fsf@eno.apple.com",
+                                   "CAGkFtXx=36Px6VPa4HCNOU+NDufJBu=Dh6ZTOKwniVwm7osMbw@mail.gmail.com",
+                                   "968F0F8D-FC55-4913-A460-69F15A53E7E6@me.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2vb663a6h.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2vb663a6h.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "mailingList": "swift-evolution",
+                   "content": "This thread is related to the review of new API guidelines, but it's not\na review thread; it's exploratory.  The goal is to come up with\nguidelines that:\n\n* describe when and where to use argument labels\n* require labels in many of the cases people have asked for them\n* are understandable by humans\n* preserve important semantics communicated by existing APIs.\n\nHere's what I'm thinking\n\n1. If and only if the first argument could complete a sentence*\n   beginning in the base name and describing the primary semantics of\n   the call, it gets no argument label:\n\n     a.contains(b)  // b completes the phrase \"a contains b\"\n     a.mergeWith(b) // b completes the phrase \"merge with b\"\n\n     a.dismiss(animated: b) // \"a, dismiss b\" is a sentence but \n                            // doesn't describe the semantics at all, \n                            // thus we add a label for b.\n\n     a.moveTo(x: 300, y: 400) // \"a, move to 300\" is a sentence \n                              // but doesn't describe the primary \n                              // semantics, which are to move in both\n                              // x and y.  Thus, x gets a label.\n\n     a.readFrom(u, ofType: b) // \"a, read from u\" describes\n                              // the primary semantics, so u gets no\n                              // label. b is an\n                              // option that tunes the primary\n                              // semantics\n\n   [Note that this covers all the direct object cases and, I believe,\n   all the default argument cases too, so maybe that exception can be\n   dropped.  We still need the exceptions for full-width type\n   conversions and indistinguishable peers]\n\n   Note: when there is a noun in the base name describing the role of the\n   first argument, we skip it in considering this criterion:\n\n      a.addObserver(b) // \"a, add b\" completes a sentence describing \n                       // the semantics.  \"Observer\" is omitted in \n                       // making this determination.\n\n* We could say \"clause\" here but I think making it an *independent*\n  clause doesn't rule out any important use-cases (see\n  https://web.cn.edu/kwheeler/gram_clauses_n_phrases.html) and at that\n  point, you might as well say \"sentence,\" which is a more\n  universally-understood term.\n\n2. Words that describe attributes of an *already-existing* instance\n   should go in the base name rather than in a label:\n\n      a.tracksHavingMediaType(\"Wax Cylinder\")      // yes\n      a.removeFirstTrackHavingMediaType(\"BetaMax\") // yes\n\n      a.tracks(mediaType: \"Wax Cylinder\")          // no\n      a.removeFirstTrack(havingMediaType: \"BetaMax\") // no\n\n   [yes, we could use \"With\" instead of \"Having\", but it's more\n   ambiguous]\n\n   Words that describe attributes of an instance *to be created* should\n   go in argument labels, rather than the base name (for parity with\n   initializers):\n\n      AudioTrack(mediaType: \"BetaMax\")                   // initializer\n      trackFactory.newTrack(mediaType: \"Wax Cylinder\")   // yes\n\n      trackFactory.newTrackWithMediaType(\"Wax Cylinder\") // no\n\n3. (this one is separable) When the first argument is the *name* or\n   *identifier* of the subject in the base name, do not label it or\n   describe it in the base name.\n\n      a.transitionToScene(.GreatHall)               // yes\n      a.transitionToSceneWithIdentifier(.GreatHall) // no\n\n      let p = someFont.glyph(\"propellor\")           // yes\n      let p = someFont.glyphWithName(\"propellor\")   // no\n      let p = someFont.glyph(name: \"propellor\")     // no\n\nThoughts?\n\n-- \n-Dave",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160201/008837.html",
+                   "date": {
+                   "$date": 1454459574000
+                   },
+                   "subject": "[swift-evolution] When to use argument labels (a new approach)",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "m21t8tuhht.fsf@eno.apple.com",
+                                   "m24mdpuj78.fsf@eno.apple.com",
+                                   "F5E0D4D3-A8FC-4B76-8D45-D07893A63522@icloud.com",
+                                   "m2powcs1ex.fsf@eno.apple.com",
+                                   "F8B4A33C-E8A6-458C-BA45-CEE7A0E9D763@akkyra.com",
+                                   "EB9A2C84-2F25-4035-B107-21AABB13E17F@gmail.com",
+                                   "m2d1s0324j.fsf@eno.apple.com",
+                                   "CACR_FB5reBvZ6FUqEGJcwhV2+VFNEtUTXiYcm4icCOQ7bqwz_g@mail.gmail.com",
+                                   "230A53A3-7A2E-4B69-963E-506F9550BF19@charlessoft.com",
+                                   "F51A1D65-76F4-46E3-B7FC-6BFBF99E1553@gmail.com",
+                                   "A4DE96B4-07B2-486E-8522-B4170B26415C@pobox.com",
+                                   "8BD597AD-CC83-4932-B30F-5B8867CA285A@akkyra.com",
+                                   "884C4DA7-E164-48B4-BBD0-3C4EB74E5E1B@apple.com",
+                                   "CACZgP0MFWJSQwt+LpJ1i5rQUP0xMbUZ4xDC7xH0ewW2sjx8kLA@mail.gmail.com",
+                                   "2315C832-0986-4B9B-8967-A68D2AFF861B@owensd.io",
+                                   "FADB0685-2806-4E5B-9E17-91AA2C085109@ericasadun.com",
+                                   "CAAR2SvOuFtg6Y2ZNhgEfvZ3HsqeAdLQdH-PbQA5jncbzyhsmKg@mail.gmail.com",
+                                   "87A25091-1F53-4224-90C1-50B705C9B8FB@gmx.de",
+                                   "F4EC3B94-010B-42E4-AF5D-A94B57167C2D@architechies.com",
+                                   "A300ED70-A00E-4503-A06B-3FDF55072B32@icloud.com",
+                                   "9411A61B-C27E-4975-902D-6CE77EA34587@mac.com",
+                                   "201A3613-29FE-4B3A-B5E6-4E4A023F4E70@gmail.com",
+                                   "DACFA92B-BBA5-47B1-9BB1-5E6AC950F324@gmail.com",
+                                   "7F8AD244-8444-43D0-8364-CE1C94BCAA40@gmail.com",
+                                   "98083B4D-DA95-4007-986C-199194AC99CD@apple.com",
+                                   "6B663195-D88A-4106-98C2-F93D72732C6F@gmail.com",
+                                   "CAB5C60s5h9ZiPUfVaSh6=z048q+6+1uxgTmLZvn=c4Ff4whyZQ@mail.gmail.com",
+                                   "C0B233E8-F0A8-4DA1-9F38-67B8317F26A5@icloud.com",
+                                   "CAAR2SvPbPgcvxt8MZAAiH4kikhK3mxGn=NNd6a1e1em+K=saUw@mail.gmail.com",
+                                   "80F5C946-370D-48B1-8B9A-2B6B62E93DC6@apple.com",
+                                   "CAAR2SvNL71px_4U8hbKY8Y5B0rMC7_zBuYeR4=AVw+by3aTx3A@mail.gmail.com",
+                                   "m237t91mag.fsf@eno.apple.com",
+                                   "m2wpqlzb6v.fsf@eno.apple.com",
+                                   "m2r3gtzaqp.fsf@eno.apple.com",
+                                   "0E1CFE9D-E014-400B-A5BE-BB2E975A12A8@akkyra.com",
+                                   "m2lh71zams.fsf@eno.apple.com",
+                                   "m2fux9za9f.fsf@eno.apple.com",
+                                   "m2a8nhz9vo.fsf@eno.apple.com",
+                                   "CBEAE419-BECD-40C2-BA33-3966147AFBA3@gmail.com",
+                                   "m2vb65xubm.fsf@eno.apple.com",
+                                   "m2powdxtcu.fsf@eno.apple.com",
+                                   "24F1DD1C-6520-47F1-9569-200CD2D0768F@apple.com",
+                                   "m21t8tz9bj.fsf@eno.apple.com",
+                                   "m2h9hpxscb.fsf@eno.apple.com",
+                                   "D1A2ED51-9DC8-4D93-9CCE-EC61DC3C0DBA@icloud.com",
+                                   "B75D57AE-D6E7-4ECB-B38B-EA700CA91864@gmail.com",
+                                   "m2zivhuv9b.fsf@eno.apple.com",
+                                   "m260y5wawg.fsf@eno.apple.com",
+                                   "CAF970E9-3684-490C-99B1-ED31BB5C2C7C@ericasadun.com",
+                                   "m2oabxuuwt.fsf@eno.apple.com",
+                                   "m2twlpuv1y.fsf@eno.apple.com",
+                                   "m2bn7xwb4a.fsf@eno.apple.com",
+                                   "m2io25uuo4.fsf@eno.apple.com",
+                                   "5D42A214-ED60-4BDF-894E-38D38D76071C@gmail.com",
+                                   "m2d1sdulm8.fsf@eno.apple.com",
+                                   "m2r3gsuche.fsf@eno.apple.com",
+                                   "1EEA4F99-5B24-4769-B02C-E2450A7B11D2@architechies.com",
+                                   "8ECAD0CE-CC9D-46D6-8FBA-840CE021D973@gmail.com",
+                                   "EC3889E3-D181-419A-ADCC-0358DE224399@gmail.com",
+                                   "E6848037-B091-4C0A-87BC-02F0E7FAA5E5@apple.com",
+                                   "CFB4D939-7661-44CD-B5E8-07255FB0E03B@gmail.com",
+                                   "CAB5C60vYrb80jSy4krNY7SROaF6D6DhFGPgV70WsKgWqYiEFAw@mail.gmail.com",
+                                   "CAB5C60taCqwAERL6c4LM-8iXen61VZfNTVvd7VBhk6SSkC1vMQ@mail.gmail.com",
+                                   "B1D28CC4-A605-45FC-9F74-FD75AEB38A4F@apple.com",
+                                   "479746A3-DBCD-474E-AB38-416DF1FBC1D7@akkyra.com",
+                                   "A7AA98B6-CFEA-4F43-B089-40876D1FA023@apple.com",
+                                   "E16573AC-74A6-4D41-802D-F00B4F4BB80B@apple.com",
+                                   "6D6C0588-3BE7-413A-976B-140456F46638@apple.com",
+                                   "33B430F0-0708-4538-B145-E540B0B3B59E@apple.com",
+                                   "057C28AC-33D2-47C2-AF49-7957C8C45B44@apple.com",
+                                   "CAB5C60sVw37Jm9simiQyF7PzYz7hhyCrMpE=rh=g72GTmNWX2g@mail.gmail.com",
+                                   "CAB5C60u4YDtqsG3a2m15bTran=KcEXJM+iac005_HUbh8nK2zw@mail.gmail.com",
+                                   "CAB5C60tixOYuQXzxaMvYJbE0t1oKHQ6TLnt_77Ww8orjrWgq1Q@mail.gmail.com",
+                                   "1A6FB88F-06EA-4A80-9B36-6409DB34B787@gmail.com",
+                                   "269BA790-9E84-4289-BBFF-339EB56B1D07@apple.com",
+                                   "2402B00B-ADDA-4789-ADFD-2E90B0CCDBA8@icloud.com",
+                                   "C2A02D7E-76F5-4B81-ACC8-94E93E31FFE1@owensd.io",
+                                   "7A059C9B-D113-4602-806C-84B70E666BDE@architechies.com",
+                                   "BFC11061-DA64-42DC-A4F4-C413D396134F@gmail.com",
+                                   "556872FD-8F23-45A7-B228-9C8AA54D9B56@owensd.io",
+                                   "m2fux7j7bw.fsf@eno.apple.com",
+                                   "32AE7F3F-2B4D-4E2E-9834-8FADBBDC1AA2@icloud.com",
+                                   "m2vb62j115.fsf@eno.apple.com",
+                                   "05591694-EECC-4D46-97AC-7DA55C4D0CA2@hartbit.com",
+                                   "4753CC24-1C85-403C-A404-7D1B7B18E4D9@owensd.io",
+                                   "EB2A87E1-6EBE-4030-B9AE-B19C7EF755B0@owensd.io",
+                                   "m2fux6izjk.fsf@eno.apple.com",
+                                   "m2a8neizh3.fsf@eno.apple.com",
+                                   "2DFD37C9-80F4-4BEC-A721-722409AF50A1@ericasadun.com",
+                                   "CANFz0qvgfJA9hJMrFQ3NZGWhWQRh_bLvCC_jOYbXA-wWfh0A0w@mail.gmail.com",
+                                   "1CE9A4F8-F48C-41B9-964A-7BAA58AFAF35@hartbit.com",
+                                   "m21t8qh9x3.fsf@eno.apple.com",
+                                   "m27fiiha53.fsf@eno.apple.com",
+                                   "FA5EBDC9-74BA-4356-BDC7-1A100AB024AF@apple.com",
+                                   "1454725725.1695451.513501034.030D5EDF@webmail.messagingengine.com",
+                                   "ADA4BBAC-E33E-4042-B7C6-6A97BE22752A@gmail.com",
+                                   "88244F28-EFFC-4212-A568-FCAB7793E241@icloud.com",
+                                   "80CAA478-E7AB-4540-8108-D919D2E35906@icloud.com",
+                                   "AA77B3F7-7138-43D8-86F6-10B307C7C0E3@dimsumthinking.com",
+                                   "B813ED88-8105-493E-BCC6-BCFF41974C93@icloud.com",
+                                   "4889B3FF-7646-439E-B300-B9FCA8AD5944@icloud.com",
+                                   "C762EC28-0FCB-4A95-B918-5EE96723E5D0@gmail.com",
+                                   "AE09650B-5499-4B64-9E98-F656700AE1C3@gmx.de",
+                                   "AE2DB998-C0C5-4664-A494-C146E89AE076@icloud.com",
+                                   "143E3A71-BE8C-4AFA-84AC-A5CF79E6353C@icloud.com",
+                                   "9FCB4568-A3A1-4244-8E04-E673A81F27BA@apple.com",
+                                   "259DA189-7EE9-4314-B3C6-E5F044AC4787@xenonium.com",
+                                   "92CF4478-881C-46DB-B36D-99CEBA2B3DBF@akkyra.com",
+                                   "5147F2A3-69EA-40BF-80A8-AE3746D0FF86@gmail.com",
+                                   "F04DB1EE-9472-4132-AA5F-BE5715A4F790@charlessoft.com",
+                                   "m24mdlf5ns.fsf@eno.apple.com",
+                                   "m2y4axdqw0.fsf@eno.apple.com",
+                                   "m2io21dpdj.fsf@eno.apple.com",
+                                   "m2r3gpdqjf.fsf@eno.apple.com",
+                                   "09A7F193-FD64-447B-9B3B-D61BF201BAD3@gmail.com",
+                                   "E0C9DE35-4FC1-467B-BBA2-C544784903FE@apple.com",
+                                   "m2vb60msk1.fsf@apple.com",
+                                   "m21t8oo7qz.fsf@apple.com",
+                                   "m2pow8msh9.fsf@apple.com",
+                                   "m2k2mgmsed.fsf@apple.com",
+                                   "CAB5C60t50OGs11SOeL0ngrZjJPVAL9uro_g9xR-i8mh7+-1uVQ@mail.gmail.com",
+                                   "CAB5C60vTZzyJ2RU7BfHqbt466zQdHYHTRDY4GzRN_HSVk6QPig@mail.gmail.com",
+                                   "E44B92EF-66E7-4699-97BC-2A0D83963209@icloud.com",
+                                   "FFC258A6-D8B7-44FD-8D9E-ED48EDE19FC0@gmail.com",
+                                   "CAPh90aFe-Q=hKDy_ZvDC9YqwJh-b5P1GgEOZTqancXSSyxuouw@mail.gmail.com",
+                                   "CAPh90aEmW_3bdXY=w2Pj3r66c3nVHZq8sEG_oWpMLBYCBvOwPA@mail.gmail.com",
+                                   "FCD7B0AC-003C-4C95-95B7-B655F1EAFE20@gmail.com",
+                                   "5C056EB7-E99F-4654-9575-7ACC20CDE154@gmail.com",
+                                   "443A3F54-7B88-4C23-8545-455CC28EEF64@gmail.com",
+                                   "F01FF635-9990-4686-A79B-9419AE04BFA0@hartbit.com",
+                                   "8100CD18-AC14-4195-ACA4-B05B89BDAAEE@akkyra.com",
+                                   "m2si13ahkn.fsf@apple.com",
+                                   "m2mvrbah6x.fsf@apple.com",
+                                   "m2h9hjagsd.fsf@apple.com",
+                                   "m260xzafr7.fsf@apple.com",
+                                   "m2bn7rafuf.fsf@apple.com",
+                                   "C7B75474-2AF0-46D0-9B6D-7A229C23A789@gmail.com",
+                                   "m2pow78hrp.fsf@apple.com",
+                                   "4C3404B5-7DF8-4720-A0D9-1379ED031945@architechies.com",
+                                   "m260xz8g8s.fsf@apple.com",
+                                   "CANq73XM1Am+8E3krCxbwr+qps9_qMdMzUY4ERvdqj_3ihEWnug@mail.gmail.com",
+                                   "EFF4A01E-9B92-4918-8786-EE44172F75AB@gmail.com",
+                                   "m237t26hx9.fsf@apple.com",
+                                   "61E9180C-CF3E-4A20-8D52-116BA76B91CD@akkyra.com",
+                                   "m2pow62bea.fsf@apple.com",
+                                   "2AB01615-D84F-403C-B47A-459B7DAEE3C8@akkyra.com",
+                                   "m2y4at1rky.fsf@apple.com",
+                                   "66BE5BB2-E1C1-4700-B0CE-2F53DCC7CEEB@gmail.com",
+                                   "83F56975-CC49-4A55-A473-42DC9657C7B1@gmail.com",
+                                   "FA926E67-4C70-4DD5-B1CC-363878D6011A@gmail.com",
+                                   "D6FB5CE4-7791-4EC8-AA38-AA37C69B7A62@gmail.com",
+                                   "109DE1ED-8408-415E-A437-69085B647ADB@gmail.com",
+                                   "B4737C1F-8CB7-44DE-A74A-FA4FA16857D3@gmail.com",
+                                   "1253BEDD-57B0-45E6-A74D-5A11E040E856@gmail.com",
+                                   "74AA7B02-358A-46D0-96C1-0EE75EE6352F@akkyra.com",
+                                   "m2twlfytor.fsf@eno.apple.com",
+                                   "m2si0zxdso.fsf@eno.apple.com",
+                                   "33C8F857-C98A-4319-9B17-BDDAA155FC92@gmail.com",
+                                   "m21t8ix351.fsf@eno.apple.com",
+                                   "D5790057-2CB3-4655-A838-E2F4FA76E4E1@icloud.com",
+                                   "m2k2mks16h.fsf@eno.apple.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2io1p8xoh.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2io1p8xoh.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "date": {
+                   "$date": 1455572094000
+                   },
+                   "subject": "Re: [swift-evolution] [Discussion] Binary search, lower bound, upper bound, equal range",
+                   "references": [
+                                  "1ED0EF4A-3A72-45F3-B73C-CAFAA17943D2@gmail.com"
+                                  ],
+                   "mailingList": "swift-evolution",
+                   "content": "\non Mon Feb 15 2016, Jeff Hajewski <swift-evolution@swift.org> wrote:\n\n> Hello,\n>\n> I am working on SR-368 <https://bugs.swift.org/browse/SR-368> and am hoping to get some feedback from the community.\n>\n> Description\n> Implement analogs to C++’s binary_search, lower_bound, upper_bound, and equal_range algorithms.\n>\n> Initial Proposal\n> I propose adding four methods for generic Array and adding four\n> methods for Arrays that conform to Comparable:\n>\n> Array\n> @warn_unused_result\n> func lowerBound(value: Array.Element, @noescape isOrderedBefore: (lhs:\n> Array.Element, rhs: Array.Element) -> Bool) -> Int?\n>\n> @warn_unused_result\n> func upperBound(value: Array.Element, @noescape isOrderedBefore: (lhs:\n> Array.Element, rhs: Array.Element) -> Bool) -> Int?\n>\n> @warn_unused_result\n> func binarySearch(value: Array.Element, @noescape\n> isOrderedBefore:(lhs: Array.Element, rhs: Array.Element) -> Bool) ->\n> Bool\n>\n> @warn_unused_result\n> func equalRange(value: Array.Element, @noescape isOrderedBefore: (lhs:\n> Array.Element, rhs: Array.Element) -> Bool) -> Range<Int>?\n>\n> Array: Comparable\n> @warn_unused_result\n> func lowerBound(value: Array.Element) -> Int?\n>\n> @warn_unused_result\n> func upperBound(value: Array.Element) -> Int?\n>\n> @warn_unused_result\n> func binarySearch(value: Array.Element) -> Bool\n>\n> @warn_unused_result\n> func equalRange(value: Array.Element) -> Range<Int>?\n>\n> Discussion\n> The main issue I’d like to discuss is how do we want to add these to Swift? My thoughts are as follows:\n>\n> These should be as generic as possible. I initially started at the\n> CollectionType level but it seemed that the problem was ultimately\n> reduced to an Array (through the use of various protocols, etc.). \n\nThese should be defined on CollectionType Note that you don't need\nrandom access to get an advantage from binary search if the comparison\nis sufficiently expensive.\n\n> For example, suppose we implemented these methods as an extension to\n> CollectionType, if we were to try and call binarySearch on a set, we\n> would first need to sort the set, which would return an array, and\n> then we would call binarySearch on that array. \n\nIt should work on any arbitrary collection.  The collections you know\nare not the only ones that matter.  For examples, consider binary\nsearching the result of applying a lazy map or filter to some sorted\narray.\n\n> Similarly, it seems at the SequenceType level the problem ultimately\n> reduces to using Array.\n\nSequences don't have indices; you can't binary search them.\n\n> Does it make sense to handle these as public functions? I tend to\n> think not as it seems less idiomatic.  I suggest eight implementations\n> similar to how sort() is handled. If the calling array’s elements\n> conform to Comparable, then no isOrderedBefore closure is required\n> since we can use “<“, otherwise the user should supply a closure to\n> allow the algorithm determine how the array elements are ordered.\n\nThe general form takes a closure that partitions the collection; see\nhttp://www.open-std.org/jtc1/sc22/wg21/docs/papers/2001/n1313.html and\nhttp://wg21.cmeerw.net/lwg/issue270\n\nI would suggest avoiding the API choice that requires both a comparison\nclosure *and* an element against which to compare, as a unary\npartitioning predicate is much simpler.\n\n> Similar to the C++ implementations, I avoid recursion and favor\n> while-loops.\n\n\nHave an implementation is important as proof-of-concept and for\nperformance testing, but I don't consider the details important at this\nstage.\n\n> These methods should be preconditioned on the calling\n> array be partitioned with respect to the passed value. \n> As far as I’m aware, there is no “isPartitioned(value:)” method\n> currently available. \n>\n> Should we add this as well? We could use this functionality and not\n> add a isPartitioned method but if we are adding this functionality is\n> there a good reason not to give the public access?  \n\nSeems like a separable proposal.\n\n> The alternative is to not set a precondition and document that the\n> results may not be valid if the calling array is not partitioned with\n> respect to value. \n\nThat *is* a precondition.  Not all preconditions can or should be\nverfied at runtime.  We would never make the caller pay to actually\nverify at runtime that the collection is partitioned w.r.t. the closure;\nthat would make the whole operation O(N) and effectively discard any\nbenefit of binary-searching.\n\n> I favor the preconditioning approach.\n>\n> Any and all feedback is greatly appreciated!\n\n\nHTH,\nDave\n\n\n-- \n-Dave\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution@swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160215/010548.html",
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CAPUwzK5Q=PsfCS2y6gk9=qmaf+1O52Q=AcfTb-NsdWxDmT-qjA@mail.gmail.com",
+                                   "2D8DB431-141F-44FF-87CB-84D60FC1BE33@icloud.com",
+                                   "CAE9YQLZYtEAy-9dDctcTkjHwjg_RwDX_q211R-GLKKEFoDDUeg@mail.gmail.com",
+                                   "7297E880-084A-4621-A710-91E46972322C@gmail.com",
+                                   "CAE9YQLZqerF3-_ou42sAuojxutWh7B48_AJXV1Wx9cYsxGp6sw@mail.gmail.com",
+                                   "8FF9B4A2-2466-4C49-844F-944CCFC4EFD9@ericasadun.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2h9h9u6wf.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2h9h9u6wf.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "date": {
+                   "$date": 1455563408000
+                   },
+                   "subject": "Re: [swift-evolution] [Review] SE-0027 Expose code unit initializers on String",
+                   "references": [
+                                  "EC204253-5C75-4717-9BB9-A2429CE81173@apple.com",
+                                  "m2egcdvs0v.fsf@eno.apple.com",
+                                  "1455558485.2125200.521836610.1813CF95@webmail.messagingengine.com"
+                                  ],
+                   "mailingList": "swift-evolution",
+                   "content": "\non Mon Feb 15 2016, Zach Waldowski <swift-evolution@swift.org> wrote:\n\n> See responses inline.\n>\n> Aside: omgomgomg I got Dave Abrahams to respond to a proposal of mine\n\nDon't worry; it'll wear off soon enough...\n\n> Excitedly,\n>   Zachary Waldowski\n>   zach@waldowski.me\n>\n> On Mon, Feb 15, 2016, at 11:48 AM, Dave Abrahams via swift-evolution\n> wrote:\n>> \n>> on Thu Feb 11 2016, Douglas Gregor <swift-evolution@swift.org> wrote:\n>> \n>> > Hello Swift community,\n>> >\n>> > The review of SE-0027 \"Expose code unit initializers on String\" begins\n>> > now and runs through February 16, 2016. The proposal is available\n>> > here:\n>> >\n>> > https://github.com/apple/swift-evolution/blob/master/proposals/0027-string-from-code-units.md\n>> > Reviews are an important part of the Swift evolution process. All\n>> > reviews should be sent to the swift-evolution mailing list at\n>> >\n>> > https://lists.swift.org/mailman/listinfo/swift-evolution\n>> > <https://lists.swift.org/mailman/listinfo/swift-evolution>\n>> > or, if you would like to keep your feedback private, directly to the\n>> > review manager. When replying, please try to keep the proposal link at\n>> > the top of the message:\n>> >\n>> > Proposal link:\n>> >\n>> > https://github.com/apple/swift-evolution/blob/master/proposals/0027-string-from-code-units.md\n>> > Reply text\n>> >\n>> > Other replies\n>> >  <https://github.com/apple/swift-evolution#what-goes-into-a-review-1>What goes into a review?\n>> >\n>> > The goal of the review process is to improve the proposal under review\n>> > through constructive criticism and, eventually, determine the\n>> > direction of Swift. When writing your review, here are some questions\n>> > you might want to answer in your review:\n>> >\n>> > What is your evaluation of the proposal?\n>> \n>> I support the intent of the proposal but am -1 on the specific proposal\n>> as offered.\n>> \n>> First, in the presentation, there are several things that make it hard\n>> to evaluate:\n>> \n>> 1. The \"decode\" function signature is so wide that it can't be read\n>>    without scrolling at\n>>    https://github.com/apple/swift-evolution/blob/master/proposals/0027-string-from-code-units.md\n>> \n>> 2. The proposal doesn't show any usage of the proposed APIs, so it\n>>    is hard to understand what effect these APIs would have on real\n>>    code.  There are some examples of uses in\n>>    https://github.com/apple/swift/compare/master...zwaldowski:string-from-code-units\n>>    but I have to dig for them.\n>> \n>> 3. The description of the “Detailed Design” doesn't show any examples\n>>    either, so I have to imagine what “backporting the Swift 3.0 versions\n>>    of the CString constructors, then making them generic over their\n>>    input and codec” means.\n>\n> The notes are appreciated. I'll take care to add examples and fix\n> formatting. The proposal was always intended to be paired with the PR to\n> the stdlib, and that lack of clarity did not come up during the proposal\n> vetting stage.\n>\n>> Next, when I look at *uses* that I can find (in the tests), I don't find\n>> them to be clear.\n>> \n>>   String(validatingCodeUnits: result, as: UTF8.self)\n>> \n>> What does “validatingCodeUnits” mean?  Clearly we're going to do some\n>> checking.  Is there a repair?  Is the initializer failable?  \n>\n> I'm open to suggestions. The names as they are were lifted from the\n> changes to the CString APIs made on swift-3-api-guidelines.\n\nI suspected that they might be so I went and checked on GitHub... but\nnow I see that only searches the default branch :-P\n\n    https://help.github.com/articles/searching-code/\n\nBut if the naming error was on our side, my apologies.  We should do\nbetter, regardless.\n\n> \"repairingCodeUnits\" implies to me that there is something already wrong\n> with them. \n\nThat doesn't bother me.  If you are requesting the repair, you are\neffectively assuming that there is something already wrong with them.\n\n> I'm also not sure as to the point of the initializer being failable;\n> many domain initializers in the stdlib don't indicate that they can\n> fail directly in the name.\n\nThe point I'm trying to make is that the implications of “validating”\naren't clear, not that I can't tell whether it's failable.\n\n>> \n>> In this change, for example:\n>> https://github.com/apple/swift/compare/master...zwaldowski:string-from-code-units#diff-d39ec2c4819c950aeef95f899f53b104R79\n>> I find the old code much clearer than the new code (I'm not sure why\n>> _decode starts with an underscore here; isn't it part of your proposed\n>> public API?)\n>\n> The PR is ahead of the proposal here. It was pointed out in the review\n> thread up to this point that that that \"primitive\" isn't truly needed;\n> the initializers on String should be the API used by all.\n\nOkay, well, proposals (including any diffs they reference) should remain\nstable under review so we know what we're reviewing.  I really don't\nknow what's being proposed here.\n\n> static func decode<\n>   Encoding: UnicodeCodecType, \n>   Input: CollectionType where Input.Generator.Element == Encoding.CodeUnit\n> >(\n>    _: Input, as: Encoding.Type, repairingInvalidCodeUnits: Bool = default\n> ) -> (result: String, repairsMade: Bool)?\n\nIt seems like you are withdrawing decode from the proposal?\n\n> For convenience, the Bool flag here is also separated out to a more\n> common-case pair of String initializers:\n\nI don't understand what it means for a “bool flag to be separated out to\na... pair of ... initializers.”\n\n> init<...>(codeUnits: Input, as: Encoding.Type)\n> init?<...>(validatingCodeUnits: Input, as: Encoding.Type)\n\nAre you saying that the first initializer corresponds to\n`repairingInvalidCodeUnits: true` and the second to\n`repairingInvalidCodeUnits: false`?\n\nWhat about the user who wants repairs if necessary and wants to know\nabout it when repairs were made?\n\n> Finally, for more direct compatibility with String.Type.fromCString(_:)\n> and String.Type.fromCStringRepairingIllFormedUTF8(_:), these\n> constructors are overloaded for pointer-based strings of unknown length:\n> \n> init(cString: UnsafePointer<CChar>)\n> init?(validatingCString: UnsafePointer<CChar>)\n\nWhy are we trying to “be compatible” with those static methods?  \n\n> The ugliness in this instance is transitional; \n\nWhat ugliness?\n\n> it stems from bridging the old-style constructor to the new-style\n> one. \n\nI don't know what that means either.\n\n> The old signature's return type is awkward in that it returns the\n> extra hadError flag regardless of whether decoding failed, which is\n> discarded almost universally by clients in the stdlib.\n>\n> I intend to revert the change to `fromCStringRepairingIllFormedUTF8`, or\n> elide `_decode` into it instead.\n\nI don't know what that means either.\n\n>> Lastly, I am very concerned about the “Alternatives Considered” section,\n>> where, of one alternative, it says:\n>> \n>>       This might be the better long-term solution from the perspective\n>>       of API maintenance, but in the meantime this proposal has a fairly\n>>       low impact.\n>> \n>> We can't accept changes into the standard library “in the meantime,”\n>> with the expectation that something more comprehensive will make them\n>> obsolete.  Even though we've had migration tools, we never operated that\n>> way in the past, and as we head toward API and ABI stability it is even\n>> more true today.\n>\n> I understand the sentiment here, but I don't think \"wait for the next\n> rewrite of String\" is a good solution to a problem that the stdlib\n> already resolves. \n\nI'm really confused.  If the stdlib already resolves the problem, why is\nthere a proposal?\n\n> See below.\n>\n>> \n>> > Is the problem being addressed significant enough to warrant a change\n>> > to Swift?\n>> \n>> Yes.\n>> \n>> > Does this proposal fit well with the feel and direction of Swift?  \n>> \n>> W.r.t. direction, the fact that we have a major String overhaul planned\n>> means that tackling this one corner of the API is probably not entirely\n>> appropriate.\n>\n> \"Corner\" is an unfair characterization; \n\nNot at all; this addresses an important use-case, but accounts for a\nvery small part of the API.\n\n> users of Swift want to implement things to the level of safety and\n> performance bar set by the stdlib, but we are currently at a\n> disadvantage. No better example can be found but in\n> corelibs-foundation:\n> https://github.com/apple/swift-corelibs-foundation/blob/546dc8e16c3c34ca50f5752c6d0f39c3524f5f0a/Foundation/NSString.swift#L305.\n\nHeh, well, that's ironic.  Before Swift was released we had all of this\nfunctionality for unicode transcoding available in the String API, and\nit was decided that to avoid treading into Foundation's territory, any\nfunctionality already exposed by NSString should not be public API on\nString without Foundation loaded.\n\nI have ambitions that Swift strings will be first-class standalone types\nwithout the need to rely on Foundation some day soon, but under the\ncircumstances we may need a more comprehensive change than merely adding\nfast unicode transcoding to justify treading into this area.\n\n> Is it not a deficiency of the stdlib when code has to resort to\n> non-public methods? \n\nYes.  There are lots of deficiencies in the stdlib.  I'm not saying this\nshouldn't be addressed, but I'm concerned about addressing this in a\ntemporary way that we think may be sub-optimal.\n\n> The stdlib (i.e., the parts touched by the PR) and corelibs-foundation\n> would have to move in lockstep to adopt a replacement, so the existing\n> underscored versions are as good as public API.\n>\n> I understand, and 100% encourage, the reticence around new API. However,\n> we've created a worse problem by encouraging slow, buggy, custom\n> versions of behavior that already exists in the stdlib, or implying that\n> the underscored API should be used because we haven't managed something\n> better yet. :/\n\nI am not reticent to have new API.  I am reticent to accept partial or\nknown-suboptimal temporary solutions when we are developing a\ncomprehensive plan that ought to address the same problems (among many\nothers).\n\n-- \n-Dave\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution@swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160215/010551.html",
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "1F083E1F-9E08-4FE5-A57C-01B9C224F623@akkyra.com",
+                                   "1455583431.2212610.522168258.4DBE63C0@webmail.messagingengine.com",
+                                   "m2r3gd79th.fsf@eno.apple.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2fuwq3ofq.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2fuwq3ofq.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "date": {
+                   "$date": 1455751817000
+                   },
+                   "subject": "Re: [swift-evolution] Proposal: Add function SequenceType.find()",
+                   "references": [
+                                  "1451443080.3672997.478886698.0D652488@webmail.messagingengine.com",
+                                  "8BE52AFF-375D-41F3-B004-70BF640C178D@gmail.com"
+                                  ],
+                   "mailingList": "swift-evolution",
+                   "content": "\non Wed Feb 17 2016, Radosław Pietruszewski <swift-evolution@swift.org> wrote:\n\n> +1. Like others, this was one of the first stdlib extensions I’ve put\n> into my Swift projects. It’s very common to want to find the first\n> matching element in an array (or, perhaps even more common, find what\n> you know if the only matching element — `filter` without the extra\n> step of unpacking the value from array.)\n>\n> It’s also common in other languages, and `find` is a good name.\n\nMy only hesitation is that find has the strong connotation of not\nmodifying the underlying sequence, but any single-pass sequence will be\nconsumed.  I don't know why that should bother me, though, considering\nthe many other such methods we have defined on SequenceType.\n\n>\n> — Radek\n>\n>> On 30 Dec 2015, at 03:38, Kevin Ballard via swift-evolution <swift-evolution@swift.org> wrote:\n>> \n>> I'm proposing a new extension method on SequenceType called find(). It's similar to CollectionType.indexOf() except it returns the element:\n>>  \n>> extension SequenceType {\n>>     /// Returns the first element where `predicate` returns `true`, or `nil`\n>>     /// if such value is not found.\n>>     public func find(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> Self.Generator.Element? {\n>>         for elt in self {\n>>             if try predicate(elt) {\n>>                 return elt\n>>             }\n>>         }\n>>         return nil\n>>     }\n>> }\n>>  \n>> -Kevin Ballard\n>>  \n>> \n>> _______________________________________________\n>> swift-evolution mailing list\n>> swift-evolution@swift.org\n>> https://lists.swift.org/mailman/listinfo/swift-evolution\n>\n> _______________________________________________\n> swift-evolution mailing list\n> swift-evolution@swift.org\n> https://lists.swift.org/mailman/listinfo/swift-evolution\n\n-- \n-Dave\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution@swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160215/010547.html",
+                   "inReplyTo": null
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2d1s2bhnf.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2d1s2bhnf.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "mailingList": "swift-evolution",
+                   "content": "I just posted a write-up about various case conventions for initialisms:\nhttps://gist.github.com/dabrahams/55fc5ece355da4664730.  I was surprised\nat how it turned out, FWIW.\n\nCheers,\n\n-- \n-Dave",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009871.html",
+                   "date": {
+                   "$date": 1455256292000
+                   },
+                   "subject": "[swift-evolution] Analysis of case conventions for initialisms",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "m28u2nxndi.fsf@eno.apple.com",
+                                   "F46AAC83-47F1-4F51-B41D-E1BC5D0711AA@aol.com",
+                                   "n9lk8c$v8d$1@ger.gmane.org",
+                                   "D52E9E6C-FAEB-4D0F-90FA-E0AA5EBEC9DC@architechies.com",
+                                   "m2twld4iax.fsf@eno.apple.com",
+                                   "CAA+bWKVPkHRPCMbDe4PRhvty07Ght_=5MFQ21FOTmcp4LaOoMA@mail.gmail.com",
+                                   "39FD5544-84D6-4F5D-AEA3-3FB1E95F7FE3@novafore.com",
+                                   "m2io1t4gin.fsf@eno.apple.com",
+                                   "m27fi94f92.fsf@eno.apple.com",
+                                   "F4305F66-675D-4324-A059-7308E47DA88F@gili-labs.com",
+                                   "5EAB6704-A9BB-4E5F-A473-EC278657E694@duckcode.com",
+                                   "CAB5jXW0hEaJfD2nbYw8+eG8SsDs6uaCoR3jdcF2ud1NnVi2wRw@mail.gmail.com",
+                                   "m2bn7ma139.fsf@eno.apple.com",
+                                   "CACR_FB4bvy3CQ+c5mwPb7XnehEQ7kpoK=c9TH71aCarS_sx+Pw@mail.gmail.com",
+                                   "CAGefD4NPDFirvP-a6MX4yFW8hirBXiTUdLCh8cVXV+JROor+gA@mail.gmail.com",
+                                   "2D0DE766-5FBA-4C84-8D72-C53B4905443C@lng.la",
+                                   "m2d1s28fgi.fsf@eno.apple.com",
+                                   "A1FF9641-9244-4421-B14A-B2E84820B067@me.com",
+                                   "28C86272-B060-4364-BD31-92D8795A9176@novafore.com",
+                                   "22AC26B2-93C0-4236-9967-C8768AC829FD@duckcode.com",
+                                   "4BFA97E7-E712-47A0-8017-A344F4BCB1AB@gmail.com",
+                                   "FA44C71C-A669-49F0-8A17-09836ABF5B87@gmail.com",
+                                   "200AAC61-A651-4B18-A41D-37AD02B55BA2@alkaline-solutions.com",
+                                   "CAGY80u=FCL8OyomvD0ps74EMzEJWw0o-g2Ri+8Ww-OMVqRuXLA@mail.gmail.com",
+                                   "116E93E1-B8C0-49A7-BB99-8280BCCC486C@me.com",
+                                   "E47D9DDB-AA8A-4E9A-A99E-8CFEE9CFDC3D@gmail.com",
+                                   "6AF98E39-4357-4056-A1E3-7F4FCC7BD6B8@apple.com",
+                                   "1C676F6C-A9BC-4C2B-9BD4-3F567735E8C8@jonshier.com",
+                                   "m2k2m97tzc.fsf@eno.apple.com",
+                                   "m28u2p7tqt.fsf@eno.apple.com",
+                                   "m2pow17upw.fsf@eno.apple.com",
+                                   "m237sx7tml.fsf@eno.apple.com",
+                                   "m2wpq96f0l.fsf@eno.apple.com",
+                                   "F869AAFE-D391-4CA2-BBC3-4C14B9FBE113@apple.com",
+                                   "77D8FEAE-0441-4215-B142-A3F824665587@apple.com",
+                                   "m2bn7l5yk3.fsf@eno.apple.com",
+                                   "1851D4D2-CA90-4DA8-9BED-46E411BF7EAF@architechies.com",
+                                   "m2oabl4go9.fsf@eno.apple.com",
+                                   "256FE930-7477-4B09-B62F-2008A8FC201F@akkyra.com",
+                                   "FCF42637-DCEB-4128-A8CE-EE59377BD5E6@aol.com",
+                                   "m2k2m7vwsg.fsf@eno.apple.com",
+                                   "CAAR2SvNZs0OPXgWDyfX0HLO2him9nf=uo+d03uimDjXcTQtp+g@mail.gmail.com",
+                                   "11585713-F63C-4718-A9CC-9ECF94881BFA@architechies.com",
+                                   "CAGY80uk8Y0D3u5qivk-4rHPNFoiu1cNppDR9BLNNOUw_nKp12A@mail.gmail.com",
+                                   "m21t8i8c2o.fsf@eno.apple.com",
+                                   "m260xu8c9w.fsf@eno.apple.com",
+                                   "8BEF478B-E645-4875-83A0-DCE405795D49@haravikk.me",
+                                   "m2si0y8l3w.fsf@eno.apple.com",
+                                   "0F128CFB-9FA3-4105-8F90-137673554DB1@haravikk.me",
+                                   "E38F1692-7DF9-4A86-A321-8D20A8562D55@architechies.com",
+                                   "CAGY80unk8PowdJk9cGWf+cAivR+sHhRk7kNvwzx7QU7jzgSh2Q@mail.gmail.com",
+                                   "B2CBBDF5-1D5A-4806-82C3-C382E6B396A2@novafore.com",
+                                   "065470D0-0929-4C90-BD7D-3C66C903D1F2@alkaline-solutions.com",
+                                   "CANq73XP9D5hJHAXdDS48sfCCqjRGxVxY2Q4_R0wRYib1q5Nx1A@mail.gmail.com",
+                                   "41808971-F951-4AD1-B4D5-4EF3EBA7956C@apple.com",
+                                   "CAGY80u=osiDtOyJ25=Z=JiB=t06qCbfjGc1dQAW2ATbh20NVHw@mail.gmail.com",
+                                   "46B954A0-6B9C-429A-A0C7-F09CCA6D2C1C@akkyra.com",
+                                   "CAGY80u=qqub8sF91XX0Fxeu-vaj9oPzXic8aNohn9p8nxAHq9Q@mail.gmail.com",
+                                   "AA449701-A473-4AE1-888B-6A787C814FA1@me.com",
+                                   "3AFA4227-061D-4868-8DAD-A1A896A84EF5@gmail.com",
+                                   "4F78BD52-4B14-4601-B21F-D6A452E11991@me.com",
+                                   "CAGY80ukMTOarfRXewHcyxxuCz7pveh1tsWn1ND--tvLT-04QTw@mail.gmail.com",
+                                   "65BA5536-0B7A-4503-96FF-D9958B0445C5@gmail.com",
+                                   "EAB194A7-1CBB-41DB-BB18-34E2EBA05DC6@apple.com",
+                                   "49A4C670-EC78-4471-BE53-68770A65C0FE@gmail.com",
+                                   "CAA+bWKXHrbxwvcCfW65+_ZtfyvyO2=CT6KwGOjjBpFDA_TeZLQ@mail.gmail.com",
+                                   "69625B55-FFB0-4C5F-8DB4-0D9F3A8B98B9@apple.com",
+                                   "m2egch7tsy.fsf@eno.apple.com",
+                                   "CAAR2SvNZ953o=iUk6CEYnO3b-11Ci_atrVacAzzhnucq_nGzfg@mail.gmail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2bn7p3d7b.fsf@apple.com"
+                   }
+                   },
+                   "_id": "m2bn7p3d7b.fsf@apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "mailingList": "swift-evolution",
+                   "content": "Hi everybody,\n\nHaving looked at some examples, the API guidelines working group members\nthat were present this morning agreed we really want prepositions inside\nthe parentheses of method calls.\n\nHere are some results for the importer; we're still tuning some of the\nheuristics but overall we feel very good about the preposition\nplacement:\n  \n  https://github.com/apple/swift-3-api-guidelines-review/commit/da7e512cf75688e6da148dd2a8b27ae9efcb8821?diff=split\n\nNote that this is not final wording, but here are the guidelines we're\nworking with for first argument labels:\n\nA. Try to form a grammatical phrase including the first argument and\n   describing the primary semantics at the call site.\n\nB. The first argument gets a label when and only when:\n\n   1. It does not form part of a grammatical phrase describing the\n      primary semantics.  For example,\n      ```\n      x.dismiss(animated: y)\n      ```\n      [more examples needed]\n      Note that parameters with defaults never describe the primary\n      semantics. so are always labeled.\n      ```\n      func invert(options options: SomeOptionSet = []) // yes\n      func invert(_ options: SomeOptionSet = [])       // no\n      ```\n\n   2. The method is a factory method; such calls should mirror\n      initializers, with no preposition.  For example,\n      ```\n      let x = UIColor(red: r, green: g, blue: b)\n      let y = monitor.makeColor(red: r, green: g, blue: b)\n      ```\n\n   3. It is part of a prepositional phrase\n\n     a. The label normally starts with the preposition. \n        For example, \n        ```\n        x.move(from: a, to: b)\n        x.loadValues(forKeys: [\"fox\", \"box\", \"lox\"])\n        ```\n     b. ...unless the preposition would break a very tight association\n        between parameters:\n        ```\n        x.moveTo(x: a, y: b)\n        ```\n        [encourage grouping parameters into higher-level concepts,\n        e.g. Point, in these cases]\n      \n\n\nFeedback most welcome, of course.\n-- \n-Dave",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160208/009519.html",
+                   "date": {
+                   "$date": 1455045480000
+                   },
+                   "subject": "[swift-evolution] [Guidelines, First Argument Labels]: Prepositions inside the parens",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "E621BC09-FCE1-4F51-B4BD-E614CF7666AC@architechies.com",
+                                   "098236E0-91CE-4023-9955-755664B94D57@architechies.com",
+                                   "m260xsz4kt.fsf@eno.apple.com",
+                                   "BC40E4FA-C388-4E30-A9FF-F65C1311C770@gmail.com",
+                                   "6F84E121-9F13-486E-8274-3E9C42D8D6E7@gmail.com",
+                                   "5A40A8C1-49CF-47D3-AF53-9B449884DDEB@haravikk.me",
+                                   "0EE50F95-F049-4036-8053-4A87176D3A46@gmail.com",
+                                   "DA4DBE04-6B70-486A-9C93-2E679FE53FFE@mac.com",
+                                   "m21t8g313w.fsf@eno.apple.com",
+                                   "m2wpq81mfl.fsf@eno.apple.com",
+                                   "31AE5BB8-F143-43EE-923A-02DC70F1131C@gmail.com",
+                                   "CADcs6kOhWVXhcW+=pU47oW8BqcL3cqe2B0LvU=vXDtpd7135UA@mail.gmail.com",
+                                   "CAGY80u==MNc+cNGY0zkeFCJoyrfkuaojvQzLsTqq5BLhT=1k0w@mail.gmail.com",
+                                   "m2si111rbo.fsf@apple.com",
+                                   "74B5D696-B831-4DF8-AEA7-7822B6CAD0D4@gmail.com",
+                                   "097463EB-7171-4493-A5F6-179FE6D8DD6F@benrimmington.com",
+                                   "F91671B7-F27E-447C-9835-BD87CAB7B410@gmail.com",
+                                   "2750C644-676F-4749-AF8B-1AEB5E70614C@apple.com",
+                                   "0B5868AD-A3AA-4A83-A30A-68F47B4170BA@architechies.com",
+                                   "CAB5C60tfzxwYgWHjmx=FcDiEEdS_BY1aoc_O1vcUCXZ7-Z4Vjw@mail.gmail.com",
+                                   "97BB6E42-B5EE-4625-A933-EC78F7BA5792@apple.com",
+                                   "33D43A0C-2D2F-409B-9226-35B62E21533A@benrimmington.com",
+                                   "DEA4FBF8-9850-482B-A756-18A1CE370384@hartbit.com",
+                                   "CANq73XOJp5iuoYFWwkd3xhMfoWydQLL7224En6B+htC+WrsY0Q@mail.gmail.com",
+                                   "D5E70B52-E57A-4F90-B6E0-9818253C1550@apple.com",
+                                   "m28u2s17fr.fsf@eno.apple.com",
+                                   "970C5B9C-01F2-4315-A41A-1CBD8A4450E9@gmail.com",
+                                   "CADcs6kP4SiFu1md=Eai0S0hhRwKYP5Ap5rNypi5QXbL5z2aQog@mail.gmail.com",
+                                   "E375C44E-8D6E-4DED-B237-0350CF315F24@akkyra.com",
+                                   "0FFC8FD3-F325-410D-A37A-66A31CFF8D03@gmail.com",
+                                   "3F7087F4-28B9-4E45-B2B1-C47A3DE0048C@icloud.com",
+                                   "932B6409-7E9C-4D30-BB8D-A13358B6E3DB@gmail.com",
+                                   "75C10B4D-9F9F-469B-93D6-6D63B167DFA2@akkyra.com",
+                                   "m2fuwzyt71.fsf@eno.apple.com",
+                                   "m2oabnyt96.fsf@eno.apple.com",
+                                   "m2a8n7yt2x.fsf@eno.apple.com",
+                                   "m2mvr7xdbd.fsf@eno.apple.com",
+                                   "E4CD90D0-1A9A-495E-B881-3587956C548E@apple.com",
+                                   "831A4CDE-658B-44B2-ACC4-BD0268E8804E@apple.com",
+                                   "E26DDECA-8237-44CB-A423-AF018C8BA484@gmail.com",
+                                   "m260xvxbnv.fsf@eno.apple.com",
+                                   "CAGY80u=gG0eBxEq_SkKPmsr8xuf+4XCFPrMOHsL6iUhJzgDHBQ@mail.gmail.com",
+                                   "CANq73XPdxReZD5ktXt51ksGtAHt2KHWGe1HeuY1WFNbRvUMQyg@mail.gmail.com",
+                                   "289D5245-1684-460D-85E4-2361A59CA358@apple.com",
+                                   "m2fuwzvt24.fsf@eno.apple.com",
+                                   "542AC632-5D51-4E90-AAEF-24C8D45F05C3@apple.com",
+                                   "FF67F767-3069-411E-98BB-11742D226EE4@apple.com",
+                                   "CADcs6kOJRzm43x+6wF+Z8Vj2_56_dU6_NN-Ubeh9dfQHOA7nEQ@mail.gmail.com",
+                                   "7DBD5244-BC59-45FF-8F16-68BB9D1941C3@akkyra.com",
+                                   "38A3243C-CF5D-41C0-B037-B8C09710EFDF@apple.com",
+                                   "2788DEA1-CB71-4112-9E42-56642875E6BA@architechies.com",
+                                   "C627C76A-8F77-4379-B3E3-F1B9FA40BB2B@akkyra.com",
+                                   "492DC1D6-5637-4F54-B61D-E588C6C9FACA@gmail.com",
+                                   "D1EDF143-4E13-48B9-B3FD-0FC71B4F1695@gmail.com",
+                                   "6DAFB064-C61F-4C50-B89E-03BF6F0DF8F7@akkyra.com",
+                                   "5CF8EDFE-D02A-4453-A20C-B34911D99CC5@gmail.com",
+                                   "3DE8701B-653F-4C78-82C8-D64247D8F373@apple.com",
+                                   "m2h9hevltw.fsf@eno.apple.com",
+                                   "E29B82E0-7B83-4981-B867-680455E2CF61@apple.com",
+                                   "E4E632D3-8A62-4742-99CA-C51DEC457080@apple.com",
+                                   "577FB5CB-1139-4144-9A9B-E25ED508B364@gmail.com",
+                                   "m260xuu2is.fsf@eno.apple.com",
+                                   "m28u2qu2lr.fsf@eno.apple.com",
+                                   "62A5DE2B-4089-4F7C-834A-D27E11817244@apple.com",
+                                   "9154CBE2-E511-4E8F-A583-38DAD330790E@apple.com",
+                                   "m2mvr6a1d3.fsf@eno.apple.com",
+                                   "0FD02879-3FBF-4769-B318-25FE2E4BD222@apple.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m2a8my3njf.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m2a8my3njf.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "date": {
+                   "$date": 1455752980000
+                   },
+                   "subject": "Re: [swift-evolution] API Guidelines Update",
+                   "references": [
+                                  "m27fi42hk9.fsf@eno.apple.com",
+                                  "CAA+bWKVcz+au2gS0Rwc0LoTD9Uyd_ZstHo-xBpwvEHqQ4dzcOQ@mail.gmail.com",
+                                  "m24md75i84.fsf@eno.apple.com",
+                                  "CAA+bWKXFVmHZHW6X0iS+vw-+=H1c1Th_rQ=Wz2GazF-kV92hNQ@mail.gmail.com",
+                                  "m2si0r3ye7.fsf@eno.apple.com",
+                                  "CADcs6kM18qDAfD03mZJTwXMafkJW5JVdetiUttU+mo2cC=4fAw@mail.gmail.com"
+                                  ],
+                   "mailingList": "swift-evolution",
+                   "content": "\non Wed Feb 17 2016, Jacob Bandes-Storch <swift-evolution@swift.org> wrote:\n\n> Question about how to interpret/apply the guidelines:\n>\n>     \"[functions/methods] without side-effects should read as noun phrases…\"\n>     \"Use the “ed/ing” rule to name the nonmutating counterpart of a\n> mutating method…\"\n>     \"The names of other types, properties, variables, and constants should\n> read as nouns.\"\n>\n> Within these guidelines, how do we explain why\n> *-stringByExpandingTildeInPath* becomes \"var *expandingTildeInPath*\"? I'm\n> wondering if the guidelines should clarify that the \"ed/ing rule\" may apply\n> to more than just nonmutating methods with mutating counterparts.\n\nWhy should it?\n\n> I think that \"var expandingTildeInPath\" is probably the best choice for\n> this API, but I can't figure out how to reconcile it with the guidelines as\n> written.\n\nThe guidelines don't force you to spell it that way, but they allow it.\n\n    “x, expanding the tilde in its path”\n\nis a noun phrase.\n\n>\n> Jacob\n>\n> On Wed, Feb 17, 2016 at 11:55 AM, Dave Abrahams via swift-evolution <\n> swift-evolution@swift.org> wrote:\n>\n>>\n>> on Wed Feb 17 2016, Trent Nadeau <swift-evolution@swift.org> wrote:\n>>\n>> > I saw that that Markdown file wasn't on master so I didn't think a PR was\n>> > appropriate. I just looked, and it appears that gh-pages is the only\n>> branch\n>> > there.\n>>\n>> Nothing wrong with that; you can submit a PR against any branch.\n>>\n>> > On Wed, Feb 17, 2016 at 1:01 PM, Dave Abrahams via swift-evolution <\n>> > swift-evolution@swift.org> wrote:\n>> >\n>> >>\n>> >> on Tue Feb 16 2016, Trent Nadeau <swift-evolution@swift.org> wrote:\n>> >>\n>> >> > I like.\n>> >> >\n>> >> > Minor grammar fix: Remove the comma in \"declared only once, but used\n>> >> > repeatedly\" in the first rule.\n>> >>\n>> >> Thanks!\n>> >>\n>> >> FYI, for the future, pull requests work great :-)\n>> >>\n>> >> > On Tue, Feb 16, 2016 at 9:31 PM, Dave Abrahams via swift-evolution <\n>> >> > swift-evolution@swift.org> wrote:\n>> >> >\n>> >> >>\n>> >> >> I've updated the API guidelines document to account for the review\n>> >> >> feedback and other issues.  Please see\n>> >> >> http://apple.github.io/swift-internals/api-design-guidelines/\n>> >> >> (presentation view)\n>> >> >> and\n>> >> >>\n>> >> >>\n>> >>\n>> https://github.com/apple/swift-internals/blob/gh-pages/api-design-guidelines/index.md\n>> >> >> (source and commit history)\n>> >> >>\n>> >> >> --\n>> >> >> -Dave\n>> >> >>\n>> >> >> _______________________________________________\n>> >> >> swift-evolution mailing list\n>> >> >> swift-evolution@swift.org\n>> >> >> https://lists.swift.org/mailman/listinfo/swift-evolution\n>> >> >>\n>> >>\n>> >> --\n>> >> -Dave\n>> >>\n>> >> _______________________________________________\n>> >> swift-evolution mailing list\n>> >> swift-evolution@swift.org\n>> >> https://lists.swift.org/mailman/listinfo/swift-evolution\n>> >>\n>>\n>> --\n>> -Dave\n>>\n>> _______________________________________________\n>> swift-evolution mailing list\n>> swift-evolution@swift.org\n>> https://lists.swift.org/mailman/listinfo/swift-evolution\n>>\n> _______________________________________________\n> swift-evolution mailing list\n> swift-evolution@swift.org\n> https://lists.swift.org/mailman/listinfo/swift-evolution\n\n-- \n-Dave\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution@swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160215/010550.html",
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CADcs6kMr0vDr7CnoYfrZNsnO_WXvCiwFM234qA8=hgm2C37ijg@mail.gmail.com",
+                                   "m2r3ga23ox.fsf@eno.apple.com",
+                                   "CADcs6kOfmzkBeqgXYvXUAFxQ6BsmRbFVoeCPcfO-Vn3_QBR=pA@mail.gmail.com",
+                                   "m2bn7e1skd.fsf@eno.apple.com",
+                                   "74ABDE77-71F4-4748-86CB-EF262A70FB1A@uzh.ch",
+                                   "m2k2m2zcyq.fsf@eno.apple.com",
+                                   "3693EE07-AF14-450A-B9ED-FA92A453F7D1@uzh.ch",
+                                   "m2fuwqyrou.fsf@eno.apple.com",
+                                   "FBD4366B-D9DC-4647-9B57-ED3FF97757BC@akkyra.com",
+                                   "m27fi1zyl8.fsf@eno.apple.com",
+                                   "m2si0pwngh.fsf@eno.apple.com",
+                                   "1B9D4203-BE07-48B0-B5E2-A8E4E9173744@akkyra.com",
+                                   "m260xkwnn6.fsf@eno.apple.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/m237ss5uuv.fsf@eno.apple.com"
+                   }
+                   },
+                   "_id": "m237ss5uuv.fsf@eno.apple.com",
+                   "from": "dabrahams at apple.com (Dave Abrahams)",
+                   "date": {
+                   "$date": 1455650184000
+                   },
+                   "subject": "Re: [swift-evolution] ed/ing, InPlace, Set/SetAlgebra naming resolution",
+                   "references": [
+                                  "m2ziv7yyt9.fsf@eno.apple.com",
+                                  "299ADA6E-54A2-4BD8-B773-94D23BEE98CF@icloud.com",
+                                  "m2pow0z9s3.fsf@eno.apple.com",
+                                  "BC7A6FB6-4AFC-4705-9560-B78D1C2432F5@icloud.com",
+                                  "m2egcfvwmm.fsf@eno.apple.com",
+                                  "1BD1D768-B095-48CF-BD19-204845380870@apple.com",
+                                  "960645F0-384C-4D45-9475-1295D001C9FD@architechies.com",
+                                  "m2si0s62zb.fsf@eno.apple.com",
+                                  "CAGY80u=9Qctj0OE7NTFVRE36z71iUrx08wAdP_7asZzXOaH_oQ@mail.gmail.com"
+                                  ],
+                   "mailingList": "swift-evolution",
+                   "content": "\non Tue Feb 16 2016, Xiaodi Wu <swift-evolution@swift.org> wrote:\n\n> Not that I like it, but\n> insertNonIntersectingRemoveIntersectingContentsOf(_:) would be the\n> stylistically consistent way to convey the right sense.\n\nDid you see Ricardo Parada's suggestions?  I thought some of those were\nbetter.\n\n> On Tue, Feb 16, 2016 at 10:22 AM Dave Abrahams via swift-evolution <\n> swift-evolution@swift.org> wrote:\n>\n>>\n>> on Mon Feb 15 2016, Brent Royal-Gordon <swift-evolution@swift.org> wrote:\n>>\n>> > I think you've ended up with the right approach, and I understand the\n>> need to move on, but...\n>> >\n>> >>     /// Returns the set of elements contained in `self` or in `other`,\n>> but not in both `self` and `other`.\n>> >>     /// EXISTING: exclusiveOr\n>> >>     @warn_unused_result\n>> >>     func invertingIntersection(other: Self) -> Self\n>> >>\n>> >>     /// Replaces `self` with a set containing all elements contained in\n>> either `self` or `other`, but not both.\n>> >>     /// EXISTING: exclusiveOrInPlace\n>> >>     mutating func invertIntersection(other: Self)\n>> >\n>> > I'm not quite happy with these. I don't like that the mutating form of\n>> > `intersection` is `intersect`, but the mutating form of\n>> > `invertingIntersection` is `invertIntersection`—it seems like both\n>> > methods should change the \"intersection\" part.\n>> >\n>> > Have you considered going the opposite direction and combining the verb\n>> \"intersect\" with the adjective \"inverse\"?\n>> >\n>> >     /// Returns the set of elements contained in `self` or in `other`,\n>> but not in both `self` and `other`.\n>> >     /// EXISTING: exclusiveOr\n>> >     @warn_unused_result\n>> >     func inverseIntersection(other: Self) -> Self\n>> >\n>> >     /// Replaces `self` with a set containing all elements contained in\n>> either `self` or `other`, but not both.\n>> >     /// EXISTING: exclusiveOrInPlace\n>> >     mutating func inverseIntersect(other: Self)\n>> >     // or perhaps even `inverselyIntersect` so it's an adverb\n>> >\n>> > I wouldn't be surprised if you did, because I could see you trying to\n>> > dodge the adverb problem, but I thought it was worth asking.\n>>\n>> These names all have the wrong sense, including the ones that were\n>> decided upon.  “Inverting the intersection” doesn't imply that elements\n>> not in the intersection will be merged, which is what happens in a\n>> symmetric difference.\n>>\n>> --\n>> -Dave\n>>\n>> _______________________________________________\n>> swift-evolution mailing list\n>> swift-evolution@swift.org\n>> https://lists.swift.org/mailman/listinfo/swift-evolution\n>>\n> _______________________________________________\n> swift-evolution mailing list\n> swift-evolution@swift.org\n> https://lists.swift.org/mailman/listinfo/swift-evolution\n\n-- \n-Dave\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution@swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160215/010551.html",
+                   "inReplyTo": null
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.56b4e1e7.c977ef4.5ce1@DevAndArtist.fritz.box"
+                   }
+                   },
+                   "_id": "etPan.56b4e1e7.c977ef4.5ce1@DevAndArtist.fritz.box",
+                   "from": "adrian.zubarev at devandartist.com (Adrian Zubarev)",
+                   "mailingList": "swift-evolution",
+                   "content": "Hello dear Swift community,\n\nthis proposal might seem like some new syntax sugar, but it also aims to escape the 'do { }' scope from the 'do try catch‘ mechanism while making the existing error handling more powerful.\n\nLets assume we have some sort of network type, which can throw a ton of different errors:\n\nstruct TCPListener {\n\t\t\n\tinit(address: String) throws { /* implement */ }\n\n\tfunc accept() throws -> TCPConn { /* implement */ }\n\n\t/* ... */\n}\n\nA way of implimentation might look like this:\n\nlet listener: TCPListener\ndo {\n\tlistener = try TCPListener(\"some valid address\")\n\n\t// we could do more work here, but if we need to catch more\n\t// errors we will result in a new PYRAMIDE OF DOOM\n} catch {\n\tfatalError()\n}\n\nAt this point think about the comment inside the 'do { }' scope. Such an application might result in a new pyramide of doom as we know from optional unwrapping before 'guard else' mechanism was introduced.\n\nlet clientConn: TCPConn\ndo {\n\tclientConn = try listener.accept() // save to call accept method\n} catch {\n\tfatalError()\n} \n\nAs you can see this application might not need the extra 'do' scope at all, and if it does, the 'do try catch' is still there.\n\nI propose a new error handling mechanism that mimics the solution for optional pyramide of doom, which adds a slightly better syntax and removes the unneeded/unused 'do { }' scope (as for the example from above). Not only can this mechanism guarantee the execution of a throwing function without any errors (like a true guard condition) it also can assign returned values to a new constant/variable.\n\nIntroducing the 'guard try catch' mechanism:\n\nguard try throwingFunc() catch { \n\t/* handle error */ \n}\n\nguard try throwingFunc() catch _ { \n\t/* handle error */ \n}\n\nguard try throwingFunc() catch pattern { \n\t/* handle error */ \n}\n\nguard try throwingFunc() catch pattern where condition { \n\t/* handle error */ \n}\n\nguard let newInstance = try throwingFuncReturns() catch ... { \n\t/* handle error */ \n}\n\nWhere '...' represents the different combinations of possible patterns already showed in the first 4 examples.\n\nWe also might want the return type to be mutable.\n\nguard var newMutableInstance = try throwingFuncReturns() catch ... { \n\t/* handle error */ \n}\n\nThis mechanism also makes the error handling more powerful, since it can catch more specific errors defined with 'where condition'.\n\nLets rebuild the example from above with the new mechanism:\n\nguard let listener = try TCPListener(\"some valid address\") catch {\n\tfatalError()\n}\n\nguard let clientConn = try listener.accept() catch {\n\tfatalError()\n} \n\nOne think that should be mentioned here is that the method call from the second 'guard' is safe, because a 'guard' body may not fall through.\n\nImpact on existing codebase: None, because the mechanism is new and does not break any existing code.\n\nI'm really curious about your opinions.",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160201/009177.html",
+                   "date": {
+                   "$date": 1454694887000
+                   },
+                   "subject": "[swift-evolution] [Proposal]: Escaping another (unused) scope pyramide with 'guard try catch'",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "F86D5A57-509B-4536-9266-8F1896CE5719@yahoo.ca",
+                                   "etPan.56b4e9ea.1b455248.5ce1@DevAndArtist.fritz.box",
+                                   "760D7808-0080-401E-B528-D412E6328E4F@yahoo.ca",
+                                   "E5AF295F-5702-4AC8-9818-AC0E6F8B6C48@ericasadun.com",
+                                   "A2471C45-3D84-4650-9C73-9D26536399CD@hartbit.com",
+                                   "etPan.56b4f581.2231f0f.5ce1@DevAndArtist.fritz.box",
+                                   "etPan.56b4f91d.13f8d65d.5ce1@DevAndArtist.fritz.box",
+                                   "31AEA5A4-4C5B-4E39-AE2C-D5EEAEF675CF@yahoo.ca",
+                                   "264C53D0-B107-4463-9505-94418D48AD16@icloud.com",
+                                   "etPan.56b5a0a2.a4c414a.5ce1@DevAndArtist.fritz.box",
+                                   "etPan.56b715c3.5df3797c.5ce1@DevAndArtist.fritz.box",
+                                   "136C8079-BE09-4D19-A4C8-872F299DCD65@icloud.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.5694130e.68c32b25.9260@Jareds-MacBook-Pro-13-Inch.local"
+                   }
+                   },
+                   "_id": "etPan.5694130e.68c32b25.9260@Jareds-MacBook-Pro-13-Inch.local",
+                   "from": "desk at jaredsinclair.com (Jared Sinclair)",
+                   "mailingList": "swift-evolution",
+                   "content": "Consider the following:\n\nprotocol Updatable {\n    func update(state: Bool)\n}\n\nclass Thing: Updatable {\n    private var enabled = false\n    \n    func update(state: Bool) {\n        self.enabled == state\n    }\n}\n\nThe obvious intention is to set self.enabled to the incoming value of state. However, it’s easy to accidentally type a second equals sign. The effect of this typo is self.enabled is never updated, leading to a run-time bug that could be difficult to diagnose. \n\nThis typo doesn’t generate any errors or warnings. I can’t think of a valid reason to use the equals function outside of comparisons. If the compiler instead treated this typo as an error, the mistake would be trivial to identify and fix:\n\nprotocol Updatable {\n    func update(state: Bool)\n}\n\nclass Thing: Updatable {\n    private var enabled = false\n    \n    func update(state: Bool) {\n        self.enabled == state // Error: `==` may not be used outside of comparisons\n    }\n}\n\n-- \nJared Sinclair\nSent with Airmail",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160111/006276.html",
+                   "date": {
+                   "$date": 1452544782000
+                   },
+                   "subject": "[swift-evolution] Proposal Idea: Use of =?utf-8?Q?=3D=3D_?=outside of comparisons should be treated as an error.",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "FF8008ED-6555-4B04-9EDE-6B6EE0E70D58@apple.com",
+                                   "9B6BEA4D-B8DD-42E1-A188-C70AC2795267@mac.com",
+                                   "CANFz0qvo4omuHqhrCgKrcNFLwJZSr15HzriwtkHSQSPukBHCzQ@mail.gmail.com",
+                                   "CA+Y5xYevdEEvKxtk9ys3GzZ2O+Ajj3k7u5ZedSOVM4P1NQcObQ@mail.gmail.com",
+                                   "CAG-XJx=bWrczPRZbmvDkXHtcgU4F7BR5-Sjp4VAqD7JwhDSp3Q@mail.gmail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.5687213e.fef9dd6.b6bc@Jareds-iMacX.local"
+                   }
+                   },
+                   "_id": "etPan.5687213e.fef9dd6.b6bc@Jareds-iMacX.local",
+                   "from": "desk at jaredsinclair.com (Jared Sinclair)",
+                   "mailingList": "swift-evolution",
+                   "content": "The one-to-many observer pattern could really use a first-party, native Swift solution. The day-to-day practice of writing iOS / OS X applications needs it, and we end up falling back on antiquated APIs like KVO or NSNotificationCenter, or short-lived third-party libraries. This is an essential need that deserves a fresh approach.\n\nWhat follows is a rough proposal for a Swift-native “KVO alternative”. \n\n\nWhat Usage Would Look Like:\n\nlet tweet = Tweet(text: “Hi.”)\ntweet.observables.isLiked.addObserver { (oldValue, newValue) -> Void in\n    // this is otherwise just a standard closure, with identical\n    // memory management rules and variable scope semantics.\n    print(“Value changed.”)\n}\ntweet.isLiked = true // Console would log “Value changed.”\n\nBehind the Scenes:\n\n- When compiling a Swift class “Foo\", the compiler would also generate a companion “Foo_SwiftObservables” class.\n\n- When initializing an instance of a Swift class, an instance of the companion “ Foo_SwiftObservables” class would be initialized and set as the value of a reserved member name like “observables”. This member would be implicit, like `self`.\n\n- The auto-generated “ Foo_SwiftObservables” class would have a corresponding property for every observable property of the target class, with an identical name.\n\n- Each property of the auto-generated “ Foo_SwiftObservables” class would be an instance of a generic `Observable<T>` class, where `T` would be assigned to the value of the associated property of the target class.\n\n- The `Observable<T>` class would have two public functions: addObserver() and removeObserver(). \n\n- The addObserver() function would take a single closure argument. This closure would have a signature like: (oldValue: T?, newValue: T?) -> Void. \n\n- Observer closures would have the same memory management and variable scope rules as any other closure. Callers would not be obligated to remove their observer closures. Doing so would be a non-mandatory best practice.\n\n\nRough Code Examples\n\nConsider a class for a Twitter client like:\n\nclass Tweet {\n    var isLiked: Bool = false\n    let text: String\n     \n    init(text: String) {\n        self.text = text\n    }\n}\nThe compiler would generate a companion observables class:\n\nclass Tweet_SwiftObservables {\n    let isLiked = Observable<Bool>()\n}\nNotice that only the `isLiked` property is carried over, since the `text` property of `Tweet` is a let, not a var.\n\nThe generic Observable class would be something like (pseudo-codish):\n\nclass Observable<T> {\n    typealias Observer = (oldValue: T?, newValue: T?) -> Void\n    private var observers = [UInt: Observer]()\n     \n    func addObserver(observer: Observer) -> Uint {\n        let token: Uint = 0 // generate some unique token\n        self.observers[token] = observer\n        return token\n    }\n     \n    func removeObserverForToken(token: Uint) {\n        self.observers[token] = nil\n    }\n}\n\nBenefits of This Approach\n\nIt’s familiar. It resembles the core mechanic of KVO without the hassle. It uses existing memory management rules. Everything you already understand about closures applies here.\n\nIt’s type-safe. The Observable<T> generic class ensures at compile-time that your observers don’t receive an incorrect type.\n\nIt’s readable. The syntax is brief without being unclear. Implementing the observation closure at the same call site as addObserver() keeps cause and effect as close together as possible.\n\nIt’s easy. It abandons a stringly-typed API in favor of a compile-time API. Since the Foo_SwiftObservables classes would be auto-generated by the compiler, there’s no need for busywork tasks like keeping redundant manual protocols or keyword constants up to date with the target classes.\n\n\nThanks for reading,\n\n\n-- \nJared Sinclair\n@jaredsinclair\njaredsinclair.com",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151228/005062.html",
+                   "date": {
+                   "$date": 1451696446000
+                   },
+                   "subject": "[swift-evolution] Swift-Native Alternative to KVO",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "6AD6F25F-393A-42AE-A377-D95E293AD7FD@charlessoft.com",
+                                   "A31386C6-415F-48F4-B3CE-FE6B727050C1@apple.com",
+                                   "DA06B201-48A6-41CC-BD3C-D9937C7C8D45@gmail.com",
+                                   "BEA28DA8-601E-4693-A7EB-D71B3229510C@gmx.de",
+                                   "096A5418-D106-4B08-A155-3A5E8917A101@rechenmaschinist.de",
+                                   "ED93A3E4-5C9E-4D83-BC4B-92FD1162C25F@me.com",
+                                   "2CDAA71D-073F-49E1-B8C8-0DC1BB3D954A@gmail.com",
+                                   "F34FC9CB-C5C1-4163-B5E3-D31E957E5325@gmail.com",
+                                   "CAHF2dSLkiZ73=rQiC_1dSJAYXW82DptChhWyyBY0O9GPbUgBkw@mail.gmail.com",
+                                   "CAEbsasTiE3GHrWF-vwxLEF+cx-90S0HuY7wXxSjxUiy-rNqmzw@mail.gmail.com",
+                                   "38F1A2BA-36E6-4975-AF38-0886E4E914E7@michelf.ca",
+                                   "8C23A474-1EB1-4F0B-8483-DBD845787E2F@gmail.com",
+                                   "097D0919-81CF-45F7-81B2-9447E97C806A@gmail.com",
+                                   "24A11CC6-9BB1-4B57-BC58-D18B4C866B55@gmx.de",
+                                   "2427E9AA-4D59-4B83-BF71-1E1D787B8759@michelf.ca",
+                                   "CALkjWZu4qWaK5Pi2mQLi=HeT-KmG_2Eddx9=1E=fbAH0mzAUYQ@mail.gmail.com",
+                                   "EB918CB4-7D7E-4B1B-9785-6D75C90A85CB@gmail.com",
+                                   "4E12B6FC-F82A-48D9-A97A-876A8E727C26@charlessoft.com",
+                                   "08330A3A-5FFE-4100-8840-9176C56F6D1A@mzy.me",
+                                   "2D8EF7CC-E0ED-4621-845A-03FCA976945C@mzy.me",
+                                   "7A34DC40-1843-413B-9EFB-CDD2CD64824E@googlemail.com",
+                                   "ADB454E7-31AB-4841-9231-9219CC548D46@gmail.com",
+                                   "34920DDA-09D5-4DF3-9145-EE153CE1AD0A@apple.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.5677bb7b.567379a5.3a4@Andyys-MacBook-Pro.local"
+                   }
+                   },
+                   "_id": "etPan.5677bb7b.567379a5.3a4@Andyys-MacBook-Pro.local",
+                   "from": "andyyhopedev at me.com (Andyy Hope)",
+                   "mailingList": "swift-evolution",
+                   "content": "Hi Swift Team and Community\n\nI’ve put a proposal up on GitHub to add a cases ‘count’ functionality to Enums for the Swift language\nhttps://gist.github.com/andyyhope/2fc5b6bee8ee1346f688\n\n\nComments, feedback, scenario appends very much welcomed. Thank you\n\n-- \nAndyy Hope\niOS Developer, Melbourne\n@andyyhope\nandyyhope.com",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151221/003819.html",
+                   "date": {
+                   "$date": 1450687355000
+                   },
+                   "subject": "[swift-evolution] Proposal: Enum 'count' functionality",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "F0F5D1CD-7CA1-474E-A842-FBD70A0161CE@me.com",
+                                   "562E3AFB-371E-44BC-8D3E-85FFD3EAF654@ericasadun.com",
+                                   "D40624BE-B2FE-416B-9090-C17C4F256D5D@apple.com",
+                                   "53262A1F-E0E2-4CDF-BB2C-DCF9E37C8CDE@gmail.com",
+                                   "CANDNO-C2K3b0vZv1rQN8xdcn8GUPK2ZrEwa5HKgVBJJkHnbupA@mail.gmail.com",
+                                   "CAGefD4OfNpR-AEzTER6zd9N-96o8P-QnWNFx0PE_7LxKfL9fsQ@mail.gmail.com",
+                                   "567A939E.5010202@extelligentcocoa.org",
+                                   "DA3112AC-2AF5-4C3F-B21C-1E707434C85E@monod-broca.fr",
+                                   "CAB5C60tLv22_o_DwsNwVUefzKzrAVfQe3TZGQ5XpYGdTSbqXtw@mail.gmail.com",
+                                   "0ED55BC2-CE3B-488C-B77E-1DC1BF004E2F@architechies.com",
+                                   "8E2D5CD7-3598-4A2C-8612-3AE248238D5C@gmail.com",
+                                   "CAK9u92NxWJ-bYa7NT-FBzUM-sXG2V9apYShL=ZdV=CbU--zHYw@mail.gmail.com",
+                                   "ACD0D869-7546-4303-957E-C7A4E95870E1@gmail.com",
+                                   "0139D274-9332-4B61-BF11-624AECEB36CA@gmail.com",
+                                   "1EE4A134-2D65-4C7F-91E5-8AC0E95F2E67@apple.com",
+                                   "B9E43B18-D5C4-475F-BF2C-062C3CADE9EC@ericasadun.com",
+                                   "C75E3604-A648-46EF-A134-29D17DEF1EB1@ericasadun.com",
+                                   "7BA6F3E4-1053-4EBB-BAEB-DF5D00A816BC@apple.com",
+                                   "326FCB02-5370-45C3-B13E-7DE17F0999AD@gmail.com",
+                                   "5092439F-43E9-42C0-9072-8EF3A1CC0AFD@me.com",
+                                   "6338CE79-C70E-4E3F-A24E-E647A0BD75AC@posteo.de",
+                                   "CADcs6kOVz5cEG4grt_nvZV9JrA7bbY_Y+yoDBcwNh+-DCcv22A@mail.gmail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.566bc229.4ec9a247.c323@IT-15556"
+                   }
+                   },
+                   "_id": "etPan.566bc229.4ec9a247.c323@IT-15556",
+                   "from": "arthur at sabintsev.com (Arthur Sabintsev)",
+                   "mailingList": "swift-evolution",
+                   "content": "Hi,\n\nI have put together a proposal for passing arrays to variadic functions (along the lines of Ruby’s Splay operator). \n\nProposal: https://github.com/ArtSabintsev/swift-evolution/blob/master/proposals/array-variadic-function.md\nPull Request: https://github.com/apple/swift-evolution/pull/52\nBug Report: https://bugs.swift.org/browse/SR-128 which led to this proposal\n\n\nBest,\n\nArthur / Sabintsev.com",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151207/001936.html",
+                   "date": {
+                   "$date": 1449902633000
+                   },
+                   "subject": "[swift-evolution] Proposal for Passing Arrays to Variadic Functions",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "1449903282.1742741.465265241.236445FD@webmail.messagingengine.com",
+                                   "1449904516.1745810.465272153.239ECD60@webmail.messagingengine.com",
+                                   "CAJvk5nXxEcg_tSGFuXUtsEK=Xwx4UW71_DF4hjiWG_TaV-=13w@mail.gmail.com",
+                                   "CAJvk5nUoVirUgaBOffMP=F_Ynt0kO4TwHHJp7HpeHj6ygduXtw@mail.gmail.com",
+                                   "1449907427.1754562.465286953.3DAF0EE8@webmail.messagingengine.com",
+                                   "CAE+=ROVnzG+sK--rxOttB5fLY0ujZUvOaMRsbxo_Ru1a_oNZ2g@mail.gmail.com",
+                                   "etPan.566c75d8.59e61e6a.c334@IT-15556",
+                                   "DE41B52E-D5F4-48F5-AE78-BA6784CF536B@alkaline-solutions.com",
+                                   "etPan.566c7af0.7546cfb7.db6e@IT-15556",
+                                   "61FE266C-A973-4F54-B7AA-CB05F1ED73BB@tarantsov.com",
+                                   "0F1401F5-3CDD-4132-9FB7-0FAC092AEBF3@apple.com",
+                                   "etPan.566c841f.785229b0.db6e@IT-15556",
+                                   "084B7B4A-6DA6-478D-A472-9267A8E64A8D@apple.com",
+                                   "1450050813.3074846.466345817.12CD3B52@webmail.messagingengine.com",
+                                   "6CDA7343-F1B7-4EEA-9D68-41D5D248BE4B@apple.com",
+                                   "1450127593.2757072.467341441.75D3EE95@webmail.messagingengine.com",
+                                   "6BEAC0E8-FD0A-44A0-BB2F-8D984698E5EF@apple.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.56667806.2de380fb.d77@mscience.local"
+                   }
+                   },
+                   "_id": "etPan.56667806.2de380fb.d77@mscience.local",
+                   "from": "adrian.zubarev at devandartist.com (Adrian Zubarev)",
+                   "mailingList": "swift-evolution",
+                   "content": "// I'll use this `function` as a closure later  \nfunc setup(_ this: SomeType) -> Void {  \n\n    this.doSomeStuff() // local parameter `this`\n}\n\nsetup(this: /* instance of SomeType */)\nThe example I’ll use here will build upon the code samples from the “Request for Discussion: Setup closures” topic.\n\nprotocol SettableType: class {\n     \n    init() // designated initializer\n}\n\nextension SettableType {\n     \n    init(@noescape setup: (this: Self) -> Void) {\n         \n        self.init()\n        setup(this: self)\n    }\n}\n\nfunc << <T: SettableType>(instance: T, @noescape setup: (this: T) -> Void) -> T {\n     \n    setup(this: instance)\n    return instance\n}\n\nextension NSObject: SettableType {}\nRight now this will look like this:\n\nNSObject() { anyArgumentName in\n\n    anyArgumentName.doSomeStuff()\n}\n\n// or\nNSObject() {  \n\n    $0.doSomeStuff()\n}\nIf we had strict local parameter names we couold omit the argument list and don’t need the shorthand argument names ($0, $1) anymore. At least the argument list could be generated automaticaly.\n\nLets reuse the SettableType from before.\n\nextension SettableType {\n     \n    init(@noescape setup: (_ this: Self) -> Void) {\n         \n        // notice that `this` is now a local parameter and _ the external paramter\n        self.init()\n        setup(self) // in this scope only the external parameter is visible\n    }\n}\n\nfunc << <T: SettableType>(instance: T, @noescape setup: (_ this: T) -> Void) -> T {\n     \n    setup(instance) // same here\n    return instance\n}\n\nlet object = NSObject() { this in // we could omit the argument list\n\n    this.doSomeStuff() // `this` is the generated argument name from the strict local parameter  \n    $0.doSomeStuff() // should raise an error even if we omit the argument list\n}\n\nobject << {\n    this.doSomeStuff()\n}\nDo you thing this feature is worth it?\n\nAny feedback is welcome.\n\n\n\n— \nRegards Adrian",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151207/001040.html",
+                   "date": {
+                   "$date": 1449555974000
+                   },
+                   "subject": "[swift-evolution] Proposal: Specifying local parameter names for closures to generate strict argument list",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/etPan.5665f300.4c1d7f6.38f@Krzysztofs-MacBook-Pro.local"
+                   }
+                   },
+                   "_id": "etPan.5665f300.4c1d7f6.38f@Krzysztofs-MacBook-Pro.local",
+                   "from": "krzysztof at siejkowski.net (=?utf-8?Q?krzysztof=40siejkowski.net?=)",
+                   "mailingList": "swift-evolution",
+                   "content": "Hi,\n\n\n# Introduction\n\nI'd like to propose a non-invasive way of extending the funtionality of `if let` conditional binding (and potencially other Optional-related language constructs) by introducing `CustomOptionalConvertible` protocol. The idea is basically the same as with `CustomStringConvertible` protocol used to provide string interpolation or with `~=` operator used in `switch` statement pattern matching.  I believe it's going to simplity and unify the use of the Optional-related family of Swift syntax constructs for custom types.\n\nThe proposal is in a draft stage right now, I'll clear it up if it proves worth to be pull-requested.\n\n\n# Motivation\n\nOne of the Swift features that are core to it's safety and readability are Optionals. They're important enough to be given special place in the language syntax. Special operators like `?`, `!` or `??`, special casting keywords like `as?`, special conditional binding `if let`. The Optionals, however, might be also seen as a member of larger family of constructs: call them monads, boxes, value containers, computational context bearers. One example of those would be a very similar type going by the name of  Either, Try or Result. It can be seen as an Optional that carries some additional information about the reason why the value is absent. That information is not always of our interest and in those cases conditional binding  for Either type makes a lot of sense. However, the `if let` syntax is currently exclusively working only for optionals.\n\n\n# Proposed solution\n\nWhile I'd love to see Swift introducing a powerful construct similar to Haskell's `do-notation` or Scala's `for-comprehension`, I believe it'd require a significant invasive change in the language implementation (and, possibly, vision). Therefore the proposed solutions is much more humble. Let's introduce the `CustomOptionalConvertible` protocol with signature:\n\n```\nprotocol CustomOptionalConvertible {\n\ttypealias Wrapped\n\tpublic var optional: Optional<Wrapped> { get }\n}\n```\n\nSuch a protocol will provide a way for an arbitrary type to convert to the Optional. All the types implementing this protocol could then be used in conditional binding syntax without explicit declaration of conversion. I do not propose the introduction of general implicit conversion construct, just a special case. The same as `CustomStringConvertible` is a special case of allowing the value to express itself in the string interpolation.`CustomOptionalConvertible` will allow the author of an arbitratry type to integrate with Swift syntax:\n\n```\nenum Either<Value> {\n\tcase Left(ErrorType)\n\tcase Right(Value)\n}\n\nextension Either : CustomOptionalConvertible {\n\ttypealias Wrapped = Value\n\tpublic var optional: Optional<Value> {\n\t\tget {\n\t\t\tswitch (self) {\n\t\t\tcase .Left(_): return .None\n\t\t\tcase .Right(let value): return .Some(value)\n\t\t\t}\n\t\t}\n\t} \n}\n\nfunc foo(either: Either<String>) -> String {\n\tif let string = either {\n\t\treturn string\n\t} else {\n\t\treturn \"No value\"\n\t}\n}\n```\n\nThere is already a similar mechanism available in the context of pattern matching: `~=` operator.\n\n\n# Impact on the language\n\nWhile I cannot say much about the impact on the compiler, I believe the introduction will bring no breaking change to the Swift language itself. All the places that are currently requiring Optionals will still require Optionals. \n\nFor the language users it'll make it easier to integrate the constructs used in the program with the native syntax, making them easier to use and read. Current solution, namely:\n```\nfunc foo(either: Either<String>) -> String {\n\tif let string = either.optional {\n\t\treturn string\n\t} else {\n\t\treturn \"No value\"\n\t}\n}\n```\nis introducing unnecessary noise in the otherwise neat syntax. The problem escalates when `if let` cascade is used:\n```\nif let string = eitherString.optional\n           int = eitherInt.optional\n           array = eitherArray.optional \n// ...\n```\n\n\n# Alternatives considered\n\nThe equivalent of Haskell’s `do-notation`. It’s a powerful construct (some say even too powerful, see https://wiki.haskell.org/Do_notation_considered_harmful). However, I can’t imagine it without significant changes to the language syntax (`if let` should return value) and vision (I believe that Optional are syntactic unicorns by design).\n\n\nAll the best,\nKrzysztof",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151207/000917.html",
+                   "date": {
+                   "$date": 1449521920000
+                   },
+                   "subject": "[swift-evolution] Proposal: extend Optional-specific syntax to arbitrary types with CustomOptionalConvertible",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "3B8C6F12-CCD2-4A45-A4C0-6DE4FA624B6F@pobox.com",
+                                   "1449524836.1231618.460833281.5C193042@webmail.messagingengine.com",
+                                   "etPan.5666045a.1ef2add2.38f@Krzysztofs-MacBook-Pro.local",
+                                   "2C1A233C-F788-4C9E-BBE2-FE8EB62950E2@anandabits.com",
+                                   "etPan.5666e533.5c2e59f1.c9ce@MacBook-Pro-user.local",
+                                   "08E24E1A-9CF5-48D6-BA45-D5620739E60E@anandabits.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/e62e8b63-6708-42d6-b70f-9d5b791ee6e3@me.com"
+                   }
+                   },
+                   "_id": "e62e8b63-6708-42d6-b70f-9d5b791ee6e3@me.com",
+                   "from": "colin.cornaby at mac.com (Colin Cornaby)",
+                   "mailingList": "swift-evolution",
+                   "content": "(I'm reading the upstream discussion but I'll reply here.)\n\nI don't know if I really like the pattern this is trying to support. I like that Swift makes it cleaner to include multiple types in a single Swift file. But I feel like this proposal is trying to take things too far the other way. Types that should should only see each other from a non \"friends\" role should be in separate files.\n\nWhat's proposed doesn't really harm someone who likes the \"multiple file\" style directly, but I don't want to see projects where everything gets jammed into one file. I think keeping the scope of private (with no new keywords) to the same file encourages good coding practices.\n\nI've really liked the balance Swift strikes in this case. I feel like this discussion is going to come down to opinion, but projects that I've worked in that have tried to over compact have always run into issues. I don't know if it's the role of the language to push an ideology either way, but personally I like the direction Swift is pushing. Files make for good scope boundaries.\n\nOn Dec 05, 2015, at 08:40 PM, Ilya via swift-evolution <swift-evolution at swift.org> wrote:\n\nI think the it would help a great deal to have an access level modifier that is really private and visible only inside the class itself. Right now, the only way to hide implementation details for a class is to hide the class code in a separate file, which is very inconvenient for several reasons:\n\n1) the meaning of the code changes depending on which file the class is in. It's very easy to accidentally expose class internal details and then call class elements that are meant to be used only inside the class. Having a keyword for class internals will allow the compiler to ensure that only the public API for the class is used from the outside world. The user can check types on his own, but it's better that the compiler does it automatically. Similarly, the user can check that only the proper APIs are called, but it's better that the compiler does it automatically.\n\n2) accessibility by file structure may cause some really short files. \n\n3) It's impossible to group related classes in one file but still hide implementation details inside each class\n\nI think that it the best solution is to make private keyword do what it states -- keep the class element private to the class. But if it's really important to have a separate keyword for backward compatibility, it would be the next best thing.\n\n--\nIlya Belenkiy\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution at swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002332.html",
+                   "date": {
+                   "$date": 1450120737000
+                   },
+                   "subject": "[swift-evolution] access control proposal",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CAOFcyhvzjU6N1exwjkxOQ5SjxbJE5WLKJh4bRoPShCPHU2Yk5g@mail.gmail.com",
+                                   "8B7BE9B4-FC1E-422C-886D-7359169ADE61@polka.cat",
+                                   "CAOFcyhuhu9YZkJ+oP7PvWww53FRqSyj=+Bdnz+Xt5K2EfF_x4A@mail.gmail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/d75ca90d-521c-47ad-b5d6-61455d327de6@me.com"
+                   }
+                   },
+                   "_id": "d75ca90d-521c-47ad-b5d6-61455d327de6@me.com",
+                   "from": "colin.cornaby at mac.com (Colin Cornaby)",
+                   "mailingList": "swift-evolution",
+                   "content": "+1 to this proposal (again)\n\n* What is your evaluation of the proposal?\n\nI know that adding this requirement is something that could frustrate a number of people, both now and people who adopt Swift in the future... But I feel that the shadowing problem that it solves could be a significant issue for developers who are new. I also feel that it matches the idea behind Swift to encourage safe development practices. Concepts like optionals also are extra additions to the language that can frustrate and annoy developers, but in the end create safer and more clear code.\n\n * Is the problem being addressed significant enough to warrant a change to Swift?\n\nI feel Swift should have some sort of handling of this sort of shadowing. Unless a better proposal comes along to solve the same problem, I feel this problem is significant enough to warrant the change.\n\n * Does this proposal fit well with the feel and direction of Swift?\n\nSee notes above. I feel like this fits will with the direction of Swift in adding new language requirements to force a developer to deal with common coding errors.\n\n * If you have you used other languages or libraries with a similar feature, how do you feel that this proposal compares to those?\n\nIt was noted in an earlier thread that this feature was added to Obj-C not intentionally, but as a result of a collection of issues. I actually appreciated this feature of Obj-C and felt like it made Obj-C a more exacting language. I know there are similar complaints about Obj-C's verbosity, but I feel like this proposal outweighs that with the additional clarity that would be added.\n\n * How much effort did you put into your review? A glance, a quick reading, or an in-depth study?\n\nI've been actively watching this review and I've hit this problem a few times in Swift. I understand that this issue is contentious, and that if this change happens, people might still be complaining years and years from now about it. But it reduces confusion in the language and eliminates possible developer error, which seems to align with the goals of Swift.\n\nOn Dec 16, 2015, at 10:55 AM, Douglas Gregor via swift-evolution <swift-evolution at swift.org> wrote:\n\nHello Swift community,\n\nThe review of “Require self for accessing instance members” begins now and runs through Sunday, December 20th. The proposal is available here:\n\n https://github.com/apple/swift-evolution/blob/master/proposals/0009-require-self-for-accessing-instance-members.md\n\nReviews are an important part of the Swift evolution process. All reviews should be sent to the swift-evolution mailing list at\n\n https://lists.swift.org/mailman/listinfo/swift-evolution\n\nor, if you would like to keep your feedback private, directly to the review manager.\n\nWhat goes into a review?\n\nThe goal of the review process is to improve the proposal under review through constructive criticism and, eventually, determine the direction of Swift. When writing your review, here are some questions you might want to answer in your review:\n\n * What is your evaluation of the proposal?\n * Is the problem being addressed significant enough to warrant a change to Swift?\n * Does this proposal fit well with the feel and direction of Swift?\n * If you have you used other languages or libraries with a similar feature, how do you feel that this proposal compares to those?\n * How much effort did you put into your review? A glance, a quick reading, or an in-depth study?\n\nMore information about the Swift evolution process is available at\n\n https://github.com/apple/swift-evolution/blob/master/process.md\n\n Cheers,\n Doug Gregor\n Review Manager",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002896.html",
+                   "date": {
+                   "$date": 1450298596000
+                   },
+                   "subject": "[swift-evolution] =?utf-8?q?_=5BReview=5D_Require_self_for_access?= =?utf-8?q?ing_instance=09members?=",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "1A99BA52-3FC7-46BF-854E-82D667F706BC@gmx.de",
+                                   "03CD6049-C70C-4C29-84AC-B7BA65C90D93@googlemail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/d6a3b09b-65e9-43c2-bc78-36765f74c9a2@me.com"
+                   }
+                   },
+                   "_id": "d6a3b09b-65e9-43c2-bc78-36765f74c9a2@me.com",
+                   "from": "tseitz42 at icloud.com (Thorsten Seitz)",
+                   "mailingList": "swift-evolution",
+                   "content": "An HTML attachment was scrubbed...\nURL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160106/33d319d4/attachment.html>",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160104/005490.html",
+                   "date": {
+                   "$date": 1452074527000
+                   },
+                   "subject": "[swift-evolution] =?utf-8?q?Require_use_of_override_keyword_to_ov?= =?utf-8?q?erride_dynamically_dispatched_methods_defined_in_a_protocol_wit?= =?utf-8?q?h_a_default_implementation?=",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CAGY80umaKBuLQZ1W9_ogkDtfksVRo532ARrtbR31KWvihAbWrA@mail.gmail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/b95aacf6-9842-45c0-bf3b-ff6fafcc7859@me.com"
+                   }
+                   },
+                   "_id": "b95aacf6-9842-45c0-bf3b-ff6fafcc7859@me.com",
+                   "from": "tkatzenbaer at me.com (Terrence Katzenbaer)",
+                   "mailingList": "swift-evolution",
+                   "content": "This seems to be better addressed with a generic protocol.\nI did consider a generic protocols, and it would be good to have some discussion on this vs. my proposed solution.\n\nWhile there are currently some limitations surrounding generics, and so I won't give specific examples, this has been stated as an area of focus for Swift 3.\nIsn't this mailing list's purpose to discuss and propose changes to Swift 3? It seems like you're dismissing this as a \"wontfix\" with hopes that improving generics would resolve this issue in its entirety.\n\nOn Dec 16, 2015, at 12:58 PM, ilya <ilya.nikokoshev at gmail.com> wrote:\n\n> It seems more expressive and more functionally correct to be able to implement a method strengthening AnyObject to my model type while still conforming to the protocol (since my model would pass \"is AnyObject\").\n\nThis seems to be better addressed with a generic protocol. While there are currently some limitations surrounding generics, and so I won't give specific examples, this has been stated as an area of focus for Swift 3. \n\n> If my NSOutlineView contained objects of a single type, it makes little sense to be forced to implement a method solely for handling AnyObjects or being forced to typecast to my model type.\n\nIn this example NSOutlineView should be specialized to some type T then.\n\nOn Wed, Dec 16, 2015 at 23:45 Terrence Katzenbaer via swift-evolution <swift-evolution at swift.org> wrote:\nMaybe I shouldn't have mentioned anything about the runtime since that's more about the implementation instead of the general idea... Something more \"swifty\" could be a compile check on the newly strengthened arguments.\n\nIf I understand your example code, it's calling didPerformSomeAction(object: Bar) instead of the Foo version because of function overloading? It seems this functionally satisfies not having to typecast, but it doesn't solve the verbosity problem since you're still forced to implement the extraneous didPerformSomeAction(object: Foo).\n\nUsing the Cocoa framework as an example, NSOutlineViewDelegate has the method:\noptional func outlineView(_ outlineView: NSOutlineView,\n         shouldSelectItem item: AnyObject) -> Bool\n\nIf my NSOutlineView contained objects of a single type, it makes little sense to be forced to implement a method solely for handling AnyObjects or being forced to typecast to my model type.\n\nIt seems more expressive and more functionally correct to be able to implement a method strengthening AnyObject to my model type while still conforming to the protocol (since my model would pass \"is AnyObject\").\n\nOn Dec 16, 2015, at 12:35 PM, Ian Ynda-Hummel <ianynda at gmail.com> wrote:\n\nSorry, that should be\n\n    extension FooDelegate where Self: BarController {\n        func didPerformSomeAction(object: Bar) {}\n    }\n\n\nOn Wed, Dec 16, 2015 at 3:32 PM Ian Ynda-Hummel <ianynda at gmail.com> wrote:\n-1\n\nI think the basic problem is saying the runtime should fail. I feel like a large part of the power of Swift is letting the compiler and the programmer make strong assumptions about types specifically to prevent the runtime from dealing with it.\n\nIn fact, the type system can save us here! I wrote some code you can play with here: http://swiftstub.com/318278733\n\nThe basic idea is that if you do something like\n\n    extension FooDelegate where Self: BarController {\n        func didPerformSomeAction(object: Foo) {}\n    }\n\ncalls to didPerformSomeAction with an argument of type Bar will call the right one for the type! There might be better ways to do that, but that is what immediately came to mind.\n\nOn Wed, Dec 16, 2015 at 2:43 PM Terrence Katzenbaer via swift-evolution <swift-evolution at swift.org> wrote:\nBecause APIs are designed to be generic, protocols that must be conformed generally use types like Object or other base classes for a given framework. This introduces type casting verbosity when implementing the protocol for a specific use. I would like to see the ability to strengthen argument types in functions declared for protocol conformance.\n\nAn example:\nclass Foo { }\n\nclass Bar: Foo { }\n\nprotocol FooDelegate {\n    func didPerformSomeAction(object: Foo)\n}\n\nclass FooController: FooDelegate {\n    func didPerformSomeAction(var object: Foo) {\n        // I know that object must be a Bar instance\n        object = object as! Bar\n        // do something with object\n    }\n}\n\nclass ProposedFooController: FooDelegate { // Type 'ProposedFooController' does not conform to protocol 'FooDelegate'\n    func didPerformSomeAction(object: Bar) {\n        // do something with Bar instance\n    }\n}\n\nThe glaring issue I see outright is how the runtime should fail when `didPerformSomeAction` in `ProposedFooController` is called with a non-Bar instance... But perhaps it /should/ fail outright because the programmer has explicitly stated that the type should be Bar.\n\n\n\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution at swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution at swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002907.html",
+                   "date": {
+                   "$date": 1450300124000
+                   },
+                   "subject": "[swift-evolution] =?utf-8?q?Allow_strengthening_argument_types_in?= =?utf-8?q?_functions_declared_for_protocol_conformance?=",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CAEaYxq_e7QsB7M=Y_PM+K7_uj0i_ieBBJKQOxJGK8UWoy7v97A@mail.gmail.com",
+                                   "745A5C92-4CFC-4F30-882E-74F4423BEC69@me.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/b8c3751a-9be3-43cf-ad06-9716ec98ce31@me.com"
+                   }
+                   },
+                   "_id": "b8c3751a-9be3-43cf-ad06-9716ec98ce31@me.com",
+                   "from": "tseitz42 at icloud.com (Thorsten Seitz)",
+                   "mailingList": "swift-evolution",
+                   "content": "An HTML attachment was scrubbed...\nURL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160107/cad9b200/attachment.html>",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160104/005685.html",
+                   "date": {
+                   "$date": 1452173776000
+                   },
+                   "subject": "[swift-evolution] ternary operator ?: suggestion",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/b32b4d86-d703-4075-9c5d-da46bbac808b@me.com"
+                   }
+                   },
+                   "_id": "b32b4d86-d703-4075-9c5d-da46bbac808b@me.com",
+                   "from": "tseitz42 at icloud.com (Thorsten Seitz)",
+                   "mailingList": "swift-evolution",
+                   "content": "An HTML attachment was scrubbed...\nURL: <https://lists.swift.org/pipermail/swift-evolution/attachments/20160106/c75c224c/attachment.html>",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160104/005485.html",
+                   "date": {
+                   "$date": 1452072743000
+                   },
+                   "subject": "[swift-evolution] =?utf-8?q?Require_use_of_override_keyword_to_ov?= =?utf-8?q?erride_dynamically_dispatched_methods_defined_in_a_protocol_wit?= =?utf-8?q?h_a_default_implementation?=",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CAGY80um=-kF12swjU5gPegzK-ZtWTkJ4NYTnvvh2dDBBANDOhQ@mail.gmail.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/b0109221-9192-4263-b751-b70175d5e1ee@me.com"
+                   }
+                   },
+                   "_id": "b0109221-9192-4263-b751-b70175d5e1ee@me.com",
+                   "from": "colin.cornaby at mac.com (Colin Cornaby)",
+                   "mailingList": "swift-evolution",
+                   "content": "I don't think this analogy follows. Books have division lines of pages or chapters that compartmentalize information. In the same way, development projects traditionally have a separation of concerns that are organized using different source code files. I don't know if a \"gazillion\" accurately captures the number of files required to separate concerns. On the other hand, I'm also not sure if Swift should try to enforce good development practices as policy (but I like the practice it's trying to support here.)\n\nI'm just watching this from the sidelines, but I haven't seen a compelling example case anywhere in the discussion that would lead to just an unmaintanable number of files. Even for multiple teams all working on the same source... separation of files seems like the cleanest solution.\n\nAs others have mentioned, iOS and Mac development (as well as open source Swift) seems to be going in the direction of a single application or project containing multiple modules. Mac has been doing that with great success for a long time. Given that's the direction things are going, private as it exists now even seems a little heavy for a lot of uses. It's completely realistic the projects are going to start separating concerns over module boundaries and not just source file boundaries. This proposal just seems to be going the opposite way that Swift and Apple platform development is going.\n\nFiles are easy to understand, and they're lightweight, and I just haven't been convinced that files with small amount of source are even a bad thing, nor have I seen Swift projects out in the wild that have too many short Swift source files that is a result of language restrictions. Do you have any examples of projects out in the community?\n\nOn Dec 14, 2015, at 11:42 AM, Ilya Belenkiy <ilya.belenkiy at gmail.com> wrote:\n\nPlease take a look at the other posts today. I addressed this concern earlier. In one sentence, just like you wouldn't want to put every paragraph of a book or every section of an article in an encyclopedia in a separate file, you wouldn't want to end up with a gazillion files just to ensure that implementation details of an API stay hidden in a way that is enforced by the compiler.\n\n--\nIlya Belenkiy\n\nOn Mon, Dec 14, 2015 at 2:19 PM Colin Cornaby via swift-evolution <swift-evolution at swift.org> wrote:\n(I'm reading the upstream discussion but I'll reply here.)\n\nI don't know if I really like the pattern this is trying to support. I like that Swift makes it cleaner to include multiple types in a single Swift file. But I feel like this proposal is trying to take things too far the other way. Types that should should only see each other from a non \"friends\" role should be in separate files.\n\nWhat's proposed doesn't really harm someone who likes the \"multiple file\" style directly, but I don't want to see projects where everything gets jammed into one file. I think keeping the scope of private (with no new keywords) to the same file encourages good coding practices.\n\nI've really liked the balance Swift strikes in this case. I feel like this discussion is going to come down to opinion, but projects that I've worked in that have tried to over compact have always run into issues. I don't know if it's the role of the language to push an ideology either way, but personally I like the direction Swift is pushing. Files make for good scope boundaries.\n\nOn Dec 05, 2015, at 08:40 PM, Ilya via swift-evolution <swift-evolution at swift.org> wrote:\n\nI think the it would help a great deal to have an access level modifier that is really private and visible only inside the class itself. Right now, the only way to hide implementation details for a class is to hide the class code in a separate file, which is very inconvenient for several reasons:\n\n1) the meaning of the code changes depending on which file the class is in. It's very easy to accidentally expose class internal details and then call class elements that are meant to be used only inside the class. Having a keyword for class internals will allow the compiler to ensure that only the public API for the class is used from the outside world. The user can check types on his own, but it's better that the compiler does it automatically. Similarly, the user can check that only the proper APIs are called, but it's better that the compiler does it automatically.\n\n2) accessibility by file structure may cause some really short files. \n\n3) It's impossible to group related classes in one file but still hide implementation details inside each class\n\nI think that it the best solution is to make private keyword do what it states -- keep the class element private to the class. But if it's really important to have a separate keyword for backward compatibility, it would be the next best thing.\n\n--\nIlya Belenkiy\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution at swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution\n\n\n_______________________________________________\nswift-evolution mailing list\nswift-evolution at swift.org\nhttps://lists.swift.org/mailman/listinfo/swift-evolution",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/002359.html",
+                   "date": {
+                   "$date": 1450127490000
+                   },
+                   "subject": "[swift-evolution] access control proposal",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CAOFcyhscgPsPWVdpjSrsx52hOy5o52D63tXXfUDZBE-xEqF8VA@mail.gmail.com",
+                                   "00FD797E-5E87-4831-86FE-F9A65F1A963B@mac.com",
+                                   "16F6DB3C-3DAD-4AD1-8A4C-D9E176CEA935@anandabits.com",
+                                   "CAOFcyhsuGkAKQdMmnCNhhSKsWZLti6+hPXNY0xcin1jvf0AnCw@mail.gmail.com",
+                                   "CAOFcyhtoE7=o3XhFy6F7R9KiE-nBO0kHb4Thvch5RC5tU2pBBA@mail.gmail.com",
+                                   "5DD98AD0-1B82-4100-A2B5-869A0FBEF8DD@owensd.io"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/SG2PR03MB1584731FBA1A64EA9DF78D42D0ED0@SG2PR03MB1584.apcprd03.prod.outlook.com"
+                   }
+                   },
+                   "_id": "SG2PR03MB1584731FBA1A64EA9DF78D42D0ED0@SG2PR03MB1584.apcprd03.prod.outlook.com",
+                   "from": "nRewik at outlook.com (Nutchaphon Rewik)",
+                   "mailingList": "swift-evolution",
+                   "content": "Extension is a powerful feature in Swift, allowing type extensibility in various way. However, there are some limitations that everyone has to cope with. We cannot add stored variables to extension scope. ( enclosed variable )\n\n\nTo workaround with the problem, associated object has been used so far by many Swift/Obj-c library that we are using today. This technique facilitates the power of extension. It allows extension to have enclosed stored property at runtime. However, we can only apply this method to NSObject subclass type. And I think it is some kind of hack, and when it comes to Swift the syntax looks messy.\n\n\nSo, I would like to propose an idea of storing variable inside extension scope. 'enclose', is a prefix keyword, stating that a variable is only visible inside an extension block scope.\n\n\n\n?protocol Incrementor{\n\n    func increase()\n\n    func otherFunc()\n\n}\n\n\nextension Incrementor{\n\n\n\n    /*\n\n        enclose keyword only allow to be used in extension scope\n\n    */\n\n    enclose var count = 1 // count is visible only in this extension scope.\n\n\n\n    func increase(){\n\n        print(count)\n\n        count = count + 1\n\n    }\n\n}\n\n\n// another extension scope\n\nextension Incrementor{\n\n\n\n    // can't see 'count' because it's in another extension scope.\n\n    func otherFunc(){\n\n        print(\"do whatever but you will not see 'count' in this\")\n\n    }\n\n}\n\n\n\n\nThis allows mixins composition style. It has no side-effect to other parts, and is considered to have better separation of concerns. Since we have protocol extension in Swift 2.0, this feature will empower composition scheme, and eliminates associated object hacking from Swift/Obj-c.\n\n\nThink about rewriting massive view controller as extensions composition. We don't have to store all states of the view controller class in one place. We can separate it to multiple part, each part consists of it own states using enclose keyword.\n\n\nI'm pretty sure it will be very useful. So, I would like to ask the opinions of you guys about pros and cons of doing this. What might be an alternative solution? Is it consistent ?",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151207/002178.html",
+                   "date": {
+                   "$date": 1450063181000
+                   },
+                   "subject": "[swift-evolution] Proposal: Enclosed variable in extension scope",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "A2E0DAD5-9238-4020-8356-B07F36FAE9FB@anandabits.com"
+                                   ]
+                   },
+                   {
+                   "_links": {
+                   "self": {
+                   "href": "/charter/emails/SG2PR03MB158461DB3C7D42E66249A4CFD0E10@SG2PR03MB1584.apcprd03.prod.outlook.com"
+                   }
+                   },
+                   "_id": "SG2PR03MB158461DB3C7D42E66249A4CFD0E10@SG2PR03MB1584.apcprd03.prod.outlook.com",
+                   "from": "nRewik at outlook.com (Nutchaphon Rewik)",
+                   "mailingList": "swift-evolution",
+                   "content": "I only see the benefits on this.\n\n  1.  We don't have to store all states in one file. States can be stored separately. So, we can write code in more composition style.\n  2.  We can add new states to the existing type. Not just NSObject subclass with associated object.\n\nprotocol Incrementer{\n\n   func increase()\n}\n\nextension Incrementer{\n\n\n   var count = 1 //\n allows stored properties\n\n    func increase(){\n\n       print(count)\n        count = count + 1\n\n   }\n\n}\n\n\n\n\n> On Dec 8, 2015, at 10:51 AM, Kevin Kachikian via swift-evolution <swift-evolution at swift.org<https://lists.swift.org/mailman/listinfo/swift-evolution>> wrote:\n>\n> I'd like to proposal to the Swift community and discuss the advantages and disadvantages of adding modifiable properties to extensions (in addition to the already existing computed properties, instance methods, subscripts, etc.):\n>\n> extension SomeType {\n>\n>       var aNewProperty: Int\n>       var anotherVariable: String\n>       var aThirdOne: MyStruct",
+                   "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/003376.html",
+                   "date": {
+                   "$date": 1450467759000
+                   },
+                   "subject": "[swift-evolution] Proposal - Allow properties in Extensions",
+                   "references": [
+                                  ""
+                                  ],
+                   "inReplyTo": null,
+                   "descendants": [
+                                   "CE5BADF3-F7E8-45BF-90ED-39B595DCFB0F@apple.com",
+                                   "0905C056-EB1F-4A4F-83A7-33985BE5EAB1@apple.com",
+                                   "C61DB8B0-61C8-4151-A8AC-E1B851A36967@gmx.de",
+                                   "F39395B9-8A58-4CDA-81DE-7D948D159E99@anandabits.com",
+                                   "CA+m2hY+8Gi-1PT8o44ACwDQf5N-sfFXTx6ZLaUj+SA8_VoJP+Q@mail.gmail.com",
+                                   "EEB7D498-E1FF-4462-AE41-5805583DF7B9@pobox.com",
+                                   "2F4D5EA7-0D73-47B0-9261-2BB896920921@mac.com",
+                                   "73928D66-EBD8-4874-A877-23C0463963B6@anandabits.com",
+                                   "50AAA49E-C723-44D0-B8E5-488F986CD4BF@apple.com",
+                                   "3D7A8253-3C8C-461B-8885-B24BEC6435F2@anandabits.com",
+                                   "7AFCBBD3-25BD-49D9-B0F9-943CB13858BE@pobox.com",
+                                   "8036CD81-7538-4D08-B3DE-8103AB412428@apple.com",
+                                   "D8BABBB7-8B90-4075-B516-91E23CCFB22F@pobox.com",
+                                   "6B9120D8-2D07-46A5-9555-D75B5394C25D@apple.com",
+                                   "C6CC61AD-DFC8-4BF1-949E-A3B2FF6C4F57@apple.com",
+                                   "6F1820BB-247F-4BE7-99E3-B02A95C0D7F5@architechies.com",
+                                   "91AC7B31-8C42-40D9-98E1-34759C2F7821@gmail.com",
+                                   "C4476C75-EF22-4276-987D-0481113BD793@apple.com",
+                                   "1450481049.2951024.471470689.0E4D79E7@webmail.messagingengine.com",
+                                   "761F842E-148D-47CE-9CF0-DD79A2179B0A@mac.com",
+                                   "B6A39095-B392-486B-84EB-4C99E7DBAB9B@owensd.io",
+                                   "9FBC0611-928C-406E-8907-07B2B30FD21E@apple.com",
+                                   "1450484395.2961641.471498457.71708274@webmail.messagingengine.com",
+                                   "6B65CEDE-7D2D-4865-ADB3-F437DB779E1F@apple.com",
+                                   "CANGnqV2KpujJkGt_xT34RHqvf34wgCbrpS+38LTSgW_2gSpQrQ@mail.gmail.com",
+                                   "1D0FDF05-6EFB-4C61-A711-CAE524E4ED9F@apple.com",
+                                   "1450489426.2976977.471534097.1562492C@webmail.messagingengine.com",
+                                   "1450510031.3065656.471645865.318B5508@webmail.messagingengine.com",
+                                   "B3362050-7934-4D00-AF7F-CFCA14001E89@anandabits.com",
+                                   "48AA0762-B09B-4579-ABB0-BC49AB6F5E2B@apple.com",
+                                   "128B5C86-C6F7-4443-B654-93A9C93E97BA@anandabits.com",
+                                   "DCBF62C1-8981-4E12-8987-0EC639FA474A@apple.com",
+                                   "50D1A6A0-691F-42F0-A541-0C9E77126291@anandabits.com",
+                                   "98F15DC4-D6DF-43C3-93B2-A92EB0694114@anandabits.com"
+                                   ]
+                   }
+                   ]
+    }
+}

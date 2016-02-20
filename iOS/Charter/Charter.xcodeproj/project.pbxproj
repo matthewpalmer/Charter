@@ -14,7 +14,6 @@
 		0E0B36E91C6E701900DF9995 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36CC1C6E701900DF9995 /* AppState.swift */; };
 		0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36CD1C6E701900DF9995 /* Assets.xcassets */; };
 		0E0B36EB1C6E701900DF9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */; };
-		0E0B36EC1C6E701900DF9995 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D01C6E701900DF9995 /* Email.swift */; };
 		0E0B36ED1C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D11C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift */; };
 		0E0B36EF1C6E701900DF9995 /* EmailTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D31C6E701900DF9995 /* EmailTree.swift */; };
 		0E0B36F01C6E701900DF9995 /* FullEmailMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36D41C6E701900DF9995 /* FullEmailMessageTableViewCell.swift */; };
@@ -39,6 +38,15 @@
 		0E8975F61C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975F51C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift */; };
 		0E8975F81C77D8A800ECFEA4 /* EmailThreadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975F71C77D8A800ECFEA4 /* EmailThreadRequest.swift */; };
 		0E8975FA1C77D9CD00ECFEA4 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E8975F91C77D9CD00ECFEA4 /* Credentials.plist */; };
+		0E8975FC1C77E41500ECFEA4 /* EmailThreadResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8975FB1C77E41500ECFEA4 /* EmailThreadResponse.json */; };
+		0E8976031C7803AD00ECFEA4 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8976021C7803AD00ECFEA4 /* Email.swift */; };
+		0E8976041C7803B500ECFEA4 /* EmailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8976001C78037D00ECFEA4 /* EmailTest.swift */; };
+		0E8976071C7804F100ECFEA4 /* RootEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8976051C7804D100ECFEA4 /* RootEmail.json */; };
+		0E89760A1C781A5600ECFEA4 /* MemberEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8976081C7817DB00ECFEA4 /* MemberEmail.json */; };
+		0E89760C1C781F7900ECFEA4 /* PreexistingEmail1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E89760B1C781F7900ECFEA4 /* PreexistingEmail1.json */; };
+		0E89760E1C781F8F00ECFEA4 /* PreexistingEmail2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E89760D1C781F8F00ECFEA4 /* PreexistingEmail2.json */; };
+		0E8976121C781FB700ECFEA4 /* PreexistingEmail4.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8976111C781FB700ECFEA4 /* PreexistingEmail4.json */; };
+		0E8976131C78208200ECFEA4 /* PreexistingEmail3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E89760F1C781FA300ECFEA4 /* PreexistingEmail3.json */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +76,6 @@
 		0E0B36CC1C6E701900DF9995 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		0E0B36CD1C6E701900DF9995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E0B36CF1C6E701900DF9995 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0E0B36D01C6E701900DF9995 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		0E0B36D11C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
 		0E0B36D31C6E701900DF9995 /* EmailTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTree.swift; sourceTree = "<group>"; };
 		0E0B36D41C6E701900DF9995 /* FullEmailMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEmailMessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -96,6 +103,15 @@
 		0E8975F51C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailThreadServiceDataSources.swift; path = Services/EmailThreadServiceDataSources.swift; sourceTree = "<group>"; };
 		0E8975F71C77D8A800ECFEA4 /* EmailThreadRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailThreadRequest.swift; path = Networking/EmailThreadRequest.swift; sourceTree = "<group>"; };
 		0E8975F91C77D9CD00ECFEA4 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Credentials.plist; path = Networking/Credentials.plist; sourceTree = "<group>"; };
+		0E8975FB1C77E41500ECFEA4 /* EmailThreadResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EmailThreadResponse.json; path = Networking/EmailThreadResponse.json; sourceTree = "<group>"; };
+		0E8976001C78037D00ECFEA4 /* EmailTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailTest.swift; path = Models/EmailTest.swift; sourceTree = "<group>"; };
+		0E8976021C7803AD00ECFEA4 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Email.swift; path = Models/Email.swift; sourceTree = "<group>"; };
+		0E8976051C7804D100ECFEA4 /* RootEmail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = RootEmail.json; path = Models/RootEmail.json; sourceTree = "<group>"; };
+		0E8976081C7817DB00ECFEA4 /* MemberEmail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MemberEmail.json; path = Models/MemberEmail.json; sourceTree = "<group>"; };
+		0E89760B1C781F7900ECFEA4 /* PreexistingEmail1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PreexistingEmail1.json; path = Models/PreexistingEmail1.json; sourceTree = "<group>"; };
+		0E89760D1C781F8F00ECFEA4 /* PreexistingEmail2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PreexistingEmail2.json; path = Models/PreexistingEmail2.json; sourceTree = "<group>"; };
+		0E89760F1C781FA300ECFEA4 /* PreexistingEmail3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PreexistingEmail3.json; path = Models/PreexistingEmail3.json; sourceTree = "<group>"; };
+		0E8976111C781FB700ECFEA4 /* PreexistingEmail4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PreexistingEmail4.json; path = Models/PreexistingEmail4.json; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +153,7 @@
 			children = (
 				0E8975DD1C77BBDE00ECFEA4 /* Services */,
 				0E8975F41C77D7A900ECFEA4 /* Networking */,
+				0E8975FF1C78036000ECFEA4 /* Models */,
 				0E0B36C81C6E701900DF9995 /* Actions.swift */,
 				0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */,
 				0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */,
@@ -144,7 +161,6 @@
 				0E0B36CC1C6E701900DF9995 /* AppState.swift */,
 				0E0B36CD1C6E701900DF9995 /* Assets.xcassets */,
 				0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */,
-				0E0B36D01C6E701900DF9995 /* Email.swift */,
 				0E0B36D11C6E701900DF9995 /* EmailCollapsibleTextViewDataSource.swift */,
 				0E0B36D31C6E701900DF9995 /* EmailTree.swift */,
 				0E0B36D41C6E701900DF9995 /* FullEmailMessageTableViewCell.swift */,
@@ -190,9 +206,33 @@
 			isa = PBXGroup;
 			children = (
 				0E8975F71C77D8A800ECFEA4 /* EmailThreadRequest.swift */,
+				0E8975FB1C77E41500ECFEA4 /* EmailThreadResponse.json */,
 				0E8975F91C77D9CD00ECFEA4 /* Credentials.plist */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		0E8975FF1C78036000ECFEA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E8976021C7803AD00ECFEA4 /* Email.swift */,
+				0E8976001C78037D00ECFEA4 /* EmailTest.swift */,
+				0E8976141C782D2200ECFEA4 /* JSON */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0E8976141C782D2200ECFEA4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0E8976051C7804D100ECFEA4 /* RootEmail.json */,
+				0E8976081C7817DB00ECFEA4 /* MemberEmail.json */,
+				0E89760B1C781F7900ECFEA4 /* PreexistingEmail1.json */,
+				0E89760D1C781F8F00ECFEA4 /* PreexistingEmail2.json */,
+				0E89760F1C781FA300ECFEA4 /* PreexistingEmail3.json */,
+				0E8976111C781FB700ECFEA4 /* PreexistingEmail4.json */,
+			);
+			name = JSON;
 			sourceTree = "<group>";
 		};
 		0E8B95FF1C5B1873009F3025 = {
@@ -354,6 +394,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E89760C1C781F7900ECFEA4 /* PreexistingEmail1.json in Resources */,
+				0E89760A1C781A5600ECFEA4 /* MemberEmail.json in Resources */,
+				0E89760E1C781F8F00ECFEA4 /* PreexistingEmail2.json in Resources */,
+				0E8976131C78208200ECFEA4 /* PreexistingEmail3.json in Resources */,
+				0E8976071C7804F100ECFEA4 /* RootEmail.json in Resources */,
+				0E8976121C781FB700ECFEA4 /* PreexistingEmail4.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +417,7 @@
 				0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */,
 				0E0B36F61C6E701900DF9995 /* Message-1 in Resources */,
 				0E8975FA1C77D9CD00ECFEA4 /* Credentials.plist in Resources */,
+				0E8975FC1C77E41500ECFEA4 /* EmailThreadResponse.json in Resources */,
 				0E0B36EB1C6E701900DF9995 /* LaunchScreen.storyboard in Resources */,
 				0E0B36FB1C6E701900DF9995 /* NoThreadsTableViewCell.xib in Resources */,
 			);
@@ -438,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8976041C7803B500ECFEA4 /* EmailTest.swift in Sources */,
 				0E8975F31C77BC8900ECFEA4 /* EmailThreadServiceImplTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +501,6 @@
 				0E8975F81C77D8A800ECFEA4 /* EmailThreadRequest.swift in Sources */,
 				0E0B36FA1C6E701900DF9995 /* NoThreadsTableViewCell.swift in Sources */,
 				0E0B36E91C6E701900DF9995 /* AppState.swift in Sources */,
-				0E0B36EC1C6E701900DF9995 /* Email.swift in Sources */,
 				0E8975F61C77D7EA00ECFEA4 /* EmailThreadServiceDataSources.swift in Sources */,
 				0E8975E11C77BC2F00ECFEA4 /* EmailThreadService.swift in Sources */,
 				0E0B36F01C6E701900DF9995 /* FullEmailMessageTableViewCell.swift in Sources */,
@@ -461,6 +508,7 @@
 				0E0B36E61C6E701900DF9995 /* AppCoordinator.swift in Sources */,
 				0E0B36EF1C6E701900DF9995 /* EmailTree.swift in Sources */,
 				0E0B36F81C6E701900DF9995 /* MessagePreviewTableViewCell.swift in Sources */,
+				0E8976031C7803AD00ECFEA4 /* Email.swift in Sources */,
 				0E0B36E81C6E701900DF9995 /* AppReducer.swift in Sources */,
 				0E0B36F41C6E701900DF9995 /* MailingListViewController.swift in Sources */,
 				0E0B36E51C6E701900DF9995 /* Actions.swift in Sources */,
@@ -674,6 +722,7 @@
 				0E8975F11C77BC5900ECFEA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0E8B96031C5B1873009F3025 /* Build configuration list for PBXProject "Charter" */ = {
 			isa = XCConfigurationList;

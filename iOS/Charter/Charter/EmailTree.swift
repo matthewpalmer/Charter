@@ -12,16 +12,16 @@ struct EmailTreeNode: Hashable, Equatable {
     let email: Email
     let children: [EmailTreeNode]
     
-    var hashValue: Int { return email.messageID.hashValue }
+    var hashValue: Int { return email.id.hashValue }
 }
 
 func ==(lhs: EmailTreeNode, rhs: EmailTreeNode) -> Bool {
-    return lhs.email.messageID == rhs.email.messageID && lhs.children == rhs.children
+    return lhs.email.id == rhs.email.id && lhs.children == rhs.children
 }
 
 func PartitionEmailsIntoTreeForest(collection: [Email]) -> [EmailTreeNode] {
     var postIDs = Dictionary<String, Email>()
-    collection.forEach { postIDs[$0.messageID] = $0 }
+    collection.forEach { postIDs[$0.id] = $0 }
 
     var parentToChildren = Dictionary<Email, [Email]>()
     

@@ -1,0 +1,14 @@
+{
+    "_id": "2",
+    "from": "Pre existing two",
+    "mailingList": "swift-evolution",
+    "content": "Pre existing two",
+    "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160111/006276.html",
+    "date": {
+        "$date": 1452544782000
+    },
+    "subject": "Re: [swift-evolution] Proposal Idea",
+    "references": [ "1" ],
+    "inReplyTo": "1",
+    "descendants": [ "3", "4" ]
+}

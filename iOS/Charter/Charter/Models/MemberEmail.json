@@ -1,0 +1,24 @@
+{
+    "_links": {
+        "self": {
+            "href": "/charter/emails/etPan.5694130e.68c32b25.9260@Jareds-MacBook-Pro-13-Inch.local"
+        }
+    },
+    "_id": "etPan.5694130e.68c32b25.9260@Jareds-MacBook-Pro-13-Inch.local",
+    "from": "desk at jaredsinclair.com (Jared Sinclair)",
+    "mailingList": "swift-evolution",
+    "content": "Consider the following:\n\nprotocol Updatable {\n    func update(state: Bool)\n}\n\nclass Thing: Updatable {\n    private var enabled = false\n    \n    func update(state: Bool) {\n        self.enabled == state\n    }\n}\n\nThe obvious intention is to set self.enabled to the incoming value of state. However, it’s easy to accidentally type a second equals sign. The effect of this typo is self.enabled is never updated, leading to a run-time bug that could be difficult to diagnose. \n\nThis typo doesn’t generate any errors or warnings. I can’t think of a valid reason to use the equals function outside of comparisons. If the compiler instead treated this typo as an error, the mistake would be trivial to identify and fix:\n\nprotocol Updatable {\n    func update(state: Bool)\n}\n\nclass Thing: Updatable {\n    private var enabled = false\n    \n    func update(state: Bool) {\n        self.enabled == state // Error: `==` may not be used outside of comparisons\n    }\n}\n\n-- \nJared Sinclair\nSent with Airmail",
+    "archiveURL": "https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160111/006276.html",
+    "date": {
+        "$date": 1452544782000
+    },
+    "subject": "[swift-evolution] Proposal Idea: Use of =?utf-8?Q?=3D=3D_?=outside of comparisons should be treated as an error.",
+    "references": [
+                   "CANFz0qvo4omuHqhrCgKrcNFLwJZSr15HzriwtkHSQSPukBHCzQ@mail.gmail.com"
+                   ],
+    "inReplyTo": "CA+Y5xYevdEEvKxtk9ys3GzZ2O+Ajj3k7u5ZedSOVM4P1NQcObQ@mail.gmail.com",
+    "descendants": [
+                    "FF8008ED-6555-4B04-9EDE-6B6EE0E70D58@apple.com",
+                    "CAG-XJx=bWrczPRZbmvDkXHtcgU4F7BR5-Sjp4VAqD7JwhDSp3Q@mail.gmail.com"
+                    ]
+}

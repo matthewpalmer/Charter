@@ -48,9 +48,9 @@ func ComputeAndSetThreadForEmail(email: Email) -> ((_: AppState, _: Store<AppSta
     return { _, _ in
         func blah(root: Email, indentLevel: Int) -> [(Int, Email)] {
             var list = [(Int, Email)]()
-            for child in root.children {
-                list.appendContentsOf(blah(child, indentLevel: indentLevel + 1))
-            }
+//            for child in root. {
+//                list.appendContentsOf(blah(child, indentLevel: indentLevel + 1))
+//            }
             return [(indentLevel, root)] + list
         }
         
@@ -116,7 +116,7 @@ func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState
                 let emails: [Email] = mailingListMessages
                     .map { message in
                         let email = Email()
-                        email.messageID = message.headers.messageID
+                        email.id = message.headers.messageID
                         email.from = message.headers.from
                         
                         if let date = emailFormatter.dateStringToDate(message.headers.date) {
@@ -133,7 +133,7 @@ func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState
                 
                 // Index by ID
                 for email in emails {
-                    messageIDToEmail[email.messageID] = email
+                    messageIDToEmail[email.id] = email
                 }
                 
                 // Add `inReplyTo` and `references`
@@ -157,7 +157,7 @@ func DownloadData(period: ListPeriod, mailingList: MailingList) -> ((_: AppState
                 
                 for child in emails {
                     if let parent = child.inReplyTo {
-                        parent.children.append(child)
+//                        parent.children.append(child)
                     }
                 }
                 
