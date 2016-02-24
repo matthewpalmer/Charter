@@ -10,50 +10,12 @@ import XCTest
 import RealmSwift
 @testable import Charter
 
-private class NSURLSessionDataTaskMock : NSURLSessionDataTask {
-    var completionHandler: ((NSData!, NSURLResponse!, NSError!) -> Void?)?
-    var completionArguments: (data: NSData?, response: NSURLResponse?, error: NSError?)
-    
-    override func resume() {
-        completionHandler?(completionArguments.data, completionArguments.response, completionArguments.error)
-    }
-}
-
-private class NetworkingSessionMock: NetworkingSession {
-    let dataTask: NSURLSessionDataTaskMock
-    
-    var assertionBlockForRequest: ((NSURLRequest) -> Void)?
-    
-    init(dataTask: NSURLSessionDataTaskMock) {
-        self.dataTask = dataTask
-    }
-    
-    func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
-        assertionBlockForRequest?(request)
-        
-        dataTask.completionHandler = completionHandler
-        return dataTask
-    }
-}
-
 class EmailThreadNetworkDataSourceImplTest: XCTestCase {
     var realm: Realm!
-    lazy var testBundle: NSBundle = {
-        return NSBundle(forClass: self.dynamicType)
-    }()
-    
-    func dataForJSONFile(file: String) -> NSData {
-        let fileURL = testBundle.URLForResource(file, withExtension: "json")!
-        return NSData(contentsOfURL: fileURL)!
-    }
     
     override func setUp() {
         super.setUp()
-        realm = try! Realm(configuration: config)
-        
-        try! realm.write {
-            realm.deleteAll()
-        }
+        realm = setUpTestRealm()
     }
 
     func testGetThreads() {

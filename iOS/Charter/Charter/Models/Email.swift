@@ -124,5 +124,3 @@ extension Email {
         return try Email.createFromJSON(json, inRealm: realm)
     }
 }
-
-

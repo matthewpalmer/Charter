@@ -24,5 +24,13 @@ class EmailThreadRequestBuilderTest: XCTestCase {
         XCTAssertEqual(parameters["sort"], "{date: -1}")
         XCTAssertEqual(parameters["pagesize"], "\(25)")
         XCTAssertEqual(parameters["page"], "\(1)")
+        
+        let realmQuery = request.realmQuery
+        XCTAssertEqual(realmQuery.page, 1)
+        XCTAssertEqual(realmQuery.pageSize, 25)
+        XCTAssertEqual(realmQuery.predicate.predicateFormat, "inReplyTo == nil")
+        let sort = realmQuery.sort
+        XCTAssertEqual(sort?.property, "date")
+        XCTAssertEqual(sort?.ascending, false)
     }
 }

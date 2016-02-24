@@ -11,7 +11,6 @@ import RealmSwift
 
 protocol EmailThreadCacheDataSource: class {
     func getThreads(request: EmailThreadRequest, completion: [Email] -> Void)
-    func cacheThreads(threads: [Email], completion: Void -> Void)
 }
 
 protocol EmailThreadNetworkDataSource: class {

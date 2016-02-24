@@ -41,12 +41,13 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
     func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
         let parameters = request.URLRequestQueryParameters
     
-        let URLComponents = NSURLComponents(string: "http://162.243.241.218:8080/charter/emails")!
+        // TODO: Get a domain name for the default back end, and make the URL more easily changed
+        let URLComponents = NSURLComponents(string: "http://162.243.241.218.xip.io:8080/charter/emails")!
         URLComponents.queryItems = parameters.map { NSURLQueryItem(name: $0, value: $1) }
         
         let URLRequest = NSMutableURLRequest(URL: URLComponents.URL!)
 
-        // TODO: This is reusable
+        // TODO: Make HTTP basic auth reusable
         if let base64 = "\(username):\(password)"
             .dataUsingEncoding(NSUTF8StringEncoding)?
             .base64EncodedStringWithOptions([]) {
@@ -58,8 +59,10 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
             guard let json = try? JSON(data: data) else { return completion([]) }
             guard let emailList = try? json.array("_embedded", "rh:doc") else { return completion([]) }
             
-            let threads = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }
-            completion(threads)
+            dispatch_async(dispatch_get_main_queue()) {
+                let threads = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }
+                completion(threads)
+            }
         }
         
         task.resume()

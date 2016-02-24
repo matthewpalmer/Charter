@@ -11,26 +11,12 @@ import RealmSwift
 import Freddy
 @testable import Charter
 
-let config = Realm.Configuration(path: "./test-realm", inMemoryIdentifier: "test-realm")
-
 class EmailTest: XCTestCase {
     var realm: Realm!
-    lazy var testBundle: NSBundle = {
-        return NSBundle(forClass: self.dynamicType)
-    }()
-    
-    func dataForJSONFile(file: String) -> NSData {
-        let fileURL = testBundle.URLForResource(file, withExtension: "json")!
-        return NSData(contentsOfURL: fileURL)!
-    }
     
     override func setUp() {
         super.setUp()
-        realm = try! Realm(configuration: config)
-        
-        try! realm.write {
-            realm.deleteAll()
-        }
+        realm = setUpTestRealm()
     }
     
     func testInitFromJSONWhenMessageIsMemberOfAThreadAndRealmIsEmpty() {

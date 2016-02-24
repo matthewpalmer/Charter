@@ -18,8 +18,14 @@ class EmailThreadRequestBuilder {
     /// (fieldName, sortAscending)
     var sort: [(String, Bool)]?
     
+    /// Only fully-formed documents should be returned
+    var onlyComplete = false
+    
     func build() -> EmailThreadRequest {
-        let request = EmailThreadRequestImpl(page: page, pageSize: pageSize, mailingList: mailingList, inReplyTo: inReplyTo, sort: sort)
+        let request = EmailThreadRequestImpl(page: page, pageSize: pageSize, mailingList: mailingList, inReplyTo: inReplyTo, sort: sort, onlyComplete: onlyComplete)
+        if sort?.count > 1 {
+            print("WARNING: EmailThreadRequest does not yet have support for multiple sort parameters.")
+        }
         return request
     }
 }
@@ -33,6 +39,8 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
     
     /// (fieldName, sortAscending)
     var sort: [(String, Bool)]?
+    
+    var onlyComplete: Bool
     
     var URLRequestQueryParameters: Dictionary<String, String> {
         var dictionary = Dictionary<String, String>()
@@ -76,8 +84,26 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
         return dictionary
     }
     
-    var predicate: NSPredicate {
-        return NSPredicate()
+    var realmQuery: RealmQuery {
+        var filterValueString: String?
+        if let inReplyTo = inReplyTo {
+            switch inReplyTo {
+            case .Left:
+                filterValueString = "'\(inReplyTo)'"
+            case .Right:
+                filterValueString = "nil"
+            }
+        }
+
+        let predicate: NSPredicate
+        if let filterValueString = filterValueString {
+            predicate = NSPredicate(format: "inReplyTo == \(filterValueString)")
+        } else {
+            predicate = NSPredicate()
+        }
+        
+        let query = RealmQuery(predicate: predicate, sort: self.sort?.first, page: page ?? 1, pageSize: pageSize ?? 25, onlyComplete: onlyComplete)
+        return query
     }
 }
 
