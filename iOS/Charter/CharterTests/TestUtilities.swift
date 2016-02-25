@@ -59,4 +59,23 @@ class NetworkingSessionMock: NetworkingSession {
     }
 }
 
-
+class EmailThreadServiceMock: EmailThreadService {
+    var cachedThreads: [Email] = []
+    var uncachedThreads: [Email] = []
+    
+    var getCachedThreadsAssertionBlock: ((request: EmailThreadRequest) -> Void)?
+    var getUncachedThreadsAssertionBlock: ((request: EmailThreadRequest) -> Void)?
+    
+    required init(cacheDataSource: EmailThreadCacheDataSource, networkDataSource: EmailThreadNetworkDataSource) {}
+    
+    func getCachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+        getCachedThreadsAssertionBlock?(request: request)
+        completion(cachedThreads)
+    }
+    
+    /// This method makes a request to the network to retrieve emails. It should only be used if the set of emails returned by `getCachedThreads` is not satisfactory; otherwise, default to `getCachedThreads`.
+    func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+        getUncachedThreadsAssertionBlock?(request: request)
+        completion(uncachedThreads)
+    }
+}

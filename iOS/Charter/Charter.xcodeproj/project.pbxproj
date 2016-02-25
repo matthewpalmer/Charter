@@ -33,6 +33,7 @@
 		0E0B36FE1C6E701900DF9995 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */; };
 		0E0B36FF1C6E701900DF9995 /* ThreadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */; };
 		0E279B141C7EC9C80007499E /* ThreadsViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E279B131C7EC9C80007499E /* ThreadsViewControllerDataSource.swift */; };
+		0E279B161C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E279B151C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift */; };
 		0E6BB6BB1C7E57110079B864 /* RealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BA1C7E57110079B864 /* RealmDataSource.swift */; };
 		0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */; };
 		0E6BB6C11C7E601F0079B864 /* RealmDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BC1C7E57A50079B864 /* RealmDataSourceTest.swift */; };
@@ -109,6 +110,7 @@
 		0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
 		0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreadsViewController.xib; sourceTree = "<group>"; };
 		0E279B131C7EC9C80007499E /* ThreadsViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewControllerDataSource.swift; sourceTree = "<group>"; };
+		0E279B151C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewControllerDataSourceTest.swift; sourceTree = "<group>"; };
 		0E6BB6BA1C7E57110079B864 /* RealmDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmDataSource.swift; path = "Data Sources/Cache/RealmDataSource.swift"; sourceTree = "<group>"; };
 		0E6BB6BC1C7E57A50079B864 /* RealmDataSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmDataSourceTest.swift; path = "Data Sources/Cache/RealmDataSourceTest.swift"; sourceTree = "<group>"; };
 		0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */,
 				0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */,
 				0E279B131C7EC9C80007499E /* ThreadsViewControllerDataSource.swift */,
+				0E279B151C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift */,
 				0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */,
 			);
 			path = Charter;
@@ -551,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E279B161C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift in Sources */,
 				0E8976041C7803B500ECFEA4 /* EmailTest.swift in Sources */,
 				0E8976271C78FEC600ECFEA4 /* EmailThreadNetworkDataSourceImplTest.swift in Sources */,
 				0E89762E1C790E0D00ECFEA4 /* EmailThreadRequestBuilderTest.swift in Sources */,
