@@ -10,11 +10,7 @@ import UIKit
 
 class EmailFormatter {
     private lazy var squareBracketRegex: NSRegularExpression = {
-        return try! NSRegularExpression(pattern: "^\\[.*\\]", options: .CaseInsensitive)
-    }()
-    
-    private lazy var leadingSpaceRegex: NSRegularExpression = {
-        return try! NSRegularExpression(pattern: "^\\s+", options: .CaseInsensitive)
+        return try! NSRegularExpression(pattern: "^\\[.*?\\]", options: .CaseInsensitive)
     }()
     
     private lazy var withinParenthesesRegex: NSRegularExpression = {
@@ -24,6 +20,7 @@ class EmailFormatter {
     private lazy var sourceDateFormatter: NSDateFormatter = {
         let df = NSDateFormatter()
         df.dateFormat = "ccc, dd MMM yyyy HH:mm:ss Z"
+        df.timeZone = NSTimeZone(abbreviation: "GMT")
         return df
     }()
     
@@ -33,15 +30,9 @@ class EmailFormatter {
         return df
     }()
     
-    private lazy var leadingPunctuationRegex: NSRegularExpression = {
-        return try! NSRegularExpression(pattern: "^\\W+", options: .CaseInsensitive)
-    }()
-    
     func formatSubject(subject: String) -> String {
         let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
-        let noLeadingPunctuation = leadingPunctuationRegex.stringByReplacingMatchesInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count), withTemplate: "")
-        let noLeadingSpaces = leadingSpaceRegex.stringByReplacingMatchesInString(noLeadingPunctuation, options: [], range: NSMakeRange(0, noLeadingPunctuation.characters.count), withTemplate: "")
-        return noLeadingSpaces
+        return noSquareBrackets.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     func formatName(name: String) -> String {
