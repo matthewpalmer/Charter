@@ -74,4 +74,18 @@ class ThreadsViewControllerDataSourceTest: XCTestCase {
         
         waitForExpectationsWithTimeout(1.0, handler: nil)
     }
+    
+    func testDataSourceForEmptyState() {
+        let service = EmailThreadServiceMock(cacheDataSource: Cache(), networkDataSource: Network())
+        let tableView = UITableView()
+        let dataSource = ThreadsViewControllerDataSource(tableView: tableView, service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
+        XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
+        
+        let cell = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! NoThreadsTableViewCell
+        XCTAssertEqual(cell.titleLabel.text, "No Messages")
+        XCTAssertEqual(cell.subtitleLabel.text, "Pull to refresh…")
+        
+    }
 }

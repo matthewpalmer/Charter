@@ -33,11 +33,19 @@ class ThreadsViewControllerDataSource: NSObject, UITableViewDataSource {
         }
     }
     
+    var isEmpty: Bool {
+        return threads.count == 0
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        guard threads.count > 0 else {
+            return tableView.dequeueReusableCellWithIdentifier(emptyCellReuseIdentifier)!
+        }
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as! MessagePreviewTableViewCell
         let email = threads[indexPath.row]
         cell.subjectLabel.text = emailFormatter.formatSubject(email.subject)
@@ -47,7 +55,7 @@ class ThreadsViewControllerDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return threads.count
+        return threads.count > 0 ? threads.count : 1
     }
     
     func refreshDataFromNetwork(completion: (Bool) -> Void) {

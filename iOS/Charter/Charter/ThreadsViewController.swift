@@ -36,6 +36,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         self.dataSource = ThreadsViewControllerDataSource(tableView: tableView, service: emailThreadService, mailingList: mailingList)
         
+        tableView.delegate = self
         tableView.dataSource = dataSource
         navigationItem.title = mailingList.name
         
@@ -43,11 +44,26 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.addSubview(refreshControl)
+        updateSeparatorStyle()
+    }
+    
+    private func updateSeparatorStyle() {
+        if dataSource.isEmpty {
+            tableView.separatorStyle = .None
+        }
     }
     
     func didRequestRefresh(sender: AnyObject) {
         dataSource.refreshDataFromNetwork { (success) -> Void in
             self.refreshControl.endRefreshing()
+            self.tableView.reloadData()
+            self.updateSeparatorStyle()
+        }
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if dataSource.isEmpty {
+            cell.userInteractionEnabled = false
         }
     }
 }

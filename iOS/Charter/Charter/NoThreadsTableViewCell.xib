@@ -43,6 +43,10 @@
                     <constraint firstItem="K7s-KW-NS8" firstAttribute="centerX" secondItem="8DH-HJ-kEt" secondAttribute="centerX" id="ySv-B5-01G"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="subtitleLabel" destination="K7s-KW-NS8" id="zD2-0s-7s5"/>
+                <outlet property="titleLabel" destination="8DH-HJ-kEt" id="my9-7D-XJa"/>
+            </connections>
             <point key="canvasLocation" x="353" y="169"/>
         </tableViewCell>
     </objects>
