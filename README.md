@@ -16,6 +16,10 @@
 
 > This is the `develop` branch. I need to write this README.
 
+Develop builds:
+
+[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=develop)](https://travis-ci.org/matthewpalmer/Charter)
+
 <!-- **How do I run the project?**
 
 1. `git clone https://github.com/matthewpalmer/Charter`
