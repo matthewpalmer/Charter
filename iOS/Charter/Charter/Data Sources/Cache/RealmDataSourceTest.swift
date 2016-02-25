@@ -51,6 +51,29 @@ class RealmDataSourceTest: XCTestCase {
         waitForExpectationsWithTimeout(1.0, handler: nil)
     }
     
+    func testLoadEmailsForIdInSet() {
+        let shouldLoadEmails = expectationWithDescription("should load correct cached emails")
+        
+        // Load data
+        let data = dataForJSONFile("EmailThreadResponse")
+        let json = try! JSON(data: data)
+        let emailList = try! json.array("_embedded", "rh:doc")
+        let _ = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }.sort { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 }
+        
+        let builder = EmailThreadRequestBuilder()
+        builder.idIn = ["m2d1s2bhnf.fsf@eno.apple.com", "etPan.566bc229.4ec9a247.c323@IT-15556"]
+        let request = builder.build()
+        
+        let dataSource = RealmDataSource(realm: realm)
+        dataSource.getThreads(request) { (emails) -> Void in
+            XCTAssertEqual(emails.count, 2)
+            XCTAssertEqual(emails.map { $0.id }.sort(), builder.idIn!.sort())
+            shouldLoadEmails.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(1.0, handler: nil)
+    }
+    
     func networkEmailsInThread() -> [NetworkEmail] {
         let data = dataForJSONFile("EmailThreadResponse")
         let json = try! JSON(data: data)

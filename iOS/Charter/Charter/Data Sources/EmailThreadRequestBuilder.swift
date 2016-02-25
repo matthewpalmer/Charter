@@ -21,8 +21,10 @@ class EmailThreadRequestBuilder {
     /// Only fully-formed documents should be returned
     var onlyComplete = false
     
+    var idIn: [String]? = nil
+    
     func build() -> EmailThreadRequest {
-        let request = EmailThreadRequestImpl(page: page, pageSize: pageSize, mailingList: mailingList, inReplyTo: inReplyTo, sort: sort, onlyComplete: onlyComplete)
+        let request = EmailThreadRequestImpl(page: page, pageSize: pageSize, mailingList: mailingList, inReplyTo: inReplyTo, sort: sort, onlyComplete: onlyComplete, idIn: idIn)
         if sort?.count > 1 {
             print("WARNING: EmailThreadRequest does not yet have support for multiple sort parameters.")
         }
@@ -42,6 +44,8 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
     
     var onlyComplete: Bool
     
+    var idIn: [String]?
+    
     var URLRequestQueryParameters: Dictionary<String, String> {
         var dictionary = Dictionary<String, String>()
         
@@ -54,6 +58,15 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
             filter["mailingList"] = Either.Left(mailingList)
         }
         
+        // Members of this list are special queries whose filter values do not want single quotes around them
+        let quoteWhiteList = ["{$in"]
+        
+        if let idIn = idIn {
+            // {_id:{ $in:['id_one','id_two',...]}}
+            let inQuery = "{$in:[" + idIn.map { "'\($0)'" }.joinWithSeparator(",") + "]}"
+            filter["_id"] = Either.Left(inQuery)
+        }
+        
         let filterArgs = filter.sort { $0.0 < $1.0 }.map { (pair: (String, Either<String, NSNull>)) -> String in
             let key = pair.0
             let either = pair.1
@@ -61,7 +74,12 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
             let valueString: String
             switch either {
             case .Left(let value):
-                valueString = "'\(value)'"
+                let isOnWhiteList = quoteWhiteList.map { value.hasPrefix($0) }.filter { $0 == true }.count > 0
+                if isOnWhiteList {
+                    valueString = "\(value)"
+                } else {
+                    valueString = "'\(value)'"
+                }
             case .Right:
                 valueString = "null"
             }
@@ -104,6 +122,11 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
         
         if let mailingList = mailingList {
             predicateComponents.append("mailingList == '\(mailingList)'")
+        }
+        
+        if let idIn = idIn {
+            let component = "id IN {" + idIn.map { "'\($0)'" }.joinWithSeparator(",") + "}"
+            predicateComponents.append(component)
         }
         
         let predicate = NSPredicate(format: predicateComponents.joinWithSeparator(" AND "))

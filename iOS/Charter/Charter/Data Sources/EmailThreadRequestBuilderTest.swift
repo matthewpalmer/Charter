@@ -33,4 +33,18 @@ class EmailThreadRequestBuilderTest: XCTestCase {
         XCTAssertEqual(sort?.property, "date")
         XCTAssertEqual(sort?.ascending, false)
     }
+    
+    func testIdInQueries() {
+        let builder = EmailThreadRequestBuilder()
+        builder.idIn = ["one@test.com", "two@example.com", "three@example.com", "four@a.net"]
+        builder.mailingList = "swift-dev"
+        
+        let request = builder.build()
+        
+        let parameters = request.URLRequestQueryParameters
+        XCTAssertEqual(parameters["filter"], "{_id:{$in:['one@test.com','two@example.com','three@example.com','four@a.net']},mailingList:'swift-dev'}")
+        
+        let realm = request.realmQuery
+        XCTAssertEqual(realm.predicate.predicateFormat, "mailingList == \"swift-dev\" AND id IN {\"one@test.com\", \"two@example.com\", \"three@example.com\", \"four@a.net\"}")
+    }
 }
