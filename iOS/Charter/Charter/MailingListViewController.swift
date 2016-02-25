@@ -26,6 +26,10 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
         super.init(nibName: "MailingListViewController", bundle: NSBundle.mainBundle())
     }
     
+    deinit {
+        print("deinit mlvc")
+    }
+    
     override func viewDidLoad() {
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: MailingListViewController.reuseIdentifier)
         tableView.dataSource = self

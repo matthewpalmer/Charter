@@ -11,6 +11,10 @@ import XCTest
 
 class EmailThreadRequestBuilderTest: XCTestCase {
     func testEmailThreadRequestBuilder() {
+        // TODO: Set emailList and make sure it gets sent along
+        
+        
+        
         // filter={inReplyTo: null}&sort={date: -1}&pagesize=25&page=1
         let builder = EmailThreadRequestBuilder()
         builder.inReplyTo = Either.Right(NSNull())

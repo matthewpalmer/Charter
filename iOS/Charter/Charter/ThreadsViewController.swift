@@ -9,61 +9,18 @@
 import UIKit
 import ReSwift
 
-protocol ThreadsViewControllerDelegate: class, UITableViewDelegate {
-    func threadsViewControllerRequestsInitialData()
-    func threadsViewControllerRequestsReloadedData()
-    func threadsViewControllerDidNavigateBackwards(threadsViewController: ThreadsViewController)
-}
-
-protocol ThreadsViewControllerDataSource: class, UITableViewDataSource {
-    func mailingListTitle() -> String
-    func rootEmailAtIndexPath(indexPath: NSIndexPath) -> Email
-}
-
 class ThreadsViewController: UIViewController, UITableViewDelegate {
-    typealias StoreSubscriberStateType = AppState
-    
-    static let reuseIdentifier = "threadsCellReuseIdentifier"
-    static let emptyCellReuseIdentifier = "threadsEmptyCell"
-    
     @IBOutlet weak var tableView: UITableView!
     
-    weak var delegate: ThreadsViewControllerDelegate? {
-        didSet {
-            if tableView != nil {
-                tableView.delegate = delegate
-            }
-        }
-    }
+    private let emailThreadService: EmailThreadService
+    private let mailingList: MailingListType
     
-    weak var dataSource: ThreadsViewControllerDataSource? {
-        didSet {
-            if tableView != nil {
-                if oldValue !== dataSource {
-                    if tableView.numberOfRowsInSection(0) == 0 {
-                        tableView.separatorStyle = .None
-                    } else {
-                        tableView.separatorStyle = .SingleLine
-                    }
-                    tableView.dataSource = dataSource
-                    tableView.reloadData()
-                }
-            } else {
-                // Reset
-                dataSource = nil
-            }
-        }
-    }
+    private var dataSource: ThreadsViewControllerDataSource!
     
-    init() {
-        super.init(nibName: "ThreadsViewController", bundle: NSBundle.mainBundle())
-    }
-    
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        if parent == nil {
-            // Pressed 'Back' from this screen. Need to update our route history.
-            delegate?.threadsViewControllerDidNavigateBackwards(self)
-        }
+    init(emailThreadService: EmailThreadService, mailingList: MailingListType) {
+        self.emailThreadService = emailThreadService
+        self.mailingList = mailingList
+        super.init(nibName: "ThreadsViewController", bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -77,37 +34,20 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     }()
     
     override func viewDidLoad() {
-        tableView.registerNib(MessagePreviewTableViewCell.nib(), forCellReuseIdentifier: ThreadsViewController.reuseIdentifier)
-        tableView.registerNib(NoThreadsTableViewCell.nib(), forCellReuseIdentifier: ThreadsViewController.emptyCellReuseIdentifier)
+        self.dataSource = ThreadsViewControllerDataSource(tableView: tableView, service: emailThreadService, mailingList: mailingList)
+        
+        tableView.dataSource = dataSource
+        navigationItem.title = mailingList.name
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        tableView.delegate = delegate
-        tableView.dataSource = dataSource
-        
         tableView.addSubview(refreshControl)
-        
-        navigationItem.title = "Threads"
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        delegate?.threadsViewControllerRequestsInitialData()
     }
     
     func didRequestRefresh(sender: AnyObject) {
-        delegate?.threadsViewControllerRequestsReloadedData()
-    }
-    
-    func beginRefreshing() {
-        refreshControl.beginRefreshing()
-    }
-    
-    func endRefreshing() {
-        refreshControl.endRefreshing()
-        if tableView != nil {
-            tableView.reloadData()
+        dataSource.refreshDataFromNetwork { (success) -> Void in
+            self.refreshControl.endRefreshing()
         }
     }
 }
