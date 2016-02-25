@@ -49,6 +49,10 @@ class EmailFormatterTest: XCTestCase {
         XCTAssertEqual(formatter.dateStringToDate(dateAsString), dateFromComponents)
         
         let localDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
-        XCTAssertEqual(formatter.formatDate(localDate), "26 Jan")
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "d MMM"
+        
+        XCTAssertEqual(formatter.formatDate(localDate), dateFormatter.stringFromDate(localDate))
     }
 }
