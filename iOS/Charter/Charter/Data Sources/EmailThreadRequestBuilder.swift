@@ -50,25 +50,29 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
             filter["inReplyTo"] = inReplyTo
         }
         
-        let filterArgs = filter.map { (pair: (String, Either<String, NSNull>)) -> String in
+        if let mailingList = mailingList {
+            filter["mailingList"] = Either.Left(mailingList)
+        }
+        
+        let filterArgs = filter.sort { $0.0 < $1.0 }.map { (pair: (String, Either<String, NSNull>)) -> String in
             let key = pair.0
             let either = pair.1
             
             let valueString: String
             switch either {
-            case .Left:
-                valueString = "'\(either)'"
+            case .Left(let value):
+                valueString = "'\(value)'"
             case .Right:
                 valueString = "null"
             }
-            return "\(key): \(valueString)"
+            return "\(key):\(valueString)"
         }
         
         let filterValueString = jsonFromEntryStrings(filterArgs)
         
         dictionary["filter"] = filterValueString
         
-        let sortArgs = sort?.map { "\($0.0): \($0.1 ? 1 : -1)" } ?? []
+        let sortArgs = sort?.map { "\($0.0):\($0.1 ? 1 : -1)" } ?? []
         if let _ = sort {
             dictionary["sort"] = jsonFromEntryStrings(sortArgs)
         }
@@ -85,22 +89,25 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
     }
     
     var realmQuery: RealmQuery {
-        var filterValueString: String?
+        var predicateComponents: [String] = []
+        
         if let inReplyTo = inReplyTo {
+            let filterValueString: String
             switch inReplyTo {
-            case .Left:
-                filterValueString = "'\(inReplyTo)'"
+            case .Left(let value):
+                filterValueString = "'\(value)'"
             case .Right:
                 filterValueString = "nil"
             }
+            
+            predicateComponents.append("inReplyTo == \(filterValueString)")
         }
-
-        let predicate: NSPredicate
-        if let filterValueString = filterValueString {
-            predicate = NSPredicate(format: "inReplyTo == \(filterValueString)")
-        } else {
-            predicate = NSPredicate()
+        
+        if let mailingList = mailingList {
+            predicateComponents.append("mailingList == '\(mailingList)'")
         }
+        
+        let predicate = NSPredicate(format: predicateComponents.joinWithSeparator(" AND "))
         
         let query = RealmQuery(predicate: predicate, sort: self.sort?.first, page: page ?? 1, pageSize: pageSize ?? 25, onlyComplete: onlyComplete)
         return query

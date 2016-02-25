@@ -21,7 +21,7 @@ class RealmDataSource: EmailThreadCacheDataSource {
         var results = realm.objects(Email).filter(realmQuery.predicate)
         
         if realmQuery.onlyComplete {
-            results = realm.objects(Email).filter("subject != '' AND from != '' AND mailingList != ''")
+            results = results.filter("subject != '' AND from != '' AND mailingList != ''")
         }
         
         if let sort = realmQuery.sort {
