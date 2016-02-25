@@ -42,4 +42,10 @@ class RealmDataSource: EmailThreadCacheDataSource {
             completion(Array(slice))
         }
     }
+    
+    func cacheEmails(emails: [NetworkEmail]) throws {
+        try emails.forEach { email in
+            try Email.createFromNetworkEmail(email, inRealm: realm)
+        }
+    }
 }

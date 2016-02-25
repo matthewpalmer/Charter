@@ -217,22 +217,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477627972.374986"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "createFromJSON(_:inRealm:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Charter/Models/EmailTest.swift"
             timestampString = "478042464.589944"
             startingColumnNumber = "9223372036854775807"
@@ -312,22 +296,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477698779.149723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "createFromJSON(_:inRealm:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Charter/Models/EmailTest.swift"
             timestampString = "478042464.589944"
             startingColumnNumber = "9223372036854775807"
@@ -336,54 +304,6 @@
             endingLineNumber = "24"
             landmarkName = "testInitFromJSONWhenMessageIsMemberOfAThreadAndRealmIsEmpty()"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477698779.149723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "createFromJSON(_:inRealm:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Charter.Email.createFromJSON (Charter.Email.Type)(Freddy.JSON, inRealm : RealmSwift.Realm) throws -&gt; Charter.Email"
-                  moduleName = "Charter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Models/Email.swift"
-                  timestampString = "477633518.035791"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "4430">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Charter.Email.(createFromJSON (Charter.Email.Type) -&gt; (Freddy.JSON, inRealm : RealmSwift.Realm) throws -&gt; Charter.Email).(closure #2)"
-                  moduleName = "Charter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Models/Email.swift"
-                  timestampString = "477633518.03624"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -471,108 +391,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477698779.149723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "createFromJSON(_:inRealm:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477698779.149723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "createFromJSON(_:inRealm:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477636812.619941"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "emailsToCreate(fromListOfIds:inRealm:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Charter.Email.(createFromJSON (Charter.Email.Type) -&gt; (Freddy.JSON, inRealm : RealmSwift.Realm) throws -&gt; Charter.Email).(emailsToCreate #1) (fromListOfIds : Swift.Array&lt;Swift.String&gt;, inRealm : RealmSwift.Realm) -&gt; Swift.Array&lt;Charter.Email&gt;"
-                  moduleName = "Charter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Models/Email.swift"
-                  timestampString = "477635869.552427"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "1841">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Charter.Email.(createFromJSON (Charter.Email.Type) -&gt; (Freddy.JSON, inRealm : RealmSwift.Realm) throws -&gt; Charter.Email).((emailsToCreate #1) (fromListOfIds : Swift.Array&lt;Swift.String&gt;, inRealm : RealmSwift.Realm) -&gt; Swift.Array&lt;Charter.Email&gt;).(closure #3)"
-                  moduleName = "Charter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Models/Email.swift"
-                  timestampString = "477635869.552799"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Models/Email.swift"
-            timestampString = "477698779.149723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "createFromJSON(_:inRealm:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImplTest.swift"
-            timestampString = "478042464.589944"
+            timestampString = "478053785.153504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "testGetThreads()"
             landmarkType = "5">
          </BreakpointContent>
@@ -584,7 +408,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
-            timestampString = "478049175.638252"
+            timestampString = "478053580.603701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+            timestampString = "478053580.603701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -596,31 +436,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
-            timestampString = "478049175.638252"
+            timestampString = "478053580.603701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "getThreads(_:completion:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
-            timestampString = "478049175.638252"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "getThreads(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -632,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
-            timestampString = "478050172.714615"
+            timestampString = "478053785.153504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "getThreads(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -648,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImplTest.swift"
-            timestampString = "478042464.589944"
+            timestampString = "478053580.603701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "testGetThreads()"
             landmarkType = "5">
          </BreakpointContent>
@@ -696,7 +520,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImplTest.swift"
-            timestampString = "478042464.589944"
+            timestampString = "478053785.153504"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "testGetThreads()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImplTest.swift"
+            timestampString = "478053785.153504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -712,27 +552,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImplTest.swift"
-            timestampString = "478042464.589944"
+            timestampString = "478053785.153504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "testGetThreads()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImplTest.swift"
-            timestampString = "478042464.589944"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "testGetThreads()"
             landmarkType = "5">
          </BreakpointContent>
@@ -749,7 +573,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "testRealmDataSource()"
+            landmarkName = "testLoadPrecachedEmails()"
             landmarkType = "5">
             <Locations>
                <Location
@@ -812,7 +636,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "testRealmDataSource()"
+            landmarkName = "testLoadPrecachedEmails()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -844,7 +668,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "testRealmDataSource()"
+            landmarkName = "testLoadPrecachedEmails()"
             landmarkType = "5">
             <Locations>
                <Location
@@ -929,95 +753,382 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Services/EmailThreadService.swift"
-            timestampString = "478050939.8598"
+            timestampString = "478062144.007747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getUncachedThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Services/EmailThreadService.swift"
+            timestampString = "478062144.007747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getUncachedThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+            timestampString = "478053580.603701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
+            landmarkName = "getThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+            timestampString = "478053580.603701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Cache/RealmDataSourceTest.swift"
+            timestampString = "478056331.556356"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "testCacheNetworkEmailsUpdateShouldOccur()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "1"
+            condition = "networkEmail.id == &quot;m27fi94f92.fsf@eno.apple.com&quot;"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Models/Email.swift"
+            timestampString = "478056383.536516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "createFromNetworkEmail(_:inRealm:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Models/Email.swift"
+            timestampString = "478056684.20762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "createFromNetworkEmail(_:inRealm:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Models/Email.swift"
+            timestampString = "478056700.819311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "createFromNetworkEmail(_:inRealm:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Services/EmailThreadService.swift"
+            timestampString = "478062144.007747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "getUncachedThreads(_:completion:)"
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Charter.EmailThreadServiceImpl.(getUncachedThreads (Charter.EmailThreadServiceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.Email&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "Charter"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadService.swift"
-                  timestampString = "478051025.374472"
+                  timestampString = "478061402.307935"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "49">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Charter.EmailThreadServiceImpl.(getUncachedThreads (Charter.EmailThreadServiceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.Email&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
                   moduleName = "Charter"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadService.swift"
-                  timestampString = "478051025.374798"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Services/EmailThreadService.swift"
-            timestampString = "478050939.8598"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getUncachedThreads(_:completion:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Charter.EmailThreadServiceImpl.(getUncachedThreads (Charter.EmailThreadServiceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.Email&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Charter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadService.swift"
-                  timestampString = "478051025.376505"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Charter.EmailThreadServiceImpl.(getUncachedThreads (Charter.EmailThreadServiceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.Email&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1).(closure #1)"
-                  moduleName = "Charter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadService.swift"
-                  timestampString = "478051025.377029"
+                  timestampString = "478061402.308539"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+            timestampString = "478060928.400472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getThreads(_:completion:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.EmailThreadNetworkDataSourceImpl.(getThreads (Charter.EmailThreadNetworkDataSourceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.NetworkEmail&gt;) -&gt; ()) -&gt; ()).(closure #2)"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Data%20Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+                  timestampString = "478060940.661643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "974">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.EmailThreadNetworkDataSourceImpl.(getThreads (Charter.EmailThreadNetworkDataSourceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.NetworkEmail&gt;) -&gt; ()) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Data%20Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+                  timestampString = "478060940.662142"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.EmailThreadNetworkDataSourceImpl.(getThreads (Charter.EmailThreadNetworkDataSourceImpl) -&gt; (Charter.EmailThreadRequest, completion : (Swift.Array&lt;Charter.NetworkEmail&gt;) -&gt; ()) -&gt; ()).(closure #2).(closure #2)"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Data%20Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+                  timestampString = "478060940.662406"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "540">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
+            timestampString = "478060978.200037"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "getThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Data Sources/Cache/RealmDataSource.swift"
+            timestampString = "478062441.259077"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "cacheEmails(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.RealmDataSource.cacheEmails (Charter.RealmDataSource)(Swift.Array&lt;Charter.NetworkEmail&gt;) throws -&gt; ()"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Data%20Sources/Cache/RealmDataSource.swift"
+                  timestampString = "478061070.462068"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charter.RealmDataSource.(cacheEmails (Charter.RealmDataSource) -&gt; (Swift.Array&lt;Charter.NetworkEmail&gt;) throws -&gt; ()).(closure #1)"
+                  moduleName = "Charter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Data%20Sources/Cache/RealmDataSource.swift"
+                  timestampString = "478061070.462332"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "512">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Services/EmailThreadService.swift"
+            timestampString = "478062144.007747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getUncachedThreads(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Charter/Services/EmailThreadServiceImplTest.swift"
+            timestampString = "478063389.965749"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "testNetworkAndCaching()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CharterTests.EmailThreadServiceImplTest.(testNetworkAndCaching (CharterTests.EmailThreadServiceImplTest) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "CharterTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadServiceImplTest.swift"
+                  timestampString = "478063396.820936"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CharterTests.EmailThreadServiceImplTest.(testNetworkAndCaching (CharterTests.EmailThreadServiceImplTest) -&gt; () -&gt; ()).(closure #1).(implicit closure #1)"
+                  moduleName = "CharterTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadServiceImplTest.swift"
+                  timestampString = "478063396.821556"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CharterTests.EmailThreadServiceImplTest.(testNetworkAndCaching (CharterTests.EmailThreadServiceImplTest) -&gt; () -&gt; ()).(closure #1).(implicit closure #2)"
+                  moduleName = "CharterTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matthewpalmer/dev/ios/Charter/iOS/Charter/Charter/Services/EmailThreadServiceImplTest.swift"
+                  timestampString = "478063396.822173"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "27">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1028,29 +1139,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
-            timestampString = "478049891.627319"
+            filePath = "Charter/AppDelegate.swift"
+            timestampString = "478063457.313589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getThreads(_:completion:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Charter/Data Sources/Networking/EmailThreadNetworkDataSourceImpl.swift"
-            timestampString = "478051004.49547"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "getThreads(_:completion:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

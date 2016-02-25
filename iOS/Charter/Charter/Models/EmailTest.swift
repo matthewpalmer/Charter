@@ -274,4 +274,15 @@ class EmailTest: XCTestCase {
         XCTAssertEqual(email.inReplyTo, nil)
         XCTAssertEqual(Array(email.descendants), [])
     }
+    
+    func testInitFromNetworkEmailWhereEmailReferencesItself() {
+        let networkEmail = NetworkEmail(id: "one@example.com", from: "f", mailingList: "list", content: "content", archiveURL: "archiv", date: NSDate(), subject: "subjecg", inReplyTo: "one@example.com", references: ["one@example.com"], descendants: ["one@example.com"])
+        let email = try! Email.createFromNetworkEmail(networkEmail, inRealm: realm)
+        XCTAssertEqual(email.id, "one@example.com")
+        XCTAssertEqual(email.references.first!.id, email.id)
+        XCTAssertEqual(email.references.first!.content, email.content)
+        XCTAssertEqual(email.descendants.first!.id, email.id)
+        XCTAssertEqual(email.descendants.first!.content, email.content)
+        XCTAssertEqual(email.inReplyTo!.id, email.id)
+    }
 }

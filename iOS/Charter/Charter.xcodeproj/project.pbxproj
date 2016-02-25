@@ -57,6 +57,7 @@
 		0E89762F1C79146700ECFEA4 /* EmailThreadResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8976201C78FE8600ECFEA4 /* EmailThreadResponse.json */; };
 		0E8976321C791AEE00ECFEA4 /* EmailInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8976301C79198E00ECFEA4 /* EmailInvalid.json */; };
 		0E8976351C791B8B00ECFEA4 /* EmailValidButPartial.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E8976331C791B8600ECFEA4 /* EmailValidButPartial.json */; };
+		0E8B1B1A1C7E841000586B24 /* NetworkEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B1B191C7E841000586B24 /* NetworkEmail.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,7 @@
 		0E89762D1C790E0D00ECFEA4 /* EmailThreadRequestBuilderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailThreadRequestBuilderTest.swift; path = "Data Sources/EmailThreadRequestBuilderTest.swift"; sourceTree = "<group>"; };
 		0E8976301C79198E00ECFEA4 /* EmailInvalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EmailInvalid.json; path = Models/EmailInvalid.json; sourceTree = "<group>"; };
 		0E8976331C791B8600ECFEA4 /* EmailValidButPartial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = EmailValidButPartial.json; path = Models/EmailValidButPartial.json; sourceTree = "<group>"; };
+		0E8B1B191C7E841000586B24 /* NetworkEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkEmail.swift; path = Models/NetworkEmail.swift; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8976021C7803AD00ECFEA4 /* Email.swift */,
+				0E8B1B191C7E841000586B24 /* NetworkEmail.swift */,
 				0E8976001C78037D00ECFEA4 /* EmailTest.swift */,
 				0E8976141C782D2200ECFEA4 /* JSON */,
 			);
@@ -573,6 +576,7 @@
 				0E0B36F81C6E701900DF9995 /* MessagePreviewTableViewCell.swift in Sources */,
 				0E8976031C7803AD00ECFEA4 /* Email.swift in Sources */,
 				0E89762C1C790DDD00ECFEA4 /* EmailThreadRequestBuilder.swift in Sources */,
+				0E8B1B1A1C7E841000586B24 /* NetworkEmail.swift in Sources */,
 				0E0B36E81C6E701900DF9995 /* AppReducer.swift in Sources */,
 				0E8976261C78FEB500ECFEA4 /* EmailThreadServiceDataSources.swift in Sources */,
 				0E0B36F41C6E701900DF9995 /* MailingListViewController.swift in Sources */,

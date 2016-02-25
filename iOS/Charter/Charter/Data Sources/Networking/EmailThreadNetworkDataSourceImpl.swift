@@ -20,11 +20,9 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
     private let session: NetworkingSession
     private let username: String
     private let password: String
-    private let realm: Realm
     
-    required init(username: String? = nil, password: String? = nil, session: NetworkingSession = NSURLSession.sharedSession(), realm: Realm = try! Realm()) {
+    required init(username: String? = nil, password: String? = nil, session: NetworkingSession = NSURLSession.sharedSession()) {
         self.session = session
-        self.realm = realm
         
         if let username = username, password = password {
             self.username = username
@@ -38,7 +36,7 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
         }
     }
     
-    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+    func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {
         let parameters = request.URLRequestQueryParameters
     
         // TODO: Get a domain name for the default back end, and make the URL more easily changed
@@ -59,10 +57,8 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
             guard let json = try? JSON(data: data) else { return completion([]) }
             guard let emailList = try? json.array("_embedded", "rh:doc") else { return completion([]) }
             
-            dispatch_async(dispatch_get_main_queue()) {
-                let threads = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }
-                completion(threads)
-            }
+            let threads = emailList.map { try? NetworkEmail.createFromJSON($0) }.flatMap { $0 }
+            completion(threads)
         }
         
         task.resume()

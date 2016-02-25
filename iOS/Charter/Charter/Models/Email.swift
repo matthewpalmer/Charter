@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import Freddy
 
+/// An email as a Realm object. The difference between `Email` and `NetworkEmail` is that `NetworkEmail` is much more inert--it does not exist in a Realm.
 final class Email: Object {
     dynamic var id: String = ""
     dynamic var from: String = ""
@@ -52,23 +53,21 @@ enum EmailError: ErrorType {
 }
 
 extension Email {
-    class func createFromJSON(json: JSON, inRealm realm: Realm) throws -> Email {
+    class func createFromNetworkEmail(networkEmail: NetworkEmail, inRealm realm: Realm) throws -> Email {
         let email = Email()
-        
-        email.id = try json.string("_id")
-        email.from = try json.string("from")
-        let interval = try json.int("date", "$date")
-        email.date = NSDate(timeIntervalSince1970: Double(interval / 1000)) // JSON response is in milliseconds
-        email.subject = try json.string("subject")
-        email.mailingList = try json.string("mailingList")
-        email.content = try json.string("content")
-        email.archiveURL = try json.string("archiveURL")
+        email.id = networkEmail.id
+        email.from = networkEmail.from
+        email.date = networkEmail.date
+        email.subject = networkEmail.subject
+        email.mailingList = networkEmail.mailingList
+        email.content = networkEmail.content
+        email.archiveURL = networkEmail.archiveURL
         
         func emailsToCreate(fromListOfIds ids: [String], inRealm realm: Realm) -> [Email] {
             let predicate = NSPredicate(format: "id IN %@", ids)
             let emailsInDatabase = Set<Email>(realm.objects(Email)
                 .filter(predicate))
-                .map { $0.id }
+                .map { $0.id } + [networkEmail.id] // In case of self-references
             
             let emailsNotInDatabase = Set<String>(ids).subtract(emailsInDatabase)
             
@@ -81,15 +80,13 @@ extension Email {
             return emailsToCreate
         }
         
-        let descendantArray = (try? json.array("descendants")) ?? [JSON]()
-        let descendantIDs = try descendantArray.map(String.init).filter { !$0.isEmpty }
+        let descendantIDs = networkEmail.descendants
         let descendantsToCreate = emailsToCreate(fromListOfIds: descendantIDs, inRealm: realm)
         
-        let referenceArray = (try? json.array("references")) ?? [JSON]()
-        let referenceIDs = try referenceArray.map(String.init).filter { !$0.isEmpty }
+        let referenceIDs = networkEmail.references
         let referencesToCreate = emailsToCreate(fromListOfIds: referenceIDs, inRealm: realm)
         
-        let inReplyTo = (try? json.string("inReplyTo", ifNull: true)) ?? nil
+        let inReplyTo = networkEmail.inReplyTo
         let inReplyToToCreate: [Email]
         if let inReplyTo = inReplyTo {
             inReplyToToCreate = emailsToCreate(fromListOfIds: [inReplyTo], inRealm: realm)
@@ -115,8 +112,12 @@ extension Email {
                 email.inReplyTo = realm.objects(Email).filter("id == %@", inReplyTo).first
             }
         }
-        
+
         return email
+    }
+    
+    class func createFromJSON(json: JSON, inRealm realm: Realm) throws -> Email {
+        return try Email.createFromNetworkEmail(try NetworkEmail.createFromJSON(json), inRealm: realm)
     }
     
     class func createFromJSONData(jsonData: NSData, realm: Realm) throws -> Email {

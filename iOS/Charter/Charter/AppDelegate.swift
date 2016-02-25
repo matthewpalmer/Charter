@@ -41,24 +41,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Realm database at \(Realm.Configuration.defaultConfiguration.path)")
         
         let realm = try! Realm()
-        let cache = RealmDataSource(realm: realm)
-        let network = EmailThreadNetworkDataSourceImpl(realm: realm)
+        let cache: EmailThreadCacheDataSource = RealmDataSource(realm: realm)
+        let network: EmailThreadNetworkDataSource = EmailThreadNetworkDataSourceImpl()
         let emailService: EmailThreadService = EmailThreadServiceImpl(cacheDataSource: cache, networkDataSource: network)
         
         let request = EmailThreadRequestBuilder()
         request.mailingList = "swift-evolution"
         request.inReplyTo = Either.Right(NSNull())
         request.page = 1
-        request.pageSize = 50
+        request.pageSize = 20
         request.sort = [("date", false)]
         request.onlyComplete = true
         
         emailService.getUncachedThreads(request.build()) { (emails) -> Void in
-            print(emails)
+
         }
-//        emailService.getCachedThreads(request.build()) { (emails) -> Void in
-//            print(emails.map { $0.date })
-//        }
         
         return true
     }
