@@ -72,9 +72,8 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
         
         dictionary["filter"] = filterValueString
         
-        let sortArgs = sort?.map { "\($0.0):\($0.1 ? 1 : -1)" } ?? []
-        if let _ = sort {
-            dictionary["sort"] = jsonFromEntryStrings(sortArgs)
+        if let sort = sort where sort.count > 0 {
+            dictionary["sort_by"] = "\(sort.first!.1 ? "" : "-")\(sort.first!.0)"
         }
         
         if let pageSize = pageSize {

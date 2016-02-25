@@ -21,7 +21,7 @@ class EmailThreadRequestBuilderTest: XCTestCase {
         let request = builder.build()
         let parameters = request.URLRequestQueryParameters
         XCTAssertEqual(parameters["filter"], "{inReplyTo:null,mailingList:'swift-users'}")
-        XCTAssertEqual(parameters["sort"], "{date:-1}")
+        XCTAssertEqual(parameters["sort_by"], "-date")
         XCTAssertEqual(parameters["pagesize"], "\(25)")
         XCTAssertEqual(parameters["page"], "\(1)")
         

@@ -63,7 +63,7 @@ class ThreadsViewControllerDataSourceTest: XCTestCase {
             XCTAssertEqual(query["page"], "1")
             XCTAssertEqual(query["filter"], "{inReplyTo:null,mailingList:\'swift-users\'}")
             XCTAssertEqual(query["pagesize"], "50")
-            XCTAssertEqual(query["sort"], "{date:-1}")
+            XCTAssertEqual(query["sort_by"], "-date")
             
             shouldMakeCorrectRequestOnRefresh.fulfill()
         }
