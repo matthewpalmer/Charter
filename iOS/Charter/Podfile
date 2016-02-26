@@ -4,7 +4,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Charter' do
-  pod 'ReSwift'
   pod 'MailingListParser', :path => '../MailingListParser'
   pod 'CollapsibleTextView', :path => '../CollapsibleTextView'
   pod 'GZIP', '~> 1.1.1'

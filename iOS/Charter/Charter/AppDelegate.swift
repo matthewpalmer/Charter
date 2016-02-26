@@ -7,11 +7,7 @@
 //
 
 import UIKit
-import ReSwift
-import MailingListParser
 import RealmSwift
-
-let mainStore = Store(reducer: AppReducer(), state: AppState())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

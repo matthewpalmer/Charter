@@ -56,4 +56,3 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
         navigationController.pushViewController(viewController, animated: true)
     }
 }
-
