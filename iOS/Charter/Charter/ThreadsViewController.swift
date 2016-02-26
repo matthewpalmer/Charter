@@ -53,6 +53,14 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
         updateSeparatorStyle()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let selected = tableView.indexPathForSelectedRow {
+            tableView.deselectRowAtIndexPath(selected, animated: true)
+        }
+    }
+    
     private func updateSeparatorStyle() {
         if dataSource.isEmpty {
             tableView.separatorStyle = .None

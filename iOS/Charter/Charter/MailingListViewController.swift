@@ -61,4 +61,12 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.selectRowAtIndexPath(nil, animated: false, scrollPosition: UITableViewScrollPosition.Middle)
         delegate?.mailingListViewControllerDidSelectMailingList(mailingLists[indexPath.row])
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let selected = tableView.indexPathForSelectedRow {
+            tableView.deselectRowAtIndexPath(selected, animated: true)
+        }
+    }
 }
