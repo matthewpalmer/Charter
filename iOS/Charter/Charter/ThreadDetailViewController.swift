@@ -8,55 +8,144 @@
 
 import UIKit
 
-protocol ThreadDetailDataSource: class, UITableViewDataSource {
+protocol TableViewCellIndentationLevelDataSource: class {
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int
 }
 
-protocol ThreadDetailViewControllerDelegate: class {
-    func threadDetailViewControllerDidNavigateBackwards(threadDetailViewController: ThreadDetailViewController)
+class ThreadDetailDataSource: NSObject, UITableViewDataSource, TableViewCellIndentationLevelDataSource {
+    private let service: EmailThreadService
+    weak var cellDelegate: FullEmailMessageTableViewCellDelegate?
+    
+    private let cellIdentifier = "emailCell"
+    
+    private var indentationAndEmail: [(Int, Email)] = [] {
+        didSet {
+            textViewDataSources = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
+        }
+    }
+    
+    private let rootEmail: Email
+    private var textViewDataSources: [NSIndexPath: EmailCollapsibleTextViewDataSource] = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
+    private lazy var emailFormatter: EmailFormatter = EmailFormatter()
+    
+    private var emails: [Email] = [] {
+        didSet {
+            self.indentationAndEmail = self.computeIndentationLevels(rootEmail)
+        }
+    }
+    
+    init(tableView: UITableView, service: EmailThreadService, rootEmail: Email) {
+        self.service = service
+        self.rootEmail = rootEmail
+        tableView.registerNib(FullEmailMessageTableViewCell.nib(), forCellReuseIdentifier: cellIdentifier)
+        super.init()
+        
+        service.getCachedThreads(descendantsRequestForRootEmail(rootEmail)) { (emails) -> Void in
+            self.emails = emails
+            tableView.reloadData()
+            
+            if rootEmail.descendants.count > emails.count {
+                // Get uncached threads if we are missing any
+                service.getUncachedThreads(self.descendantsRequestForRootEmail(rootEmail), completion: { (descendants) -> Void in
+                    self.emails = descendants
+                    tableView.reloadData()
+                })
+            }
+        }
+    }
+    
+    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        return indentationAndEmail[indexPath.row].0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! FullEmailMessageTableViewCell
+        let email = indentationAndEmail[indexPath.row].1
+        
+        cell.indentationLevel = indentationAndEmail[indexPath.row].0
+        cell.indentationWidth = 10
+        cell.dateLabel.text = emailFormatter.formatDate(email.date)
+        cell.nameLabel.text = emailFormatter.formatName(email.from)
+        cell.delegate = cellDelegate
+        
+        var textViewDataSource = textViewDataSources[indexPath]
+        
+        if textViewDataSource == nil {
+            let regions = EmailCollapsibleTextViewDataSource.QuoteRanges(email.content)
+            textViewDataSource = EmailCollapsibleTextViewDataSource(text: email.content, initiallyCollapsedRegions: regions)
+            textViewDataSources[indexPath] = textViewDataSource!
+        }
+        
+        cell.textViewDataSource = textViewDataSource!
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return indentationAndEmail.count
+    }
+    
+    private func descendantsRequestForRootEmail(rootEmail: Email) -> EmailThreadRequest {
+        let builder = EmailThreadRequestBuilder()
+        builder.idIn = Array(rootEmail.descendants.map { $0.id })
+        builder.page = 1
+        builder.pageSize = 1000
+        builder.onlyComplete = true
+        return builder.build()
+    }
+    
+    private func computeIndentationLevels(rootEmail: Email) -> [(Int, Email)] {
+        var children = [String: [Email]]()
+        for email in rootEmail.descendants {
+            if let inReplyTo = email.inReplyTo {
+                if children[inReplyTo.id] == nil {
+                    children[inReplyTo.id] = []
+                }
+                
+                children[inReplyTo.id]!.append(email)
+            }
+        }
+        
+        func indentationLevel(root: Email, indentLevel: Int) -> [(Int, Email)] {
+            var list = [(Int, Email)]()
+            for child in children[root.id] ?? [] {
+                if child.id != root.id {
+                    list.appendContentsOf(indentationLevel(child, indentLevel: indentLevel + 1))
+                }
+            }
+            return [(indentLevel, root)] + list
+        }
+        
+        let thread = indentationLevel(rootEmail, indentLevel: 0)
+        return thread
+    }
 }
 
 class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEmailMessageTableViewCellDelegate, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    static let fullMessageCellIdentifier = "fullMessageCellId"
+    private var dataSource: ThreadDetailDataSource!
+    private let rootEmail: Email
+    private let service: EmailThreadService
     
-    weak var dataSource: ThreadDetailDataSource? {
-        didSet {
-            if tableView != nil {
-                tableView.dataSource = dataSource
-            }
-        }
-    }
-    weak var delegate: ThreadDetailViewControllerDelegate?
-    
-    init() {
+    init(service: EmailThreadService, rootEmail: Email) {
+        self.service = service
+        self.rootEmail = rootEmail
         super.init(nibName: "ThreadDetailViewController", bundle: NSBundle.mainBundle())
     }
-
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        if parent == nil {
-            // Pressed 'Back' from this screen. Need to update our route history.
-            delegate?.threadDetailViewControllerDidNavigateBackwards(self)
-        }
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewWillDisappear(animated: Bool) {
-        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        tableView.registerNib(FullEmailMessageTableViewCell.nib(), forCellReuseIdentifier: ThreadDetailViewController.fullMessageCellIdentifier)
-        tableView.estimatedRowHeight = 160
-        tableView.rowHeight = UITableViewAutomaticDimension
+    override func viewDidLoad() {
+        dataSource = ThreadDetailDataSource(tableView: tableView, service: service, rootEmail: rootEmail)
+        dataSource.cellDelegate = self
         tableView.dataSource = dataSource
         tableView.delegate = self
+        tableView.estimatedRowHeight = 160
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .None
         tableView.allowsSelection = false
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
@@ -99,4 +188,5 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
+    
 }

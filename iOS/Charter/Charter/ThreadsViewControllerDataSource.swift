@@ -65,6 +65,10 @@ class ThreadsViewControllerDataSource: NSObject, UITableViewDataSource {
         }
     }
     
+    func emailAtIndexPath(indexPath: NSIndexPath) -> Email {
+        return threads[indexPath.row]
+    }
+    
     private func threadsRequestForPage(page: Int) -> EmailThreadRequest {
         let builder = EmailThreadRequestBuilder()
         builder.mailingList = mailingList.identifier

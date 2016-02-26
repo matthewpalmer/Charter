@@ -186,6 +186,12 @@
 				0E8975FF1C78036000ECFEA4 /* Models */,
 				0E8976281C79010D00ECFEA4 /* Utility types */,
 				0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */,
+				0E0B36E11C6E701900DF9995 /* ThreadDetailViewController.swift */,
+				0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */,
+				0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */,
+				0E279B131C7EC9C80007499E /* ThreadsViewControllerDataSource.swift */,
+				0E279B151C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift */,
+				0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */,
 				0E8B1B1F1C7EBF7100586B24 /* EmailFormatter.swift */,
 				0E279B171C7FA6050007499E /* EmailFormatterTest.swift */,
 				0E0B36C81C6E701900DF9995 /* Actions.swift */,
@@ -209,12 +215,6 @@
 				0E0B36DE1C6E701900DF9995 /* NoThreadsTableViewCell.swift */,
 				0E0B36DF1C6E701900DF9995 /* NoThreadsTableViewCell.xib */,
 				0E0B36E01C6E701900DF9995 /* SML-Bridging-Header.h */,
-				0E0B36E11C6E701900DF9995 /* ThreadDetailViewController.swift */,
-				0E0B36E21C6E701900DF9995 /* ThreadDetailViewController.xib */,
-				0E0B36E31C6E701900DF9995 /* ThreadsViewController.swift */,
-				0E279B131C7EC9C80007499E /* ThreadsViewControllerDataSource.swift */,
-				0E279B151C7F96F20007499E /* ThreadsViewControllerDataSourceTest.swift */,
-				0E0B36E41C6E701900DF9995 /* ThreadsViewController.xib */,
 			);
 			path = Charter;
 			sourceTree = "<group>";

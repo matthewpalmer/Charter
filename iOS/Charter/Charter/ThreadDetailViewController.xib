@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThreadDetailViewController" customModule="Swift_Mailing_List" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThreadDetailViewController" customModule="Charter" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="wjj-ck-I1D" id="6mP-ab-pTn"/>
+                <outlet property="tableView" destination="wjj-ck-I1D" id="rE7-LA-qrg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

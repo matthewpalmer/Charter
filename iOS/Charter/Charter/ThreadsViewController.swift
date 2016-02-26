@@ -9,6 +9,10 @@
 import UIKit
 import ReSwift
 
+protocol ThreadsViewControllerDelegate: class {
+    func threadsViewController(threadsViewController: ThreadsViewController, didSelectEmail email: Email)
+}
+
 class ThreadsViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
@@ -16,6 +20,8 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     private let mailingList: MailingListType
     
     private var dataSource: ThreadsViewControllerDataSource!
+    
+    weak var delegate: ThreadsViewControllerDelegate?
     
     init(emailThreadService: EmailThreadService, mailingList: MailingListType) {
         self.emailThreadService = emailThreadService
@@ -65,5 +71,9 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
         if dataSource.isEmpty {
             cell.userInteractionEnabled = false
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        delegate?.threadsViewController(self, didSelectEmail: dataSource.emailAtIndexPath(indexPath))
     }
 }

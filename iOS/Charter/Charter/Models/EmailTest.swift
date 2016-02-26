@@ -285,4 +285,110 @@ class EmailTest: XCTestCase {
         XCTAssertEqual(email.descendants.first!.content, email.content)
         XCTAssertEqual(email.inReplyTo!.id, email.id)
     }
+    
+    func testInReplyTo() {
+        let originalId = "D8CF8D02-509C-40A8-8589-2C59C0201F39@apple.com"
+        let inReplyTo: String = "880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com"
+        let references: [String] = [
+            "CADcs6kMMqbtWS1_gByxYUO=+ET8V+iJYXaaGrqVx5Sq-=M37_A@mail.gmail.com",
+            "986FDA06-FE79-4310-9FB7-21E9AEF25B51@apple.com",
+            "880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com"]
+        let descendants: [String] = [
+            "D8CF8D02-509C-40A8-8589-2C59C0201F39@apple.com",
+            "CADcs6kOm7nBk78fZkOBYWa85dX=j4hrWUQk4AaYyJ6Yb5T2Vqg@mail.gmail.com",
+            "7C0783FC-B039-4F0E-BF68-D992380B37CF@gmail.com",
+            "BE52EDE6-A109-49F7-BE7B-876BF2950578@apple.com",
+            "9643FE18-C60C-4B0C-A23D-0B9B2CA06908@gmail.com"
+        ]
+        
+        let networkEmail = NetworkEmail(id: originalId, from: "Joe", mailingList: "s", content: "c", archiveURL: "a", date: NSDate(), subject: "s", inReplyTo: inReplyTo, references: references, descendants: descendants)
+        let email = try! Email.createFromNetworkEmail(networkEmail, inRealm: realm)
+        
+        XCTAssertEqual(email.id, originalId)
+        XCTAssertEqual(email.references.map { $0.id }.sort(), references.sort())
+    }
 }
+
+/*
+(lldb) po referencesToCreate
+▿ 1 elements
+▿ [0] : Email {
+id = 880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com;
+from = ;
+mailingList = ;
+content = ;
+archiveURL = (null);
+date = 1970-01-01 00:00:01 +0000;
+subject = ;
+inReplyTo = (null);
+references = List<Email> (
+
+);
+descendants = List<Email> (
+
+);
+}
+
+(lldb) po email
+Email {
+id = D8CF8D02-509C-40A8-8589-2C59C0201F39@apple.com;
+from = jgroff at apple.com (Joe Groff);
+mailingList = swift-evolution;
+content =
+> On Feb 25, 2016, at 2:40 PM, Radosław Pietruszewski <radexpl@gmail.com> wrote:
+>
+> Ah, that’s a neat idea! Not sure it’s an improvement though to have a magic type that changes how the compiler treats your method, rather than a rather explicit *attribute* on the method…
+
+There's no magic. If you can't construct a value of your return type, you can't return.
+
+-Joe
+_______________________________________________
+swift-evolution mailing list
+swift-evolution@swift.org
+https://lists.swift.org/mailman/listinfo/swift-evolution
+;
+archiveURL = https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160222/011083.html;
+date = 2016-02-25 22:40:54 +0000;
+subject = Re: [swift-evolution] Idea: change "@noreturn func f()" to "func f() noreturn";
+inReplyTo = (null);
+references = List<Email> (
+
+);
+descendants = List<Email> (
+
+);
+}
+
+(lldb) po email.id
+"D8CF8D02-509C-40A8-8589-2C59C0201F39@apple.com"
+
+(lldb) po referencesToCreate.map { $0.id }
+▿ 1 elements
+- [0] : "880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com"
+
+(lldb) po descendantsToCreate.map { $0.id }
+▿ 4 elements
+- [0] : "BE52EDE6-A109-49F7-BE7B-876BF2950578@apple.com"
+- [1] : "9643FE18-C60C-4B0C-A23D-0B9B2CA06908@gmail.com" { ... }
+- [2] : "CADcs6kOm7nBk78fZkOBYWa85dX=j4hrWUQk4AaYyJ6Yb5T2Vqg@mail.gmail.com" { ... }
+- [3] : "7C0783FC-B039-4F0E-BF68-D992380B37CF@gmail.com" { ... }
+
+(lldb) po inReplyToToCreate
+▿ 1 elements
+▿ [0] : Email {
+id = 880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com;
+from = ;
+mailingList = ;
+content = ;
+archiveURL = (null);
+date = 1970-01-01 00:00:01 +0000;
+subject = ;
+inReplyTo = (null);
+references = List<Email> (
+
+);
+descendants = List<Email> (
+
+);
+}
+*/

@@ -80,11 +80,18 @@ extension Email {
             return emailsToCreate
         }
         
+        // Ensure that we only add 1 email with a given id
+        var emailPool = [String: Email]()
+        
         let descendantIDs = networkEmail.descendants
         let descendantsToCreate = emailsToCreate(fromListOfIds: descendantIDs, inRealm: realm)
         
+        descendantsToCreate.forEach { emailPool[$0.id] = $0 }
+        
         let referenceIDs = networkEmail.references
         let referencesToCreate = emailsToCreate(fromListOfIds: referenceIDs, inRealm: realm)
+        
+        referencesToCreate.forEach { emailPool[$0.id] = $0 }
         
         let inReplyTo = networkEmail.inReplyTo
         let inReplyToToCreate: [Email]
@@ -94,11 +101,14 @@ extension Email {
             inReplyToToCreate = []
         }
         
+        inReplyToToCreate.forEach { emailPool[$0.id] = $0 }
+        
+        // If any of the reference-type emails (i.e. incomplete emails) are trying to save over the top of the networkEmail, remove them from the pool.
+        emailPool.removeValueForKey(email.id)
+        
         try realm.write {
             realm.add(email, update: true)
-            realm.add(descendantsToCreate)
-            realm.add(referencesToCreate)
-            realm.add(inReplyToToCreate)
+            realm.add(emailPool.values)
             
             func addEmailsWithIds(ids: [String], toList list: List<Email>) {
                 let toAdd = realm.objects(Email).filter("id in %@", ids)
