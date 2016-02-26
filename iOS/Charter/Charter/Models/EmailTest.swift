@@ -8,7 +8,6 @@
 
 import XCTest
 import RealmSwift
-import Freddy
 @testable import Charter
 
 class EmailTest: XCTestCase {

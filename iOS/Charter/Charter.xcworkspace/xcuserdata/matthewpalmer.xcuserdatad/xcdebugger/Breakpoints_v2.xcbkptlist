@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Charter/Models/EmailTest.swift"
-            timestampString = "478221239.821363"
+            timestampString = "478223598.292622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "testInitFromJSONWhenMessageIsTheRootOfAThreadAndRealmIsEmpty()"
             landmarkType = "5">
             <Locations>

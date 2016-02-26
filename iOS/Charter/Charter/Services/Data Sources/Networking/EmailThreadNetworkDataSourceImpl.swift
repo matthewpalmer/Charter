@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Freddy
 import RealmSwift
 
 protocol NetworkingSession {
