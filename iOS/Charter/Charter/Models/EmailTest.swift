@@ -20,8 +20,7 @@ class EmailTest: XCTestCase {
     }
     
     func testInitFromJSONWhenMessageIsMemberOfAThreadAndRealmIsEmpty() {
-        let json = try! JSON(data: dataForJSONFile("MemberEmail"))
-        let email = try! Email.createFromJSON(json, inRealm: realm)
+        let email = try! Email.createFromData(dataForJSONFile("MemberEmail"), inRealm: realm)
         
         // Other properties are asserted in `testInitFromJSONWhenMessageIsTheRootOfAThreadAndRealmIsEmpty`.
         // This test focuses on the relationship-building JSON entries.
@@ -44,7 +43,7 @@ class EmailTest: XCTestCase {
     
     func testInitFromJSONWhenMessageIsTheRootOfAThreadAndRealmIsEmpty() {
         let data = dataForJSONFile("RootEmail")
-        let email = try! Email.createFromJSONData(data, realm: realm)
+        let email = try! Email.createFromData(data, inRealm: realm)
         
         // Assert the `email` instance is correct.
         XCTAssertEqual(email.id, "m2ziv7yyt9.fsf@eno.apple.com")
@@ -230,7 +229,7 @@ class EmailTest: XCTestCase {
         // This test asserts that the right relationships are formed when the realm already contains data; other tests assert that the right fields get set with values.
         
         // 1. User requests the "threads" endpoint, which gives us a root email for the thread and references for the other emails in the thread (but these are incomplete)
-        let email1 = try! Email.createFromJSONData(dataForJSONFile("PreexistingEmail1"), realm: realm)
+        let email1 = try! Email.createFromData(dataForJSONFile("PreexistingEmail1"), inRealm: realm)
         
         XCTAssertEqual(email1.id, "1")
         XCTAssertEqual(email1.descendants.map { $0.id }.sort(), ["2", "3", "4"].sort())
@@ -239,17 +238,17 @@ class EmailTest: XCTestCase {
         XCTAssertEqual(email1.references.count, 0)
         
         // 2. User goes into the "thread" and the sub-emails are retrieved.
-        let email2 = try! Email.createFromJSONData(dataForJSONFile("PreexistingEmail2"), realm: realm)
+        let email2 = try! Email.createFromData(dataForJSONFile("PreexistingEmail2"), inRealm: realm)
         XCTAssertEqual(email2.id, "2")
         XCTAssertEqual(email2.descendants.map { $0.id }.sort(), ["3", "4"].sort())
         XCTAssertEqual(email2.inReplyTo, email1)
         XCTAssertEqual(email1.descendants.filter { $0.id == "2" }.first!.subject, email2.subject)
         
-        let email3 = try! Email.createFromJSONData(dataForJSONFile("PreexistingEmail3"), realm: realm)
+        let email3 = try! Email.createFromData(dataForJSONFile("PreexistingEmail3"), inRealm: realm)
         XCTAssertEqual(email3.content, "Pre existing three")
         XCTAssertEqual(email3.inReplyTo, email2)
         
-        let email4 = try! Email.createFromJSONData(dataForJSONFile("PreexistingEmail4"), realm: realm)
+        let email4 = try! Email.createFromData(dataForJSONFile("PreexistingEmail4"), inRealm: realm)
         XCTAssertEqual(email4.inReplyTo, email3)
         XCTAssertEqual(email4.references.sort({ $0.id > $1.id }), [email3, email2, email1].sort({ $0.id > $1.id }))
         XCTAssertEqual(email1.descendants.sort({$0.id > $1.id}), [email4, email3, email2].sort({$0.id > $1.id}))
@@ -259,7 +258,7 @@ class EmailTest: XCTestCase {
         let expectation = expectationWithDescription("Should throw if not present")
         
         do {
-            let _ = try Email.createFromJSONData(dataForJSONFile("EmailInvalid"), realm: realm)
+            let _ = try Email.createFromData(dataForJSONFile("EmailInvalid"), inRealm: realm)
         } catch {
             expectation.fulfill()
         }
@@ -268,7 +267,7 @@ class EmailTest: XCTestCase {
     }
     
     func testInitFromJSONWhereOptionalFieldsAreNotPresent() {
-        let email = try! Email.createFromJSONData(dataForJSONFile("EmailValidButPartial"), realm: realm)
+        let email = try! Email.createFromData(dataForJSONFile("EmailValidButPartial"), inRealm: realm)
         XCTAssertEqual(email.id, "b32b4d86-d703-4075-9c5d-da46bbac808b@me.com")
         XCTAssertEqual(Array(email.references), [])
         XCTAssertEqual(email.inReplyTo, nil)
@@ -308,87 +307,3 @@ class EmailTest: XCTestCase {
         XCTAssertEqual(email.references.map { $0.id }.sort(), references.sort())
     }
 }
-
-/*
-(lldb) po referencesToCreate
-▿ 1 elements
-▿ [0] : Email {
-id = 880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com;
-from = ;
-mailingList = ;
-content = ;
-archiveURL = (null);
-date = 1970-01-01 00:00:01 +0000;
-subject = ;
-inReplyTo = (null);
-references = List<Email> (
-
-);
-descendants = List<Email> (
-
-);
-}
-
-(lldb) po email
-Email {
-id = D8CF8D02-509C-40A8-8589-2C59C0201F39@apple.com;
-from = jgroff at apple.com (Joe Groff);
-mailingList = swift-evolution;
-content =
-> On Feb 25, 2016, at 2:40 PM, Radosław Pietruszewski <radexpl@gmail.com> wrote:
->
-> Ah, that’s a neat idea! Not sure it’s an improvement though to have a magic type that changes how the compiler treats your method, rather than a rather explicit *attribute* on the method…
-
-There's no magic. If you can't construct a value of your return type, you can't return.
-
--Joe
-_______________________________________________
-swift-evolution mailing list
-swift-evolution@swift.org
-https://lists.swift.org/mailman/listinfo/swift-evolution
-;
-archiveURL = https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160222/011083.html;
-date = 2016-02-25 22:40:54 +0000;
-subject = Re: [swift-evolution] Idea: change "@noreturn func f()" to "func f() noreturn";
-inReplyTo = (null);
-references = List<Email> (
-
-);
-descendants = List<Email> (
-
-);
-}
-
-(lldb) po email.id
-"D8CF8D02-509C-40A8-8589-2C59C0201F39@apple.com"
-
-(lldb) po referencesToCreate.map { $0.id }
-▿ 1 elements
-- [0] : "880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com"
-
-(lldb) po descendantsToCreate.map { $0.id }
-▿ 4 elements
-- [0] : "BE52EDE6-A109-49F7-BE7B-876BF2950578@apple.com"
-- [1] : "9643FE18-C60C-4B0C-A23D-0B9B2CA06908@gmail.com" { ... }
-- [2] : "CADcs6kOm7nBk78fZkOBYWa85dX=j4hrWUQk4AaYyJ6Yb5T2Vqg@mail.gmail.com" { ... }
-- [3] : "7C0783FC-B039-4F0E-BF68-D992380B37CF@gmail.com" { ... }
-
-(lldb) po inReplyToToCreate
-▿ 1 elements
-▿ [0] : Email {
-id = 880C49F5-11DF-4368-B3DF-A5ECB0CAC515@gmail.com;
-from = ;
-mailingList = ;
-content = ;
-archiveURL = (null);
-date = 1970-01-01 00:00:01 +0000;
-subject = ;
-inReplyTo = (null);
-references = List<Email> (
-
-);
-descendants = List<Email> (
-
-);
-}
-*/

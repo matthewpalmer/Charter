@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Freddy
 
 struct NetworkEmail {
     let id: String
@@ -22,26 +21,42 @@ struct NetworkEmail {
     let descendants: [String]
 }
 
+enum NetworkEmailError: ErrorType {
+    case MissingRequiredField
+    case InvalidDate
+    case InvalidJSON
+}
+
 extension NetworkEmail {
-    static func createFromJSONData(jsonData: NSData) throws -> NetworkEmail {
-        let json = try JSON(data: jsonData)
-        return try NetworkEmail.createFromJSON(json)
+    init(fromDictionary: NSDictionary) throws {
+        let d = fromDictionary
+        
+        guard let
+            id = d["_id"] as? String,
+            from = d["from"] as? String,
+            mailingList = d["mailingList"] as? String,
+            content = d["content"] as? String,
+            subject = d["subject"] as? String
+            else { throw NetworkEmailError.MissingRequiredField }
+        
+        let references = ((d["references"] as? [String]) ?? []).filter { !$0.isEmpty }
+        let descendants = ((d["descendants"] as? [String]) ?? []).filter { !$0.isEmpty }
+        let inReplyTo = d["inReplyTo"] as? String
+        let archiveURL = d["archiveURL"] as? String
+        
+        guard let dateDict = d["date"] as? NSDictionary, interval = dateDict["$date"] as? Double else { throw NetworkEmailError.InvalidDate }
+        let date = NSDate(timeIntervalSince1970: interval / 1000)
+        
+        self.init(id: id, from: from, mailingList: mailingList, content: content, archiveURL: archiveURL, date: date, subject: subject, inReplyTo: inReplyTo, references: references, descendants: descendants)
     }
     
-    static func createFromJSON(json: JSON) throws -> NetworkEmail {
-        let id = try json.string("_id")
-        let from = try json.string("from")
-        let interval = try json.int("date", "$date")
-        let date = NSDate(timeIntervalSince1970: Double(interval / 1000)) // JSON response is in milliseconds
-        let subject = try json.string("subject")
-        let mailingList = try json.string("mailingList")
-        let content = try json.string("content")
-        let archiveURL = try json.string("archiveURL")
+    static func listFromJSONData(data: NSData) throws -> [NetworkEmail] {
+        let json = try NSJSONSerialization.JSONObjectWithData(data, options: [])
         
-        let descendants = (try? json.array("descendants").map(String.init).filter { !$0.isEmpty }) ?? []
-        let references = (try? json.array("references").map(String.init).filter { !$0.isEmpty }) ?? []
-        let inReplyTo = (try? json.string("inReplyTo", ifNull: true)) ?? nil
+        guard let dictionary = json as? NSDictionary,
+            embedded = dictionary["_embedded"] as? NSDictionary,
+            docs = embedded["rh:doc"] as? Array<NSDictionary> else { throw NetworkEmailError.InvalidJSON }
         
-        return NetworkEmail(id: id, from: from, mailingList: mailingList, content: content, archiveURL: archiveURL, date: date, subject: subject, inReplyTo: inReplyTo, references: references, descendants: descendants)
+        return docs.map { try? NetworkEmail(fromDictionary: $0) }.flatMap { $0 }
     }
 }

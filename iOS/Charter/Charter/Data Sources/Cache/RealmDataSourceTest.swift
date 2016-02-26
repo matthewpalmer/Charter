@@ -38,10 +38,14 @@ class RealmDataSourceTest: XCTestCase {
         
         // Load in data
         let data = dataForJSONFile("EmailThreadResponse")
-        let json = try! JSON(data: data)
-        let emailList = try! json.array("_embedded", "rh:doc")
-        let threads = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }.sort { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 }
+        let json = try! NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+        let emailDicts = ((json["_embedded"]! as! NSDictionary)["rh:doc"] as! Array<NSDictionary>)
         
+        let threads: [Email] = emailDicts.map {
+            let networkEmail = try! NetworkEmail(fromDictionary: $0)
+            return try! Email.createFromNetworkEmail(networkEmail, inRealm: self.realm)
+            }.sort { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 }
+    
         let dataSource = RealmDataSource(realm: realm)
         dataSource.getThreads(request) { (emails) -> Void in
             XCTAssertEqual([threads[8].id, threads[9].id], emails.map { $0.id })
@@ -56,9 +60,9 @@ class RealmDataSourceTest: XCTestCase {
         
         // Load data
         let data = dataForJSONFile("EmailThreadResponse")
-        let json = try! JSON(data: data)
-        let emailList = try! json.array("_embedded", "rh:doc")
-        let _ = emailList.map { try? Email.createFromJSON($0, inRealm: self.realm) }.flatMap { $0 }.sort { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 }
+        let networkEmails = try! NetworkEmail.listFromJSONData(data)
+        let emails = networkEmails.map { try! Email.createFromNetworkEmail($0, inRealm: realm) }
+            .sort { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 }
         
         let builder = EmailThreadRequestBuilder()
         builder.idIn = ["m2d1s2bhnf.fsf@eno.apple.com", "etPan.566bc229.4ec9a247.c323@IT-15556"]
@@ -76,10 +80,7 @@ class RealmDataSourceTest: XCTestCase {
     
     func networkEmailsInThread() -> [NetworkEmail] {
         let data = dataForJSONFile("EmailThreadResponse")
-        let json = try! JSON(data: data)
-        let emailList = try! json.array("_embedded", "rh:doc")
-        let fromNetwork = emailList.map { try! NetworkEmail.createFromJSON($0) }
-        return fromNetwork
+        return try! NetworkEmail.listFromJSONData(data)
     }
     
     func testCacheNetworkEmailsUpdateShouldOccur() {

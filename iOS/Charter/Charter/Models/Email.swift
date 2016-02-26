@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Freddy
 
 /// An email as a Realm object. The difference between `Email` and `NetworkEmail` is that `NetworkEmail` is much more inert--it does not exist in a Realm.
 final class Email: Object {
@@ -50,9 +49,20 @@ extension Email: Hashable {
 
 enum EmailError: ErrorType {
     case InvalidDate
+    case MissingFields
+    case InvalidData
 }
 
 extension Email {
+    /// Construct an email from JSON data from `data`.
+    class func createFromData(data: NSData, inRealm realm: Realm) throws -> Email {
+        guard let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary else { throw EmailError.InvalidData }
+        
+        let networkEmail = try NetworkEmail(fromDictionary: dictionary)
+        
+        return try Email.createFromNetworkEmail(networkEmail, inRealm: realm)
+    }
+    
     class func createFromNetworkEmail(networkEmail: NetworkEmail, inRealm realm: Realm) throws -> Email {
         let email = Email()
         email.id = networkEmail.id
@@ -124,14 +134,5 @@ extension Email {
         }
 
         return email
-    }
-    
-    class func createFromJSON(json: JSON, inRealm realm: Realm) throws -> Email {
-        return try Email.createFromNetworkEmail(try NetworkEmail.createFromJSON(json), inRealm: realm)
-    }
-    
-    class func createFromJSONData(jsonData: NSData, realm: Realm) throws -> Email {
-        let json = try JSON(data: jsonData)
-        return try Email.createFromJSON(json, inRealm: realm)
     }
 }
