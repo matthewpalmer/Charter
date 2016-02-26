@@ -70,9 +70,11 @@ class ThreadDetailDataSource: NSObject, UITableViewDataSource, TableViewCellInde
         
         var textViewDataSource = textViewDataSources[indexPath]
         
+        let content = emailFormatter.formatContent(email.content)
+        
         if textViewDataSource == nil {
-            let regions = EmailCollapsibleTextViewDataSource.QuoteRanges(email.content)
-            textViewDataSource = EmailCollapsibleTextViewDataSource(text: email.content, initiallyCollapsedRegions: regions)
+            let regions = EmailCollapsibleTextViewDataSource.QuoteRanges(content)
+            textViewDataSource = EmailCollapsibleTextViewDataSource(text: content, initiallyCollapsedRegions: regions)
             textViewDataSources[indexPath] = textViewDataSource!
         }
         

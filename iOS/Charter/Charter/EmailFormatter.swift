@@ -30,6 +30,15 @@ class EmailFormatter {
         return df
     }()
     
+    private lazy var footerBoilerPlateRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "_______________________________________________.*?$", options: NSRegularExpressionOptions.DotMatchesLineSeparators)
+    }()
+    
+    func formatContent(content: String) -> String {
+        let noFooter = footerBoilerPlateRegex.stringByReplacingMatchesInString(content, options: [], range: NSMakeRange(0, content.characters.count), withTemplate: "")
+        return noFooter
+    }
+    
     func formatSubject(subject: String) -> String {
         let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
         return noSquareBrackets.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
