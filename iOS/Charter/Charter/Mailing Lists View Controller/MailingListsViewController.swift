@@ -1,5 +1,5 @@
 //
-//  MailingListViewController.swift
+//  MailingListsViewController.swift
 //  Swift Mailing List
 //
 //  Created by Matthew Palmer on 4/02/2016.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol MailingListViewControllerDelegate: class {
-    func mailingListViewControllerDidSelectMailingList(mailingList: MailingListType)
+protocol MailingListsViewControllerDelegate: class {
+    func mailingListsViewControllerDidSelectMailingList(mailingList: MailingListType)
 }
 
-class MailingListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MailingListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    weak var delegate: MailingListViewControllerDelegate?
+    weak var delegate: MailingListsViewControllerDelegate?
     
     let mailingLists: [MailingListType]
     
@@ -23,7 +23,7 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
     
     init(mailingLists: [MailingListType]) {
         self.mailingLists = mailingLists
-        super.init(nibName: "MailingListViewController", bundle: NSBundle.mainBundle())
+        super.init(nibName: "MailingListsViewController", bundle: NSBundle.mainBundle())
     }
     
     deinit {
@@ -31,7 +31,7 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     override func viewDidLoad() {
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: MailingListViewController.reuseIdentifier)
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: MailingListsViewController.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -43,7 +43,7 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(MailingListViewController.reuseIdentifier)!
+        let cell = tableView.dequeueReusableCellWithIdentifier(MailingListsViewController.reuseIdentifier)!
         cell.textLabel?.text = self.mailingLists[indexPath.row].name
         cell.accessoryType = .DisclosureIndicator
         return cell
@@ -59,7 +59,7 @@ class MailingListViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.selectRowAtIndexPath(nil, animated: false, scrollPosition: UITableViewScrollPosition.Middle)
-        delegate?.mailingListViewControllerDidSelectMailingList(mailingLists[indexPath.row])
+        delegate?.mailingListsViewControllerDidSelectMailingList(mailingLists[indexPath.row])
     }
     
     override func viewWillDisappear(animated: Bool) {

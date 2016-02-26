@@ -16,17 +16,17 @@ class AppCoordinator: NSObject {
         self.navigationController = navigationController
         super.init()
         
-        let mailingListViewController = MailingListViewController(mailingLists: MailingList.cases.map { $0.rawValue })
-        mailingListViewController.delegate = self
-        self.navigationController.pushViewController(mailingListViewController, animated: false)
+        let mailingListsViewController = MailingListsViewController(mailingLists: MailingList.cases.map { $0.rawValue })
+        mailingListsViewController.delegate = self
+        self.navigationController.pushViewController(mailingListsViewController, animated: false)
     }
     
     // Caches
     private var threadsViewControllerForMailingList = [MailingList: ThreadsViewController]()
 }
 
-extension AppCoordinator: MailingListViewControllerDelegate {
-    func mailingListViewControllerDidSelectMailingList(mailingList: MailingListType) {
+extension AppCoordinator: MailingListsViewControllerDelegate {
+    func mailingListsViewControllerDidSelectMailingList(mailingList: MailingListType) {
         let viewController: ThreadsViewController
         let list = MailingList(rawValue: mailingList)!
         
