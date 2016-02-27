@@ -8,33 +8,43 @@
 
 import UIKit
 
-class ThreadsViewControllerDataSource: NSObject, UITableViewDataSource {
+protocol ThreadsViewControllerDataSource: class, UITableViewDataSource {
+    var mailingList: MailingListType { get }
+    var isEmpty: Bool { get }
+    func refreshDataFromNetwork(completion: (Bool) -> Void)
+    func emailAtIndexPath(indexPath: NSIndexPath) -> Email
+    func registerTableView(tableView: UITableView)
+}
+
+class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSource {
     private let service: EmailThreadService
     private let cellReuseIdentifier = "threadsCellReuseIdentifier"
     private let emptyCellReuseIdentifier = "emptyCellReuseIdentifier"
     
-    private let mailingList: MailingListType
+    let mailingList: MailingListType
     private var threads: [Email] = []
     
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
-    init(tableView: UITableView, service: EmailThreadService, mailingList: MailingListType) {
-        tableView.registerNib(MessagePreviewTableViewCell.nib(), forCellReuseIdentifier: cellReuseIdentifier)
-        tableView.registerNib(NoThreadsTableViewCell.nib(), forCellReuseIdentifier: emptyCellReuseIdentifier)
-        
+    init(service: EmailThreadService, mailingList: MailingListType) {
         self.service = service
         self.mailingList = mailingList
         
         super.init()
+    }
+    
+    var isEmpty: Bool {
+        return threads.count == 0
+    }
+    
+    func registerTableView(tableView: UITableView) {
+        tableView.registerNib(MessagePreviewTableViewCell.nib(), forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.registerNib(NoThreadsTableViewCell.nib(), forCellReuseIdentifier: emptyCellReuseIdentifier)
         
         service.getCachedThreads(threadsRequestForPage(1)) { (emails) -> Void in
             self.threads = emails
             tableView.reloadData()
         }
-    }
-    
-    var isEmpty: Bool {
-        return threads.count == 0
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -37,7 +37,8 @@ extension AppCoordinator: MailingListsViewControllerDelegate {
         if threadsViewControllerForMailingList[list] != nil {
             viewController = threadsViewControllerForMailingList[list]!
         } else {
-            viewController = ThreadsViewController(emailThreadService: service, mailingList: mailingList)
+            let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: mailingList)
+            viewController = ThreadsViewController(dataSource: dataSource)
             viewController.delegate = self
             threadsViewControllerForMailingList[list] = viewController
         }

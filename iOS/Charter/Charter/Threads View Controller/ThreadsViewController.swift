@@ -15,16 +15,12 @@ protocol ThreadsViewControllerDelegate: class {
 class ThreadsViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    private let emailThreadService: EmailThreadService
-    private let mailingList: MailingListType
-    
-    private var dataSource: ThreadsViewControllerDataSource!
+    private let dataSource: ThreadsViewControllerDataSource
     
     weak var delegate: ThreadsViewControllerDelegate?
     
-    init(emailThreadService: EmailThreadService, mailingList: MailingListType) {
-        self.emailThreadService = emailThreadService
-        self.mailingList = mailingList
+    init(dataSource: ThreadsViewControllerDataSource) {
+        self.dataSource = dataSource
         super.init(nibName: "ThreadsViewController", bundle: nil)
     }
 
@@ -39,11 +35,11 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     }()
     
     override func viewDidLoad() {
-        self.dataSource = ThreadsViewControllerDataSource(tableView: tableView, service: emailThreadService, mailingList: mailingList)
+        self.dataSource.registerTableView(tableView)
         
         tableView.delegate = self
         tableView.dataSource = dataSource
-        navigationItem.title = mailingList.name
+        navigationItem.title = dataSource.mailingList.name
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension

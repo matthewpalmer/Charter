@@ -19,7 +19,7 @@ private class Network: EmailThreadNetworkDataSource {
     func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {}
 }
 
-class ThreadsViewControllerDataSourceTest: XCTestCase {
+class ThreadsViewControllerDataSourceImplTest: XCTestCase {
     func testDataSource() {
         let shouldGetInitialCachedThreads = expectationWithDescription("should get initial cached threads")
         
@@ -47,7 +47,8 @@ class ThreadsViewControllerDataSourceTest: XCTestCase {
         }
         
         let tableView = UITableView()
-        let dataSource = ThreadsViewControllerDataSource(tableView: tableView, service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        dataSource.registerTableView(tableView)
         
         XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
@@ -78,7 +79,8 @@ class ThreadsViewControllerDataSourceTest: XCTestCase {
     func testDataSourceForEmptyState() {
         let service = EmailThreadServiceMock(cacheDataSource: Cache(), networkDataSource: Network())
         let tableView = UITableView()
-        let dataSource = ThreadsViewControllerDataSource(tableView: tableView, service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        dataSource.registerTableView(tableView)
         
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
         XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
