@@ -12,6 +12,7 @@ class MessagePreviewTableViewCell: UITableViewCell {
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var messageCountLabel: UILabel!
     
     class func nib() -> UINib {
         return UINib(nibName: "MessagePreviewTableViewCell", bundle: nil)

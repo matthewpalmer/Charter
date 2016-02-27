@@ -61,6 +61,7 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
         cell.subjectLabel.text = emailFormatter.formatSubject(email.subject)
         cell.nameLabel.text = emailFormatter.formatName(email.from)
         cell.timeLabel.text = emailFormatter.formatDate(email.date)
+        cell.messageCountLabel.text = "\(email.descendants.count)"
         return cell
     }
     

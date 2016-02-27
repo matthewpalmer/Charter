@@ -32,6 +32,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         email1.subject = "some subject"
         email1.date = NSDate(timeIntervalSince1970: 100000)
         email1.from = "Matthew Palmer"
+        email1.descendants.appendContentsOf([Email(), Email(), Email()])
         service.cachedThreads = [email1]
         
         service.getCachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
@@ -57,6 +58,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         XCTAssertEqual(cell.subjectLabel.text, email1.subject)
         XCTAssertEqual(cell.timeLabel.text, "2 Jan")
         XCTAssertEqual(cell.nameLabel.text, email1.from)
+        XCTAssertEqual(cell.messageCountLabel.text, "3")
         
         service.getUncachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
             let query = request.URLRequestQueryParameters
