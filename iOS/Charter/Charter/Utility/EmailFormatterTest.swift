@@ -55,4 +55,13 @@ class EmailFormatterTest: XCTestCase {
         
         XCTAssertEqual(formatter.formatDate(localDate), dateFormatter.stringFromDate(localDate))
     }
+    
+    func testFormatContent() {
+        let formatter = EmailFormatter()
+        let content = "This is some text_______________________________________________Past\nthe\nseparator"
+        XCTAssertEqual(formatter.formatContent(content), "This is some text")
+        
+        let content2 = "This is some text_______________________________________________Past\nthe\nseparator_______________________________________________With\nmultiple\nseparators"
+        XCTAssertEqual(formatter.formatContent(content2), "This is some text")
+    }
 }
