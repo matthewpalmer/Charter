@@ -24,7 +24,7 @@
 
 **Can I contribute?**
 
-Of course! We’d love to see contributions from everyone, especially people trying to scratch an itch they’ve found after using an app. If you come across anything you want to work on, open an issue and get started.
+Of course! We’d love to see contributions from everyone, especially people trying to scratch an itch they’ve found after using the app. If you come across anything you want to work on, open an issue and get started.
 
 If you’re keen to contribute but don’t feel like coding, there’s a bunch of stuff that needs to be done. We’re always trying to
 
