@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ReSwift
 
 protocol ThreadsViewControllerDelegate: class {
     func threadsViewController(threadsViewController: ThreadsViewController, didSelectEmail email: Email)
