@@ -41,7 +41,11 @@ Getting a Charter backend instance involves:
   })
   ```
 
-- Run the web server, `java -server -jar restheart.jar etc/restheart.yml`
+- Run the web server, `forever start -c sh run-server.sh`
+
+```sh
+java -server -jar ~/restheart-1.1.5/restheart.jar ~/restheart-1.1.5/etc/restheart.yml
+```
 
 ### Notes to myself
 
