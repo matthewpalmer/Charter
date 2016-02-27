@@ -31,6 +31,16 @@ class MockNetworkDataSource: EmailThreadNetworkDataSource {
     }
 }
 
+class MockApplication: Application {
+    var networkActivityIndicatorToggleCount = 0
+    
+    var networkActivityIndicatorVisible: Bool = false {
+        didSet {
+            networkActivityIndicatorToggleCount++
+        }
+    }
+}
+
 class EmailThreadServiceImplTest: XCTestCase {
     func testCompletionCalledWhenRetrievingFromCache() {
         let expectation = expectationWithDescription("should complete with emails")
@@ -63,12 +73,16 @@ class EmailThreadServiceImplTest: XCTestCase {
         network.emails = [email2]
         
         let service = EmailThreadServiceImpl(cacheDataSource: cache, networkDataSource: network)
+        let application = MockApplication()
+        service.application = application
         
         cache.cacheEmailAssertionBlock = { (emails: [NetworkEmail]) in
             XCTAssertEqual(emails.first!.id, network.emails.first!.id)
         }
         
         service.getUncachedThreads(EmailThreadRequestBuilder().build()) { (uncachedEmails) -> Void in
+            XCTAssertEqual(application.networkActivityIndicatorToggleCount, 2)
+            XCTAssertEqual(application.networkActivityIndicatorVisible, false)
             expectation.fulfill()
         }
         

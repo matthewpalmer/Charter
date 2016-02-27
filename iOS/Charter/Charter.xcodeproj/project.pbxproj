@@ -225,12 +225,12 @@
 			isa = PBXGroup;
 			children = (
 				0E0CF9171C8119BB00D7DCFE /* Data Sources */,
+				0E0CF9231C8119BB00D7DCFE /* EmailThreadService.swift */,
+				0E0CF9251C8119BB00D7DCFE /* EmailThreadServiceImplTest.swift */,
 				0E0CF9201C8119BB00D7DCFE /* EmailThreadRequest.swift */,
 				0E0CF9211C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift */,
 				0E0CF9221C8119BB00D7DCFE /* EmailThreadRequestBuilderTest.swift */,
-				0E0CF9231C8119BB00D7DCFE /* EmailThreadService.swift */,
 				0E0CF9241C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift */,
-				0E0CF9251C8119BB00D7DCFE /* EmailThreadServiceImplTest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

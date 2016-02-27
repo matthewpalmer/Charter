@@ -6,7 +6,7 @@
 //  Copyright © 2016 Matthew Palmer. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol EmailThreadService {
     init(cacheDataSource: EmailThreadCacheDataSource, networkDataSource: EmailThreadNetworkDataSource)
@@ -16,9 +16,17 @@ protocol EmailThreadService {
     func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void)
 }
 
+protocol Application {
+    var networkActivityIndicatorVisible: Bool { get set }
+}
+
+extension UIApplication: Application {}
+
 class EmailThreadServiceImpl: EmailThreadService {
     let cacheDataSource: EmailThreadCacheDataSource
     let networkDataSource: EmailThreadNetworkDataSource
+    
+    var application: Application = UIApplication.sharedApplication()
     
     required init(cacheDataSource: EmailThreadCacheDataSource, networkDataSource: EmailThreadNetworkDataSource) {
         self.cacheDataSource = cacheDataSource
@@ -32,8 +40,12 @@ class EmailThreadServiceImpl: EmailThreadService {
     }
     
     func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+        application.networkActivityIndicatorVisible = true
+        
         networkDataSource.getThreads(request) { networkThreads in
             dispatch_async(dispatch_get_main_queue()) {
+                self.application.networkActivityIndicatorVisible = false
+                
                 let _ = try? self.cacheDataSource.cacheEmails(networkThreads)
                 
                 self.cacheDataSource.getThreads(request) {
