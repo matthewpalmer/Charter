@@ -14,32 +14,23 @@
 
 ## Details
 
-> This is the `develop` branch. I need to write this README.
+<a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
 
-Develop builds:
+[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
 
-[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=develop)](https://travis-ci.org/matthewpalmer/Charter)
+**How do I run the project?**
 
-<!-- **How do I run the project?**
-
-1. `git clone https://github.com/matthewpalmer/Charter`
-2. `pod install`
-3. Run the app in Xcode
-
-**Is this available on the App Store?**
-
-Yep—[Charter on the App Store](https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&mt=8). You’re welcome to download from the App Store or build it yourself, whatever’s easiest.
+* This is pending some finalisation of how we do the server side component, whether we have a fake local server, what access people will need to the database and archive data, etc.
 
 **Can I contribute?**
 
-Of course! However, I will say this: I didn’t intend to open source this so early, so the project’s pretty messy,
-and it’s going to change pretty quickly over the coming weeks. It might not be the best use of your time to do it *right now*,
-but open an issue and we can track it.
+Of course! We’d love to see contributions from everyone, especially people trying to scratch an itch they’ve found after using an app. If you come across anything you want to work on, open an issue and get started.
 
-**What’s next?**
+If you’re keen to contribute but don’t feel like coding, there’s a bunch of stuff that needs to be done. We’re always trying to
 
-I’m going to be trying to do the whole [Artsy](http://artsy.net) “Open Source by Default” thing, so I’ll mainly track what’s coming up in the GitHub issues for this repo, but roughly
-
-* Add a backend so we can get faster list updates (and open source it)
-* Clean up the front end codebase so it's easier for others to contribute
-* The usual: bug fixes and new features -->
+* improve the visual design of the app
+* improve the app icon
+* improve App Store marketing—think copy writing for the description, gorgeous screenshots, and maybe even a product video preview
+* improve the speed of the server or make the database more efficient
+* make getting set up and getting started contributing way easier
+* …
