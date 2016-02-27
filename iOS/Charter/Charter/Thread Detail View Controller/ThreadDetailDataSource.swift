@@ -49,13 +49,13 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
     func registerTableView(tableView: UITableView) {
         tableView.registerNib(FullEmailMessageTableViewCell.nib(), forCellReuseIdentifier: cellIdentifier)
         
-        service.getCachedThreads(descendantsRequestForRootEmail(rootEmail)) { (emails) -> Void in
+        service.getCachedThreads(descendantsRequestForRootEmail(rootEmail)) { [unowned self] (emails) -> Void in
             self.emails = emails
             tableView.reloadData()
             
             if self.rootEmail.descendants.count > emails.count {
                 // Get uncached threads if we are missing any
-                self.service.getUncachedThreads(self.descendantsRequestForRootEmail(self.rootEmail), completion: { (descendants) -> Void in
+                self.service.getUncachedThreads(self.descendantsRequestForRootEmail(self.rootEmail), completion: { [unowned self] (descendants) -> Void in
                     self.emails = descendants
                     tableView.reloadData()
                 })

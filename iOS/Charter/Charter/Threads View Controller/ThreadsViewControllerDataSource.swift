@@ -41,7 +41,7 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
         tableView.registerNib(MessagePreviewTableViewCell.nib(), forCellReuseIdentifier: cellReuseIdentifier)
         tableView.registerNib(NoThreadsTableViewCell.nib(), forCellReuseIdentifier: emptyCellReuseIdentifier)
         
-        service.getCachedThreads(threadsRequestForPage(1)) { (emails) -> Void in
+        service.getCachedThreads(threadsRequestForPage(1)) { [unowned self] (emails) -> Void in
             self.threads = emails
             tableView.reloadData()
         }

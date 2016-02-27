@@ -42,7 +42,7 @@ class EmailThreadServiceImpl: EmailThreadService {
     func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
         application.networkActivityIndicatorVisible = true
         
-        networkDataSource.getThreads(request) { networkThreads in
+        networkDataSource.getThreads(request) { [unowned self] networkThreads in
             dispatch_async(dispatch_get_main_queue()) {
                 self.application.networkActivityIndicatorVisible = false
                 
