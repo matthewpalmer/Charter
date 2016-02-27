@@ -9,38 +9,6 @@
 import XCTest
 @testable import Charter
 
-class MockCacheDataSource: EmailThreadCacheDataSource {
-    var emails: [Email] = []
-    
-    var cacheEmailAssertionBlock: ((emails: [NetworkEmail]) -> Void)?
-    
-    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
-        completion(emails)
-    }
-
-    func cacheEmails(emails: [NetworkEmail]) throws {
-        cacheEmailAssertionBlock?(emails: emails)
-    }
-}
-
-class MockNetworkDataSource: EmailThreadNetworkDataSource {
-    var emails: [NetworkEmail] = []
-    
-    func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {
-        completion(emails)
-    }
-}
-
-class MockApplication: Application {
-    var networkActivityIndicatorToggleCount = 0
-    
-    var networkActivityIndicatorVisible: Bool = false {
-        didSet {
-            networkActivityIndicatorToggleCount++
-        }
-    }
-}
-
 class EmailThreadServiceImplTest: XCTestCase {
     func testCompletionCalledWhenRetrievingFromCache() {
         let expectation = expectationWithDescription("should complete with emails")
