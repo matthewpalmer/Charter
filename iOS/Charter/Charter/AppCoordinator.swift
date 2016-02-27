@@ -52,7 +52,8 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
         let cache = RealmDataSource()
         let network = EmailThreadNetworkDataSourceImpl()
         let service = EmailThreadServiceImpl(cacheDataSource: cache, networkDataSource: network)
-        let viewController = ThreadDetailViewController(service: service, rootEmail: email)
+        let dataSource = ThreadDetailDataSourceImpl(service: service, rootEmail: email)
+        let viewController = ThreadDetailViewController(dataSource: dataSource)
         
         navigationController.pushViewController(viewController, animated: true)
     }

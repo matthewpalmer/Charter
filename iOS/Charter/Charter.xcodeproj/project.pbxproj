@@ -54,6 +54,7 @@
 		0E0CF9701C811A0200D7DCFE /* PreexistingEmail3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9111C8119BB00D7DCFE /* PreexistingEmail3.json */; };
 		0E0CF9711C811A0200D7DCFE /* PreexistingEmail4.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9121C8119BB00D7DCFE /* PreexistingEmail4.json */; };
 		0E0CF9721C811A0200D7DCFE /* RootEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9131C8119BB00D7DCFE /* RootEmail.json */; };
+		0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */; };
 		0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */; };
 		0E8975D31C77023A00ECFEA4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
@@ -126,6 +127,7 @@
 		0E0CF9371C8119BB00D7DCFE /* EmailFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFormatter.swift; sourceTree = "<group>"; };
 		0E0CF9381C8119BB00D7DCFE /* EmailFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFormatterTest.swift; sourceTree = "<group>"; };
 		0E0CF9731C811A3A00D7DCFE /* Charter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Charter-Bridging-Header.h"; sourceTree = "<group>"; };
+		0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSource.swift; sourceTree = "<group>"; };
 		0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = Snapshot/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E8975E81C77BC5900ECFEA4 /* CharterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +274,7 @@
 				0E0CF9291C8119BB00D7DCFE /* FullEmailMessageTableViewCell.xib */,
 				0E0CF92A1C8119BB00D7DCFE /* ThreadDetailViewController.swift */,
 				0E0CF92B1C8119BB00D7DCFE /* ThreadDetailViewController.xib */,
+				0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */,
 			);
 			path = "Thread Detail View Controller";
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				0E0CF9531C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift in Sources */,
 				0E0CF9561C8119BB00D7DCFE /* ThreadDetailViewController.swift in Sources */,
 				0E0CF9501C8119BB00D7DCFE /* EmailThreadService.swift in Sources */,
+				0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */,
 				0E0CF95C1C8119BB00D7DCFE /* ThreadsViewController.swift in Sources */,
 				0E0CF9461C8119BB00D7DCFE /* NetworkEmail.swift in Sources */,
 				0E0CF94E1C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift in Sources */,
