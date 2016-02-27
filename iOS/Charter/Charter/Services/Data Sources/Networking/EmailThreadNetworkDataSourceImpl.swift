@@ -38,8 +38,7 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
     func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {
         let parameters = request.URLRequestQueryParameters
     
-        // TODO: Get a domain name for the default back end, and make the URL more easily changed
-        let URLComponents = NSURLComponents(string: "http://162.243.241.218.xip.io:8080/charter/emails")!
+        let URLComponents = NSURLComponents(string: "http://charter.ws:8080/charter/emails")!
         URLComponents.queryItems = parameters.map { NSURLQueryItem(name: $0, value: $1) }
         
         let URLRequest = NSMutableURLRequest(URL: URLComponents.URL!)

@@ -40,26 +40,13 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>swift.org</key>
+			<key>charter.ws</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<false/>
-				<key>NSTemporaryExceptionMinimumTLSVersion</key>
-				<string>1.2</string>
-				<key>NSTemporaryExceptionRequiresForwardSecrecy</key>
-				<false/>
+				<true/>
 			</dict>
-            <key>xip.io</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSTemporaryExceptionRequiresForwardSecrecy</key>
-                <false/>
-            </dict>
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
