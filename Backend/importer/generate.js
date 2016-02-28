@@ -24,7 +24,7 @@ provide scripts to download that data, so check the README for those.
 This script will write the contents of the JSON to the directory specified, 
 using the mailing list identifiers as file names.
 
-node index.js $data_directory $output_directory
+node generate.js $data_directory $output_directory
 
 */
 
@@ -77,7 +77,7 @@ const dataDirectory = process.argv[2];
 const outputDirectory = process.argv[3];
 
 if (!dataDirectory || !outputDirectory) {
-  console.error('Usage: node index.js $dataDirectory $outputDirectory. See top of file for info.');
+  console.error('Usage: node generate.js $dataDirectory $outputDirectory. See top of file for info.');
   return;
 }
 
