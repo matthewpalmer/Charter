@@ -6,6 +6,7 @@
   "dependencies": {
     "async": "^1.5.2",
     "cheerio": "^0.20.0",
+    "glob": "^7.0.0",
     "mailin": "^3.0.3",
     "mailparser": "^0.5.3",
     "moment": "^2.11.2",
