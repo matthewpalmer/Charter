@@ -7,6 +7,7 @@
     "async": "^1.5.2",
     "cheerio": "^0.20.0",
     "mailin": "^3.0.3",
+    "mailparser": "^0.5.3",
     "moment": "^2.11.2",
     "mongodb": "^2.1.7",
     "request": "^2.69.0",
@@ -21,12 +22,12 @@
   },
   "scripts": {
     "test": "NODE_ENV=test mocha --",
-    "test-all": "npm test ./test/*.test.js"
+    "test-all": "npm test ./**/*.test.js"
   },
   "repository": {
     "type": "git",
     "url": "git@162.243.241.218:charter.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }

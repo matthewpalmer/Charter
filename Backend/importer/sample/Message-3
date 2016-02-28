@@ -1,0 +1,53 @@
+From: jgroff at apple.com (Joe Groff)
+Date: Tue, 08 Dec 2015 09:54:45 -0800
+Subject: [swift-evolution] isEqual to replace == Equatable Requirement
+In-Reply-To: <CAKK64=ggLQwCsSBH9MBzoQ5KJP=Vbgs0yNV6EazDJ0h6WByO5Q@mail.gmail.com>
+References: <CAKK64=ggLQwCsSBH9MBzoQ5KJP=Vbgs0yNV6EazDJ0h6WByO5Q@mail.gmail.com>
+Message-ID: <15F13AFD-9D2F-4C73-996F-368C937532E3@apple.com>
+
+Long term we'd like to make it so that operators can be methods of their operand types, either instead of or in addition to being globals. That seems like a better way of addressing these concerns.
+
+-Joe
+
+> On Dec 8, 2015, at 2:01 AM, Richard Fox via swift-evolution <swift-evolution at swift.org> wrote:
+> 
+> Hi all,
+> 
+> I would like to propose changing the Equatable protocol to use isEqual(to:Self) -> Bool, defined inside of a type to replace the currently used operator == function, which is defined outside of the type.
+> 
+>  <https://gist.github.com/Nadohs/308603afa65cbbfba07c#reasoning>Reasoning:
+> 
+> Having the conforming function defined inside of the type is more intuitive, since in general functions required for conformance are defined within the type. It feels like an unnecesary detail for learners of Swift to have to stumble through.
+> The implementation for this would look something like this:
+> 
+>      public protocol Equatable{
+>        ....
+> 
+>        /// Shortcut for defining `==` function inside type definition.
+>        @warn_unused_result
+>        func isEqual(to:Self) -> Bool
+>      }
+> 
+>      @warn_unused_result
+>      public func == <T : Equatable>(lhs: T, rhs: T) -> Bool {
+>          return lhs.isEqual(rhs)
+>      }
+>  <https://gist.github.com/Nadohs/308603afa65cbbfba07c#impact-on-existing-code>Impact on Existing Code:
+> 
+> This implementation would break existing code, but could be fixed with a default protocol extension such as:
+> 
+>      /// Default `isEqual` function to satisfy other types only definiting
+>      /// `==` for equality.
+>      public extension Equatable{
+>          func isEqual(to:Self) -> Bool{
+>              return self == to
+>          }
+>      }  
+> Not adding the default function for isEqual makes more sense to me though, since it would remove any strict requirement for Equatable conformance and leave no warning for the loop you would create by implementing neither isEqual nor ==.
+> 
+> Regards,
+> Rich Fox
+>  _______________________________________________
+> swift-evolution mailing list
+> swift-evolution at swift.org
+> https://lists.swift.org/mailman/listinfo/swift-evolution
