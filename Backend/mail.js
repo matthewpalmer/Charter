@@ -18,7 +18,7 @@ MongoClient.connect(url, function(err, db) {
 
   setInterval(function() {
     validateArchiveURLs(collection);
-  }, 1000 * 60 * 5); // Every 5 mins
+  }, 1000 * 60 * 15); // Every 15 mins
 
   mailin.start({
     port: 25,

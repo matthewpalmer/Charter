@@ -42,7 +42,7 @@ const getTestFile = (name, callback) => {
 const mailingLists = ['swift-evolution', 'swift-users', 'swift-dev'];
 
 function run(dataDirectory, outputDirectory) {
-  mailingLists.forEach(list => {
+  async.each(mailingLists, (list, callback) => {
     const files = glob(path.join(dataDirectory, list, '*.txt'), (err, files) => {
       async.concat(files, parseFile(list), (err, listElements) => {
         fs.writeFile(path.join(outputDirectory, list + '.json'), JSON.stringify(listElements), (e) => {
@@ -51,6 +51,7 @@ function run(dataDirectory, outputDirectory) {
           } else {
             console.log(list, '— ✔︎');
           }
+          callback(e);
         });
       });
     });
