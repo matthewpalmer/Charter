@@ -56,9 +56,12 @@
 		0E0CF9721C811A0200D7DCFE /* RootEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9131C8119BB00D7DCFE /* RootEmail.json */; };
 		0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */; };
 		0E0CF9771C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */; };
+		0E4430C01C83C683007B57F0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */; };
+		0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */; };
+		0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4430C31C83C85C007B57F0 /* ScreenshotData.json */; };
 		0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */; };
-		0E8975D31C77023A00ECFEA4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
+		E57A07F844712123F8323A63 /* Pods_CharterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,8 +133,10 @@
 		0E0CF9731C811A3A00D7DCFE /* Charter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Charter-Bridging-Header.h"; sourceTree = "<group>"; };
 		0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSource.swift; sourceTree = "<group>"; };
 		0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSourceImplTest.swift; sourceTree = "<group>"; };
+		0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
+		0E4430C31C83C85C007B57F0 /* ScreenshotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ScreenshotData.json; path = CharterUITests/ScreenshotData.json; sourceTree = SOURCE_ROOT; };
 		0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
-		0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = Snapshot/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E8975E81C77BC5900ECFEA4 /* CharterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8975EC1C77BC5900ECFEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,8 +145,11 @@
 		1528DD33AA4E86705B2BDE04 /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
 		1D429F569C69C6E0148D0A7C /* Pods-Charter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Charter/Pods-Charter.debug.xcconfig"; sourceTree = "<group>"; };
 		48BD330A86F6C6BA34A7FD2F /* Pods-Swift Mailing List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.release.xcconfig"; sourceTree = "<group>"; };
+		5FDCFFDDD506A709EF5D86C7 /* Pods-CharterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CharterUITests/Pods-CharterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CharterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA2AC83B4D785149E529AB6 /* Pods_Swift_Mailing_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Mailing_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9201E5405C60241E066FA77C /* Pods_Charter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Charter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF74B2EAD3944B0FBF5DC744 /* Pods-CharterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CharterUITests/Pods-CharterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57A07F844712123F8323A63 /* Pods_CharterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +193,7 @@
 				0E0B36CD1C6E701900DF9995 /* Assets.xcassets */,
 				0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */,
 				0E0B36D61C6E701900DF9995 /* Info.plist */,
+				0E4430C31C83C85C007B57F0 /* ScreenshotData.json */,
 				0E0CF9731C811A3A00D7DCFE /* Charter-Bridging-Header.h */,
 			);
 			path = Charter;
@@ -341,7 +351,8 @@
 		0EE823061C674BE8005070AC /* CharterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0E8975D21C77023A00ECFEA4 /* SnapshotHelper.swift */,
+				0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */,
+				0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */,
 				0EE823091C674BE8005070AC /* Info.plist */,
 			);
 			path = CharterUITests;
@@ -354,6 +365,8 @@
 				48BD330A86F6C6BA34A7FD2F /* Pods-Swift Mailing List.release.xcconfig */,
 				1D429F569C69C6E0148D0A7C /* Pods-Charter.debug.xcconfig */,
 				04791EF6784CA91D405E69D8 /* Pods-Charter.release.xcconfig */,
+				CF74B2EAD3944B0FBF5DC744 /* Pods-CharterUITests.debug.xcconfig */,
+				5FDCFFDDD506A709EF5D86C7 /* Pods-CharterUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -363,6 +376,7 @@
 			children = (
 				7DA2AC83B4D785149E529AB6 /* Pods_Swift_Mailing_List.framework */,
 				9201E5405C60241E066FA77C /* Pods_Charter.framework */,
+				738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -412,9 +426,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EE8230C1C674BE8005070AC /* Build configuration list for PBXNativeTarget "CharterUITests" */;
 			buildPhases = (
+				5829B9D7C34574ADC72D5BEF /* Check Pods Manifest.lock */,
 				0EE823011C674BE8005070AC /* Sources */,
 				0EE823021C674BE8005070AC /* Frameworks */,
 				0EE823031C674BE8005070AC /* Resources */,
+				D256E77D73EC5C3A3C3FC0D4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -491,6 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */,
 				0E0B36F21C6E701900DF9995 /* Info.plist in Resources */,
 				0E0CF95D1C8119BB00D7DCFE /* ThreadsViewController.xib in Resources */,
 				0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */,
@@ -514,6 +531,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5829B9D7C34574ADC72D5BEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8E2012A48AD0AF84D8B62274 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,6 +589,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Charter/Pods-Charter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D256E77D73EC5C3A3C3FC0D4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CharterUITests/Pods-CharterUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -611,7 +658,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8975D31C77023A00ECFEA4 /* SnapshotHelper.swift in Sources */,
+				0E4430C01C83C683007B57F0 /* SnapshotHelper.swift in Sources */,
+				0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +733,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -708,6 +757,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -730,6 +780,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -746,6 +797,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -779,6 +831,7 @@
 		};
 		0EE8230D1C674BE8005070AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF74B2EAD3944B0FBF5DC744 /* Pods-CharterUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CharterUITests/Info.plist;
@@ -793,6 +846,7 @@
 		};
 		0EE8230E1C674BE8005070AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FDCFFDDD506A709EF5D86C7 /* Pods-CharterUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CharterUITests/Info.plist;

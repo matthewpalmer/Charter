@@ -10,3 +10,8 @@ target 'Charter' do
   pod 'MMMarkdown', '~> 0.5.1'
   pod 'RealmSwift', '~> 0.98.0'
 end
+
+target 'CharterUITests' do
+  pod 'SimulatorStatusMagic', :configurations => ['Debug']
+end
+

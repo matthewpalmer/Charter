@@ -8,6 +8,7 @@ PODS:
   - Realm/Headers (0.98.0)
   - RealmSwift (0.98.0):
     - Realm (= 0.98.0)
+  - SimulatorStatusMagic (1.7)
 
 DEPENDENCIES:
   - CollapsibleTextView (from `../CollapsibleTextView`)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - MailingListParser (from `../MailingListParser`)
   - MMMarkdown (~> 0.5.1)
   - RealmSwift (~> 0.98.0)
+  - SimulatorStatusMagic
 
 EXTERNAL SOURCES:
   CollapsibleTextView:
@@ -29,5 +31,6 @@ SPEC CHECKSUMS:
   MMMarkdown: 06f7989e0350d10a7de50516af6c812402ce554b
   Realm: 28efc598b8b1b378d27a222d9fc037a29ae68642
   RealmSwift: 7ef4b9ee449d711cd5a7d69a3af1cc5cd0efb619
+  SimulatorStatusMagic: 46c90a12f73abeda6d7c16876e1e0998b6ca5f4f
 
 COCOAPODS: 0.39.0

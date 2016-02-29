@@ -1,3 +1,7 @@
 iOS/**/screenshots
 iOS/**/Pods/
 Backend/**/node_modules
+iOS/Charter/Charter.app.dSYM.zip
+iOS/Charter/Charter.ipa
+iOS/Charter/fastlane/test_output/
+iOS/Charter/fastlane/report.xml

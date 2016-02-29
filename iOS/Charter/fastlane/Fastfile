@@ -1,0 +1,34 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# By default, fastlane will send which actions are used
+# No personal data is shared, more information on https://github.com/fastlane/enhancer
+# Uncomment the following line to opt out
+# opt_out_usage
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.63.1"
+
+default_platform :ios
+
+platform :ios do
+  desc "Deploy a new version to the App Store"
+  lane :appstore do
+    cocoapods
+    scan(scheme: "Charter")
+    increment_build_number
+    snapshot(scheme: "CharterUITests")
+    gym(scheme: "Charter") # Build your app - more options available
+    deliver(force: true)
+  end
+
+end

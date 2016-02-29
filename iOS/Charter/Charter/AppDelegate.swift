@@ -35,6 +35,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Realm database at \(Realm.Configuration.defaultConfiguration.path)")
         
+        if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+            // If we are doing UI testing, load some stub data into the default Realm.
+            // We can't do this from the UI test because the Realms will be different.
+            // Runtime check that we are in snapshot mode.
+            
+            let realm = try! Realm()
+
+            do {
+                let fileURL = NSBundle.mainBundle().URLForResource("ScreenshotData", withExtension: "json")!
+                let data = NSData(contentsOfURL: fileURL)!
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! NSDictionary
+                let emailDicts = ((json["_embedded"]! as! NSDictionary)["rh:doc"] as! Array<NSDictionary>)
+                
+                emailDicts.forEach {
+                    let networkEmail = try! NetworkEmail(fromDictionary: $0)
+                    try! Email.createFromNetworkEmail(networkEmail, inRealm: realm)
+                }
+            } catch let e {
+                print(e)
+                fatalError("Creating emails in realm failed")
+            }
+        }
+        
         return true
     }
 }
