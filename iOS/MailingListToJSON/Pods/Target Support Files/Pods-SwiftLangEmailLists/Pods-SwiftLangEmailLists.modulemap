@@ -1,6 +1,0 @@
-framework module Pods_SwiftLangEmailLists {
-  umbrella header "Pods-SwiftLangEmailLists-umbrella.h"
-
-  export *
-  module * { export * }
-}
