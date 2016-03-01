@@ -16,6 +16,15 @@ module.exports = (message, callback) => {
     output.from = mail.headers.from;
     output.content = mail.text;
     output.date = mail.headers.date;
+
+    if (output.date === 'Tue, 23 Feb 2016 12:09:25 -0800') {
+      // console.log('\n\n\n');
+      // console.log(output);
+      // console.log('\n\n\n');
+      // console.log(mail);
+      // console.log('\n\n\n');
+    }
+
     output.messageID = mail.messageId;
     return callback(null, output);
   });
@@ -26,6 +35,10 @@ module.exports = (message, callback) => {
   // (Note that this is an assumption that's not necessarily spec-compliant).
   const beginning = message.indexOf('\nFrom:');
   message = message.substring(beginning + 1, message.length);
+
+  if (message.indexOf('Date: Tue, 23 Feb 2016 12:09:25 -0800') !== -1) {
+    // console.log('***\n***\n\n', message, '\n***\n');
+  }
 
   mailparser.write(message);
   mailparser.end();

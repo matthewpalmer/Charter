@@ -32,7 +32,7 @@ Getting a Charter backend instance involves:
 - Running the database reformatting script, `node db-format.js`
 - Creating indexes on the database, `db.emails.createIndex({date: 1})`
 - Run the mail listener script with `forever start mail.js` (note that you have to be subscribed to the Swift mailing lists and have your DNS set up correctly for [mailin.io](http://mailin.io/doc))
-- After the first email comes in, manuall find and set its archiveURL to be correct (emails that come in after it will have their archiveURL determined by this document). This has to occur after the first email in case there is a large time gap between importing from the archives and when we start our mail listener.
+- ~~After the first email comes in, manually find and set its archiveURL to be correct (emails that come in after it will have their archiveURL determined by this document). This has to occur after the first email in case there is a large time gap between importing from the archives and when we start our mail listener.~~ archiveURLs are pretty broken, we're going to need a better approach.
 
   ```js
   db.emails.update({

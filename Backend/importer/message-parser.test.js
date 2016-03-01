@@ -68,4 +68,24 @@ describe('message-parser', () => {
       });
     })
   });
+
+  it('should parse Message-4 into an object with the correct fields', (done) => {
+    getTestFile('Message-4', (err, message) => {
+      messageParser(message, (err, actual) => {
+        const expected = {
+          from: 'jgroff at apple.com (Joe Groff)',
+          date: 'Tue, 23 Feb 2016 12:09:25 -0800',
+          subject: '[swift-users] libswift frontend ios',
+          inReplyTo: 'CA+mxoxcfbFFAGU1ocL9cbQWQwbK6dt5c5bxK7Jp8mRkifDcpvw@mail.gmail.com',
+          messageID: '55571741-5D3D-4EEE-ABA5-D2FF5E305C08@apple.com',
+          references: ['CA+mxoxf5wDk0rQK1dPjC9QO+EZrzvwO8k2qufsCufes83BtjVw@mail.gmail.com', 'B034287A-A96B-4C3C-814F-3B9D8AD9AE36@apple.com', 'CA+mxoxeXL7if7iJZ7BMxychZh+pYBhM=XxyKq3HonZi+ng0pqA@mail.gmail.com', '948BA6D0-08DC-4DD0-9BA7-3CEBBBD02735@apple.com', 'CA+mxoxcfbFFAGU1ocL9cbQWQwbK6dt5c5bxK7Jp8mRkifDcpvw@mail.gmail.com']
+        };
+
+        expected.content = `\n> On Feb 23, 2016, at 12:06 PM, Ramakrishna Mallireddy <ramakrishna.malli at gmail.com> wrote:\n> \n> While trying to build for iOS, I am stuck here...I am using the build-script to compile, iOS simulator builds are done and for arm all libs are generate except libSwiftIRGen.a, libSwiftSILOptimizer & libSwiftImmediate.a\n> \n> swift/swift/lib/Immediate/REPL.cpp:39:10: fatal error: 'histedit.h' file not found\n> \n> #include <histedit.h>\n> \n> this file is not there for iOS, how to get around this.\n> \n\nlibedit probably isn't available on iOS, but it's only used by the compiler-debugging REPL. You can refine the #if here to exclude it from iOS builds:\n\n#if defined(__APPLE__) || defined(__FreeBSD__)\n// FIXME: Support REPL on non-Apple platforms. Ubuntu 14.10's editline does not\n// include the wide character entry points needed by the REPL yet.\n#include <histedit.h>\n#endif // __APPLE__\n\nInstead of defined(__APPLE__), defined(__MACOSX__) is probably more appropriate.\n\n-Joe`;
+
+        expect(actual).to.eql(expected);
+        done();
+      });
+    })
+  });
 });
