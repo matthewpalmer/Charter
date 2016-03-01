@@ -43,6 +43,6 @@ If you’re keen to contribute but don’t feel like coding, there’s a bunch o
 * improve App Store marketing—think copy writing for the description, gorgeous screenshots, and maybe even a product video preview
 * translation and localisation (!!!)
 * improve the speed of the server or make the database more efficient
-* make suggestions, report bugs, ask questions, help people who ask questions, getting set up and getting started contributing way easier
+* make suggestions, report bugs, ask questions, help people who ask questions
 
 If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file!
