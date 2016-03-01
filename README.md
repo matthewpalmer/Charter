@@ -18,9 +18,19 @@
 
 [![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
 
-**How do I run the project?**
+**How do I run the iOS app?**
 
-* This is pending some finalisation of how we do the server side component, whether we have a fake local server, what access people will need to the database and archive data, etc.
+You can [download it from the App Store](https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8) or run it yourself:
+
+1. `git clone https://github.com/matthewpalmer/Charter`
+2. `cd iOS/Charter`
+3. `pod install`
+4. `open Charter.xcworkspace`
+5. Run the app! Everything should be good to go.
+
+**How do I run the backend?**
+
+Running the backend is a little more tedious because it involves importing a bunch of archival data from the lists.swift.org website. Check out the README in the `/Backend` directory.
 
 **Can I contribute?**
 
@@ -31,6 +41,8 @@ If you’re keen to contribute but don’t feel like coding, there’s a bunch o
 * improve the visual design of the app
 * improve the app icon
 * improve App Store marketing—think copy writing for the description, gorgeous screenshots, and maybe even a product video preview
+* translation and localisation (!!!)
 * improve the speed of the server or make the database more efficient
-* make getting set up and getting started contributing way easier
-* …
+* make suggestions, report bugs, ask questions, help people who ask questions, getting set up and getting started contributing way easier
+
+If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file!
