@@ -37,14 +37,18 @@ extension NetworkEmail {
             mailingList = d["mailingList"] as? String,
             content = d["content"] as? String,
             subject = d["subject"] as? String
-            else { throw NetworkEmailError.MissingRequiredField }
+            else {
+                throw NetworkEmailError.MissingRequiredField
+        }
         
         let references = ((d["references"] as? [String]) ?? []).filter { !$0.isEmpty }
         let descendants = ((d["descendants"] as? [String]) ?? []).filter { !$0.isEmpty }
         let inReplyTo = d["inReplyTo"] as? String
         let archiveURL = d["archiveURL"] as? String
         
-        guard let dateDict = d["date"] as? NSDictionary, interval = dateDict["$date"] as? Double else { throw NetworkEmailError.InvalidDate }
+        guard let dateDict = d["date"] as? NSDictionary, interval = dateDict["$date"] as? Double else {
+            throw NetworkEmailError.InvalidDate
+        }
         let date = NSDate(timeIntervalSince1970: interval / 1000)
         
         self.init(id: id, from: from, mailingList: mailingList, content: content, archiveURL: archiveURL, date: date, subject: subject, inReplyTo: inReplyTo, references: references, descendants: descendants)

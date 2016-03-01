@@ -16,9 +16,9 @@ MongoClient.connect(url, function(err, db) {
   logger("Mail: connected to database.");
   var collection = db.collection('emails');
 
-  setInterval(function() {
-    validateArchiveURLs(collection);
-  }, 1000 * 60 * 15); // Every 15 mins
+  // setInterval(function() {
+  //   validateArchiveURLs(collection);
+  // }, 1000 * 60 * 15); // Every 15 mins
 
   mailin.start({
     port: 25,

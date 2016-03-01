@@ -62,15 +62,17 @@ const parseFile = (list) => (file, callback) => {
   fs.readFile(file, 'utf8', (err, message) => {
     listParser(message, (err, formattedMessages) => {
       formattedMessages = formattedMessages
-        .map(x => addMetadataToFormattedMessage(file, list, x));
+        .map(x => reformatMessage(file, list, x));
 
       callback(null, formattedMessages);
     });
   });
 };
 
-const addMetadataToFormattedMessage = (file, mailingList, formattedMessage) => {
+const reformatMessage = (file, mailingList, formattedMessage) => {
   formattedMessage.mailingList = mailingList;
+  formattedMessage._id = formattedMessage.messageID;
+  delete formattedMessage.messageID;
   return formattedMessage;
 }
 

@@ -52,8 +52,12 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
         
         let task = session.dataTaskWithRequest(URLRequest) { (data, response, error) -> Void in
             guard let data = data else { return completion([]) }
-            guard let emails: [NetworkEmail] = try? NetworkEmail.listFromJSONData(data) else { return completion([]) }
-            completion(emails)
+            do {
+                guard let emails: [NetworkEmail] = try NetworkEmail.listFromJSONData(data) else { return completion([]) }
+                completion(emails)
+            } catch let e {
+                print(e)
+            }
         }
         
         task.resume()
