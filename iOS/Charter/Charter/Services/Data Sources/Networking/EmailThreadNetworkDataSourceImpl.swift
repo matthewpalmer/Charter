@@ -41,7 +41,9 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
         let URLComponents = NSURLComponents(string: "http://charter.ws:8080/charter/emails")!
         URLComponents.queryItems = parameters.map { NSURLQueryItem(name: $0, value: $1) }
         
-        let URLRequest = NSMutableURLRequest(URL: URLComponents.URL!)
+        // We need to avoid double percent encoding the % sign.
+        guard let fixedString = URLComponents.URL?.absoluteString.stringByReplacingOccurrencesOfString("%25", withString: "%"), fixedURL = NSURL(string: fixedString) else { return completion([]) }
+        let URLRequest = NSMutableURLRequest(URL: fixedURL)
 
         // TODO: Make HTTP basic auth reusable
         if let base64 = "\(username):\(password)"

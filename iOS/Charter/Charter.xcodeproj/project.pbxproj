@@ -56,6 +56,7 @@
 		0E0CF9721C811A0200D7DCFE /* RootEmail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9131C8119BB00D7DCFE /* RootEmail.json */; };
 		0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */; };
 		0E0CF9771C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */; };
+		0E0EEAF21C88F7BA00AA1351 /* SubThreadResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */; };
 		0E4430C01C83C683007B57F0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */; };
 		0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */; };
 		0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4430C31C83C85C007B57F0 /* ScreenshotData.json */; };
@@ -133,6 +134,7 @@
 		0E0CF9731C811A3A00D7DCFE /* Charter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Charter-Bridging-Header.h"; sourceTree = "<group>"; };
 		0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSource.swift; sourceTree = "<group>"; };
 		0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSourceImplTest.swift; sourceTree = "<group>"; };
+		0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubThreadResponse.json; sourceTree = "<group>"; };
 		0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		0E4430C31C83C85C007B57F0 /* ScreenshotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ScreenshotData.json; path = CharterUITests/ScreenshotData.json; sourceTree = SOURCE_ROOT; };
@@ -274,6 +276,7 @@
 				0E0CF91D1C8119BB00D7DCFE /* EmailThreadNetworkDataSourceImpl.swift */,
 				0E0CF91E1C8119BB00D7DCFE /* EmailThreadNetworkDataSourceImplTest.swift */,
 				0E0CF91F1C8119BB00D7DCFE /* EmailThreadResponse.json */,
+				0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				0E0CF96F1C811A0200D7DCFE /* PreexistingEmail2.json in Resources */,
 				0E0CF9711C811A0200D7DCFE /* PreexistingEmail4.json in Resources */,
 				0E0CF9671C8119DC00D7DCFE /* EmailThreadResponse.json in Resources */,
+				0E0EEAF21C88F7BA00AA1351 /* SubThreadResponse.json in Resources */,
 				0E0CF96C1C811A0200D7DCFE /* EmailValidButPartial.json in Resources */,
 				0E0CF96E1C811A0200D7DCFE /* PreexistingEmail1.json in Resources */,
 			);

@@ -63,7 +63,13 @@ private struct EmailThreadRequestImpl: EmailThreadRequest {
         
         if let idIn = idIn {
             // {_id:{ $in:['id_one','id_two',...]}}
-            let inQuery = "{$in:[" + idIn.map { "'\($0)'" }.joinWithSeparator(",") + "]}"
+
+            let inQuery = "{$in:[" + idIn.map {
+                // NSURLComponents won't escape '+' for us
+                let escaped = $0.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet(charactersInString: "+").invertedSet) ?? ""
+                return "'\(escaped)'"
+            }.joinWithSeparator(",") + "]}"
+            
             filter["_id"] = Either.Left(inQuery)
         }
         
