@@ -1,0 +1,4 @@
+— Added realtime message sync so there’s no delay between being sent to the mailing list and the post arriving in Charter
+— Added a little label to tell you how many messages are in a conversation
+— Improved conversation threading reliability
+— Various bug fixes
