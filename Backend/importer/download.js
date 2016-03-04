@@ -7,7 +7,7 @@ const listPeriod = require('../list-period');
 
 function getQueryDates() {
   const startDate = new Date('November 30, 2015 12:30:00');
-  const endDate = new Date('February 28, 2016 12:30:00');
+  const endDate = new Date();
 
   const m = moment(startDate);
   const endMoment = moment(endDate);
