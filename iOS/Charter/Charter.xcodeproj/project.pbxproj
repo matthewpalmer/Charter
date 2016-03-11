@@ -61,6 +61,8 @@
 		0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */; };
 		0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4430C31C83C85C007B57F0 /* ScreenshotData.json */; };
 		0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */; };
+		0EA0AEA41C927ED5004908E0 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA31C927ED5004908E0 /* ColorGenerator.swift */; };
+		0EA0AEA61C927EE6004908E0 /* ColorGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA51C927EE6004908E0 /* ColorGeneratorTest.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 		E57A07F844712123F8323A63 /* Pods_CharterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -142,6 +144,8 @@
 		0E8975E81C77BC5900ECFEA4 /* CharterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8975EC1C77BC5900ECFEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA0AEA31C927ED5004908E0 /* ColorGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
+		0EA0AEA51C927EE6004908E0 /* ColorGeneratorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorGeneratorTest.swift; sourceTree = "<group>"; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1528DD33AA4E86705B2BDE04 /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				0E0CF9361C8119BB00D7DCFE /* Either.swift */,
+				0EA0AEA31C927ED5004908E0 /* ColorGenerator.swift */,
+				0EA0AEA51C927EE6004908E0 /* ColorGeneratorTest.swift */,
 				0E0CF9371C8119BB00D7DCFE /* EmailFormatter.swift */,
 				0E0CF9381C8119BB00D7DCFE /* EmailFormatterTest.swift */,
 			);
@@ -618,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E0CF9651C8119D300D7DCFE /* RealmDataSourceTest.swift in Sources */,
+				0EA0AEA61C927EE6004908E0 /* ColorGeneratorTest.swift in Sources */,
 				0E0CF9661C8119D800D7DCFE /* EmailThreadNetworkDataSourceImplTest.swift in Sources */,
 				0E0CF96A1C8119F900D7DCFE /* EmailTest.swift in Sources */,
 				0E0CF9631C8119C400D7DCFE /* EmailThreadRequestBuilderTest.swift in Sources */,
@@ -635,6 +642,7 @@
 			files = (
 				0E0CF9531C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift in Sources */,
 				0E0CF9561C8119BB00D7DCFE /* ThreadDetailViewController.swift in Sources */,
+				0EA0AEA41C927ED5004908E0 /* ColorGenerator.swift in Sources */,
 				0E0CF9501C8119BB00D7DCFE /* EmailThreadService.swift in Sources */,
 				0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */,
 				0E0CF95C1C8119BB00D7DCFE /* ThreadsViewController.swift in Sources */,
