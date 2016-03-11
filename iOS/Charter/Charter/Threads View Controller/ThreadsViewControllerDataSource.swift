@@ -18,6 +18,7 @@ protocol ThreadsViewControllerDataSource: class, UITableViewDataSource {
 
 class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSource {
     private let service: EmailThreadService
+    private let labelService: LabelService
     private let cellReuseIdentifier = "threadsCellReuseIdentifier"
     private let emptyCellReuseIdentifier = "emptyCellReuseIdentifier"
     
@@ -26,9 +27,10 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
     
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
     
-    init(service: EmailThreadService, mailingList: MailingListType) {
+    init(service: EmailThreadService, mailingList: MailingListType, labelService: LabelService) {
         self.service = service
         self.mailingList = mailingList
+        self.labelService = labelService
         
         super.init()
     }
@@ -58,10 +60,15 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as! MessagePreviewTableViewCell
         let email = threads[indexPath.row]
-        cell.subjectLabel.text = emailFormatter.formatSubject(email.subject)
-        cell.nameLabel.text = emailFormatter.formatName(email.from)
-        cell.timeLabel.text = emailFormatter.formatDate(email.date)
-        cell.messageCountLabel.text = "\(email.descendants.count)"
+        let formattedSubject = emailFormatter.formatSubject(email.subject)
+        let labels = emailFormatter.labelsInSubject(formattedSubject)
+        
+        cell.setName(emailFormatter.formatName(email.from))
+        cell.setTime(emailFormatter.formatDate(email.date))
+        cell.setMessageCount("\(email.descendants.count)")
+        cell.setLabels(labels.map { (labelService.formattedStringForLabel($0), labelService.colorForLabel($0)) })
+        cell.setSubject(emailFormatter.subjectByRemovingLabels(formattedSubject))
+        
         return cell
     }
     

@@ -29,7 +29,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         let service = EmailThreadServiceMock(cacheDataSource: Cache(), networkDataSource: Network())
         
         let email1 = Email()
-        email1.subject = "some subject"
+        email1.subject = "[swift-users] [Proposal] [Accepted] some subject"
         email1.date = NSDate(timeIntervalSince1970: 100000)
         email1.from = "Matthew Palmer"
         email1.descendants.appendContentsOf([Email(), Email(), Email()])
@@ -47,18 +47,26 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
             shouldGetInitialCachedThreads.fulfill()
         }
         
+        let labelService = LabelServiceImpl()
+        
         let tableView = UITableView()
-        let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue, labelService: labelService)
         dataSource.registerTableView(tableView)
         
         XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
         
         let cell = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! MessagePreviewTableViewCell
-        XCTAssertEqual(cell.subjectLabel.text, email1.subject)
-        XCTAssertEqual(cell.timeLabel.text, "2 Jan")
-        XCTAssertEqual(cell.nameLabel.text, email1.from)
+        XCTAssertEqual(cell.subjectLabel.text, "some subject")
+         // Lower case because we do small caps
+        XCTAssertEqual(cell.timeLabel.text, "2 jan")
+        XCTAssertEqual(cell.nameLabel.text, email1.from.lowercaseString)
         XCTAssertEqual(cell.messageCountLabel.text, "3")
+        
+        print(email1.subject)
+        let labels = cell.labelStackView.arrangedSubviews
+        XCTAssertEqual((labels[0] as! UILabel).text, "proposal")
+        XCTAssertEqual((labels[1] as! UILabel).text, "accepted")
         
         service.getUncachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
             let query = request.URLRequestQueryParameters
@@ -80,8 +88,9 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
     
     func testDataSourceForEmptyState() {
         let service = EmailThreadServiceMock(cacheDataSource: Cache(), networkDataSource: Network())
+        let labelService = LabelServiceImpl()
         let tableView = UITableView()
-        let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue)
+        let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue, labelService: labelService)
         dataSource.registerTableView(tableView)
         
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)

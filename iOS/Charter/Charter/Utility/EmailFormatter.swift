@@ -9,7 +9,7 @@
 import UIKit
 
 class EmailFormatter {
-    private lazy var squareBracketRegex: NSRegularExpression = {
+    private lazy var squareBracketAtStartRegex: NSRegularExpression = {
         return try! NSRegularExpression(pattern: "^\\[.*?\\]", options: .CaseInsensitive)
     }()
     
@@ -40,8 +40,36 @@ class EmailFormatter {
     }
     
     func formatSubject(subject: String) -> String {
-        let noSquareBrackets = squareBracketRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
+        let noSquareBrackets = squareBracketAtStartRegex.stringByReplacingMatchesInString(subject, options: [], range: NSMakeRange(0, subject.characters.count), withTemplate: "")
         return noSquareBrackets.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+    
+    private lazy var squareBracketForLabelRegex: NSRegularExpression = {
+        // ^(\[[^\]]*\])+
+        return try! NSRegularExpression(pattern: "^(\\[[^\\]]*\\]\\s*)+", options: [])
+    }()
+    
+    func labelsInSubject(string: String) -> [String] {
+        let allLabelsStringMatch = squareBracketForLabelRegex.matchesInString(string, options: [], range: NSMakeRange(0, string.characters.count))
+        guard let first = allLabelsStringMatch.first else {
+            return []
+        }
+        
+        return (string as NSString).substringWithRange(first.range)
+            .componentsSeparatedByString("]")
+            .map {
+                $0.stringByReplacingOccurrencesOfString("[", withString: "")
+                    .stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
+            }.filter { $0 != "" && $0 != "]" }
+    }
+    
+    func subjectByRemovingLabels(string: String) -> String {
+        let allLabelsStringMatch = squareBracketForLabelRegex.matchesInString(string, options: [], range: NSMakeRange(0, string.characters.count))
+        guard let first = allLabelsStringMatch.first else {
+            return string
+        }
+        
+        return (string as NSString).stringByReplacingCharactersInRange(first.range, withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     func formatName(name: String) -> String {
