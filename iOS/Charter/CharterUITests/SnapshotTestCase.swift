@@ -35,7 +35,7 @@ class SnapshotTestCase: XCTestCase {
         snapshot("04MailingLists")
         tablesQuery.staticTexts["Swift Evolution"].tap()
         snapshot("01Threads")
-        tablesQuery.staticTexts["Proposal: Optional Binding Shorthand Syntax"].tap()
+        tablesQuery.staticTexts["Optional Binding Shorthand Syntax"].tap()
         snapshot("02Content")
         tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0).staticTexts["•••"].tap()
         snapshot("03Quote")
