@@ -30,6 +30,7 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
         }
     }
     
+    private let codeBlockParser: CodeBlockParser
     private let rootEmail: Email
     private var textViewDataSources: [NSIndexPath: EmailCollapsibleTextViewDataSource] = [NSIndexPath: EmailCollapsibleTextViewDataSource]()
     private lazy var emailFormatter: EmailFormatter = EmailFormatter()
@@ -40,9 +41,10 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
         }
     }
     
-    init(service: EmailThreadService, rootEmail: Email) {
+    init(service: EmailThreadService, rootEmail: Email, codeBlockParser: CodeBlockParser) {
         self.service = service
         self.rootEmail = rootEmail
+        self.codeBlockParser = codeBlockParser
         super.init()
     }
     
@@ -83,7 +85,7 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
         
         if textViewDataSource == nil {
             let regions = EmailCollapsibleTextViewDataSource.QuoteRanges(content)
-            textViewDataSource = EmailCollapsibleTextViewDataSource(text: content, initiallyCollapsedRegions: regions)
+            textViewDataSource = EmailCollapsibleTextViewDataSource(text: content, initiallyCollapsedRegions: regions, codeBlockParser: codeBlockParser)
             textViewDataSources[indexPath] = textViewDataSource!
         }
         
