@@ -64,6 +64,8 @@
 		0EA0AEA81C935962004908E0 /* LabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA71C935962004908E0 /* LabelService.swift */; };
 		0EA0AEAA1C936FB9004908E0 /* UIFont_SmallCaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA91C936FB9004908E0 /* UIFont_SmallCaps.swift */; };
 		0EA0AEAC1C937FA0004908E0 /* NRLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEAB1C937FA0004908E0 /* NRLabel.swift */; };
+		0EA0AECC1C93C09C004908E0 /* CodeBlockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AECB1C93C09C004908E0 /* CodeBlockParser.swift */; };
+		0EA0AECE1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AECD1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 		E57A07F844712123F8323A63 /* Pods_CharterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -148,6 +150,8 @@
 		0EA0AEA71C935962004908E0 /* LabelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelService.swift; sourceTree = "<group>"; };
 		0EA0AEA91C936FB9004908E0 /* UIFont_SmallCaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont_SmallCaps.swift; sourceTree = "<group>"; };
 		0EA0AEAB1C937FA0004908E0 /* NRLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLabel.swift; sourceTree = "<group>"; };
+		0EA0AECB1C93C09C004908E0 /* CodeBlockParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlockParser.swift; sourceTree = "<group>"; };
+		0EA0AECD1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString_AttributesAndRanges.swift; sourceTree = "<group>"; };
 		0EE823051C674BE8005070AC /* CharterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE823091C674BE8005070AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1528DD33AA4E86705B2BDE04 /* Pods-Swift Mailing List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.debug.xcconfig"; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 				0E0CF92B1C8119BB00D7DCFE /* ThreadDetailViewController.xib */,
 				0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */,
 				0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */,
+				0EA0AECB1C93C09C004908E0 /* CodeBlockParser.swift */,
 			);
 			path = "Thread Detail View Controller";
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			children = (
 				0E0CF9361C8119BB00D7DCFE /* Either.swift */,
 				0EA0AEA91C936FB9004908E0 /* UIFont_SmallCaps.swift */,
+				0EA0AECD1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift */,
 				0EA0AEAB1C937FA0004908E0 /* NRLabel.swift */,
 				0E0CF9371C8119BB00D7DCFE /* EmailFormatter.swift */,
 				0E0CF9381C8119BB00D7DCFE /* EmailFormatterTest.swift */,
@@ -649,6 +655,7 @@
 				0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */,
 				0E0CF95C1C8119BB00D7DCFE /* ThreadsViewController.swift in Sources */,
 				0E0CF9461C8119BB00D7DCFE /* NetworkEmail.swift in Sources */,
+				0EA0AECC1C93C09C004908E0 /* CodeBlockParser.swift in Sources */,
 				0E0CF94E1C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift in Sources */,
 				0E0CF9511C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift in Sources */,
 				0EA0AEAA1C936FB9004908E0 /* UIFont_SmallCaps.swift in Sources */,
@@ -659,6 +666,7 @@
 				0E0CF95A1C8119BB00D7DCFE /* NoThreadsTableViewCell.swift in Sources */,
 				0E0CF9611C8119BB00D7DCFE /* EmailFormatter.swift in Sources */,
 				0E0CF9451C8119BB00D7DCFE /* MailingList.swift in Sources */,
+				0EA0AECE1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift in Sources */,
 				0E0CF9581C8119BB00D7DCFE /* MessagePreviewTableViewCell.swift in Sources */,
 				0E0CF93B1C8119BB00D7DCFE /* Email.swift in Sources */,
 				0E0CF94A1C8119BB00D7DCFE /* EmailThreadNetworkDataSourceImpl.swift in Sources */,

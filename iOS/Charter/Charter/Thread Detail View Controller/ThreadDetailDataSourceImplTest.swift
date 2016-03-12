@@ -80,7 +80,7 @@ class ThreadDetailDataSourceImplTest: XCTestCase {
         service.cachedThreads = [emailThread[0]]
         service.uncachedThreads = [emailThread[0], emailThread[1], emailThread[2], emailThread[3]]
         
-        let dataSource = ThreadDetailDataSourceImpl(service: service, rootEmail: emailThread[0])
+        let dataSource = ThreadDetailDataSourceImpl(service: service, rootEmail: emailThread[0], codeBlockParser: SwiftCodeBlockParser())
         let tableView = UITableView()
         dataSource.registerTableView(tableView)
         

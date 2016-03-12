@@ -154,7 +154,7 @@ private func attributedStringForTextView(text: String) -> NSAttributedString? {
 class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
     var preloadedData = [NSAttributedString]()
     
-    override init(text: String, initiallyCollapsedRegions: [NSRange]) {
+    init(text: String, initiallyCollapsedRegions: [NSRange], codeBlockParser: CodeBlockParser) {
         super.init(text: text, initiallyCollapsedRegions: initiallyCollapsedRegions)
         
         let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
@@ -162,27 +162,39 @@ class EmailCollapsibleTextViewDataSource: CollapsibleTextViewDataSource {
         descriptor = descriptor.fontDescriptorWithSymbolicTraits(UIFontDescriptorSymbolicTraits.TraitItalic)
         
         let italicBodyFont = UIFont(descriptor: descriptor, size: bodyFont.pointSize)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.3
         
         for region in regions {
             let text = textForRegion(region).stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
             
-            let font: UIFont
-            let color: UIColor
-            
             if region.state == .Collapsed || region.state == .Expanded {
-                font = italicBodyFont
-                color = UIColor.darkGrayColor()
+                let attributedString = NSAttributedString(string: text, attributes: [
+                    NSFontAttributeName: italicBodyFont,
+                    NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+                    NSParagraphStyleAttributeName: paragraphStyle
+                ])
+                
+                preloadedData.append(attributedString)
             } else {
-                font = bodyFont
-                color = UIColor.blackColor()
+                let codeBlockAttributes = [
+                    NSForegroundColorAttributeName: UIColor.blackColor(),
+                    NSBackgroundColorAttributeName: UIColor(hue:0, saturation:0, brightness:0.96, alpha:1),
+                    NSFontAttributeName: UIFont(name: "Menlo-Regular", size: bodyFont.pointSize)!
+                ]
+                
+                let blockRanges = codeBlockParser.codeBlockRangesInText(text)
+                let attributedString = NSMutableAttributedString(string: text)
+                attributedString.addAttribute(NSFontAttributeName, value: bodyFont, range: NSMakeRange(0, text.characters.count))
+                
+                attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, text.characters.count))
+                attributedString.applyEachAttribute(codeBlockAttributes, toEachRange: blockRanges)
+                
+                let inlineCodeRanges = codeBlockParser.inlineCodeRangesInText(text)
+                attributedString.applyEachAttribute(codeBlockAttributes, toEachRange: inlineCodeRanges)
+                
+                preloadedData.append(attributedString)
             }
-            
-            let attributedString = NSAttributedString(string: text, attributes: [
-                NSFontAttributeName: font,
-                NSForegroundColorAttributeName: color
-            ])
-            
-            preloadedData.append(attributedString)
         }
     }
     
