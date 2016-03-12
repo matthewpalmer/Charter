@@ -73,8 +73,8 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
         
         cell.indentationLevel = indentationAndEmail[indexPath.row].0
         cell.indentationWidth = 10
-        cell.dateLabel.text = emailFormatter.formatDate(email.date)
-        cell.nameLabel.text = emailFormatter.formatName(email.from)
+        cell.setDate(emailFormatter.formatDate(email.date))
+        cell.setName(emailFormatter.formatName(email.from))
         cell.delegate = cellDelegate
         
         var textViewDataSource = textViewDataSources[indexPath]
