@@ -63,4 +63,14 @@ class FullEmailMessageTableViewCell: UITableViewCell, CollapsibleTextViewDataSou
     func collapsibleTextViewDataSourceNeedsPopoverViewControllerPresented(view: UIView, sender: UIView) {
         delegate?.presentPopover(view, sender: sender)
     }
+    
+    func setName(name: String) {
+        nameLabel.font = UIFont.smallCapsFontOfSize(14)
+        nameLabel.text = name.lowercaseString
+    }
+    
+    func setDate(date: String) {
+        dateLabel.font = UIFont.smallCapsFontOfSize(14)
+        dateLabel.text = date.lowercaseString
+    }
 }

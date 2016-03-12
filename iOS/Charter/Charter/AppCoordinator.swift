@@ -33,11 +33,11 @@ extension AppCoordinator: MailingListsViewControllerDelegate {
         let cache = RealmDataSource()
         let network = EmailThreadNetworkDataSourceImpl()
         let service = EmailThreadServiceImpl(cacheDataSource: cache, networkDataSource: network)
-        
+                
         if threadsViewControllerForMailingList[list] != nil {
             viewController = threadsViewControllerForMailingList[list]!
         } else {
-            let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: mailingList)
+            let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: mailingList, labelService: LabelServiceImpl())
             viewController = ThreadsViewController(dataSource: dataSource)
             viewController.delegate = self
             threadsViewControllerForMailingList[list] = viewController

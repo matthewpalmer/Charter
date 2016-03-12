@@ -64,4 +64,22 @@ class EmailFormatterTest: XCTestCase {
         let content2 = "This is some text_______________________________________________Past\nthe\nseparator_______________________________________________With\nmultiple\nseparators"
         XCTAssertEqual(formatter.formatContent(content2), "This is some text")
     }
+    
+    func testGetLabelsInSubject() {
+        let subject = "[swift-evolution][Proposal][Accepted] SE-0043 Writing square brackets [like] this"
+        let formatter = EmailFormatter()
+        let expected = ["swift-evolution", "Proposal", "Accepted", "SE-0043"]
+        let actual = formatter.labelsInSubject(subject)
+        XCTAssertEqual(expected, actual)
+        
+        XCTAssertEqual(formatter.labelsInSubject("[swift-evolution] [Request] Variadic parameters as arguments in closures"), ["swift-evolution", "Request"])
+    }
+    
+    func testRemoveLabels() {
+        let subject = "[swift-evolution][Proposal][Accepted] JRA-1004 Writing square brackets [like] this"
+        let formatter = EmailFormatter()
+        let expected = "Writing square brackets [like] this"
+        let actual = formatter.subjectByRemovingLabels(subject)
+        XCTAssertEqual(expected, actual)
+    }
 }
