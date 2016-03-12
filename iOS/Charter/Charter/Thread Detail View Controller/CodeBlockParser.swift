@@ -65,14 +65,25 @@ class SwiftCodeBlockParser: CodeBlockParser {
                             j++
                         }
                         
-                        ranges.append(NSMakeRange(start, j - start + 1)) // + 1 to include the newline
+                        let length: Int
+                        if j - start + 1 > text.characters.count - start {
+                            length = text.characters.count - start
+                        } else {
+                            length = j - start + 1  // + 1 to include the newline if possible
+                        }
+                        
+                        ranges.append(NSMakeRange(start, length))
                         currentPosition = j + 1
                         break
                     }
                 }
             }
             
-            nextMatch = regex.firstMatchInString(text, options: [], range: NSMakeRange(currentPosition, text.characters.count - currentPosition))
+            if currentPosition > text.characters.count || unresolvedBraceCount > 0 {
+                nextMatch = nil
+            } else {
+                nextMatch = regex.firstMatchInString(text, options: [], range: NSMakeRange(currentPosition, text.characters.count - currentPosition))
+            }
         }
         
         return ranges

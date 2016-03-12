@@ -86,7 +86,6 @@ class EmailFormatter {
     func subjectByRemovingLabels(string: String) -> String {
         let noSquareBrackets = subjectByRemovingSquareBracketLabels(string)
         return removeLeadingIssueKey(noSquareBrackets)
-        return noSquareBrackets
     }
     
     private func subjectByRemovingSquareBracketLabels(string: String) -> String {
