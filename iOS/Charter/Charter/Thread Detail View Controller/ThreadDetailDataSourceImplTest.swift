@@ -87,23 +87,23 @@ class ThreadDetailDataSourceImplTest: XCTestCase {
         let formatter = EmailFormatter()
         
         let cell1 = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! FullEmailMessageTableViewCell
-        XCTAssertEqual(cell1.nameLabel.text, emailThread[0].from)
-        XCTAssertEqual(cell1.dateLabel.text, formatter.formatDate(emailThread[0].date))
+        XCTAssertEqual(cell1.nameLabel.text, emailThread[0].from.lowercaseString)
+        XCTAssertEqual(cell1.dateLabel.text, formatter.formatDate(emailThread[0].date).lowercaseString)
         XCTAssertEqual(cell1.indentationLevel, 0)
         
         let cell2 = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 1, inSection: 0)) as! FullEmailMessageTableViewCell
-        XCTAssertEqual(cell2.nameLabel.text, emailThread[1].from)
-        XCTAssertEqual(cell2.dateLabel.text, formatter.formatDate(emailThread[1].date))
+        XCTAssertEqual(cell2.nameLabel.text, emailThread[1].from.lowercaseString)
+        XCTAssertEqual(cell2.dateLabel.text, formatter.formatDate(emailThread[1].date).lowercaseString)
         XCTAssertEqual(cell2.indentationLevel, 1)
         
         let cell3 = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 2, inSection: 0)) as! FullEmailMessageTableViewCell
-        XCTAssertEqual(cell3.nameLabel.text, emailThread[2].from)
-        XCTAssertEqual(cell3.dateLabel.text, formatter.formatDate(emailThread[2].date))
+        XCTAssertEqual(cell3.nameLabel.text, emailThread[2].from.lowercaseString)
+        XCTAssertEqual(cell3.dateLabel.text, formatter.formatDate(emailThread[2].date).lowercaseString)
         XCTAssertEqual(cell3.indentationLevel, 2)
         
         let cell4 = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 3, inSection: 0)) as! FullEmailMessageTableViewCell
-        XCTAssertEqual(cell4.nameLabel.text, emailThread[3].from)
-        XCTAssertEqual(cell4.dateLabel.text, formatter.formatDate(emailThread[3].date))
+        XCTAssertEqual(cell4.nameLabel.text, emailThread[3].from.lowercaseString)
+        XCTAssertEqual(cell4.dateLabel.text, formatter.formatDate(emailThread[3].date).lowercaseString)
         XCTAssertEqual(cell4.indentationLevel, 1)
     }
 }

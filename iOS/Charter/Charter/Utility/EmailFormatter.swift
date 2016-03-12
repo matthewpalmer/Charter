@@ -49,7 +49,20 @@ class EmailFormatter {
         return try! NSRegularExpression(pattern: "^(\\[[^\\]]*\\]\\s*)+", options: [])
     }()
     
+    private lazy var issueKeyRegex: NSRegularExpression = {
+        return try! NSRegularExpression(pattern: "^([a-z]+-[0-9]+):?", options: .CaseInsensitive)
+    }()
+    
     func labelsInSubject(string: String) -> [String] {
+        let squareBrackets = squareBracketedLabels(string)
+        if let issueKeys = issueKeyLabel(string) {
+            return squareBrackets + [issueKeys]
+        }
+        
+        return squareBrackets
+    }
+    
+    private func squareBracketedLabels(string: String) -> [String] {
         let allLabelsStringMatch = squareBracketForLabelRegex.matchesInString(string, options: [], range: NSMakeRange(0, string.characters.count))
         guard let first = allLabelsStringMatch.first else {
             return []
@@ -63,13 +76,31 @@ class EmailFormatter {
             }.filter { $0 != "" && $0 != "]" }
     }
     
+    private func issueKeyLabel(string: String) -> String? {
+        // Square bracketed labels conventionally precede issue key labels
+        let noSquareBrackets = subjectByRemovingSquareBracketLabels(string)
+        guard let match = issueKeyRegex.firstMatchInString(noSquareBrackets, options: [], range: NSMakeRange(0, noSquareBrackets.characters.count)) else { return nil }
+        return (noSquareBrackets as NSString).substringWithRange(match.range).stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: ":"))
+    }
+    
     func subjectByRemovingLabels(string: String) -> String {
+        let noSquareBrackets = subjectByRemovingSquareBracketLabels(string)
+        return removeLeadingIssueKey(noSquareBrackets)
+        return noSquareBrackets
+    }
+    
+    private func subjectByRemovingSquareBracketLabels(string: String) -> String {
         let allLabelsStringMatch = squareBracketForLabelRegex.matchesInString(string, options: [], range: NSMakeRange(0, string.characters.count))
         guard let first = allLabelsStringMatch.first else {
             return string
         }
         
         return (string as NSString).stringByReplacingCharactersInRange(first.range, withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    }
+    
+    private func removeLeadingIssueKey(string: String) -> String {
+        guard let issueKey = issueKeyRegex.firstMatchInString(string, options: [], range: NSMakeRange(0, string.characters.count)) else { return string }
+        return (string as NSString).stringByReplacingCharactersInRange(issueKey.range, withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     func formatName(name: String) -> String {

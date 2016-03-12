@@ -66,9 +66,9 @@ class EmailFormatterTest: XCTestCase {
     }
     
     func testGetLabelsInSubject() {
-        let subject = "[swift-evolution][Proposal][Accepted] Writing square brackets [like] this"
+        let subject = "[swift-evolution][Proposal][Accepted] SE-0043 Writing square brackets [like] this"
         let formatter = EmailFormatter()
-        let expected = ["swift-evolution", "Proposal", "Accepted"]
+        let expected = ["swift-evolution", "Proposal", "Accepted", "SE-0043"]
         let actual = formatter.labelsInSubject(subject)
         XCTAssertEqual(expected, actual)
         
@@ -76,7 +76,7 @@ class EmailFormatterTest: XCTestCase {
     }
     
     func testRemoveLabels() {
-        let subject = "[swift-evolution][Proposal][Accepted] Writing square brackets [like] this"
+        let subject = "[swift-evolution][Proposal][Accepted] JRA-1004 Writing square brackets [like] this"
         let formatter = EmailFormatter()
         let expected = "Writing square brackets [like] this"
         let actual = formatter.subjectByRemovingLabels(subject)
