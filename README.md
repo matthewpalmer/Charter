@@ -8,7 +8,7 @@
 
 <p align="center">
 <br/>
-<img src="http://i.imgur.com/ouvY5SA.png" /><img src="http://i.imgur.com/yPScDFa.png" />
+<img src="http://i.imgur.com/IuLzox0.png" width="250" /><img src="http://i.imgur.com/9YWiF1R.png" width="250" />
 <br/>
 </p>
 

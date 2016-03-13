@@ -9,7 +9,7 @@ platform :ios do
     scan(scheme: "Charter")
     increment_build_number
     snapshot(scheme: "CharterUITests")
-    # gym(scheme: "Charter") # Build your app - more options available
+    gym(scheme: "Charter") # Build your app - more options available
     deliver
   end
 
