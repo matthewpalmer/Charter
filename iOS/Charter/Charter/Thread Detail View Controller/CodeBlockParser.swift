@@ -21,9 +21,6 @@ class SwiftCodeBlockParser: CodeBlockParser {
     }
     
     func codeBlockRangesInText(text: String) -> [NSRange] {
-        // Notes:
-        // - these might have overlap
-        // - we are parsing the text twice... if performance becomes an issue, dig into this.
         let swiftBlocks = swiftBlockRanges(text)
         let markdownBlocks = markdownBlockRanges(text)
         return markdownBlocks + swiftBlocks
@@ -40,6 +37,7 @@ class SwiftCodeBlockParser: CodeBlockParser {
     }
     
     /// Swift-specific `func {...}` style blocks
+    /*
     private func _swiftBlockRanges(text: String) -> [NSRange] {
         // This method is *not* performant enough for production.
         
@@ -95,4 +93,5 @@ class SwiftCodeBlockParser: CodeBlockParser {
         
         return ranges
     }
+    */
 }
