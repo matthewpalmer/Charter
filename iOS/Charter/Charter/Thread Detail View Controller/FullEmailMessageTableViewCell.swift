@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CollapsibleTextView
 
 protocol FullEmailMessageTableViewCellDelegate: class {
     func didChangeCellHeight(indexPath: NSIndexPath)
