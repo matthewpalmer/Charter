@@ -8,6 +8,5 @@
 
 #ifndef SML_Bridging_Header_h
 #define SML_Bridging_Header_h
-#import <GZIP/GZIP.h>
 
 #endif /* SML_Bridging_Header_h */
