@@ -35,8 +35,15 @@ class SwiftCodeBlockParser: CodeBlockParser {
         return regex.matchesInString(text, options: [], range: NSMakeRange(0, text.characters.count)).map { $0.range }
     }
     
-    /// Swift-specific `func {...}` style blocks
     private func swiftBlockRanges(text: String) -> [NSRange] {
+        return []
+    }
+    
+    /// Swift-specific `func {...}` style blocks
+    private func _swiftBlockRanges(text: String) -> [NSRange] {
+        // This method is *not* performant enough for production.
+        
+        
         // ^[a-z]+.*\{\\n*$
         // Need to keep an eye out for nested blocks
         
