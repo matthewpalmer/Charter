@@ -24,7 +24,7 @@
 		0E0CF94E1C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9211C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift */; };
 		0E0CF9501C8119BB00D7DCFE /* EmailThreadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9231C8119BB00D7DCFE /* EmailThreadService.swift */; };
 		0E0CF9511C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9241C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift */; };
-		0E0CF9531C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9271C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift */; };
+		0E0CF9531C8119BB00D7DCFE /* EmailTextRegionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9271C8119BB00D7DCFE /* EmailTextRegionViewDataSource.swift */; };
 		0E0CF9541C8119BB00D7DCFE /* FullEmailMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9281C8119BB00D7DCFE /* FullEmailMessageTableViewCell.swift */; };
 		0E0CF9551C8119BB00D7DCFE /* FullEmailMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9291C8119BB00D7DCFE /* FullEmailMessageTableViewCell.xib */; };
 		0E0CF9561C8119BB00D7DCFE /* ThreadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF92A1C8119BB00D7DCFE /* ThreadDetailViewController.swift */; };
@@ -60,6 +60,9 @@
 		0E4430C01C83C683007B57F0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */; };
 		0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */; };
 		0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4430C31C83C85C007B57F0 /* ScreenshotData.json */; };
+		0E6675EA1C989CB500EC4513 /* ThreeDotsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6675E91C989CB500EC4513 /* ThreeDotsButton.swift */; };
+		0E6675EC1C989D0400EC4513 /* EmailQuoteRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6675EB1C989D0400EC4513 /* EmailQuoteRanges.swift */; };
+		0E6675EE1C989E9E00EC4513 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6675ED1C989E9E00EC4513 /* RegionView.swift */; };
 		0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */; };
 		0EA0AEA81C935962004908E0 /* LabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA71C935962004908E0 /* LabelService.swift */; };
 		0EA0AEAA1C936FB9004908E0 /* UIFont_SmallCaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA91C936FB9004908E0 /* UIFont_SmallCaps.swift */; };
@@ -120,7 +123,7 @@
 		0E0CF9231C8119BB00D7DCFE /* EmailThreadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThreadService.swift; sourceTree = "<group>"; };
 		0E0CF9241C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThreadServiceDataSources.swift; sourceTree = "<group>"; };
 		0E0CF9251C8119BB00D7DCFE /* EmailThreadServiceImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailThreadServiceImplTest.swift; sourceTree = "<group>"; };
-		0E0CF9271C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCollapsibleTextViewDataSource.swift; sourceTree = "<group>"; };
+		0E0CF9271C8119BB00D7DCFE /* EmailTextRegionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextRegionViewDataSource.swift; sourceTree = "<group>"; };
 		0E0CF9281C8119BB00D7DCFE /* FullEmailMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullEmailMessageTableViewCell.swift; sourceTree = "<group>"; };
 		0E0CF9291C8119BB00D7DCFE /* FullEmailMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullEmailMessageTableViewCell.xib; sourceTree = "<group>"; };
 		0E0CF92A1C8119BB00D7DCFE /* ThreadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +146,9 @@
 		0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		0E4430C31C83C85C007B57F0 /* ScreenshotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ScreenshotData.json; path = CharterUITests/ScreenshotData.json; sourceTree = SOURCE_ROOT; };
+		0E6675E91C989CB500EC4513 /* ThreeDotsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDotsButton.swift; sourceTree = "<group>"; };
+		0E6675EB1C989D0400EC4513 /* EmailQuoteRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailQuoteRanges.swift; sourceTree = "<group>"; };
+		0E6675ED1C989E9E00EC4513 /* RegionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		0E8975E81C77BC5900ECFEA4 /* CharterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8975EC1C77BC5900ECFEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -295,14 +301,16 @@
 		0E0CF9261C8119BB00D7DCFE /* Thread Detail View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0E0CF9271C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift */,
-				0E0CF9281C8119BB00D7DCFE /* FullEmailMessageTableViewCell.swift */,
-				0E0CF9291C8119BB00D7DCFE /* FullEmailMessageTableViewCell.xib */,
 				0E0CF92A1C8119BB00D7DCFE /* ThreadDetailViewController.swift */,
 				0E0CF92B1C8119BB00D7DCFE /* ThreadDetailViewController.xib */,
 				0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */,
 				0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */,
+				0E0CF9281C8119BB00D7DCFE /* FullEmailMessageTableViewCell.swift */,
+				0E0CF9291C8119BB00D7DCFE /* FullEmailMessageTableViewCell.xib */,
 				0EA0AECB1C93C09C004908E0 /* CodeBlockParser.swift */,
+				0E6675ED1C989E9E00EC4513 /* RegionView.swift */,
+				0E0CF9271C8119BB00D7DCFE /* EmailTextRegionViewDataSource.swift */,
+				0E6675E91C989CB500EC4513 /* ThreeDotsButton.swift */,
 			);
 			path = "Thread Detail View Controller";
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 				0EA0AEAB1C937FA0004908E0 /* NRLabel.swift */,
 				0E0CF9371C8119BB00D7DCFE /* EmailFormatter.swift */,
 				0E0CF9381C8119BB00D7DCFE /* EmailFormatterTest.swift */,
+				0E6675EB1C989D0400EC4513 /* EmailQuoteRanges.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -648,17 +657,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E0CF9531C8119BB00D7DCFE /* EmailCollapsibleTextViewDataSource.swift in Sources */,
+				0E0CF9531C8119BB00D7DCFE /* EmailTextRegionViewDataSource.swift in Sources */,
 				0EA0AEA81C935962004908E0 /* LabelService.swift in Sources */,
 				0E0CF9561C8119BB00D7DCFE /* ThreadDetailViewController.swift in Sources */,
 				0E0CF9501C8119BB00D7DCFE /* EmailThreadService.swift in Sources */,
 				0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */,
 				0E0CF95C1C8119BB00D7DCFE /* ThreadsViewController.swift in Sources */,
+				0E6675EA1C989CB500EC4513 /* ThreeDotsButton.swift in Sources */,
 				0E0CF9461C8119BB00D7DCFE /* NetworkEmail.swift in Sources */,
 				0EA0AECC1C93C09C004908E0 /* CodeBlockParser.swift in Sources */,
 				0E0CF94E1C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift in Sources */,
 				0E0CF9511C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift in Sources */,
 				0EA0AEAA1C936FB9004908E0 /* UIFont_SmallCaps.swift in Sources */,
+				0E6675EE1C989E9E00EC4513 /* RegionView.swift in Sources */,
 				0E0B36E71C6E701900DF9995 /* AppDelegate.swift in Sources */,
 				0E0CF94D1C8119BB00D7DCFE /* EmailThreadRequest.swift in Sources */,
 				0E0CF9391C8119BB00D7DCFE /* MailingListsViewController.swift in Sources */,
@@ -670,6 +681,7 @@
 				0E0CF9581C8119BB00D7DCFE /* MessagePreviewTableViewCell.swift in Sources */,
 				0E0CF93B1C8119BB00D7DCFE /* Email.swift in Sources */,
 				0E0CF94A1C8119BB00D7DCFE /* EmailThreadNetworkDataSourceImpl.swift in Sources */,
+				0E6675EC1C989D0400EC4513 /* EmailQuoteRanges.swift in Sources */,
 				0E0CF95E1C8119BB00D7DCFE /* ThreadsViewControllerDataSource.swift in Sources */,
 				0E0CF9601C8119BB00D7DCFE /* Either.swift in Sources */,
 				0EA0AEAC1C937FA0004908E0 /* NRLabel.swift in Sources */,
