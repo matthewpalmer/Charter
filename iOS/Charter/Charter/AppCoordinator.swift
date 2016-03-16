@@ -58,10 +58,17 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func threadsViewController(threadsViewController: ThreadsViewController, didSearchWithPhrase phrase: String) {
-        print("Searching for phrase... \(phrase)")
-        let newVc = UIViewController()
-        newVc.view.backgroundColor = .redColor()
-        navigationController.pushViewController(newVc, animated: true)
+    func threadsViewController(threadsViewController: ThreadsViewController, didSearchWithPhrase phrase: String, inMailingList mailingList: MailingListType) {
+        let cache = RealmDataSource()
+        let network = EmailThreadNetworkDataSourceImpl()
+        let service = EmailThreadServiceImpl(cacheDataSource: cache, networkDataSource: network)
+        let dataSource = ThreadsSearchViewControllerDataSource(service: service, labelService: LabelServiceImpl(), mailingList: mailingList, searchPhrase: phrase)
+        
+        let viewController = ThreadsViewController(dataSource: dataSource)
+        viewController.searchEnabled = false
+        viewController.refreshEnabled = false
+        viewController.delegate = self
+        
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

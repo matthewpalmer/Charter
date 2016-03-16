@@ -53,7 +53,6 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue, labelService: labelService)
         dataSource.registerTableView(tableView)
         
-        XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
         
         let cell = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! MessagePreviewTableViewCell
@@ -94,7 +93,6 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         dataSource.registerTableView(tableView)
         
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
-        XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
         
         let cell = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! NoThreadsTableViewCell
         XCTAssertEqual(cell.titleLabel.text, "No Messages")

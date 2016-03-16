@@ -14,5 +14,4 @@ class NoThreadsTableViewCell: UITableViewCell {
     class func nib() -> UINib {
         return UINib(nibName: "NoThreadsTableViewCell", bundle: nil)
     }
-    
 }

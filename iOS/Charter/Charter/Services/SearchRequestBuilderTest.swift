@@ -13,10 +13,10 @@ class SearchRequestBuilderTest: XCTestCase {
     func testSearchRequestBuilder() {
         let builder = SearchRequestBuilder()
         builder.text = "Erica"
+        builder.mailingList = "swift-evolution"
         
-        // /charter/emails?filter={$text: {$search: 'Erica'}}&pagesize=50&sort_by={$meta: "textScore"}
         let parameters = builder.build().URLRequestQueryParameters
-        XCTAssertEqual(parameters["filter"], "{$text:{$search:'Erica'}}")
+        XCTAssertEqual(parameters["filter"], "{$text:{$search:'Erica'},mailingList:'swift-evolution'}")
         XCTAssertEqual(parameters["pagesize"], "50")
         XCTAssertEqual(parameters["sort_by"], "{$meta:'textScore'}")
     }

@@ -10,10 +10,17 @@ import UIKit
 
 protocol ThreadsViewControllerDataSource: class, UITableViewDataSource {
     var mailingList: MailingListType { get }
+    var title: String { get }
     var isEmpty: Bool { get }
     func refreshDataFromNetwork(completion: (Bool) -> Void)
     func emailAtIndexPath(indexPath: NSIndexPath) -> Email
     func registerTableView(tableView: UITableView)
+}
+
+extension ThreadsViewControllerDataSource {
+    var title: String {
+        return mailingList.name
+    }
 }
 
 class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSource {
@@ -49,12 +56,9 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard threads.count > 0 else {
+            tableView.backgroundColor = UIColor.whiteColor()
             return tableView.dequeueReusableCellWithIdentifier(emptyCellReuseIdentifier)!
         }
         
@@ -66,14 +70,20 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
         cell.setName(emailFormatter.formatName(email.from))
         cell.setTime(emailFormatter.formatDate(email.date))
         cell.setMessageCount("\(email.descendants.count)")
-        cell.setLabels(labels.map { (labelService.formattedStringForLabel($0), labelService.colorForLabel($0)) })
+        cell.setLabels(labels.map { (labelService.formattedStringForLabel($0), labelService.colorForLabel($0), UIColor.whiteColor()) })
         cell.setSubject(emailFormatter.subjectByRemovingLabels(formattedSubject))
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return threads.count > 0 ? threads.count : 1
+        guard threads.count > 0 else {
+            tableView.backgroundColor = UIColor.whiteColor()
+            return 1
+        }
+        
+        tableView.backgroundColor = UIColor(hue:0.67, saturation:0.02, brightness:0.96, alpha:1)
+        return threads.count
     }
     
     func refreshDataFromNetwork(completion: (Bool) -> Void) {

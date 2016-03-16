@@ -11,12 +11,20 @@ import UIKit
 /// Construct a search request with text properties. Note: the Realm query provided by the request built by this class should  **not** be used, i.e. don't try to use this request to retrieve cached results.
 class SearchRequestBuilder: NSObject {
     var text: String?
+    var mailingList: String?
     
     private lazy var params: Dictionary<String, String> = {
         // /charter/emails?filter={$text: {$search: 'Erica'}}&pagesize=50&sort_by={$meta: "textScore"}
         
         let text = self.text ?? ""
-        let filter = "{$text:{$search:'\(text)'}}"
+        
+        var mailingListField: String?
+        if self.mailingList != nil {
+            mailingListField = "mailingList:'\(self.mailingList!)'"
+        }
+        
+        var filter = "{$text:{$search:'\(text)'}\(mailingListField != nil ? ",\(mailingListField!)" : "")}"
+        
         let params: [String: String] = [
             "filter": filter,
             "pagesize": "50",

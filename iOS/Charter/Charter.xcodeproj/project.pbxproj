@@ -57,6 +57,9 @@
 		0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */; };
 		0E0CF9771C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */; };
 		0E0EEAF21C88F7BA00AA1351 /* SubThreadResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */; };
+		0E126A831C99E9C6007FB497 /* ThreadsSearchViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E126A821C99E9C5007FB497 /* ThreadsSearchViewControllerDataSource.swift */; };
+		0E126A861C99EBF0007FB497 /* SearchInProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E126A841C99EBF0007FB497 /* SearchInProgressTableViewCell.swift */; };
+		0E126A871C99EBF0007FB497 /* SearchInProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E126A851C99EBF0007FB497 /* SearchInProgressTableViewCell.xib */; };
 		0E4430C01C83C683007B57F0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */; };
 		0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */; };
 		0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4430C31C83C85C007B57F0 /* ScreenshotData.json */; };
@@ -145,6 +148,9 @@
 		0E0CF9741C812C5500D7DCFE /* ThreadDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSource.swift; sourceTree = "<group>"; };
 		0E0CF9761C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadDetailDataSourceImplTest.swift; sourceTree = "<group>"; };
 		0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubThreadResponse.json; sourceTree = "<group>"; };
+		0E126A821C99E9C5007FB497 /* ThreadsSearchViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsSearchViewControllerDataSource.swift; sourceTree = "<group>"; };
+		0E126A841C99EBF0007FB497 /* SearchInProgressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInProgressTableViewCell.swift; sourceTree = "<group>"; };
+		0E126A851C99EBF0007FB497 /* SearchInProgressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchInProgressTableViewCell.xib; sourceTree = "<group>"; };
 		0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		0E4430C31C83C85C007B57F0 /* ScreenshotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ScreenshotData.json; path = CharterUITests/ScreenshotData.json; sourceTree = SOURCE_ROOT; };
@@ -332,6 +338,9 @@
 				0E0CF9321C8119BB00D7DCFE /* ThreadsViewController.xib */,
 				0E0CF9331C8119BB00D7DCFE /* ThreadsViewControllerDataSource.swift */,
 				0E0CF9341C8119BB00D7DCFE /* ThreadsViewControllerDataSourceTest.swift */,
+				0E126A821C99E9C5007FB497 /* ThreadsSearchViewControllerDataSource.swift */,
+				0E126A841C99EBF0007FB497 /* SearchInProgressTableViewCell.swift */,
+				0E126A851C99EBF0007FB497 /* SearchInProgressTableViewCell.xib */,
 			);
 			path = "Threads View Controller";
 			sourceTree = "<group>";
@@ -546,6 +555,7 @@
 				0E0CF95D1C8119BB00D7DCFE /* ThreadsViewController.xib in Resources */,
 				0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */,
 				0E0CF9591C8119BB00D7DCFE /* MessagePreviewTableViewCell.xib in Resources */,
+				0E126A871C99EBF0007FB497 /* SearchInProgressTableViewCell.xib in Resources */,
 				0E0CF9491C8119BB00D7DCFE /* Credentials.plist in Resources */,
 				0E0CF93A1C8119BB00D7DCFE /* MailingListsViewController.xib in Resources */,
 				0E0CF95B1C8119BB00D7DCFE /* NoThreadsTableViewCell.xib in Resources */,
@@ -667,6 +677,7 @@
 				0E0CF9531C8119BB00D7DCFE /* EmailTextRegionViewDataSource.swift in Sources */,
 				0EA0AEA81C935962004908E0 /* LabelService.swift in Sources */,
 				0E0CF9561C8119BB00D7DCFE /* ThreadDetailViewController.swift in Sources */,
+				0E126A861C99EBF0007FB497 /* SearchInProgressTableViewCell.swift in Sources */,
 				0E0CF9501C8119BB00D7DCFE /* EmailThreadService.swift in Sources */,
 				0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */,
 				0E85F2841C98EAFA00F6B81D /* SearchRequestBuilder.swift in Sources */,
@@ -681,6 +692,7 @@
 				0E0B36E71C6E701900DF9995 /* AppDelegate.swift in Sources */,
 				0E0CF94D1C8119BB00D7DCFE /* EmailThreadRequest.swift in Sources */,
 				0E0CF9391C8119BB00D7DCFE /* MailingListsViewController.swift in Sources */,
+				0E126A831C99E9C6007FB497 /* ThreadsSearchViewControllerDataSource.swift in Sources */,
 				0E0CF9471C8119BB00D7DCFE /* RealmDataSource.swift in Sources */,
 				0E0CF95A1C8119BB00D7DCFE /* NoThreadsTableViewCell.swift in Sources */,
 				0E0CF9611C8119BB00D7DCFE /* EmailFormatter.swift in Sources */,

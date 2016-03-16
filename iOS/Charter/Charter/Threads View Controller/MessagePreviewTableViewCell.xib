@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -42,6 +41,14 @@ span multiple lines</string>
                         <rect key="frame" x="15" y="91" width="252" height="30"/>
                         <color key="backgroundColor" red="0.87553879310000005" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xw5-mb-9y1">
+                        <rect key="frame" x="275" y="91" width="45" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="ZUB-2C-EwZ"/>
+                            <constraint firstAttribute="height" constant="30" id="sqn-pu-aU6"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="IQP-7J-q0E">
                         <rect key="frame" x="282" y="91" width="30" height="30"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -61,12 +68,14 @@ span multiple lines</string>
                     <constraint firstItem="xPw-UM-7hp" firstAttribute="leading" secondItem="jFZ-dp-D2G" secondAttribute="trailing" constant="13" id="GVl-Fk-bWS"/>
                     <constraint firstAttribute="topMargin" secondItem="jFZ-dp-D2G" secondAttribute="top" id="HrL-84-1es"/>
                     <constraint firstItem="a3f-mu-B4p" firstAttribute="top" secondItem="jFZ-dp-D2G" secondAttribute="bottom" constant="8" id="K4L-1f-PaG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xw5-mb-9y1" secondAttribute="trailing" constant="-8" id="OxN-h8-RV3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="a3f-mu-B4p" secondAttribute="trailing" id="R2y-Qw-mSD"/>
                     <constraint firstAttribute="topMargin" secondItem="xPw-UM-7hp" secondAttribute="top" id="Vcl-qK-v0H"/>
                     <constraint firstAttribute="trailingMargin" secondItem="IQP-7J-q0E" secondAttribute="trailing" id="ZHy-C9-yvL"/>
                     <constraint firstAttribute="trailingMargin" secondItem="xPw-UM-7hp" secondAttribute="trailing" id="dah-nD-Nrf"/>
                     <constraint firstItem="IQP-7J-q0E" firstAttribute="top" secondItem="uNL-F6-wfT" secondAttribute="top" constant="-3" id="fVM-LI-D8Z"/>
                     <constraint firstAttribute="leadingMargin" secondItem="jFZ-dp-D2G" secondAttribute="leading" constant="-7" id="neT-eK-GLk"/>
+                    <constraint firstItem="xw5-mb-9y1" firstAttribute="centerY" secondItem="IQP-7J-q0E" secondAttribute="centerY" id="s6m-PQ-mHe"/>
                     <constraint firstAttribute="leadingMargin" secondItem="uNL-F6-wfT" secondAttribute="leading" constant="-7" id="toI-hw-YjQ"/>
                     <constraint firstItem="IQP-7J-q0E" firstAttribute="top" secondItem="a3f-mu-B4p" secondAttribute="bottom" constant="8" id="zs3-lB-Eyq"/>
                 </constraints>

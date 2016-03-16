@@ -59,6 +59,7 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
                 completion(emails)
             } catch let e {
                 print(e)
+                completion([])
             }
         }
         

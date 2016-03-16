@@ -10,15 +10,18 @@ import UIKit
 
 protocol ThreadsViewControllerDelegate: class {
     func threadsViewController(threadsViewController: ThreadsViewController, didSelectEmail email: Email)
-    func threadsViewController(threadsViewController: ThreadsViewController, didSearchWithPhrase phrase: String)
+    func threadsViewController(threadsViewController: ThreadsViewController, didSearchWithPhrase phrase: String, inMailingList mailingList: MailingListType)
 }
 
-class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
+class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     private let dataSource: ThreadsViewControllerDataSource
     
     weak var delegate: ThreadsViewControllerDelegate?
+    
+    var searchEnabled = true
+    var refreshEnabled = true
     
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -40,20 +43,27 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
     override func viewDidLoad() {
         self.dataSource.registerTableView(tableView)
         
+        tableView.backgroundColor = UIColor(hue:0.67, saturation:0.02, brightness:0.96, alpha:1) // Group table background color
+        
         tableView.delegate = self
         tableView.dataSource = dataSource
-        navigationItem.title = dataSource.mailingList.name
+        navigationItem.title = dataSource.title
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        tableView.addSubview(refreshControl)
         updateSeparatorStyle()
         
-        searchController.dimsBackgroundDuringPresentation = true
-        definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.delegate = self
+        if searchEnabled {
+            searchController.dimsBackgroundDuringPresentation = true
+            definesPresentationContext = true
+            tableView.tableHeaderView = searchController.searchBar
+            searchController.searchBar.delegate = self
+        }
+        
+        if refreshEnabled {
+            tableView.addSubview(refreshControl)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -82,6 +92,17 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
         if dataSource.isEmpty {
             cell.userInteractionEnabled = false
         }
+        
+        if searchEnabled && cell is MessagePreviewTableViewCell {
+            let messageCell = cell as! MessagePreviewTableViewCell
+            messageCell.labelStackView.userInteractionEnabled = true
+            messageCell.labelStackView.arrangedSubviews.forEach { labelView in
+                let tap = UITapGestureRecognizer(target: self, action: "didTapLabelInCell:")
+                labelView.userInteractionEnabled = true
+                labelView.addGestureRecognizer(tap)
+                
+            }
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -89,6 +110,22 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        delegate?.threadsViewController(self, didSearchWithPhrase: searchBar.text ?? "")
+        delegate?.threadsViewController(self, didSearchWithPhrase: searchBar.text ?? "", inMailingList: dataSource.mailingList)
+    }
+    
+    func didTapLabelInCell(sender: UIGestureRecognizer) {
+        if let label = sender.view as? UILabel {
+            let text = label.text?.lowercaseString ?? ""
+            let regex = try! NSRegularExpression(pattern: "[a-z]+-[0-9]+", options: .CaseInsensitive)
+            let searchText: String
+            // If searching for an issue key (e.g. SE-0048), don't use square brackets
+            if regex.matchesInString(text, options: [], range: NSMakeRange(0, text.characters.count)).count > 0 {
+                searchText = text
+            } else {
+                searchText = "[\(text)]"
+            }
+            
+            delegate?.threadsViewController(self, didSearchWithPhrase: searchText, inMailingList: dataSource.mailingList)
+        }
     }
 }
