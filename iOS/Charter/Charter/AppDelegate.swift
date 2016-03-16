@@ -21,7 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().tintColor = UIColor(red:0.99, green:0.43, blue:0.22, alpha:1)
+        let orange = UIColor(red:0.99, green:0.43, blue:0.22, alpha:1)
+        UINavigationBar.appearance().tintColor = orange
+        UIBarButtonItem.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).tintColor = orange
+        
         coordinator = AppCoordinator(navigationController: navigationController)
         
         let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in

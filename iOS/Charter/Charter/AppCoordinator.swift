@@ -57,4 +57,11 @@ extension AppCoordinator: ThreadsViewControllerDelegate {
         
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func threadsViewController(threadsViewController: ThreadsViewController, didSearchWithPhrase phrase: String) {
+        print("Searching for phrase... \(phrase)")
+        let newVc = UIViewController()
+        newVc.view.backgroundColor = .redColor()
+        navigationController.pushViewController(newVc, animated: true)
+    }
 }

@@ -10,14 +10,17 @@ import UIKit
 
 protocol ThreadsViewControllerDelegate: class {
     func threadsViewController(threadsViewController: ThreadsViewController, didSelectEmail email: Email)
+    func threadsViewController(threadsViewController: ThreadsViewController, didSearchWithPhrase phrase: String)
 }
 
-class ThreadsViewController: UIViewController, UITableViewDelegate {
+class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     private let dataSource: ThreadsViewControllerDataSource
     
     weak var delegate: ThreadsViewControllerDelegate?
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     init(dataSource: ThreadsViewControllerDataSource) {
         self.dataSource = dataSource
@@ -46,6 +49,11 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
         
         tableView.addSubview(refreshControl)
         updateSeparatorStyle()
+        
+        searchController.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.delegate = self
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -78,5 +86,9 @@ class ThreadsViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         delegate?.threadsViewController(self, didSelectEmail: dataSource.emailAtIndexPath(indexPath))
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        delegate?.threadsViewController(self, didSearchWithPhrase: searchBar.text ?? "")
     }
 }
