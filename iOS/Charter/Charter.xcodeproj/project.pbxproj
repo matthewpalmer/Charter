@@ -64,6 +64,8 @@
 		0E6675EC1C989D0400EC4513 /* EmailQuoteRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6675EB1C989D0400EC4513 /* EmailQuoteRanges.swift */; };
 		0E6675EE1C989E9E00EC4513 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6675ED1C989E9E00EC4513 /* RegionView.swift */; };
 		0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */; };
+		0E85F2841C98EAFA00F6B81D /* SearchRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E85F2831C98EAFA00F6B81D /* SearchRequestBuilder.swift */; };
+		0E85F2861C98F8EC00F6B81D /* SearchRequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E85F2851C98F8EC00F6B81D /* SearchRequestBuilderTest.swift */; };
 		0EA0AEA81C935962004908E0 /* LabelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA71C935962004908E0 /* LabelService.swift */; };
 		0EA0AEAA1C936FB9004908E0 /* UIFont_SmallCaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEA91C936FB9004908E0 /* UIFont_SmallCaps.swift */; };
 		0EA0AEAC1C937FA0004908E0 /* NRLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AEAB1C937FA0004908E0 /* NRLabel.swift */; };
@@ -150,6 +152,8 @@
 		0E6675EB1C989D0400EC4513 /* EmailQuoteRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailQuoteRanges.swift; sourceTree = "<group>"; };
 		0E6675ED1C989E9E00EC4513 /* RegionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		0E6BB6BF1C7E57D70079B864 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
+		0E85F2831C98EAFA00F6B81D /* SearchRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequestBuilder.swift; sourceTree = "<group>"; };
+		0E85F2851C98F8EC00F6B81D /* SearchRequestBuilderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequestBuilderTest.swift; sourceTree = "<group>"; };
 		0E8975E81C77BC5900ECFEA4 /* CharterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CharterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8975EC1C77BC5900ECFEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E8B96081C5B1873009F3025 /* Charter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +264,8 @@
 				0E0CF9231C8119BB00D7DCFE /* EmailThreadService.swift */,
 				0E0CF9251C8119BB00D7DCFE /* EmailThreadServiceImplTest.swift */,
 				0E0CF9201C8119BB00D7DCFE /* EmailThreadRequest.swift */,
+				0E85F2831C98EAFA00F6B81D /* SearchRequestBuilder.swift */,
+				0E85F2851C98F8EC00F6B81D /* SearchRequestBuilderTest.swift */,
 				0E0CF9211C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift */,
 				0E0CF9221C8119BB00D7DCFE /* EmailThreadRequestBuilderTest.swift */,
 				0E0CF9241C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift */,
@@ -648,6 +654,7 @@
 				0E0CF9771C812E5D00D7DCFE /* ThreadDetailDataSourceImplTest.swift in Sources */,
 				0E0CF9641C8119C800D7DCFE /* EmailThreadServiceImplTest.swift in Sources */,
 				0E6BB6C01C7E57D70079B864 /* TestUtilities.swift in Sources */,
+				0E85F2861C98F8EC00F6B81D /* SearchRequestBuilderTest.swift in Sources */,
 				0E0CF9681C8119EA00D7DCFE /* ThreadsViewControllerDataSourceTest.swift in Sources */,
 				0E0CF9691C8119F000D7DCFE /* EmailFormatterTest.swift in Sources */,
 			);
@@ -662,6 +669,7 @@
 				0E0CF9561C8119BB00D7DCFE /* ThreadDetailViewController.swift in Sources */,
 				0E0CF9501C8119BB00D7DCFE /* EmailThreadService.swift in Sources */,
 				0E0CF9751C812C5500D7DCFE /* ThreadDetailDataSource.swift in Sources */,
+				0E85F2841C98EAFA00F6B81D /* SearchRequestBuilder.swift in Sources */,
 				0E0CF95C1C8119BB00D7DCFE /* ThreadsViewController.swift in Sources */,
 				0E6675EA1C989CB500EC4513 /* ThreeDotsButton.swift in Sources */,
 				0E0CF9461C8119BB00D7DCFE /* NetworkEmail.swift in Sources */,
