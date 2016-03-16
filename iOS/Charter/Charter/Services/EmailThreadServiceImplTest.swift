@@ -56,4 +56,48 @@ class EmailThreadServiceImplTest: XCTestCase {
         
         waitForExpectationsWithTimeout(1.0, handler: nil)
     }
+    
+    func testGetUncachedThreads() {
+        let expectation = expectationWithDescription("should get uncached threads")
+        
+        let cache = MockCacheDataSource()
+        let email1 = Email()
+        email1.id = "one"
+        
+        let email3 = Email()
+        email3.id = "three"
+        
+        cache.emails = [email1, email3]
+        
+        cache.cacheEmailAssertionBlock = { (emails: [NetworkEmail]) in
+            let email2 = Email()
+            email2.id = "two"
+            cache.emails = [email1, email2, email3]
+        }
+        
+        func networkEmailWithId(id: String) -> NetworkEmail {
+            return NetworkEmail(id: id, from: "", mailingList: "", content: "", archiveURL: nil, date: NSDate(), subject: "", inReplyTo: nil, references: [], descendants: [])
+        }
+        
+        let network = MockNetworkDataSource()
+        network.emails = [networkEmailWithId("two"), networkEmailWithId("three"), networkEmailWithId("one")]
+        
+        let service = EmailThreadServiceImpl(cacheDataSource: cache, networkDataSource: network)
+        let application = MockApplication()
+        service.application = application
+        
+        service.getUncachedThreads(EmailThreadRequestBuilder().build()) { (emails) -> Void in
+            XCTAssertEqual(application.networkActivityIndicatorToggleCount, 2)
+            XCTAssertEqual(application.networkActivityIndicatorVisible, false)
+            
+            // Should match ordering from network, not the cache
+            XCTAssertEqual(emails[0].id, "two")
+            XCTAssertEqual(emails[1].id, "three")
+            XCTAssertEqual(emails[2].id, "one")
+            
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(1.0, handler: nil)
+    }
 }

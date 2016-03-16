@@ -64,7 +64,8 @@ class EmailThreadServiceMock: EmailThreadService {
     var uncachedThreads: [Email] = []
     
     var getCachedThreadsAssertionBlock: ((request: CachedThreadRequest) -> Void)?
-    var getUncachedThreadsAssertionBlock: ((request: EmailThreadRequest) -> Void)?
+    var refreshCacheAssertionBlock: ((request: EmailThreadRequest) -> Void)?
+    var getUncachedThreadsAssertionBlock: ((request: UncachedThreadRequest) -> Void)?
     
     required init(cacheDataSource: EmailThreadCacheDataSource, networkDataSource: EmailThreadNetworkDataSource) {}
     
@@ -74,6 +75,11 @@ class EmailThreadServiceMock: EmailThreadService {
     }
     
     func refreshCache(request: EmailThreadRequest, completion: [Email] -> Void) {
+        refreshCacheAssertionBlock?(request: request)
+        completion(uncachedThreads)
+    }
+    
+    func getUncachedThreads(request: UncachedThreadRequest, completion: [Email] -> Void) {
         getUncachedThreadsAssertionBlock?(request: request)
         completion(uncachedThreads)
     }

@@ -68,7 +68,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         XCTAssertEqual((labels[0] as! UILabel).text, "proposal")
         XCTAssertEqual((labels[1] as! UILabel).text, "accepted")
         
-        service.getUncachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
+        service.refreshCacheAssertionBlock = { (request: EmailThreadRequest) in
             let query = request.URLRequestQueryParameters
             
             XCTAssertEqual(query["page"], "1")
