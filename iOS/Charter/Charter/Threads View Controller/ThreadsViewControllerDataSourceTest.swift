@@ -10,13 +10,13 @@ import XCTest
 @testable import Charter
 
 private class Cache: EmailThreadCacheDataSource {
-    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {}
+    func getThreads(request: CachedThreadRequest, completion: [Email] -> Void) {}
 
     func cacheEmails(emails: [NetworkEmail]) throws {}
 }
 
 private class Network: EmailThreadNetworkDataSource {
-    func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {}
+    func getThreads(request: UncachedThreadRequest, completion: [NetworkEmail] -> Void) {}
 }
 
 class ThreadsViewControllerDataSourceImplTest: XCTestCase {
@@ -35,7 +35,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         email1.descendants.appendContentsOf([Email(), Email(), Email()])
         service.cachedThreads = [email1]
         
-        service.getCachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
+        service.getCachedThreadsAssertionBlock = { (request: CachedThreadRequest) in
             let query = request.realmQuery
             XCTAssertEqual(query.predicate.predicateFormat, "inReplyTo == nil AND mailingList == \"swift-users\"")
             XCTAssertEqual(query.onlyComplete, true)

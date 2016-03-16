@@ -48,7 +48,7 @@ class EmailThreadServiceImplTest: XCTestCase {
             XCTAssertEqual(emails.first!.id, network.emails.first!.id)
         }
         
-        service.getUncachedThreads(EmailThreadRequestBuilder().build()) { (uncachedEmails) -> Void in
+        service.refreshCache(EmailThreadRequestBuilder().build()) { (uncachedEmails) -> Void in
             XCTAssertEqual(application.networkActivityIndicatorToggleCount, 2)
             XCTAssertEqual(application.networkActivityIndicatorVisible, false)
             expectation.fulfill()

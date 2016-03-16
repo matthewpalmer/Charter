@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Construct a search request with text properties. Note: the Realm query provided by the request built by this class should  *not* be used.
+/// Construct a search request with text properties. Note: the Realm query provided by the request built by this class should  **not** be used, i.e. don't try to use this request to retrieve cached results.
 class SearchRequestBuilder: NSObject {
     var text: String?
     
@@ -29,15 +29,11 @@ class SearchRequestBuilder: NSObject {
         return RealmQuery(predicate: NSPredicate(format: ""), sort: nil, page: 1, pageSize: 0, onlyComplete: true)
     }()
     
-    func build() -> EmailThreadRequest {
+    func build() -> UncachedThreadRequest {
         return SearchRequest(URLRequestQueryParameters: params)
     }
 }
 
-private struct SearchRequest: EmailThreadRequest {
+private struct SearchRequest: UncachedThreadRequest {
     let URLRequestQueryParameters: Dictionary<String, String>
-    
-    var realmQuery: RealmQuery {
-        fatalError("\(__LINE__): SearchRequestBuilder does not construct a Realm query.")
-    }
 }

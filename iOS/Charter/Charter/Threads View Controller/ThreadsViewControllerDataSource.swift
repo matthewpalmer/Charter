@@ -77,7 +77,7 @@ class ThreadsViewControllerDataSourceImpl: NSObject, ThreadsViewControllerDataSo
     }
     
     func refreshDataFromNetwork(completion: (Bool) -> Void) {
-        service.getUncachedThreads(threadsRequestForPage(1)) { emails in
+        service.refreshCache(threadsRequestForPage(1)) { emails in
             self.threads = emails
             completion(true)
         }

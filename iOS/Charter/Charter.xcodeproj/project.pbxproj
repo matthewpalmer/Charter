@@ -264,11 +264,11 @@
 				0E0CF9231C8119BB00D7DCFE /* EmailThreadService.swift */,
 				0E0CF9251C8119BB00D7DCFE /* EmailThreadServiceImplTest.swift */,
 				0E0CF9201C8119BB00D7DCFE /* EmailThreadRequest.swift */,
-				0E85F2831C98EAFA00F6B81D /* SearchRequestBuilder.swift */,
-				0E85F2851C98F8EC00F6B81D /* SearchRequestBuilderTest.swift */,
 				0E0CF9211C8119BB00D7DCFE /* EmailThreadRequestBuilder.swift */,
 				0E0CF9221C8119BB00D7DCFE /* EmailThreadRequestBuilderTest.swift */,
 				0E0CF9241C8119BB00D7DCFE /* EmailThreadServiceDataSources.swift */,
+				0E85F2831C98EAFA00F6B81D /* SearchRequestBuilder.swift */,
+				0E85F2851C98F8EC00F6B81D /* SearchRequestBuilderTest.swift */,
 				0EA0AEA71C935962004908E0 /* LabelService.swift */,
 			);
 			path = Services;

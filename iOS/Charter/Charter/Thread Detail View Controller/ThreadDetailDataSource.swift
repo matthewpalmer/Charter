@@ -57,7 +57,7 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
             
             if self.rootEmail.descendants.count > emails.count {
                 // Get uncached threads if we are missing any
-                self.service.getUncachedThreads(self.descendantsRequestForRootEmail(self.rootEmail), completion: { (descendants) -> Void in
+                self.service.refreshCache(self.descendantsRequestForRootEmail(self.rootEmail), completion: { (descendants) -> Void in
                     self.emails = descendants
                     tableView.reloadData()
                 })
