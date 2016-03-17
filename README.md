@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
+
 <p align="center">
   <img src="http://i.imgur.com/ClrkeeK.png" />
 </p>
@@ -18,8 +20,6 @@
 
 
 ![qrcode](qrcode.png)
-
-[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
 
 **How do I run the iOS app?**
 
