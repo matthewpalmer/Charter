@@ -10,13 +10,13 @@ import XCTest
 @testable import Charter
 
 private class Cache: EmailThreadCacheDataSource {
-    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {}
+    func getThreads(request: CachedThreadRequest, completion: [Email] -> Void) {}
 
     func cacheEmails(emails: [NetworkEmail]) throws {}
 }
 
 private class Network: EmailThreadNetworkDataSource {
-    func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {}
+    func getThreads(request: UncachedThreadRequest, completion: [NetworkEmail] -> Void) {}
 }
 
 class ThreadsViewControllerDataSourceImplTest: XCTestCase {
@@ -35,7 +35,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         email1.descendants.appendContentsOf([Email(), Email(), Email()])
         service.cachedThreads = [email1]
         
-        service.getCachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
+        service.getCachedThreadsAssertionBlock = { (request: CachedThreadRequest) in
             let query = request.realmQuery
             XCTAssertEqual(query.predicate.predicateFormat, "inReplyTo == nil AND mailingList == \"swift-users\"")
             XCTAssertEqual(query.onlyComplete, true)
@@ -53,7 +53,6 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         let dataSource = ThreadsViewControllerDataSourceImpl(service: service, mailingList: MailingList.SwiftUsers.rawValue, labelService: labelService)
         dataSource.registerTableView(tableView)
         
-        XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
         
         let cell = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! MessagePreviewTableViewCell
@@ -68,7 +67,7 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         XCTAssertEqual((labels[0] as! UILabel).text, "proposal")
         XCTAssertEqual((labels[1] as! UILabel).text, "accepted")
         
-        service.getUncachedThreadsAssertionBlock = { (request: EmailThreadRequest) in
+        service.refreshCacheAssertionBlock = { (request: EmailThreadRequest) in
             let query = request.URLRequestQueryParameters
             
             XCTAssertEqual(query["page"], "1")
@@ -94,7 +93,6 @@ class ThreadsViewControllerDataSourceImplTest: XCTestCase {
         dataSource.registerTableView(tableView)
         
         XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 1)
-        XCTAssertEqual(dataSource.numberOfSectionsInTableView(tableView), 1)
         
         let cell = dataSource.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0)) as! NoThreadsTableViewCell
         XCTAssertEqual(cell.titleLabel.text, "No Messages")

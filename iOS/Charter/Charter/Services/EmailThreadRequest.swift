@@ -16,7 +16,12 @@ struct RealmQuery {
     let onlyComplete: Bool
 }
 
-protocol EmailThreadRequest {
+protocol UncachedThreadRequest {
     var URLRequestQueryParameters: Dictionary<String, String> { get }
+}
+
+protocol CachedThreadRequest {
     var realmQuery: RealmQuery { get }
 }
+
+protocol EmailThreadRequest: CachedThreadRequest, UncachedThreadRequest {}

@@ -63,17 +63,23 @@ class EmailThreadServiceMock: EmailThreadService {
     var cachedThreads: [Email] = []
     var uncachedThreads: [Email] = []
     
-    var getCachedThreadsAssertionBlock: ((request: EmailThreadRequest) -> Void)?
-    var getUncachedThreadsAssertionBlock: ((request: EmailThreadRequest) -> Void)?
+    var getCachedThreadsAssertionBlock: ((request: CachedThreadRequest) -> Void)?
+    var refreshCacheAssertionBlock: ((request: EmailThreadRequest) -> Void)?
+    var getUncachedThreadsAssertionBlock: ((request: UncachedThreadRequest) -> Void)?
     
     required init(cacheDataSource: EmailThreadCacheDataSource, networkDataSource: EmailThreadNetworkDataSource) {}
     
-    func getCachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+    func getCachedThreads(request: CachedThreadRequest, completion: [Email] -> Void) {
         getCachedThreadsAssertionBlock?(request: request)
         completion(cachedThreads)
     }
     
-    func getUncachedThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+    func refreshCache(request: EmailThreadRequest, completion: [Email] -> Void) {
+        refreshCacheAssertionBlock?(request: request)
+        completion(uncachedThreads)
+    }
+    
+    func getUncachedThreads(request: UncachedThreadRequest, completion: [Email] -> Void) {
         getUncachedThreadsAssertionBlock?(request: request)
         completion(uncachedThreads)
     }
@@ -84,7 +90,7 @@ class MockCacheDataSource: EmailThreadCacheDataSource {
     
     var cacheEmailAssertionBlock: ((emails: [NetworkEmail]) -> Void)?
     
-    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+    func getThreads(request: CachedThreadRequest, completion: [Email] -> Void) {
         completion(emails)
     }
     
@@ -96,7 +102,7 @@ class MockCacheDataSource: EmailThreadCacheDataSource {
 class MockNetworkDataSource: EmailThreadNetworkDataSource {
     var emails: [NetworkEmail] = []
     
-    func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {
+    func getThreads(request: UncachedThreadRequest, completion: [NetworkEmail] -> Void) {
         completion(emails)
     }
 }

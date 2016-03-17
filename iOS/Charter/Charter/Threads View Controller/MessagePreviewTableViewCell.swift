@@ -36,7 +36,7 @@ class MessagePreviewTableViewCell: UITableViewCell {
         messageCountLabel.layer.masksToBounds = true
     }
     
-    func setLabels(labels: [(string: String, color: UIColor)]) {
+    func setLabels(labels: [(string: String, textColor: UIColor, backgroundColor: UIColor)]) {
         let font = UIFont.systemSmallCapsMediumWeightFontOfSize(14)
         labelStackView.spacing = 10
         labelStackView.distribution = .EqualSpacing
@@ -44,12 +44,13 @@ class MessagePreviewTableViewCell: UITableViewCell {
         let labs: [UILabel] = labels.map {
             let l = NRLabel()
             l.font = font
-            l.textColor = $0.color
+            l.textColor = $0.textColor
             l.text = $0.string
-            l.layer.borderColor = $0.color.CGColor
+            l.layer.borderColor = $0.textColor.CGColor
             l.layer.borderWidth = 1.0
             l.layer.cornerRadius = 3.0
             l.layer.masksToBounds = true
+            l.layer.backgroundColor = $0.backgroundColor.CGColor
             l.textInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
             return l
         }

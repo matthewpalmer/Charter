@@ -73,5 +73,4 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
-    
 }

@@ -35,7 +35,7 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
         }
     }
     
-    func getThreads(request: EmailThreadRequest, completion: [NetworkEmail] -> Void) {
+    func getThreads(request: UncachedThreadRequest, completion: [NetworkEmail] -> Void) {
         let parameters = request.URLRequestQueryParameters
     
         let URLComponents = NSURLComponents(string: "http://charter.ws:8080/charter/emails")!
@@ -59,6 +59,7 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
                 completion(emails)
             } catch let e {
                 print(e)
+                completion([])
             }
         }
         

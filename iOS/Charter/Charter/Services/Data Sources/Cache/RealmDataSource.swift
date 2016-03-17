@@ -16,7 +16,7 @@ class RealmDataSource: EmailThreadCacheDataSource {
         self.realm = realm
     }
     
-    func getThreads(request: EmailThreadRequest, completion: [Email] -> Void) {
+    func getThreads(request: CachedThreadRequest, completion: [Email] -> Void) {
         let realmQuery = request.realmQuery
         var results = realm.objects(Email).filter(realmQuery.predicate)
         
