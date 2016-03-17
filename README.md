@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
+
 <p align="center">
   <img src="http://i.imgur.com/ClrkeeK.png" />
 </p>
@@ -14,9 +16,10 @@
 
 ## Details
 
-<a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
+<a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a> 
 
-[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
+
+![qrcode](qrcode.png)
 
 **How do I run the iOS app?**
 
