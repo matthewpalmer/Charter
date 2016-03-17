@@ -111,12 +111,12 @@ class ThreadsSearchViewControllerDataSource: NSObject, ThreadsViewControllerData
             let cell = tableView.dequeueReusableCellWithIdentifier(emptyCellReuseIdentifier) as! SearchInProgressTableViewCell
             if isSearching {
                 cell.activityIndicator.startAnimating()
-                cell.searchLabel.text = "Searching…"
+                cell.searchLabel.text = Localizable.Strings.searching
                 cell.activityIndicator.hidden = false
             } else {
                 cell.activityIndicator.stopAnimating()
                 cell.activityIndicator.hidden = true
-                cell.searchLabel.text = "No Results"
+                cell.searchLabel.text = Localizable.Strings.noResults
             }
             
             return cell
@@ -151,11 +151,11 @@ private enum Match {
         
         switch self {
         case .Subject(let _):
-            text = "Subject"
+            text = Localizable.Strings.subject
         case .From(let _):
-            text = "Author"
+            text = Localizable.Strings.author
         case .Content(let _):
-            text = "Content"
+            text = Localizable.Strings.content
         }
         
         return (text.lowercaseString, color)
