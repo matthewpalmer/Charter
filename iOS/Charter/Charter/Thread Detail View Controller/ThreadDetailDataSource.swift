@@ -118,6 +118,10 @@ class ThreadDetailDataSourceImpl: NSObject, ThreadDetailDataSource {
             }
         }
         
+        for id in children.keys {
+            children[id] = children[id]?.sort { $0.date.compare($1.date) == NSComparisonResult.OrderedAscending }
+        }
+        
         func indentationLevel(root: Email, indentLevel: Int) -> [(Int, Email)] {
             var list = [(Int, Email)]()
             for child in children[root.id] ?? [] {
