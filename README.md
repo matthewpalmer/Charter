@@ -15,7 +15,7 @@
 <div height = "200" width = "500" bgcolor="#f6f6f6" align="center">
     <a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
     <br/>
-    <a color="#aaa" href="http://tiny.cc/charter-app"><font size="12">(tiny.cc/charter-app)</font></a>
+    (<a href="http://tiny.cc/charter-app">tiny.cc/charter-app</a>)
 </div>
 
 ## Details
