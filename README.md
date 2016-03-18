@@ -50,3 +50,9 @@ If you’re keen to contribute but don’t feel like coding, there’s a bunch o
 * make suggestions, report bugs, ask questions, help people who ask questions
 
 If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file!
+
+## Contributors
+
+My personal thanks to everyone who has contributed to Charter!
+
+* [haawa799](https://github.com/haawa799) — improved access to the App Store listing from the README by adding a QR code
