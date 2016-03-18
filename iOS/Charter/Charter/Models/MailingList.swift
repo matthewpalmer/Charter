@@ -41,11 +41,11 @@ enum MailingList: RawRepresentable {
     var rawValue: MailingListType {
         switch self {
         case .SwiftEvolution:
-            return _MailingList(identifier: "swift-evolution", name: "Swift Evolution")
+            return _MailingList(identifier: "swift-evolution", name: Localizable.Strings.swiftEvolution)
         case .SwiftUsers:
-            return _MailingList(identifier: "swift-users", name: "Swift Users")
+            return _MailingList(identifier: "swift-users", name: Localizable.Strings.swiftUsers)
         case .SwiftDev:
-            return _MailingList(identifier: "swift-dev", name: "Swift Dev")
+            return _MailingList(identifier: "swift-dev", name: Localizable.Strings.swiftDev)
         }
     }
 }

@@ -1,0 +1,24 @@
+/* 
+  LocalizableStrings.strings
+  Charter
+
+  Created by Francisco Amado on 17/03/16.
+  Copyright © 2016 Matthew Palmer. All rights reserved.
+*/
+// Template case
+template-key = "template string";
+
+// MailingList.swift
+swift-evolution = "Swift Evolution";
+swift-users = "Swift Users";
+swift-dev = "Swift Dev";
+
+// MailingListsViewController.swift
+mailing-lists = "Mailing Lists";
+
+// ThreadsSearchViewControllerDataSource.swift
+searching = "Searching...";
+no-results = "No Results";
+subject = "Subject";
+author = "Author";
+content = "Content";
