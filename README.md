@@ -13,7 +13,7 @@
 </p>
 
 <div height = "200" width = "500" bgcolor="#f6f6f6" align="center">
-    [![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
+    <a href="https://travis-ci.org/matthewpalmer/Charter"><img src="https://travis-ci.org/matthewpalmer/Charter.svg?branch=master"></a>
 
     <a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
 
