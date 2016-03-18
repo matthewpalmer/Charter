@@ -17,7 +17,7 @@
 
     <a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
 
-    <img src="Documentation%20Resources/qrcode.png" width="75" />
+    <a href="http://tiny.cc/charter-app">tiny.cc/charter-app</a>
 </div>
 
 ## Details
