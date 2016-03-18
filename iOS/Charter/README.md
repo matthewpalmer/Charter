@@ -6,7 +6,7 @@ This structure isn’t groundbreaking, but I thought it might be worth putting a
 
 But first, one of those generic diagrams that might be helpful? (I’ve always found words more useful, but whatever—hopefully this is clear.)
 
-![charter app structure](Documentation Resources/iOS App Structure.png)
+![charter app structure](../../Documentation Resources/iOS App Structure.png)
 
 Alright.
 
@@ -20,7 +20,7 @@ So how do the services actually get their data? The **data sources**. A data sou
 
 And now the much hated **view controllers**. These will ask a service for something, the service will give something back to them, and the view controller gives it to a view, maybe reformatting it along the way. If formatting gets to be a big chore, we might create a class just to handle that reformatting; or if we have a lot of data and change to handle, we might make a view controller data source for that view controller.
 
-We put this stuff together with protocols. Just about everything is a protocol. Need a networking data source? Create a `NetworkDataSource` protocol that tells the service what this class promises to do. Then we could create a `RESTAPINetworkDataSource` class that actually does the hard yards. 
+We put this stuff together with protocols. Just about everything is a protocol. Need a networking data source? Create a `NetworkDataSource` protocol that tells the service what this class promises to do. Then we create a `RESTAPINetworkDataSource` class that actually does the hard yards. 
 
 A couple of other points of interest:
 
