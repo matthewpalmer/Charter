@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
-
 <p align="center">
   <img src="http://i.imgur.com/ClrkeeK.png" />
 </p>
@@ -10,16 +8,19 @@
 
 <p align="center">
 <br/>
-<img src="http://i.imgur.com/IuLzox0.png" width="250" /><img src="http://i.imgur.com/9YWiF1R.png" width="250" />
+<img src="Documentation\ Resources/screenshot-1.png" width="250" /><img src="Documentation\ Resources/screenshot-2.png" width="250" />
 <br/>
 </p>
 
+<div height = "200" width = "500" bgcolor="#f6f6f6" align="center">
+    [![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
+
+    <a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
+
+    <img src="Documentation\ Resources/qrcode.png" width="75" />
+</div>
+
 ## Details
-
-<a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a> 
-
-
-![qrcode](qrcode.png)
 
 **How do I run the iOS app?**
 

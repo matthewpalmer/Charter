@@ -13,8 +13,8 @@ before_install:
   - node --version
 
 install:
-  - ./build/install-dependencies.sh
+  - ./Build\ Scripts/install-dependencies.sh
 
 script:
-  - ./build/backend-test.sh
-  - ./build/ios-test.sh
+  - ./Build\ Scripts/backend-test.sh
+  - ./Build\ Scripts/ios-test.sh
