@@ -31,7 +31,7 @@ class MailingListsViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        navigationItem.title = "Mailing Lists"
+        navigationItem.title = Localizable.Strings.mailingLists
     }
 
     required init?(coder aDecoder: NSCoder) {
