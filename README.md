@@ -49,7 +49,7 @@ If you’re keen to contribute but don’t feel like coding, there’s a bunch o
 * improve the speed of the server or make the database more efficient
 * make suggestions, report bugs, ask questions, help people who ask questions
 
-If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file!
+If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file! After a few contributions, we’ll give you push access so you can review and merge pull requests.
 
 ## Contributors
 
