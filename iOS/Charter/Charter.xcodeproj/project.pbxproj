@@ -58,6 +58,7 @@
 		0E0EEAF21C88F7BA00AA1351 /* SubThreadResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */; };
 		0E126A831C99E9C6007FB497 /* ThreadsSearchViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E126A821C99E9C5007FB497 /* ThreadsSearchViewControllerDataSource.swift */; };
 		0E126A861C99EBF0007FB497 /* SearchInProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E126A841C99EBF0007FB497 /* SearchInProgressTableViewCell.swift */; };
+		0E3516641C9E52B000AEB7ED /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3516631C9E52B000AEB7ED /* Localizable.swift */; };
 		0E4430C01C83C683007B57F0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */; };
 		0E4430C21C83C6C2007B57F0 /* SnapshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */; };
 		0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4430C31C83C85C007B57F0 /* ScreenshotData.json */; };
@@ -74,7 +75,6 @@
 		0EA0AECE1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA0AECD1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift */; };
 		17F963741C9AF68800034AD3 /* NoThreadsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F963761C9AF68800034AD3 /* NoThreadsTableViewCell.xib */; };
 		17F963771C9AF69700034AD3 /* SearchInProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17F963791C9AF69700034AD3 /* SearchInProgressTableViewCell.xib */; };
-		17F963821C9AFE3200034AD3 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F963811C9AFE3200034AD3 /* Localizable.swift */; };
 		17F963831C9AFF7700034AD3 /* LocalizableStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17F963851C9AFF7700034AD3 /* LocalizableStrings.strings */; };
 		512BA184CC3097284807FFB3 /* Pods_Charter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9201E5405C60241E066FA77C /* Pods_Charter.framework */; };
 		E57A07F844712123F8323A63 /* Pods_CharterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */; };
@@ -151,6 +151,7 @@
 		0E0EEAF11C88F7BA00AA1351 /* SubThreadResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubThreadResponse.json; sourceTree = "<group>"; };
 		0E126A821C99E9C5007FB497 /* ThreadsSearchViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsSearchViewControllerDataSource.swift; sourceTree = "<group>"; };
 		0E126A841C99EBF0007FB497 /* SearchInProgressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInProgressTableViewCell.swift; sourceTree = "<group>"; };
+		0E3516631C9E52B000AEB7ED /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizable.swift; path = Charter/Resources/Localizable.swift; sourceTree = "<group>"; };
 		0E4430BF1C83C683007B57F0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		0E4430C11C83C6C2007B57F0 /* SnapshotTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTestCase.swift; sourceTree = "<group>"; };
 		0E4430C31C83C85C007B57F0 /* ScreenshotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ScreenshotData.json; path = CharterUITests/ScreenshotData.json; sourceTree = SOURCE_ROOT; };
@@ -177,7 +178,6 @@
 		17F9637B1C9AF6E900034AD3 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/SearchInProgressTableViewCell.strings"; sourceTree = "<group>"; };
 		17F9637C1C9AF85100034AD3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/NoThreadsTableViewCell.strings; sourceTree = "<group>"; };
 		17F9637D1C9AF85100034AD3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SearchInProgressTableViewCell.strings; sourceTree = "<group>"; };
-		17F963811C9AFE3200034AD3 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		17F963841C9AFF7700034AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/LocalizableStrings.strings; sourceTree = "<group>"; };
 		17F963861C9AFF8300034AD3 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LocalizableStrings.strings"; sourceTree = "<group>"; };
 		17F963871C9AFF8500034AD3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LocalizableStrings.strings; sourceTree = "<group>"; };
@@ -415,7 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				17F963851C9AFF7700034AD3 /* LocalizableStrings.strings */,
-				17F963811C9AFE3200034AD3 /* Localizable.swift */,
+				0E3516631C9E52B000AEB7ED /* Localizable.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -719,7 +719,7 @@
 				0E0CF9471C8119BB00D7DCFE /* RealmDataSource.swift in Sources */,
 				0E0CF95A1C8119BB00D7DCFE /* NoThreadsTableViewCell.swift in Sources */,
 				0E0CF9611C8119BB00D7DCFE /* EmailFormatter.swift in Sources */,
-				17F963821C9AFE3200034AD3 /* Localizable.swift in Sources */,
+				0E3516641C9E52B000AEB7ED /* Localizable.swift in Sources */,
 				0E0CF9451C8119BB00D7DCFE /* MailingList.swift in Sources */,
 				0EA0AECE1C93C10D004908E0 /* NSAttributedString_AttributesAndRanges.swift in Sources */,
 				0E0CF9581C8119BB00D7DCFE /* MessagePreviewTableViewCell.swift in Sources */,

@@ -11,14 +11,16 @@ devices([
 ])
 
 languages([
-  "en-US"
+  "en-US",
+  "pt-PT",
+  "es"
 ])
 
 # Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments
 # launch_arguments("-favColor red")
 
 # The name of the scheme which contains the UI Tests
-# scheme "SchemeName"
+scheme "CharterUITests"
 
 # Where should the resulting screenshots be stored?
 # output_directory "./screenshots"
