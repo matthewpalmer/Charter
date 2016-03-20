@@ -2,3 +2,7 @@
 — Added a little label to tell you how many messages are in a conversation
 — Improved conversation threading reliability
 — Various bug fixes
+
+Huge thanks to everyone who has contributed to the Charter open source project:
+
+— haawa799, improved access to the App Store listing from the README by adding a QR code

@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/matthewpalmer/Charter.svg?branch=master)](https://travis-ci.org/matthewpalmer/Charter)
-
 <p align="center">
   <img src="http://i.imgur.com/ClrkeeK.png" />
 </p>
@@ -10,16 +8,17 @@
 
 <p align="center">
 <br/>
-<img src="http://i.imgur.com/IuLzox0.png" width="250" /><img src="http://i.imgur.com/9YWiF1R.png" width="250" />
+<img src="Documentation%20Resources/screenshot-1.png" width="250" /><img src="Documentation%20Resources/screenshot-2.png" width="250" />
 <br/>
 </p>
 
+<div height = "200" width = "500" bgcolor="#f6f6f6" align="center">
+    <a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a>
+    <br/>
+    <a href="http://tiny.cc/charter-app">tiny.cc/charter-app</a>
+</div>
+
 ## Details
-
-<a href="https://itunes.apple.com/us/app/charter-mailing-list-client/id1082212697?ls=1&amp;mt=8"><img src="http://matthewpalmer.net/charter/app-store.svg"></a> 
-
-
-![qrcode](qrcode.png)
 
 **How do I run the iOS app?**
 
@@ -48,4 +47,10 @@ If you’re keen to contribute but don’t feel like coding, there’s a bunch o
 * improve the speed of the server or make the database more efficient
 * make suggestions, report bugs, ask questions, help people who ask questions
 
-If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file!
+If you do any of the above, remember to open a PR to add yourself to the `CONTRIBUTORS` file! After a few contributions, we’ll give you push access so you can review and merge pull requests.
+
+## Contributors
+
+My personal thanks to everyone who has contributed to Charter!
+
+* [haawa799](https://github.com/haawa799) — improved access to the App Store listing from the README by adding a QR code
