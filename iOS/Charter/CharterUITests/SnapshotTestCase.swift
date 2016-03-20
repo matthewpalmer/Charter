@@ -30,16 +30,18 @@ class SnapshotTestCase: XCTestCase {
         // Note: before trying to record a screenshot, run the UI tests (Cmd + U on the CharterUITests scheme) to load the stub data into the default Realm. Make sure you clean the content and settings of the simulator.
         // This only needs to be done when recording new screenshots; when running the tests, the app will load the stub data into the realm itself.
         
+        // Be sure to check that your UI test runs in simulators with different localisations
+        
         let app = XCUIApplication()
+        let quoteDisclosureText = "•••"
+        
         let tablesQuery = app.tables
         snapshot("04MailingLists")
-        tablesQuery.staticTexts["Swift Evolution"].tap()
+        tablesQuery.cells["swift-evolution"].tap()
         snapshot("01Threads")
         tablesQuery.staticTexts["Optional Binding Shorthand Syntax"].tap()
         snapshot("02Content")
-        tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0).staticTexts["•••"].tap()
+        tablesQuery.childrenMatchingType(.Cell).elementBoundByIndex(0).staticTexts[quoteDisclosureText].tap()
         snapshot("03Quote")
-        app.navigationBars["UIView"].buttons["Swift Evolution"].tap()
     }
-
 }

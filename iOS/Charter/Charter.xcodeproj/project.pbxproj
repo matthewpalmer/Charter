@@ -222,6 +222,7 @@
 			children = (
 				0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */,
 				0E0B36C91C6E701900DF9995 /* AppCoordinator.swift */,
+				17F9637E1C9AF9DB00034AD3 /* Resources */,
 				0E0CF9081C8119BB00D7DCFE /* Models */,
 				0E0CF9161C8119BB00D7DCFE /* Services */,
 				0E0CF9351C8119BB00D7DCFE /* Utility */,
@@ -381,7 +382,6 @@
 		0E8B95FF1C5B1873009F3025 = {
 			isa = PBXGroup;
 			children = (
-				17F9637E1C9AF9DB00034AD3 /* Resources */,
 				0E0B36C71C6E701900DF9995 /* Charter */,
 				0EE823061C674BE8005070AC /* CharterUITests */,
 				0E8975E91C77BC5900ECFEA4 /* CharterTests */,
@@ -418,6 +418,7 @@
 				0E3516631C9E52B000AEB7ED /* Localizable.swift */,
 			);
 			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4164DBA32992E8297D1B3199 /* Pods */ = {

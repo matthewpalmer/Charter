@@ -42,6 +42,7 @@ class MailingListsViewController: UIViewController, UITableViewDataSource, UITab
         let cell = tableView.dequeueReusableCellWithIdentifier(MailingListsViewController.reuseIdentifier)!
         cell.textLabel?.text = self.mailingLists[indexPath.row].name
         cell.accessoryType = .DisclosureIndicator
+        cell.accessibilityIdentifier = self.mailingLists[indexPath.row].identifier
         return cell
     }
     
