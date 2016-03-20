@@ -54,4 +54,4 @@ If you do any of the above, remember to open a PR to add yourself to the `CONTRI
 My personal thanks to everyone who has contributed to Charter!
 
 * [haawa799](https://github.com/haawa799) — improved access to the App Store listing from the README by adding a QR code
-* [FranciscoAmado](https://github.com/FranciscoAmado] — added localizations for Portugese and Spanish
+* [FranciscoAmado](https://github.com/FranciscoAmado) — added localizations for Portugese and Spanish
