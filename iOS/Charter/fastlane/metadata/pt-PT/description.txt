@@ -1,0 +1,12 @@
+Charter é um cliente para ajudar a gerir Listas de email relacionadas com Swift.
+Permite ler emails sobre a linguagem de programação Swift de uma forma intuitiva e agradável.
+
+— Ler as Listas Evolução Swift (swift-evolution), Utilizadores Swift (swift-users) e Desenvolvimento Swift (swift-dev)
+— As respostas às mensagens são agrupadas para facilitar o seguimento da conversa
+— Leitura sem conectividade através do descarregamento de uma lista
+— Ver emails por mensagem para seguimento da conversa
+— Textos com tamanhos excessivos são compactados para melhorar a leitura.
+
+As Listas são agrupadas por desenvolvedores Swift para agrupar e discutir o presente e futuro da linguagem, mantendo o utilizador a par das mais recentes novidades, práticas e ideias da comunidade Swift.
+
+Tentar acompanhar uma lista de emails através da web ou de uma cliente de email tornou—se uma tarefa complicada e cansativa, sendo impossível seguir discussões, perdendo—se pontos importantes num mar de informação formatada. Charter clarifica a leitura e apresenta a discussão num formato intuitivo.
