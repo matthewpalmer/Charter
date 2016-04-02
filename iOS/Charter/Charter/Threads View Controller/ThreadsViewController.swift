@@ -64,6 +64,8 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
         if refreshEnabled {
             tableView.addSubview(refreshControl)
         }
+        
+        didRequestRefresh(self)
     }
     
     override func viewWillDisappear(animated: Bool) {
