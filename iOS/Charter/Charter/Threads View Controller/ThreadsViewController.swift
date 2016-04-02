@@ -51,6 +51,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: .zero)
         
         updateSeparatorStyle()
         
@@ -79,6 +80,8 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
     private func updateSeparatorStyle() {
         if dataSource.isEmpty {
             tableView.separatorStyle = .None
+        } else {
+            tableView.separatorStyle = .SingleLine
         }
     }
     
