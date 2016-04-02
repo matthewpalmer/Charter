@@ -30,6 +30,7 @@ class MailingListsViewController: UIViewController, UITableViewDataSource, UITab
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: MailingListsViewController.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.tableFooterView = UIView(frame: .zero)
         
         navigationItem.title = Localizable.Strings.mailingLists
     }
