@@ -66,7 +66,12 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
             tableView.addSubview(refreshControl)
         }
         
-        didRequestRefresh(self)
+        // Check whether we are running UI tests before performing an automatic refresh.
+        // If we refresh immediately the screenshots (which we take with Fastlane in doing the UI tests)
+        // will be in an undefined state.
+        if !NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+            didRequestRefresh(self)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
