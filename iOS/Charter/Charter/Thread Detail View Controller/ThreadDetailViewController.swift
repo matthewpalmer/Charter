@@ -13,7 +13,7 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
     
     private let dataSource: ThreadDetailDataSource
     
-    private var navigationBar: UINavigationBar { return navigationController!.navigationBar }
+    private var navigationBar: UINavigationBar? { return navigationController?.navigationBar }
     
     private lazy var nextMessageButton: UIBarButtonItem = { UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowDown"), style: .Plain, target: self, action: #selector(self.scrollToNextMessage)) }()
     private lazy var previousMessageButton: UIBarButtonItem = { UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowUp"), style: .Plain, target: self, action: #selector(self.scrollToPreviousMessage)) }()
@@ -46,6 +46,8 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
     }
     
     func updateNavigationButtons() {
+		guard let navigationBar = navigationBar else { return }
+		
         previousMessageButton.enabled = tableView.contentOffset.y > 0
         
         let lastRowIndexPath = NSIndexPath(forRow: lastRowIndex, inSection: 0)
@@ -102,8 +104,8 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
 // Logic for navigation buttons (previous/next arrows)
 extension ThreadDetailViewController {
     private var firstVisibleRowIndex: Int? {
-        let navBar = navigationController!.navigationBar
-        let convertedNavBarFrame = tableView.convertRect(navBar.bounds, fromView: navBar)
+		guard let navigationBar = navigationBar else { return nil }
+        let convertedNavBarFrame = tableView.convertRect(navigationBar.bounds, fromView: navigationBar)
         let samplingY = convertedNavBarFrame.origin.y + convertedNavBarFrame.size.height + 1
         return tableView.indexPathForRowAtPoint(CGPoint(x: 0, y: samplingY))?.row
     }
