@@ -46,8 +46,8 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
     }
     
     func updateNavigationButtons() {
-		guard let navigationBar = navigationBar else { return }
-		
+        guard let navigationBar = navigationBar else { return }
+        
         previousMessageButton.enabled = tableView.contentOffset.y > 0
         
         let lastRowIndexPath = NSIndexPath(forRow: lastRowIndex, inSection: 0)
@@ -104,7 +104,7 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
 // Logic for navigation buttons (previous/next arrows)
 extension ThreadDetailViewController {
     private var firstVisibleRowIndex: Int? {
-		guard let navigationBar = navigationBar else { return nil }
+        guard let navigationBar = navigationBar else { return nil }
         let convertedNavBarFrame = tableView.convertRect(navigationBar.bounds, fromView: navigationBar)
         let samplingY = convertedNavBarFrame.origin.y + convertedNavBarFrame.size.height + 1
         return tableView.indexPathForRowAtPoint(CGPoint(x: 0, y: samplingY))?.row
