@@ -27,6 +27,8 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .None
         tableView.allowsSelection = false
+		
+		setupNavigationButtons()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -73,4 +75,46 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         
         self.presentViewController(viewController, animated: true, completion: nil)
     }
+}
+
+// Logic for navigation buttons (previous/next arrows)
+extension ThreadDetailViewController {
+	private var topVisibleRowIndex: Int? {
+		let navBar = navigationController!.navigationBar
+		let navBarFrameInTableView = tableView.convertRect(navBar.bounds, fromView: navBar)
+		let samplingY = navBarFrameInTableView.origin.y + navBarFrameInTableView.size.height + 1
+		return tableView.indexPathForRowAtPoint(CGPoint(x: 0, y: samplingY))?.row
+	}
+	
+	private var lastRowIndex: Int {
+		return dataSource.tableView(tableView, numberOfRowsInSection: 0) - 1
+	}
+	
+	func setupNavigationButtons() {
+		navigationItem.rightBarButtonItems = [
+			UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowDown"), style: .Plain, target: self, action: #selector(self.scrollToNextMessage)),
+			UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowUp"), style: .Plain, target: self, action: #selector(self.scrollToPreviousMessage))
+		]
+	}
+	
+	func scrollToPreviousMessage() {
+		guard let currentIndex = topVisibleRowIndex else { return }
+		scrollToRowAtIndex(requestedIndex: currentIndex - 1)
+	}
+	
+	func scrollToNextMessage() {
+		guard let currentIndex = topVisibleRowIndex else { return }
+		scrollToRowAtIndex(requestedIndex: currentIndex + 1)
+	}
+	
+	private func scrollToRowAtIndex(requestedIndex index: Int) {
+		let indexPath = NSIndexPath(forRow: clamp(index, min: 0, max: lastRowIndex), inSection: 0)
+		tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+	}
+	
+	private func clamp<T : Comparable>(value: T, min: T, max: T) -> T {
+		if (value < min) { return min }
+		if (value > max) { return max }
+		return value
+	}
 }
