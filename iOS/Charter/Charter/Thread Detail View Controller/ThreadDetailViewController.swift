@@ -12,12 +12,21 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
     @IBOutlet weak var tableView: UITableView!
     
     private let dataSource: ThreadDetailDataSource
+	
+	private var navigationBar: UINavigationBar { return navigationController!.navigationBar }
+	
+	private lazy var nextMessageButton: UIBarButtonItem = { UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowDown"), style: .Plain, target: self, action: #selector(self.scrollToNextMessage)) }()
+	private lazy var previousMessageButton: UIBarButtonItem = { UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowUp"), style: .Plain, target: self, action: #selector(self.scrollToPreviousMessage)) }()
     
     init(dataSource: ThreadDetailDataSource) {
         self.dataSource = dataSource
         super.init(nibName: "ThreadDetailViewController", bundle: NSBundle.mainBundle())
     }
-    
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
     override func viewDidLoad() {
         dataSource.registerTableView(tableView)
         dataSource.cellDelegate = self
@@ -30,10 +39,23 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
 		
 		setupNavigationButtons()
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+	
+	func setupNavigationButtons() {
+		navigationItem.rightBarButtonItems = [nextMessageButton, previousMessageButton]
+		updateNavigationButtons()
+	}
+	
+	func updateNavigationButtons() {
+		previousMessageButton.enabled = tableView.contentOffset.y > 0
+		
+		let lastRowIndexPath = NSIndexPath(forRow: lastRowIndex, inSection: 0)
+		let navBarOffset = navigationBar.frame.size.height + navigationBar.frame.origin.y
+		nextMessageButton.enabled = tableView.contentOffset.y < tableView.rectForRowAtIndexPath(lastRowIndexPath).origin.y - navBarOffset - 1
+	}
+	
+	func scrollViewDidScroll(scrollView: UIScrollView) {
+		updateNavigationButtons()
+	}
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
         return dataSource.tableView(tableView, indentationLevelForRowAtIndexPath: indexPath) ?? 0
@@ -79,10 +101,10 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
 
 // Logic for navigation buttons (previous/next arrows)
 extension ThreadDetailViewController {
-	private var topVisibleRowIndex: Int? {
+	private var firstVisibleRowIndex: Int? {
 		let navBar = navigationController!.navigationBar
-		let navBarFrameInTableView = tableView.convertRect(navBar.bounds, fromView: navBar)
-		let samplingY = navBarFrameInTableView.origin.y + navBarFrameInTableView.size.height + 1
+		let convertedNavBarFrame = tableView.convertRect(navBar.bounds, fromView: navBar)
+		let samplingY = convertedNavBarFrame.origin.y + convertedNavBarFrame.size.height + 1
 		return tableView.indexPathForRowAtPoint(CGPoint(x: 0, y: samplingY))?.row
 	}
 	
@@ -90,20 +112,13 @@ extension ThreadDetailViewController {
 		return dataSource.tableView(tableView, numberOfRowsInSection: 0) - 1
 	}
 	
-	func setupNavigationButtons() {
-		navigationItem.rightBarButtonItems = [
-			UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowDown"), style: .Plain, target: self, action: #selector(self.scrollToNextMessage)),
-			UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowUp"), style: .Plain, target: self, action: #selector(self.scrollToPreviousMessage))
-		]
-	}
-	
 	func scrollToPreviousMessage() {
-		guard let currentIndex = topVisibleRowIndex else { return }
+		guard let currentIndex = firstVisibleRowIndex else { return }
 		scrollToRowAtIndex(requestedIndex: currentIndex - 1)
 	}
 	
 	func scrollToNextMessage() {
-		guard let currentIndex = topVisibleRowIndex else { return }
+		guard let currentIndex = firstVisibleRowIndex else { return }
 		scrollToRowAtIndex(requestedIndex: currentIndex + 1)
 	}
 	
