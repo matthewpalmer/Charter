@@ -5,3 +5,19 @@ Huge thanks to everyone who has contributed to the Charter open source project:
 
 — haawa799, improved access to the App Store listing from the README by adding a QR code
 — FranciscoAmado, added localizations for Portugese and Spanish
+
+Huge thanks to everyone who has contributed to the Charter open source project:
+
+— haawa799, improved access to the App Store listing from the README
+
+Huge thanks to everyone who has contributed to the Charter open source project:
+
+— FranciscoAmado, added localizations for Portugese and Spanish
+
+Huge thanks to everyone who has contributed to the Charter open source project:
+
+— denissezavala, added refreshing threads when the view loads and improved the threads list’s design
+
+Huge thanks to everyone who has contributed to the Charter open source project:
+
+— fortinmike, added the previous and next buttons to the conversation view
