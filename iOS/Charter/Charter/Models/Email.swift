@@ -37,16 +37,6 @@ final class Email: Object {
     }
 }
 
-extension Email: Equatable {}
-
-func ==(lhs: Email, rhs: Email) -> Bool {
-    return lhs.id == rhs.id
-}
-
-extension Email: Hashable {
-    override var hashValue: Int { return id.hashValue }
-}
-
 enum EmailError: ErrorType {
     case InvalidDate
     case MissingFields

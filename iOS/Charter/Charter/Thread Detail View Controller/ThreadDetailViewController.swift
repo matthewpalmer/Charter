@@ -13,9 +13,18 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
     
     private let dataSource: ThreadDetailDataSource
     
+    private var navigationBar: UINavigationBar? { return navigationController?.navigationBar }
+    
+    private lazy var nextMessageButton: UIBarButtonItem = { UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowDown"), style: .Plain, target: self, action: #selector(self.scrollToNextMessage)) }()
+    private lazy var previousMessageButton: UIBarButtonItem = { UIBarButtonItem(image: UIImage(named: "UIButtonBarArrowUp"), style: .Plain, target: self, action: #selector(self.scrollToPreviousMessage)) }()
+    
     init(dataSource: ThreadDetailDataSource) {
         self.dataSource = dataSource
         super.init(nibName: "ThreadDetailViewController", bundle: NSBundle.mainBundle())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -27,10 +36,27 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = .None
         tableView.allowsSelection = false
+        
+        setupNavigationButtons()
     }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    
+    func setupNavigationButtons() {
+        navigationItem.rightBarButtonItems = [nextMessageButton, previousMessageButton]
+        updateNavigationButtons()
+    }
+    
+    func updateNavigationButtons() {
+        guard let navigationBar = navigationBar else { return }
+        
+        previousMessageButton.enabled = tableView.contentOffset.y > 0
+        
+        let lastRowIndexPath = NSIndexPath(forRow: lastRowIndex, inSection: 0)
+        let navBarOffset = navigationBar.frame.size.height + navigationBar.frame.origin.y
+        nextMessageButton.enabled = tableView.contentOffset.y < tableView.rectForRowAtIndexPath(lastRowIndexPath).origin.y - navBarOffset - 1
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        updateNavigationButtons()
     }
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
@@ -72,5 +98,40 @@ class ThreadDetailViewController: UIViewController, UITableViewDelegate, FullEma
         viewController.view.addSubview(view)
         
         self.presentViewController(viewController, animated: true, completion: nil)
+    }
+}
+
+// Logic for navigation buttons (previous/next arrows)
+extension ThreadDetailViewController {
+    private var firstVisibleRowIndex: Int? {
+        guard let navigationBar = navigationBar else { return nil }
+        let convertedNavBarFrame = tableView.convertRect(navigationBar.bounds, fromView: navigationBar)
+        let samplingY = convertedNavBarFrame.origin.y + convertedNavBarFrame.size.height + 1
+        return tableView.indexPathForRowAtPoint(CGPoint(x: 0, y: samplingY))?.row
+    }
+    
+    private var lastRowIndex: Int {
+        return dataSource.tableView(tableView, numberOfRowsInSection: 0) - 1
+    }
+    
+    func scrollToPreviousMessage() {
+        guard let currentIndex = firstVisibleRowIndex else { return }
+        scrollToRowAtIndex(requestedIndex: currentIndex - 1)
+    }
+    
+    func scrollToNextMessage() {
+        guard let currentIndex = firstVisibleRowIndex else { return }
+        scrollToRowAtIndex(requestedIndex: currentIndex + 1)
+    }
+    
+    private func scrollToRowAtIndex(requestedIndex index: Int) {
+        let indexPath = NSIndexPath(forRow: clamp(index, min: 0, max: lastRowIndex), inSection: 0)
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+    }
+    
+    private func clamp<T : Comparable>(value: T, min: T, max: T) -> T {
+        if (value < min) { return min }
+        if (value > max) { return max }
+        return value
     }
 }
