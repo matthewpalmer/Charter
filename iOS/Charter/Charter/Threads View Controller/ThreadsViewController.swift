@@ -51,6 +51,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
         
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: .zero)
         
         updateSeparatorStyle()
         
@@ -63,6 +64,13 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
         
         if refreshEnabled {
             tableView.addSubview(refreshControl)
+        }
+        
+        // Check whether we are running UI tests before performing an automatic refresh.
+        // If we refresh immediately the screenshots (which we take with Fastlane in doing the UI tests)
+        // will be in an undefined state.
+        if !NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+            didRequestRefresh(self)
         }
     }
     
@@ -77,6 +85,8 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
     private func updateSeparatorStyle() {
         if dataSource.isEmpty {
             tableView.separatorStyle = .None
+        } else {
+            tableView.separatorStyle = .SingleLine
         }
     }
     
