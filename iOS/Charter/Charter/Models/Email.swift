@@ -43,6 +43,14 @@ enum EmailError: ErrorType {
     case InvalidData
 }
 
+extension Email: Hashable {
+    override var hashValue: Int { return id.hashValue }
+}
+
+func ==(lhs: Email, rhs: Email) -> Bool {
+    return lhs.id == rhs.id
+}
+
 extension Email {
     /// Construct an email from JSON data from `data`.
     class func createFromData(data: NSData, inRealm realm: Realm) throws -> Email {
