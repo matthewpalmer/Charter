@@ -15,7 +15,7 @@ protocol CodeBlockParser {
 
 class SwiftCodeBlockParser: CodeBlockParser {
     func inlineCodeRangesInText(text: String) -> [NSRange] {
-        let regex = try! NSRegularExpression(pattern: "`[^`][^`].*?`", options: []) // Must not include ```-style blocks
+        let regex = try! NSRegularExpression(pattern: "`[^`].*?`", options: []) // Must not include ```-style blocks
         let matches = regex.matchesInString(text, options: [], range: NSMakeRange(0, text.characters.count))
         return matches.map { $0.range }
     }

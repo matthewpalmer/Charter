@@ -123,7 +123,7 @@ class EmailTextRegionViewDataSource: NSObject, RegionViewDataSource {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         view.expandIndicator.tag = index
-        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didTapToExpandRegion:")
+        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EmailTextRegionViewDataSource.didTapToExpandRegion(_:)))
         view.expandIndicator.removeGestureRecognizer(tapGestureRecognizer)
         view.expandIndicator.addGestureRecognizer(tapGestureRecognizer)
         return view

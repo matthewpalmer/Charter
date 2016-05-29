@@ -31,7 +31,7 @@ class EmailThreadNetworkDataSourceImpl: EmailThreadNetworkDataSource {
             self.username = dictionary!["username"] as! String
             self.password = dictionary!["password"] as! String
         } else {
-            fatalError("\(__FILE__): Username and password must be provided to a request. Ensure that a Credentials.plist file exists with `username` and `password` set.")
+            fatalError("\(#file): Username and password must be provided to a request. Ensure that a Credentials.plist file exists with `username` and `password` set.")
         }
     }
     

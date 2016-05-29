@@ -36,7 +36,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "didRequestRefresh:", forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(ThreadsViewController.didRequestRefresh(_:)), forControlEvents: .ValueChanged)
         return refreshControl
     }()
     
@@ -97,7 +97,7 @@ class ThreadsViewController: UIViewController, UITableViewDelegate, UISearchBarD
             let messageCell = cell as! MessagePreviewTableViewCell
             messageCell.labelStackView.userInteractionEnabled = true
             messageCell.labelStackView.arrangedSubviews.forEach { labelView in
-                let tap = UITapGestureRecognizer(target: self, action: "didTapLabelInCell:")
+                let tap = UITapGestureRecognizer(target: self, action: #selector(ThreadsViewController.didTapLabelInCell(_:)))
                 labelView.userInteractionEnabled = true
                 labelView.addGestureRecognizer(tap)
                 

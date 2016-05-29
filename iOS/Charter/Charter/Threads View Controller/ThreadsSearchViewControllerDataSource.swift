@@ -150,11 +150,11 @@ private enum Match {
         let color: UIColor = UIColor(red:0.99, green:0.43, blue:0.22, alpha:1)
         
         switch self {
-        case .Subject(let _):
+        case .Subject(_):
             text = Localizable.Strings.subject
-        case .From(let _):
+        case .From(_):
             text = Localizable.Strings.author
-        case .Content(let _):
+        case .Content(_):
             text = Localizable.Strings.content
         }
         

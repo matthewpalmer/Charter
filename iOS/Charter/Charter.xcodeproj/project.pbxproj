@@ -11,7 +11,6 @@
 		0E0B36E71C6E701900DF9995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0B36CA1C6E701900DF9995 /* AppDelegate.swift */; };
 		0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36CD1C6E701900DF9995 /* Assets.xcassets */; };
 		0E0B36EB1C6E701900DF9995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36CE1C6E701900DF9995 /* LaunchScreen.storyboard */; };
-		0E0B36F21C6E701900DF9995 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0B36D61C6E701900DF9995 /* Info.plist */; };
 		0E0CF9391C8119BB00D7DCFE /* MailingListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9061C8119BB00D7DCFE /* MailingListsViewController.swift */; };
 		0E0CF93A1C8119BB00D7DCFE /* MailingListsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CF9071C8119BB00D7DCFE /* MailingListsViewController.xib */; };
 		0E0CF93B1C8119BB00D7DCFE /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CF9091C8119BB00D7DCFE /* Email.swift */; };
@@ -512,7 +511,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Matthew Palmer";
 				TargetAttributes = {
 					0E8975E71C77BC5900ECFEA4 = {
@@ -574,7 +573,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4430C71C83E9E9007B57F0 /* ScreenshotData.json in Resources */,
-				0E0B36F21C6E701900DF9995 /* Info.plist in Resources */,
 				0E0CF95D1C8119BB00D7DCFE /* ThreadsViewController.xib in Resources */,
 				0E0B36EA1C6E701900DF9995 /* Assets.xcassets in Resources */,
 				0E0CF9591C8119BB00D7DCFE /* MessagePreviewTableViewCell.xib in Resources */,
