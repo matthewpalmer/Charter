@@ -12,6 +12,7 @@ template-key = "template string";
 swift-evolution = "Evolución Swift";
 swift-users = "Usuarios Swift";
 swift-dev = "Dev Swift";
+swift-build-dev = "Swift Build Dev";
 
 // MailingListsViewController.swift
 mailing-lists = "Listas";

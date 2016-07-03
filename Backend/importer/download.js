@@ -64,7 +64,7 @@ if (!outputDirectory) {
   return;
 }
 
-async.each(['swift-evolution', 'swift-users', 'swift-dev'], (list, callback) => {
+async.each(['swift-evolution', 'swift-users', 'swift-dev', 'swift-build-dev'], (list, callback) => {
   downloadURLs(path.join(outputDirectory, list), getURLs(list), callback);
 }, (err) => {
   if (err) {

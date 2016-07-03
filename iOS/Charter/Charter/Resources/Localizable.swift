@@ -13,6 +13,7 @@ struct Localizable {
 		static let swiftEvolution = NSLocalizedString("swift-evolution", tableName: "LocalizableStrings", comment: "")
 		static let swiftUsers = NSLocalizedString("swift-users", tableName: "LocalizableStrings", comment: "")
 		static let swiftDev = NSLocalizedString("swift-dev", tableName: "LocalizableStrings", comment: "")
+    static let swiftBuildDev = NSLocalizedString("swift-build-dev", tableName: "LocalizableStrings", comment: "")
 		static let mailingLists = NSLocalizedString("mailing-lists", tableName: "LocalizableStrings", comment: "")
 		static let searching = NSLocalizedString("searching", tableName: "LocalizableStrings", comment: "")
 		static let noResults = NSLocalizedString("no-results", tableName: "LocalizableStrings", comment: "")

@@ -1,12 +1,12 @@
 /*
 
 This is the main script for creating a JSON file that can be imported into
-the database. It expects the following structure. $data_directory is the 
-directory you pass on the command line. It may vary. Everything else is 
+the database. It expects the following structure. $data_directory is the
+directory you pass on the command line. It may vary. Everything else is
 not designed to be tweaked, and expects data in a format loosely copying that
 of the lists.swift.org website. We will (hopefully remember to)
 provide scripts to download that data, so check the README for those.
-  
+
   - $data_directory/
     - swift-evolution/
       - Week-of-Mon-20151207.txt
@@ -21,7 +21,7 @@ provide scripts to download that data, so check the README for those.
       - Week-of-...txt
       - Week-of-...txt
 
-This script will write the contents of the JSON to the directory specified, 
+This script will write the contents of the JSON to the directory specified,
 using the mailing list identifiers as file names.
 
 node generate.js $data_directory $output_directory
@@ -39,7 +39,7 @@ const getTestFile = (name, callback) => {
   fs.readFile(path.join(__dirname, 'sample', name), 'utf8', callback);
 };
 
-const mailingLists = ['swift-evolution', 'swift-users', 'swift-dev'];
+const mailingLists = ['swift-evolution', 'swift-users', 'swift-dev', 'swift-build-dev'];
 
 function run(dataDirectory, outputDirectory) {
   async.each(mailingLists, (list, callback) => {
