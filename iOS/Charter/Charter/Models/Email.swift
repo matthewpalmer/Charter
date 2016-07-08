@@ -47,6 +47,11 @@ func ==(lhs: Email, rhs: Email) -> Bool {
     return lhs.id == rhs.id
 }
 
+// For whatever reason in my Xcode 7.3 we need this conformance to compile. This is redundant so I expect this will change soon.
+extension Email: Hashable {
+    override var hashValue: Int { return id.hashValue }
+}
+
 extension Email {
     /// Construct an email from JSON data from `data`.
     class func createFromData(data: NSData, inRealm realm: Realm) throws -> Email {
