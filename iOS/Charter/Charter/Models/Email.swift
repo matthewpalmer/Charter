@@ -43,10 +43,6 @@ enum EmailError: ErrorType {
     case InvalidData
 }
 
-extension Email: Hashable {
-    override var hashValue: Int { return id.hashValue }
-}
-
 func ==(lhs: Email, rhs: Email) -> Bool {
     return lhs.id == rhs.id
 }
