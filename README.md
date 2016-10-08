@@ -1,3 +1,10 @@
+> Due to costs and lack of interest, I’ve had to take down the Charter service. 
+>
+> If you’re interested in running your own copy, get in touch and I can send you the database backups.
+
+<br/>
+<br/>
+
 <p align="center">
   <img src="http://i.imgur.com/ClrkeeK.png" />
 </p>
