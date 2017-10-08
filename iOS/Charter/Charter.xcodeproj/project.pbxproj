@@ -184,6 +184,9 @@
 		48BD330A86F6C6BA34A7FD2F /* Pods-Swift Mailing List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift Mailing List.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift Mailing List/Pods-Swift Mailing List.release.xcconfig"; sourceTree = "<group>"; };
 		5FDCFFDDD506A709EF5D86C7 /* Pods-CharterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CharterUITests/Pods-CharterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		738AA2B9358BB33BF55918BF /* Pods_CharterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CharterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C68EC4A1F8AC18B006B0A68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NoThreadsTableViewCell.strings; sourceTree = "<group>"; };
+		7C68EC4B1F8AC18B006B0A68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SearchInProgressTableViewCell.strings; sourceTree = "<group>"; };
+		7C68EC4C1F8AC1D2006B0A68 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LocalizableStrings.strings; sourceTree = "<group>"; };
 		7DA2AC83B4D785149E529AB6 /* Pods_Swift_Mailing_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Mailing_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9201E5405C60241E066FA77C /* Pods_Charter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Charter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF74B2EAD3944B0FBF5DC744 /* Pods-CharterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CharterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CharterUITests/Pods-CharterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -537,6 +540,7 @@
 				Base,
 				"pt-PT",
 				es,
+				ru,
 			);
 			mainGroup = 0E8B95FF1C5B1873009F3025;
 			productRefGroup = 0E8B96091C5B1873009F3025 /* Products */;
@@ -772,6 +776,7 @@
 				17F963751C9AF68800034AD3 /* Base */,
 				17F9637A1C9AF6E900034AD3 /* pt-PT */,
 				17F9637C1C9AF85100034AD3 /* es */,
+				7C68EC4A1F8AC18B006B0A68 /* ru */,
 			);
 			name = NoThreadsTableViewCell.xib;
 			sourceTree = "<group>";
@@ -782,6 +787,7 @@
 				17F963781C9AF69700034AD3 /* Base */,
 				17F9637B1C9AF6E900034AD3 /* pt-PT */,
 				17F9637D1C9AF85100034AD3 /* es */,
+				7C68EC4B1F8AC18B006B0A68 /* ru */,
 			);
 			name = SearchInProgressTableViewCell.xib;
 			sourceTree = "<group>";
@@ -792,6 +798,7 @@
 				17F963841C9AFF7700034AD3 /* Base */,
 				17F963861C9AFF8300034AD3 /* pt-PT */,
 				17F963871C9AFF8500034AD3 /* es */,
+				7C68EC4C1F8AC1D2006B0A68 /* ru */,
 			);
 			name = LocalizableStrings.strings;
 			sourceTree = "<group>";
